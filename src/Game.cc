@@ -20,9 +20,9 @@
 
 EntityManager entityManager;
 
-TextObject* textObj1{new TextObject(ASSETS_FONT_ARCADECLASSIC, 14, sf::Color::White, sf::Text::Bold)};
+auto textObj1{new TextObject(ASSETS_FONT_ARCADECLASSIC, 14, sf::Color::White, sf::Text::Bold)};
 
-sf::Clock* gameClock{new sf::Clock()};
+auto gameClock{new sf::Clock()};
 float deltaTime{};
 
 
@@ -56,11 +56,11 @@ Game::Game()
 
   tileGroup = new TileGroup(window, 12, 12, ASSETS_MAPS, 4.f, 16, 16, ASSETS_TILES);
 
-  Entity& hero{entityManager.AddEntity("hero")};
-  Entity& candle1{entityManager.AddEntity("candle")};
-  Entity& chest1{entityManager.AddEntity("chest")};
-  Entity& chest2{entityManager.AddEntity("chest")};
-  Entity& chest3{entityManager.AddEntity("chest")};
+  auto& hero{entityManager.AddEntity("hero")};
+  auto& candle1{entityManager.AddEntity("candle")};
+  auto& chest1{entityManager.AddEntity("chest")};
+  auto& chest2{entityManager.AddEntity("chest")};
+  auto& chest3{entityManager.AddEntity("chest")};
 
   Entity& buttonDebugPhysics{entityManager.AddEntity("button")};
 
@@ -101,9 +101,7 @@ Game::Game()
   contactEventManager = new ContactEventManager();
 }
 
-Game::~Game()
-{
-}
+Game::~Game() = default;
 
 void Game::Initialize()
 {

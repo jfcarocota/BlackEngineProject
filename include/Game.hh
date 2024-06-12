@@ -17,7 +17,7 @@ private:
   b2Draw* drawPhysics{};
   bool debugPhysics{};
 
-  void Update();
+  static void Update();
   void Render();
   void MainLoop();
   void Destroy();
