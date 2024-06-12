@@ -1,0 +1,5 @@
+"F:\CLion 2023.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=F:/CLion 2023.1.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S E:\Documentos\cc-projects\clion-projects\BlackEngineProject -B E:\Documentos\cc-projects\clion-projects\BlackEngineProject\cmake-build-debug
+-- Found SFML 2.6.0 in F:/SFML-2.6.0-windows-gcc-13.1.0-mingw-32-bit/SFML-2.6.0/lib/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/Documentos/cc-projects/clion-projects/BlackEngineProject/cmake-build-debug
