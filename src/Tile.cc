@@ -1,4 +1,5 @@
 #include "Tile.hh"
+#include <iostream>
 
 Tile::Tile(std::string textureUrl, float scale, int width, int height, int column, int row,
 float posX, float posY, sf::RenderWindow*& window)
@@ -13,7 +14,9 @@ float posX, float posY, sf::RenderWindow*& window)
   this->posY = posY;
 
   texture = new sf::Texture();
-  texture->loadFromFile(textureUrl);
+  if (!texture->loadFromFile(textureUrl)) {
+    std::cerr << "Failed to load tile texture: " << textureUrl << std::endl;
+  }
   sprite = new sf::Sprite(*texture, sf::IntRect(column * width, row * height, width, height));
   sprite->setPosition(posX, posY);
   sprite->setColor(sf::Color::White);
@@ -22,7 +25,12 @@ float posX, float posY, sf::RenderWindow*& window)
 
 Tile::~Tile()
 {
-
+  if (texture) {
+    delete texture;
+  }
+  if (sprite) {
+    delete sprite;
+  }
 }
 
 void Tile::Draw()

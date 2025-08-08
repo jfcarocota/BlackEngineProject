@@ -495,4 +495,6 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: \
   /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
   /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
   /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream

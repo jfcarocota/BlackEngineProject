@@ -1,5 +1,5 @@
 #include "TileGroup.hh"
-#include<iostream>
+#include <iostream>
 
 TileGroup::TileGroup(sf::RenderWindow*& window, int COLS, int ROWS, const char* filePath, 
 float scale, float tileWidth, float tileHeight, const char* textureUrl)
@@ -20,12 +20,26 @@ float scale, float tileWidth, float tileHeight, const char* textureUrl)
 
 TileGroup::~TileGroup()
 {
-
+  if (reader) {
+    delete reader;
+  }
+  if (tiles) {
+    for (auto* tile : *tiles) {
+      delete tile;
+    }
+    delete tiles;
+  }
 }
 
 void TileGroup::GenerateMap()
 {
   reader->open(filePath);
+  
+  if (!reader->is_open()) {
+    std::cerr << "Failed to open map file: " << filePath << std::endl;
+    return;
+  }
+  
   for(int y{}; y < ROWS; y++)
   {
     for(int x{}; x < COLS; x++)
@@ -34,9 +48,15 @@ void TileGroup::GenerateMap()
       float posY{scale * tileHeight * y};
 
       int coord{};
-      *reader >> coord;
+      if (!(*reader >> coord)) {
+        std::cerr << "Failed to read coordinate at position (" << x << ", " << y << ") from map file: " << filePath << std::endl;
+        break;
+      }
       int col{coord};
-      *reader >> coord;
+      if (!(*reader >> coord)) {
+        std::cerr << "Failed to read coordinate at position (" << x << ", " << y << ") from map file: " << filePath << std::endl;
+        break;
+      }
       int row{coord};
 
       tiles->push_back(new Tile(textureUrl, scale, tileWidth, tileHeight, col, row, posX, posY, window));
