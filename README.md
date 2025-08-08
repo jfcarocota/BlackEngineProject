@@ -8,7 +8,7 @@ A modern C++ game engine built with SFML, Box2D, and ImGui, featuring an Entity-
 - **Entity-Component System (ECS)**: Flexible and modular game object architecture
 - **2D Physics**: Box2D integration for realistic physics simulation
 - **Graphics**: SFML-based rendering with sprite management
-- **Audio**: SFML audio system with spatial audio support
+- **Audio**: SFML audio system (OpenAL bundled inside the macOS app)
 - **Input System**: Keyboard and mouse input handling
 - **Animation System**: JSON-based animation clips with frame-by-frame control
 - **Debug UI**: ImGui integration for real-time debugging and development tools
@@ -50,7 +50,7 @@ Entity
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **macOS** (tested on macOS 21.6.0)
+- **macOS** (tested on macOS 12)
 - **CMake** 3.16 or higher
 - **Homebrew** (for dependency management)
 
@@ -58,9 +58,10 @@ Entity
 ```bash
 # Install required packages via Homebrew
 brew install sfml box2d jsoncpp
+# (OpenAL is bundled in the .app; no need to install system-wide)
 ```
 
-### Building the Project
+### Building the Project (dev executable)
 ```bash
 # Clone the repository
 git clone https://github.com/jfcarocota/BlackEngineProject.git
@@ -74,33 +75,49 @@ cd cmake-build-debug
 cmake ..
 make
 
-# Run the game
+# Run the game from the build dir
 ./BlackEngineProject
 ```
 
-### Project Structure
+### macOS App (.app) usage
+- A self-contained `.app` is generated at the project root: `BlackEngineProject.app`
+  - Binary at `Contents/MacOS/BlackEngineProject-bin`
+  - Assets at `Contents/Resources/assets`
+  - OpenAL at `Contents/Frameworks/libopenal.1.dylib`
+- You can double-click the app in Finder, or run:
+```bash
+open ./BlackEngineProject.app
+```
+- If Finder blocks the app (Gatekeeper), clear quarantine once:
+```bash
+xattr -dr com.apple.quarantine ./BlackEngineProject.app
+```
+
+### Packaging to dist/
+- A distribution copy is produced via the custom target `package_app`:
+```bash
+# From build directory
+make
+# Outputs: dist/BlackEngineProject.app
+```
+
+## 📦 Project Structure
 ```
 BlackEngineProject/
-├── assets/                 # Game assets
+├── assets/                 # Game assets (copied into build and .app)
 │   ├── animations/         # Animation JSON files
-│   ├── audio/             # Sound effects and music
-│   ├── fonts/             # Font files
-│   ├── GUI/               # UI textures
-│   ├── maps/              # Level data
-│   ├── sprites.png        # Sprite sheet
-│   └── tiles.png          # Tile textures
-├── include/               # Header files
-│   ├── Components/        # ECS component headers
-│   ├── GUI/               # GUI system headers
-│   └── *.hh               # Core engine headers
-├── src/                   # Source files
-│   ├── Components/        # ECS component implementations
-│   ├── GUI/               # GUI system implementations
-│   └── *.cc               # Core engine implementations
-├── third_party/           # External libraries
-│   └── imgui/             # Dear ImGui library
-├── CMakeLists.txt         # Build configuration
-└── README.md              # This file
+│   ├── audio/              # Sound effects and music
+│   ├── fonts/              # Font files
+│   ├── GUI/                # UI textures
+│   ├── maps/               # Level data
+│   ├── sprites.png         # Sprite sheet
+│   └── tiles.png           # Tile textures
+├── include/                # Header files
+├── src/                    # Source files
+├── third_party/            # External libraries
+├── CMakeLists.txt          # Build configuration
+├── BlackEngineProject.app  # macOS app bundle (dev output)
+└── dist/                   # Packaged app for distribution
 ```
 
 ## 🎯 Usage
@@ -131,138 +148,47 @@ animator.AddAnimation("walk", AnimationClip("assets/animations/player/walk.json"
 animator.PlayAnimation("walk");
 ```
 
-### Physics Integration
-```cpp
-// Create physics body
-auto& rigidBody = entity.AddComponent<RigidBodyComponent>(
-    world,                    // Box2D world
-    b2BodyType::b2_dynamicBody, // Body type
-    1,                        // Density
-    0,                        // Friction
-    0,                        // Restitution
-    0.f,                      // Angle
-    true,                     // Fixed rotation
-    &entity                   // User data
-);
-```
-
-### Collision Detection
-```cpp
-// Collision events are automatically handled by ContactEventManager
-// Custom collision responses can be added in ContactEventManager.cc
-```
-
 ## 🎮 Controls
-
-### Game Controls
 - **WASD**: Move player character
-- **Mouse**: Click UI elements
 - **ESC**: Close ImGui debug windows
 
-### Debug Controls
-- **F3**: Toggle ImGui test window
-- **Debug Physics Button**: Toggle physics visualization
-- **ImGui Windows**: Various debug information panels
+## 🔊 Audio
+- Uses SFML audio with OpenAL. The `.app` bundles `libopenal.1.dylib` so end-users do not need Homebrew.
+- In development, audio also works when running the app from Finder or Terminal.
 
-## 🔧 Configuration
+## 🧰 Troubleshooting
+- If the app shows missing assets when double-clicked: the app now sets its working directory to `Contents/Resources`; assets are copied there. Rebuild if assets changed.
+- If macOS blocks the app: remove quarantine (`xattr -dr com.apple.quarantine BlackEngineProject.app`).
 
-### Game Constants
-All game constants are defined in `include/Constants.hh`:
+## 🔐 Code Signing & Notarization (optional)
+CMake provides targets to sign and notarize the `.app`.
 
-```cpp
-namespace GameConstants {
-    constexpr float PLAYER_SPEED = 200.0f;
-    constexpr float PLAYER_FRICTION = 0.28f;
-    constexpr int PHYSICS_VELOCITY_ITERATIONS = 8;
-    constexpr int PHYSICS_POSITION_ITERATIONS = 8;
-    constexpr float TILE_SIZE = 16.0f;
-    constexpr float TILE_SCALE = 4.0f;
-    constexpr int MAP_WIDTH = 12;
-    constexpr int MAP_HEIGHT = 12;
-}
+- Configure with identity and options:
+```bash
+cmake -B cmake-build-debug -S . \
+  -DMAC_SIGN=ON \
+  -DMAC_IDENTITY="Developer ID Application: Your Name (TEAMID)" \
+  -DMAC_TEAM_ID=TEAMID \
+  -DMAC_NOTARIZE=ON \
+  -DAPPLE_ID="your@appleid.com" \
+  -DAPPLE_ID_PASS="@keychain:AC_PASSWORD"
 ```
-
-### Window Configuration
-```cpp
-const unsigned int WINDOW_WIDTH{760};
-const unsigned int WINDOW_HEIGHT{760};
-const char* GAME_NAME{"Game1"};
+- Build, sign, notarize:
+```bash
+cmake --build cmake-build-debug --target sign_app
+cmake --build cmake-build-debug --target notarize_app
 ```
-
-## 🎨 Asset System
-
-### Supported Asset Types
-- **Sprites**: PNG format with sprite sheet support
-- **Audio**: OGG format for sound effects and music
-- **Fonts**: TTF format for text rendering
-- **Animations**: JSON format with frame data
-- **Maps**: Grid-based level data
-
-### Asset Loading
-Assets are automatically copied to the build directory during compilation. All asset paths are relative to the executable location.
-
-## 🐛 Debugging
-
-### ImGui Integration
-The engine includes a comprehensive debug UI system:
-- **Demo Window**: ImGui demo and examples
-- **Debug Info**: Real-time game state information
-- **Entity Info**: Component and entity details
-- **Test Window**: Custom debug interface
-
-### Physics Debugging
-- **Debug Draw**: Visualize physics bodies and shapes
-- **Collision Detection**: Real-time collision event logging
-- **Performance Metrics**: Frame rate and physics step timing
-
-## 🔄 Game Loop
-
-The engine follows a standard game loop pattern:
-
-1. **Event Processing**: Handle input and window events
-2. **Physics Update**: Update Box2D physics simulation
-3. **Game Logic**: Update entities and components
-4. **Rendering**: Draw all game objects and UI
-5. **Frame Limiting**: Maintain consistent frame rate
-
-## 🚧 Development
-
-### Adding New Components
-1. Create header file in `include/Components/`
-2. Inherit from `Component` base class
-3. Implement required virtual methods
-4. Add to CMakeLists.txt build configuration
-
-### Adding New Systems
-1. Create system class in `src/`
-2. Integrate with EntityManager
-3. Add to Game class initialization
-4. Update build configuration
-
-### Code Style
-- **Naming**: PascalCase for classes, camelCase for methods
-- **Includes**: Use `#include <...>` for standard library, `#include "..."` for project files
-- **Memory**: Use smart pointers (`std::unique_ptr`) for ownership
-- **Error Handling**: Check return values and log errors appropriately
+This will sign with hardened runtime and entitlements, submit to Apple Notary Service, and staple the ticket.
 
 ## 📝 License
-
 This project is open source. See LICENSE file for details.
 
 ## 🤝 Contributing
-
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Add tests if applicable
 5. Submit a pull request
-
-## 📞 Support
-
-For issues and questions:
-- Create an issue on GitHub
-- Check the documentation
-- Review the code examples
 
 ---
 
