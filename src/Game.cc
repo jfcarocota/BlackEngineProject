@@ -69,14 +69,14 @@ Game::Game()
   hero.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_dynamicBody, 1, 0, 0, 0.f, true, (void*) &hero);
   hero.AddComponent<AnimatorComponent>();
   hero.AddComponent<AudioListenerComponent>();
-  hero.AddComponent<Movement>(200.f, 0.28f, AudioClip("assets/audio/steps.ogg"));
+  hero.AddComponent<Movement>(200.f, 0.28f, AudioClip("../assets/audio/steps.ogg"));
   hero.AddComponent<FlipSprite>();
 
   candle1.AddComponent<TransformComponent>(500.f, 500.f, 16.f, 16.f, 3.f);
   candle1.AddComponent<SpriteComponent>(ASSETS_SPRITES, 0, 5);
   candle1.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &candle1);
   auto& candle1Animator = candle1.AddComponent<AnimatorComponent>();
-  candle1Animator.AddAnimation("idle", AnimationClip("assets/animations/candle/idle.json"));
+  candle1Animator.AddAnimation("idle", AnimationClip("../assets/animations/candle/idle.json"));
 
   chest1.AddComponent<TransformComponent>(300.f, 500.f, 16.f, 16.f, 4.f);
   chest1.AddComponent<SpriteComponent>(ASSETS_SPRITES, 6, 1);
@@ -96,7 +96,7 @@ Game::Game()
     std::cout << "clicked" << std::endl;
     debugPhysics = !debugPhysics;
   });
-  buttonPhysicsComp.SetTexture("assets/GUI/button.png");
+  buttonPhysicsComp.SetTexture("../assets/GUI/button.png");
 
   contactEventManager = new ContactEventManager();
 }
