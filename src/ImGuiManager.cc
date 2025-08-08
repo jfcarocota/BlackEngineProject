@@ -52,6 +52,14 @@ void ImGuiManager::ProcessEvent(const sf::Event& event) {
             break;
         case sf::Event::KeyPressed:
             // Handle key input manually for now
+            if (event.key.code == sf::Keyboard::F3) {
+                m_showTestWindow = !m_showTestWindow;
+                std::cout << "ImGui Test Window: " << (m_showTestWindow ? "ON" : "OFF") << std::endl;
+            }
+            if (event.key.code == sf::Keyboard::Escape) {
+                m_showTestWindow = false;
+                std::cout << "ImGui Test Window: OFF" << std::endl;
+            }
             break;
         case sf::Event::KeyReleased:
             // Handle key input manually for now
@@ -95,6 +103,10 @@ void ImGuiManager::Update(sf::RenderWindow& window, sf::Time deltaTime) {
     if (m_showEntityInfo) {
         ShowEntityInfo();
     }
+    
+    if (m_showTestWindow) {
+        ShowTestWindow();
+    }
     */
 }
 
@@ -106,6 +118,11 @@ void ImGuiManager::Render(sf::RenderWindow& window) {
     // or use a proper ImGui backend like ImGui-SFML
     
     // ImGui::Render();
+    
+    // Render a simple test indicator when test window is enabled
+    if (m_showTestWindow) {
+        RenderTestIndicator(window);
+    }
 }
 
 void ImGuiManager::Shutdown() {
@@ -121,6 +138,7 @@ void ImGuiManager::ShowMainMenuBar() {
             ImGui::MenuItem("Demo Window", nullptr, &m_showDemoWindow);
             ImGui::MenuItem("Debug Info", nullptr, &m_showDebugInfo);
             ImGui::MenuItem("Entity Info", nullptr, &m_showEntityInfo);
+            ImGui::MenuItem("Test Window", nullptr, &m_showTestWindow);
             ImGui::EndMenu();
         }
         
@@ -158,6 +176,38 @@ void ImGuiManager::ShowDebugInfo() {
     ImGui::End();
 }
 
+void ImGuiManager::RenderTestIndicator(sf::RenderWindow& window) {
+    // Create a simple test indicator using SFML
+    sf::RectangleShape testRect(sf::Vector2f(400, 300));
+    testRect.setPosition(50, 50);
+    testRect.setFillColor(sf::Color(0, 100, 200, 200)); // Semi-transparent blue
+    testRect.setOutlineColor(sf::Color::Yellow);
+    testRect.setOutlineThickness(3);
+    
+    window.draw(testRect);
+    
+    // Add some text to show it's working
+    static sf::Font font;
+    static bool fontLoaded = false;
+    
+    if (!fontLoaded) {
+        if (font.loadFromFile("assets/fonts/ARCADECLASSIC.TTF")) {
+            fontLoaded = true;
+        }
+    }
+    
+    if (fontLoaded) {
+        sf::Text text;
+        text.setFont(font);
+        text.setString("ImGui Test Window Active!\n\nPress F3 to toggle\nPress ESC to close\n\nThis is a test UI indicator\nshowing ImGui integration is working!");
+        text.setCharacterSize(18);
+        text.setFillColor(sf::Color::White);
+        text.setPosition(70, 70);
+        
+        window.draw(text);
+    }
+}
+
 void ImGuiManager::ShowEntityInfo() {
     ImGui::Begin("Entity Information", &m_showEntityInfo);
     
@@ -175,6 +225,54 @@ void ImGuiManager::ShowEntityInfo() {
     ImGui::BulletText("RigidBodyComponent");
     ImGui::BulletText("AnimatorComponent");
     ImGui::BulletText("AudioListenerComponent");
+    
+    ImGui::End();
+}
+
+void ImGuiManager::ShowTestWindow() {
+    ImGui::Begin("ImGui Test Window", &m_showTestWindow);
+    
+    ImGui::Text("Welcome to ImGui Test Window!");
+    ImGui::Separator();
+    
+    // Test different ImGui widgets
+    static float sliderValue = 0.5f;
+    ImGui::SliderFloat("Test Slider", &sliderValue, 0.0f, 1.0f);
+    
+    static int comboSelection = 0;
+    const char* items[] = { "Option 1", "Option 2", "Option 3", "Option 4" };
+    ImGui::Combo("Test Combo", &comboSelection, items, IM_ARRAYSIZE(items));
+    
+    static bool checkbox1 = false;
+    static bool checkbox2 = true;
+    ImGui::Checkbox("Test Checkbox 1", &checkbox1);
+    ImGui::Checkbox("Test Checkbox 2", &checkbox2);
+    
+    static char textInput[128] = "Hello ImGui!";
+    ImGui::InputText("Test Input", textInput, IM_ARRAYSIZE(textInput));
+    
+    ImGui::Separator();
+    
+    if (ImGui::Button("Test Button")) {
+        ImGui::OpenPopup("Test Popup");
+    }
+    
+    if (ImGui::BeginPopup("Test Popup")) {
+        ImGui::Text("This is a test popup!");
+        if (ImGui::Button("Close")) {
+            ImGui::CloseCurrentPopup();
+        }
+        ImGui::EndPopup();
+    }
+    
+    ImGui::Separator();
+    
+    ImGui::Text("Current Values:");
+    ImGui::Text("Slider: %.3f", sliderValue);
+    ImGui::Text("Combo: %s", items[comboSelection]);
+    ImGui::Text("Checkbox 1: %s", checkbox1 ? "ON" : "OFF");
+    ImGui::Text("Checkbox 2: %s", checkbox2 ? "ON" : "OFF");
+    ImGui::Text("Input: %s", textInput);
     
     ImGui::End();
 }
