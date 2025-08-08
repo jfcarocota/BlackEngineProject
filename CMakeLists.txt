@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(BlackEngineProject CXX)
+set(PROJECT_VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -78,6 +79,20 @@ if(APPLE)
     INSTALL_RPATH "@executable_path;@executable_path/../Frameworks"
   )
 
+  # Bundle metadata
+  set(BUNDLE_IDENTIFIER "com.blackengine.project")
+  set(BUNDLE_ICON_FILE "AppIcon.icns")
+  set(BUNDLE_ICON_SOURCE ${CMAKE_SOURCE_DIR}/assets/GUI/AppIcon.icns)
+  # If icon is missing, clear the icon file so Info.plist doesn't reference it
+  if(NOT EXISTS ${BUNDLE_ICON_SOURCE})
+    set(BUNDLE_ICON_FILE "")
+  endif()
+
+  # Configure Info.plist
+  configure_file(${CMAKE_SOURCE_DIR}/cmake/Info.plist.in
+                 ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Info.plist
+                 @ONLY)
+
   # Try to locate an OpenAL dylib from common prefixes
   set(OPENAL_CANDIDATES
     /usr/local/lib/libopenal.1.dylib
@@ -109,3 +124,45 @@ add_custom_command(TARGET BlackEngineProject POST_BUILD
   ${CMAKE_SOURCE_DIR}/assets
   ${CMAKE_BINARY_DIR}/assets
 )
+
+# Package into .app bundle: copy binary and assets
+if(APPLE)
+  add_custom_command(TARGET BlackEngineProject POST_BUILD
+    # Ensure destination dirs exist
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+            ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/MacOS
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+            ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Resources
+
+    # Copy built binary into the app bundle (as BlackEngineProject-bin to keep script as launcher)
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            $<TARGET_FILE:BlackEngineProject>
+            ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/MacOS/BlackEngineProject-bin
+
+    # Copy assets into app Resources
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/assets
+            ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Resources/assets
+  )
+
+  # Copy icon only if present
+  if(EXISTS ${BUNDLE_ICON_SOURCE})
+    add_custom_command(TARGET BlackEngineProject POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different
+              ${BUNDLE_ICON_SOURCE}
+              ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Resources/${BUNDLE_ICON_FILE}
+    )
+  endif()
+endif()
+
+# Install/packaging target to create dist/.app bundle copy
+set(DIST_DIR ${CMAKE_SOURCE_DIR}/dist)
+add_custom_target(package_app ALL
+  COMMAND ${CMAKE_COMMAND} -E rm -rf ${DIST_DIR}
+  COMMAND ${CMAKE_COMMAND} -E make_directory ${DIST_DIR}
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+          ${CMAKE_SOURCE_DIR}/BlackEngineProject.app
+          ${DIST_DIR}/BlackEngineProject.app
+  COMMENT "Packaging .app into dist/"
+)
+add_dependencies(package_app BlackEngineProject)
