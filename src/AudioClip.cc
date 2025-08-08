@@ -3,24 +3,60 @@
 
 AudioClip::AudioClip()
 {
-
+#ifdef SFML_AUDIO_AVAILABLE
+  sound = nullptr;
+  buffer = nullptr;
+#endif
 }
+
 AudioClip::AudioClip(const char* audioUrl)
 {
   this->audioUrl = audioUrl;
   
 #ifdef SFML_AUDIO_AVAILABLE
+  sound = nullptr;
+  buffer = nullptr;
+  
+  if (!audioUrl) {
+    std::cerr << "AudioClip: audioUrl is null" << std::endl;
+    return;
+  }
+  
   try {
     sound = new sf::Sound();
+    buffer = new sf::SoundBuffer();
+    
     if (!sound) {
       std::cerr << "Failed to create SFML Sound object" << std::endl;
+      return;
     }
+    
+    if (!buffer) {
+      std::cerr << "Failed to create SFML SoundBuffer object" << std::endl;
+      delete sound;
+      sound = nullptr;
+      return;
+    }
+    
+    if (!buffer->loadFromFile(audioUrl)) {
+      std::cerr << "Failed to load audio file: " << audioUrl << std::endl;
+      delete sound;
+      delete buffer;
+      sound = nullptr;
+      buffer = nullptr;
+      return;
+    }
+    
+    sound->setBuffer(*buffer);
+    
   } catch (const std::exception& e) {
     std::cerr << "Exception creating AudioClip: " << e.what() << std::endl;
-    sound = nullptr;
+    if (sound) { delete sound; sound = nullptr; }
+    if (buffer) { delete buffer; buffer = nullptr; }
   }
 #endif
 }
+
 void AudioClip::SetVolume(float volume)
 {
 #ifdef SFML_AUDIO_AVAILABLE
@@ -33,29 +69,89 @@ void AudioClip::SetVolume(float volume)
 AudioClip::~AudioClip()
 {
 #ifdef SFML_AUDIO_AVAILABLE
-  if (sound) {
-    delete sound;
+  if (sound) { delete sound; sound = nullptr; }
+  if (buffer) { delete buffer; buffer = nullptr; }
+#endif
+}
+
+// Copy constructor
+AudioClip::AudioClip(const AudioClip& other)
+{
+  audioUrl = other.audioUrl;
+#ifdef SFML_AUDIO_AVAILABLE
+  sound = nullptr;
+  buffer = nullptr;
+  if (!other.audioUrl.empty()) {
+    try {
+      sound = new sf::Sound();
+      buffer = new sf::SoundBuffer();
+      if (buffer->loadFromFile(audioUrl)) {
+        sound->setBuffer(*buffer);
+      }
+    } catch (...) {
+      if (sound) { delete sound; sound = nullptr; }
+      if (buffer) { delete buffer; buffer = nullptr; }
+    }
   }
 #endif
 }
 
+// Copy assignment
+AudioClip& AudioClip::operator=(const AudioClip& other)
+{
+  if (this == &other) return *this;
+  audioUrl = other.audioUrl;
 #ifdef SFML_AUDIO_AVAILABLE
-void AudioClip::Play(sf::SoundBuffer& buffer)
+  if (sound) { delete sound; sound = nullptr; }
+  if (buffer) { delete buffer; buffer = nullptr; }
+  if (!other.audioUrl.empty()) {
+    try {
+      sound = new sf::Sound();
+      buffer = new sf::SoundBuffer();
+      if (buffer->loadFromFile(audioUrl)) {
+        sound->setBuffer(*buffer);
+      }
+    } catch (...) {
+      if (sound) { delete sound; sound = nullptr; }
+      if (buffer) { delete buffer; buffer = nullptr; }
+    }
+  }
+#endif
+  return *this;
+}
+
+// Move constructor
+AudioClip::AudioClip(AudioClip&& other) noexcept
+{
+  audioUrl = std::move(other.audioUrl);
+#ifdef SFML_AUDIO_AVAILABLE
+  sound = other.sound; other.sound = nullptr;
+  buffer = other.buffer; other.buffer = nullptr;
+#endif
+}
+
+// Move assignment
+AudioClip& AudioClip::operator=(AudioClip&& other) noexcept
+{
+  if (this == &other) return *this;
+  audioUrl = std::move(other.audioUrl);
+#ifdef SFML_AUDIO_AVAILABLE
+  if (sound) { delete sound; }
+  if (buffer) { delete buffer; }
+  sound = other.sound; other.sound = nullptr;
+  buffer = other.buffer; other.buffer = nullptr;
+#endif
+  return *this;
+}
+
+#ifdef SFML_AUDIO_AVAILABLE
+void AudioClip::Play(sf::SoundBuffer&)
 {
   if (!sound) {
     std::cerr << "Sound object is null, cannot play audio" << std::endl;
     return;
   }
-  
-  try {
-    if (!buffer.loadFromFile(audioUrl)) {
-      std::cerr << "Failed to load audio file: " << audioUrl << std::endl;
-      return;
-    }
-    sound->setBuffer(buffer);
-    sound->play();
-  } catch (const std::exception& e) {
-    std::cerr << "Exception playing audio: " << e.what() << std::endl;
-  }
+  try { sound->play(); }
+  catch (const std::exception& e) { std::cerr << "Exception playing audio: " << e.what() << std::endl; }
 }
 #endif

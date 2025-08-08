@@ -36,10 +36,10 @@ add_executable(BlackEngineProject
 # Dependencies (use pkg-config for better compatibility)
 find_package(PkgConfig REQUIRED)
 
-# SFML via pkg-config (Homebrew version) - excluding audio for now due to OpenAL issues
+# SFML via pkg-config (Homebrew version)
 pkg_check_modules(SFML REQUIRED sfml-system sfml-window sfml-graphics)
-# Try to find audio separately (optional) - temporarily disabled
-# pkg_check_modules(SFML_AUDIO sfml-audio)
+# Try to find audio separately (optional)
+pkg_check_modules(SFML_AUDIO sfml-audio)
 
 # Box2D via CMake
 find_package(box2d REQUIRED)
@@ -63,15 +63,47 @@ target_link_libraries(BlackEngineProject PRIVATE
   ${JSONCPP_LIBRARIES}
 )
 
-# Add audio if available - temporarily disabled
-# if(SFML_AUDIO_FOUND)
-#   target_link_libraries(BlackEngineProject PRIVATE ${SFML_AUDIO_LIBRARIES})
-#   target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
-# endif()
+# Add audio if available
+if(SFML_AUDIO_FOUND)
+  target_link_libraries(BlackEngineProject PRIVATE ${SFML_AUDIO_LIBRARIES})
+  target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
+endif()
 
 # On macOS, ensure rpath is used so the executable can find Homebrew-installed dylibs
 if(APPLE)
   set(CMAKE_MACOSX_RPATH ON)
+  set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
+  # Search both next to executable and in app Frameworks
+  set_target_properties(BlackEngineProject PROPERTIES
+    INSTALL_RPATH "@executable_path;@executable_path/../Frameworks"
+  )
+
+  # Try to locate an OpenAL dylib from common prefixes
+  set(OPENAL_CANDIDATES
+    /usr/local/lib/libopenal.1.dylib
+    /opt/homebrew/lib/libopenal.1.dylib
+  )
+  set(OPENAL_DYLIB "")
+  foreach(p ${OPENAL_CANDIDATES})
+    if(EXISTS ${p})
+      set(OPENAL_DYLIB ${p})
+      break()
+    endif()
+  endforeach()
+
+  # Bundle OpenAL next to the executable and inside the app bundle, if found
+  if(OPENAL_DYLIB)
+    add_custom_command(TARGET BlackEngineProject POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different
+              ${OPENAL_DYLIB}
+              ${CMAKE_BINARY_DIR}/
+      COMMAND ${CMAKE_COMMAND} -E make_directory
+              ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Frameworks
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different
+              ${OPENAL_DYLIB}
+              ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Frameworks/libopenal.1.dylib
+    )
+  endif()
 endif()
 
 # Copy assets to build directory for standalone executable

@@ -19,6 +19,9 @@ if [ ! -f "cmake-build-debug/BlackEngineProject" ]; then
     exit 1
 fi
 
+# Prefer bundled OpenAL (both from build dir and app Frameworks)
+export DYLD_LIBRARY_PATH="${PROJECT_DIR}/cmake-build-debug:${APP_DIR}/Contents/Frameworks:${DYLD_LIBRARY_PATH}"
+
 # Check if assets directory exists
 if [ ! -d "assets" ]; then
     osascript -e 'display alert "Error" message "assets directory not found!"'

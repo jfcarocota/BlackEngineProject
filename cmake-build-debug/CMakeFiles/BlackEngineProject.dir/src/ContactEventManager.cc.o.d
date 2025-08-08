@@ -545,4 +545,22 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/SpriteComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AudioListenerComponent.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp

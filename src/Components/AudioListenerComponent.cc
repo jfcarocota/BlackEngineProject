@@ -1,9 +1,11 @@
 #include "Components/AudioListenerComponent.hh"
+#include <iostream>
 
 AudioListenerComponent::AudioListenerComponent()
 {
 #ifdef SFML_AUDIO_AVAILABLE
   this->soundBuffer = sf::SoundBuffer();
+  audioClip = nullptr;
 #endif
 }
 
@@ -35,15 +37,23 @@ void AudioListenerComponent::Play()
 void AudioListenerComponent::PlayOneShot(AudioClip& audioClip, float audioVolume)
 {
 #ifdef SFML_AUDIO_AVAILABLE
-  audioClip.SetVolume(audioVolume);
-  audioClip.Play(soundBuffer);
+  try {
+    audioClip.SetVolume(audioVolume);
+    audioClip.Play(soundBuffer);
+  } catch (const std::exception& e) {
+    std::cerr << "Exception in PlayOneShot: " << e.what() << std::endl;
+  }
 #endif
 }
 
 void AudioListenerComponent::PlayOneShot(AudioClip& audioClip)
 {
 #ifdef SFML_AUDIO_AVAILABLE
-  audioClip.SetVolume(1.f);
-  audioClip.Play(soundBuffer);
+  try {
+    audioClip.SetVolume(1.f);
+    audioClip.Play(soundBuffer);
+  } catch (const std::exception& e) {
+    std::cerr << "Exception in PlayOneShot: " << e.what() << std::endl;
+  }
 #endif
 }

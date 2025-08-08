@@ -217,6 +217,12 @@ box2d_DIR:PATH=/usr/local/lib/cmake/box2d
 pkgcfg_lib_JSONCPP_jsoncpp:FILEPATH=/usr/local/Cellar/jsoncpp/1.9.6/lib/libjsoncpp.dylib
 
 //Path to a library.
+pkgcfg_lib_SFML_AUDIO_sfml-audio:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-audio.dylib
+
+//Path to a library.
+pkgcfg_lib_SFML_AUDIO_sfml-system:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-system.dylib
+
+//Path to a library.
 pkgcfg_lib_SFML_sfml-graphics:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-graphics.dylib
 
 //Path to a library.
@@ -400,6 +406,41 @@ JSONCPP_jsoncpp_VERSION:INTERNAL=
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+SFML_AUDIO_CFLAGS:INTERNAL=-I/usr/local/Cellar/sfml/2.6.0/include;-I/usr/local/include;-I/usr/local/include/AL;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/flac/1.4.3/include;-I/usr/local/Cellar/libogg/1.3.5/include
+SFML_AUDIO_CFLAGS_I:INTERNAL=
+SFML_AUDIO_CFLAGS_OTHER:INTERNAL=
+SFML_AUDIO_FOUND:INTERNAL=1
+SFML_AUDIO_INCLUDEDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include
+SFML_AUDIO_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include;/usr/local/include;/usr/local/include/AL;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/flac/1.4.3/include;/usr/local/Cellar/libogg/1.3.5/include
+SFML_AUDIO_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sfml/2.6.0/lib;-lsfml-audio;-lsfml-system
+SFML_AUDIO_LDFLAGS_OTHER:INTERNAL=
+SFML_AUDIO_LIBDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
+SFML_AUDIO_LIBRARIES:INTERNAL=sfml-audio;sfml-system
+SFML_AUDIO_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
+SFML_AUDIO_LIBS:INTERNAL=
+SFML_AUDIO_LIBS_L:INTERNAL=
+SFML_AUDIO_LIBS_OTHER:INTERNAL=
+SFML_AUDIO_LIBS_PATHS:INTERNAL=
+SFML_AUDIO_MODULE_NAME:INTERNAL=sfml-audio
+SFML_AUDIO_PREFIX:INTERNAL=/usr/local/Cellar/sfml/2.6.0
+SFML_AUDIO_STATIC_CFLAGS:INTERNAL=-I/usr/local/Cellar/sfml/2.6.0/include;-I/usr/local/include;-I/usr/local/include/AL;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/flac/1.4.3/include;-I/usr/local/Cellar/libogg/1.3.5/include
+SFML_AUDIO_STATIC_CFLAGS_I:INTERNAL=
+SFML_AUDIO_STATIC_CFLAGS_OTHER:INTERNAL=
+SFML_AUDIO_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include;/usr/local/include;/usr/local/include/AL;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/flac/1.4.3/include;/usr/local/Cellar/libogg/1.3.5/include
+SFML_AUDIO_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sfml/2.6.0/lib;-lsfml-audio;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenAL.framework;-lsfml-system;-L/usr/local/lib;-lopenal;-L/usr/local/Cellar/libvorbis/1.3.7/lib;-lvorbisenc;-lvorbisfile;-lvorbis;-lm;-L/usr/local/Cellar/flac/1.4.3/lib;-lFLAC;-lm;-L/usr/local/Cellar/libogg/1.3.5/lib;-logg
+SFML_AUDIO_STATIC_LDFLAGS_OTHER:INTERNAL=/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenAL.framework
+SFML_AUDIO_STATIC_LIBDIR:INTERNAL=
+SFML_AUDIO_STATIC_LIBRARIES:INTERNAL=sfml-audio;sfml-system;openal;vorbisenc;vorbisfile;vorbis;m;FLAC;m;ogg
+SFML_AUDIO_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib;/usr/local/lib;/usr/local/Cellar/libvorbis/1.3.7/lib;/usr/local/Cellar/flac/1.4.3/lib;/usr/local/Cellar/libogg/1.3.5/lib
+SFML_AUDIO_STATIC_LIBS:INTERNAL=
+SFML_AUDIO_STATIC_LIBS_L:INTERNAL=
+SFML_AUDIO_STATIC_LIBS_OTHER:INTERNAL=
+SFML_AUDIO_STATIC_LIBS_PATHS:INTERNAL=
+SFML_AUDIO_VERSION:INTERNAL=2.6.0
+SFML_AUDIO_sfml-audio_INCLUDEDIR:INTERNAL=
+SFML_AUDIO_sfml-audio_LIBDIR:INTERNAL=
+SFML_AUDIO_sfml-audio_PREFIX:INTERNAL=
+SFML_AUDIO_sfml-audio_VERSION:INTERNAL=
 SFML_CFLAGS:INTERNAL=-I/usr/local/Cellar/sfml/2.6.0/include;-I/usr/local/opt/freetype/include/freetype2;-I/usr/local/opt/libpng/include/libpng16
 SFML_CFLAGS_I:INTERNAL=
 SFML_CFLAGS_OTHER:INTERNAL=
@@ -448,15 +489,21 @@ SFML_sfml-window_PREFIX:INTERNAL=/usr/local/Cellar/sfml/2.6.0
 SFML_sfml-window_VERSION:INTERNAL=2.6.0
 __pkg_config_arguments_JSONCPP:INTERNAL=REQUIRED;jsoncpp
 __pkg_config_arguments_SFML:INTERNAL=REQUIRED;sfml-system;sfml-window;sfml-graphics
+__pkg_config_arguments_SFML_AUDIO:INTERNAL=sfml-audio
 __pkg_config_checked_JSONCPP:INTERNAL=1
 __pkg_config_checked_SFML:INTERNAL=1
+__pkg_config_checked_SFML_AUDIO:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_JSONCPP_jsoncpp
 pkgcfg_lib_JSONCPP_jsoncpp-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_SFML_AUDIO_sfml-audio
+pkgcfg_lib_SFML_AUDIO_sfml-audio-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_SFML_AUDIO_sfml-system
+pkgcfg_lib_SFML_AUDIO_sfml-system-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_SFML_sfml-graphics
 pkgcfg_lib_SFML_sfml-graphics-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_SFML_sfml-system
 pkgcfg_lib_SFML_sfml-system-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_SFML_sfml-window
 pkgcfg_lib_SFML_sfml-window-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/usr/local/Cellar/jsoncpp/1.9.6/lib
+prefix_result:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
 
