@@ -166,3 +166,38 @@ add_custom_target(package_app ALL
   COMMENT "Packaging .app into dist/"
 )
 add_dependencies(package_app BlackEngineProject)
+
+# Signing and Notarization options
+option(MAC_SIGN "Code sign the app" OFF)
+set(MAC_IDENTITY "" CACHE STRING "Codesign identity (e.g., Developer ID Application: Your Name (TEAMID))")
+set(MAC_TEAM_ID "" CACHE STRING "Apple Developer Team ID")
+set(MAC_NOTARIZE "OFF" CACHE STRING "Notarize the app (ON/OFF)")
+set(APPLE_ID "" CACHE STRING "Apple ID email for notarization")
+set(APPLE_ID_PASS "" CACHE STRING "App-specific password for notarization (or keychain reference)")
+set(MAC_BUNDLE_PATH ${CMAKE_SOURCE_DIR}/BlackEngineProject.app)
+set(MAC_ENTITLEMENTS ${CMAKE_SOURCE_DIR}/cmake/Entitlements.plist)
+
+if(APPLE)
+  # Codesign target
+  add_custom_target(sign_app
+    COMMAND /bin/sh -c "if [ \"${MAC_SIGN}\" = \"ON\" ] && [ -n \"${MAC_IDENTITY}\" ]; then \
+      codesign --force --deep --options runtime --entitlements ${MAC_ENTITLEMENTS} --sign \"${MAC_IDENTITY}\" \"${MAC_BUNDLE_PATH}\"; \
+    else \
+      echo 'Skipping codesign: set -DMAC_SIGN=ON -DMAC_IDENTITY=...'; \
+    fi"
+    DEPENDS BlackEngineProject
+    COMMENT "Code signing app bundle"
+  )
+
+  # Notarization target (uploads for notarization; requires Xcode tools and credentials)
+  add_custom_target(notarize_app
+    COMMAND /bin/sh -c "if [ \"${MAC_NOTARIZE}\" = \"ON\" ] && [ -n \"${APPLE_ID}\" ] && [ -n \"${APPLE_ID_PASS}\" ]; then \
+      xcrun notarytool submit \"${MAC_BUNDLE_PATH}\" --apple-id \"${APPLE_ID}\" --password \"${APPLE_ID_PASS}\" --team-id \"${MAC_TEAM_ID}\" --wait; \
+      xcrun stapler staple \"${MAC_BUNDLE_PATH}\"; \
+    else \
+      echo 'Skipping notarization: set -DMAC_NOTARIZE=ON and provide APPLE_ID, APPLE_ID_PASS, MAC_TEAM_ID'; \
+    fi"
+    DEPENDS sign_app
+    COMMENT "Notarizing app bundle"
+  )
+endif()
