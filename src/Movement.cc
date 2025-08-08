@@ -23,8 +23,8 @@ void Movement::Initialize()
   rigidbody = owner->GetComponent<RigidBodyComponent>();
   audioListener = owner->GetComponent<AudioListenerComponent>();
 
-  animator->AddAnimation("idle", AnimationClip("../assets/animations/player/idle.json"));
-  animator->AddAnimation("walk", AnimationClip("../assets/animations/player/walk.json"));
+  animator->AddAnimation("idle", AnimationClip("assets/animations/player/idle.json"));
+  animator->AddAnimation("walk", AnimationClip("assets/animations/player/walk.json"));
 }
 
 void Movement::Update(float& deltaTime)
