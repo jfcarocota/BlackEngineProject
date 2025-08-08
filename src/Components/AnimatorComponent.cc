@@ -26,7 +26,18 @@ void AnimatorComponent::RefreshAnimationClip()
 
 void AnimatorComponent::Play(std::string animationName)
 {
-  AnimationClip anim = animations.at(animationName);
+  auto it = animations.find(animationName);
+  if (it == animations.end()) {
+    std::cerr << "Animation '" << animationName << "' not found" << std::endl;
+    return;
+  }
+  
+  AnimationClip anim = it->second;
+  
+  if (!anim.IsValid()) {
+    std::cerr << "Cannot play invalid animation '" << animationName << "'" << std::endl;
+    return;
+  }
 
   if(animationName != currentAnimationName)
   {
@@ -39,6 +50,12 @@ void AnimatorComponent::Play(std::string animationName)
 
 void AnimatorComponent::AddAnimation(std::string animationName, AnimationClip animationClip)
 {
+  // Check if animation clip is valid
+  if (!animationClip.IsValid()) {
+    std::cerr << "Warning: Invalid animation clip for '" << animationName << "'" << std::endl;
+    return;
+  }
+  
   if(currentAnimationName.empty())
   {
     currentAnimationName = animationName;

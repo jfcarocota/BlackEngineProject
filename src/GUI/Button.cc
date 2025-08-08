@@ -1,4 +1,5 @@
 #include "GUI/Button.hh"
+#include <iostream>
 
 Button::Button(TransformComponent& transform, float borderSize,
 sf::Color fillColor, sf::Color borderColor, std::function<void()> onClickAction):
@@ -16,11 +17,11 @@ Button::~Button()
 
 void Button::SetTexture(std::string texturePath)
 {
-  if(rectangleShape != nullptr)
-  {
-    texture = sf::Texture();
-    texture.loadFromFile(texturePath);
+  texture = sf::Texture();
+  if (texture.loadFromFile(texturePath)) {
     rectangleShape.setTexture(&texture);
+  } else {
+    std::cerr << "Failed to load button texture: " << texturePath << std::endl;
   }
 }
 

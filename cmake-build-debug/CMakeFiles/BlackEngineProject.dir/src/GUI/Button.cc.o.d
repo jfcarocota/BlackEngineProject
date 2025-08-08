@@ -499,4 +499,6 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: \
   /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream
