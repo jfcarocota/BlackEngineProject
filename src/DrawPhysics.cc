@@ -1,4 +1,5 @@
 #include "DrawPhysics.hh"
+#include <cmath>
 
 DrawPhysics::DrawPhysics(sf::RenderWindow*& window)
 {
