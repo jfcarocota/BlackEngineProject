@@ -91,12 +91,9 @@ if(APPLE)
     endif()
   endforeach()
 
-  # Bundle OpenAL next to the executable and inside the app bundle, if found
+  # Bundle OpenAL inside the app bundle if found
   if(OPENAL_DYLIB)
     add_custom_command(TARGET BlackEngineProject POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different
-              ${OPENAL_DYLIB}
-              ${CMAKE_BINARY_DIR}/
       COMMAND ${CMAKE_COMMAND} -E make_directory
               ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Frameworks
       COMMAND ${CMAKE_COMMAND} -E copy_if_different
