@@ -10,6 +10,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/CMakeLists.txt"
   "CMakeFiles/4.0.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.0.3/CMakeSystem.cmake"
+  "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake/Info.plist.in"
   "/usr/local/lib/cmake/box2d/box2dConfig-release.cmake"
   "/usr/local/lib/cmake/box2d/box2dConfig.cmake"
   "/usr/local/lib/cmake/box2d/box2dConfigVersion.cmake"
@@ -49,10 +50,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/BlackEngineProject.app/Contents/Info.plist"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/BlackEngineProject.dir/DependInfo.cmake"
+  "CMakeFiles/package_app.dir/DependInfo.cmake"
   )

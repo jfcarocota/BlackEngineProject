@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Resolve app and project paths
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APP_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+CONTENTS_DIR="${APP_DIR}"
+RES_DIR="${CONTENTS_DIR}/Resources"
+MACOS_DIR="${CONTENTS_DIR}/MacOS"
+
+# Set working directory to Resources so relative asset paths work
+cd "${RES_DIR}" || exit 1
+
+# Prefer bundled OpenAL from app Frameworks
+export DYLD_LIBRARY_PATH="${CONTENTS_DIR}/Frameworks:${DYLD_LIBRARY_PATH}"
+
+# Run the bundled binary
+exec "${MACOS_DIR}/BlackEngineProject-bin"

@@ -129,6 +129,19 @@ BlackEngineProject/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BlackEngineProject.dir/build.make CMakeFiles/BlackEngineProject.dir/build
 .PHONY : BlackEngineProject/fast
 
+#=============================================================================
+# Target rules for targets named package_app
+
+# Build rule for target.
+package_app: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 package_app
+.PHONY : package_app
+
+# fast build rule for target.
+package_app/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/package_app.dir/build.make CMakeFiles/package_app.dir/build
+.PHONY : package_app/fast
+
 src/Animation.o: src/Animation.cc.o
 .PHONY : src/Animation.o
 
@@ -737,6 +750,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... package_app"
 	@echo "... BlackEngineProject"
 	@echo "... src/Animation.o"
 	@echo "... src/Animation.i"

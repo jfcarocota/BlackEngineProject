@@ -1,3 +1,4 @@
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/BlackEngineProject.dir
+/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/package_app.dir
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
