@@ -25,24 +25,28 @@ bool EntityManager::HasNoEntities()
 
 void EntityManager::Update(float& deltaTime)
 {
+  activeEntities.clear();
+  activeEntities.reserve(entities.size());
+  
   for(auto& entity : entities)
   {
     if(entity->IsActive())
     {
       entity->Update(deltaTime);
-      acttiveEntities.emplace_back(entity);
+      activeEntities.push_back(entity);
     }
     else
     {
-      inactiveEntities.emplace_back(entity);
+      inactiveEntities.push_back(entity);
     }
   }
-  if(acttiveEntities.size() > 0)
+  
+  if(!activeEntities.empty())
   {
-    entities = acttiveEntities;
-    acttiveEntities.clear();
+    entities = std::move(activeEntities);
   }
-  if(inactiveEntities.size() > 0)
+  
+  if(!inactiveEntities.empty())
   {
     for(auto& entity : inactiveEntities)
     {

@@ -51,7 +51,7 @@ void AnimatorComponent::AddAnimation(std::string animationName, AnimationClip an
 
 void AnimatorComponent::Update(float& deltaTime)
 {
-  if(&sprite && &transform)
+  if(sprite != nullptr && transform != nullptr)
   {
     if(animations.size() > 0 && !currentAnimationName.empty())
     {

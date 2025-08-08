@@ -77,7 +77,7 @@ void RigidBodyComponent::AddVelocity(b2Vec2 velocity)
 
 void RigidBodyComponent::Update(float& deltaTime)
 {
-  if(&spriteComponent && &transform)
+  if(spriteComponent != nullptr && transform != nullptr)
   {
     bodyPos = body->GetPosition();
     trsPos = sf::Vector2f(bodyPos.x, bodyPos.y);

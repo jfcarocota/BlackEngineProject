@@ -1,11 +1,11 @@
 #pragma once
 
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "ContactEventManager.hh"
 #include "DrawPhysics.hh"
 #include "ImGuiManager.hh"
-#include<box2d/box2d.h>
-#include<queue>
+#include <box2d/box2d.h>
+#include <queue>
 
 class Game
 {

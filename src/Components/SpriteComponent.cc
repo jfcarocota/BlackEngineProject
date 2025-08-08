@@ -1,5 +1,6 @@
 #include "Components/SpriteComponent.hh"
 #include "Components/EntityManager.hh"
+#include <iostream>
 
 SpriteComponent::SpriteComponent(const char* textureUrl, unsigned int col, unsigned int row)
 {
@@ -8,7 +9,9 @@ SpriteComponent::SpriteComponent(const char* textureUrl, unsigned int col, unsig
   this->row = row;
 
   texture = sf::Texture();
-  texture.loadFromFile(textureUrl);
+  if (!texture.loadFromFile(textureUrl)) {
+    std::cerr << "Failed to load texture: " << textureUrl << std::endl;
+  }
 }
 
 void SpriteComponent::Initialize()
@@ -30,7 +33,7 @@ SpriteComponent::~SpriteComponent()
 
 void SpriteComponent::Update(float& deltaTime)
 {
-  if(&transform)
+  if(transform != nullptr)
   {
     sprite.setPosition(transform->GetPosition());
   }
@@ -47,7 +50,7 @@ void SpriteComponent::SetFlipTexture(bool flipTexture)
   sprite.setScale(flipTexture ? -transform->GetScale(): transform->GetScale(), transform->GetScale());
 }
 
-bool SpriteComponent::GetFliptexture() const
+bool SpriteComponent::GetFlipTexture() const
 {
   return flipTexture;
 }

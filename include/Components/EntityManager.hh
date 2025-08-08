@@ -1,14 +1,14 @@
 #pragma once
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "Component.hh"
 #include "Entity.hh"
-#include<vector>
+#include <vector>
 
 class EntityManager
 {
 private:
   std::vector<Entity*> entities;
-  std::vector<Entity*> acttiveEntities;
+  std::vector<Entity*> activeEntities;
   std::vector<Entity*> inactiveEntities;
 public:
   EntityManager(/* args */);

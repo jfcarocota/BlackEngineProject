@@ -3,8 +3,9 @@
 #include "InputSystem.hh"
 #include "GUI/TextObject.hh"
 #include "DrawPhysics.hh"
-#include<box2d/box2d.h>
-#include<iostream>
+#include <box2d/box2d.h>
+#include <iostream>
+#include <memory>
 //#include <steam/steam_api.h>
 #include "TileGroup.hh"
 #include "Components/EntityManager.hh"
@@ -20,14 +21,11 @@
 
 EntityManager entityManager;
 
-auto textObj1{new TextObject(ASSETS_FONT_ARCADECLASSIC, 14, sf::Color::White, sf::Text::Bold)};
-
-auto gameClock{new sf::Clock()};
+std::unique_ptr<TextObject> textObj1;
+std::unique_ptr<sf::Clock> gameClock;
 float deltaTime{};
 
-
-TileGroup* tileGroup{};
-Tile* tile1{};
+std::unique_ptr<TileGroup> tileGroup;
 
 uint32 flags{};
     //flags += b2Draw::e_aabbBit;
@@ -54,7 +52,9 @@ Game::Game()
   world = new b2World(*gravity);
   drawPhysics = new DrawPhysics(window);
 
-  tileGroup = new TileGroup(window, 12, 12, ASSETS_MAPS, 4.f, 16, 16, ASSETS_TILES);
+  tileGroup = std::make_unique<TileGroup>(window, GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT, 
+                                        ASSETS_MAPS, GameConstants::TILE_SCALE, GameConstants::TILE_SIZE, 
+                                        GameConstants::TILE_SIZE, ASSETS_TILES);
 
   auto& hero{entityManager.AddEntity("hero")};
   auto& candle1{entityManager.AddEntity("candle")};
@@ -69,7 +69,7 @@ Game::Game()
   hero.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_dynamicBody, 1, 0, 0, 0.f, true, (void*) &hero);
   hero.AddComponent<AnimatorComponent>();
   hero.AddComponent<AudioListenerComponent>();
-  hero.AddComponent<Movement>(200.f, 0.28f, AudioClip("../assets/audio/steps.ogg"));
+  hero.AddComponent<Movement>(GameConstants::PLAYER_SPEED, GameConstants::PLAYER_FRICTION, AudioClip("../assets/audio/steps.ogg"));
   hero.AddComponent<FlipSprite>();
 
   candle1.AddComponent<TransformComponent>(500.f, 500.f, 16.f, 16.f, 3.f);
@@ -114,6 +114,10 @@ void Game::Initialize()
   // Initialize ImGui
   imguiManager->Initialize(*window);
 
+  // Initialize global objects
+  textObj1 = std::make_unique<TextObject>(ASSETS_FONT_ARCADECLASSIC, 14, sf::Color::White, sf::Text::Bold);
+  gameClock = std::make_unique<sf::Clock>();
+  
   textObj1->SetTextStr("Hello game engine");
   MainLoop();
 }
@@ -121,13 +125,15 @@ void Game::Initialize()
 void Game::UpdatePhysics()
 {
   world->ClearForces();
-  world->Step(deltaTime, 8, 8);
+  world->Step(deltaTime, GameConstants::PHYSICS_VELOCITY_ITERATIONS, GameConstants::PHYSICS_POSITION_ITERATIONS);
 }
 
 void Game::Update()
 {
-  deltaTime = gameClock->getElapsedTime().asSeconds();
-  gameClock->restart();
+  if (gameClock) {
+    deltaTime = gameClock->getElapsedTime().asSeconds();
+    gameClock->restart();
+  }
 
   entityManager.Update(deltaTime);
   
@@ -161,8 +167,12 @@ void Game::Render()
 {
   window->clear(sf::Color::Black);
 
-  window->draw(*textObj1->GetText());
-  tileGroup->Draw();
+  if (textObj1) {
+    window->draw(*textObj1->GetText());
+  }
+  if (tileGroup) {
+    tileGroup->Draw();
+  }
   entityManager.Render(*window);
   if(debugPhysics)
   {

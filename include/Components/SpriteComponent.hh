@@ -1,7 +1,7 @@
 #pragma once
 #include "Component.hh"
 #include "TransformComponent.hh"
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 class SpriteComponent: public Component
 {
@@ -18,7 +18,7 @@ public:
   void Update(float& deltaTime) override;
   void Render(sf::RenderWindow& window) override;
   void SetFlipTexture(bool flip);
-  bool GetFliptexture() const;
+  bool GetFlipTexture() const;
   sf::Vector2f GetOrigin() const;
   void RebindRectTexture(int col, int row, float width, float height);
   void Initialize() override;
