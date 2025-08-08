@@ -462,4 +462,6 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: \
   /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
   /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
   /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp
+  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream
