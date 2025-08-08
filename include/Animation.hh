@@ -16,7 +16,6 @@ private:
   int currentAnimation{};
   SpriteComponent& sprite;
   TransformComponent& transform;
-  std::ifstream* reader{};
   Json::Value root{};
 
 public:

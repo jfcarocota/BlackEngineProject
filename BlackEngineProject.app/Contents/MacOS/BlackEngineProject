@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Get the directory where this app bundle is located
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+PROJECT_DIR="$(dirname "$APP_DIR")"
+
+# Change to the project directory
+cd "$PROJECT_DIR"
+
+# Check if cmake-build-debug exists
+if [ ! -d "cmake-build-debug" ]; then
+    osascript -e 'display alert "Error" message "cmake-build-debug directory not found! Please build the project first."'
+    exit 1
+fi
+
+# Check if the executable exists
+if [ ! -f "cmake-build-debug/BlackEngineProject" ]; then
+    osascript -e 'display alert "Error" message "BlackEngineProject executable not found! Please build the project first."'
+    exit 1
+fi
+
+# Check if assets directory exists
+if [ ! -d "assets" ]; then
+    osascript -e 'display alert "Error" message "assets directory not found!"'
+    exit 1
+fi
+
+# Run the program
+cd cmake-build-debug
+./BlackEngineProject

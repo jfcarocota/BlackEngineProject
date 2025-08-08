@@ -548,12 +548,46 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Constants.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/InputSystem.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/TextObject.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/TileGroup.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Tile.hh \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_seek_set.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/gethostuuid.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach-o/dyld.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdbool.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdbool.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach-o/loader.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/vm_types.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/vm_types.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/boolean.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/boolean.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/boolean.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/vm_prot.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/thread_status.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/thread_status.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/thread_state.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/thread_state.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/message.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/port.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/kern_return.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/kern_return.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/kern_return.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/fp_reg.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/eflags.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/architecture/byte_order.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/OSByteOrder.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/i386/OSByteOrder.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_os_inline.h \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/TileGroup.hh \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Tile.hh \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
@@ -575,24 +609,6 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AudioListenerComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Movement.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/FlipSprite.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/Button.hh

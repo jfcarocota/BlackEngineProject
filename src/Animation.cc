@@ -4,10 +4,10 @@
 Animation::Animation(SpriteComponent& sprite, TransformComponent& transform, const char* animUrl):
 sprite(sprite), transform(transform)
 {
-  reader = new std::ifstream();
-  reader->open(animUrl);
+  std::ifstream reader;
+  reader.open(animUrl);
   
-  if (!reader->is_open()) {
+  if (!reader.is_open()) {
     std::cerr << "Failed to open animation file: " << animUrl << std::endl;
     return;
   }
@@ -15,7 +15,7 @@ sprite(sprite), transform(transform)
   root = Json::Value();
 
   try {
-    *reader >> root;
+    reader >> root;
     
     if (root.isNull() || !root.isObject()) {
       std::cerr << "Invalid JSON format in animation file: " << animUrl << std::endl;
@@ -39,7 +39,7 @@ sprite(sprite), transform(transform)
     std::cerr << "Error reading animation file " << animUrl << ": " << e.what() << std::endl;
   }
 
-  reader->close();
+  reader.close();
 }
 
 void Animation::Play(float& deltaTime)
@@ -66,7 +66,4 @@ void Animation::Play(float& deltaTime)
 
 Animation::~Animation()
 {
-  if (reader) {
-    delete reader;
-  }
 }

@@ -6,7 +6,6 @@
 class AnimationClip
 {
 private:
-  std::ifstream* reader{};
   Json::Value root{};
   bool isValid{false};
 
@@ -21,10 +20,10 @@ public:
   
   AnimationClip(const char* animUrl)
   {
-    reader = new std::ifstream();
-    reader->open(animUrl);
+    std::ifstream reader;
+    reader.open(animUrl);
     
-    if (!reader->is_open()) {
+    if (!reader.is_open()) {
       std::cerr << "Failed to open animation file: " << animUrl << std::endl;
       isValid = false;
       return;
@@ -33,7 +32,7 @@ public:
     root = Json::Value();
 
     try {
-      *reader >> root;
+      reader >> root;
       
       if (root.isNull() || !root.isObject()) {
         std::cerr << "Invalid JSON format in animation file: " << animUrl << std::endl;
@@ -63,14 +62,22 @@ public:
       isValid = false;
     }
 
-    reader->close();
+    reader.close();
   }
   
-  ~AnimationClip(){
-    if (reader) {
-      delete reader;
-    }
-  }
+  // Copy constructor
+  AnimationClip(const AnimationClip& other) = default;
+  
+  // Copy assignment operator
+  AnimationClip& operator=(const AnimationClip& other) = default;
+  
+  // Move constructor
+  AnimationClip(AnimationClip&& other) = default;
+  
+  // Move assignment operator
+  AnimationClip& operator=(AnimationClip&& other) = default;
+  
+  ~AnimationClip() = default;
   
   bool IsValid() const { return isValid; }
 };

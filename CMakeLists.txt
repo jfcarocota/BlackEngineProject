@@ -38,8 +38,8 @@ find_package(PkgConfig REQUIRED)
 
 # SFML via pkg-config (Homebrew version) - excluding audio for now due to OpenAL issues
 pkg_check_modules(SFML REQUIRED sfml-system sfml-window sfml-graphics)
-# Try to find audio separately (optional)
-pkg_check_modules(SFML_AUDIO sfml-audio)
+# Try to find audio separately (optional) - temporarily disabled
+# pkg_check_modules(SFML_AUDIO sfml-audio)
 
 # Box2D via CMake
 find_package(box2d REQUIRED)
@@ -63,11 +63,11 @@ target_link_libraries(BlackEngineProject PRIVATE
   ${JSONCPP_LIBRARIES}
 )
 
-# Add audio if available
-if(SFML_AUDIO_FOUND)
-  target_link_libraries(BlackEngineProject PRIVATE ${SFML_AUDIO_LIBRARIES})
-  target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
-endif()
+# Add audio if available - temporarily disabled
+# if(SFML_AUDIO_FOUND)
+#   target_link_libraries(BlackEngineProject PRIVATE ${SFML_AUDIO_LIBRARIES})
+#   target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
+# endif()
 
 # On macOS, ensure rpath is used so the executable can find Homebrew-installed dylibs
 if(APPLE)

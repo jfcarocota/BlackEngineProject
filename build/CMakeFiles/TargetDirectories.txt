@@ -1,3 +1,0 @@
-/Users/jesuscaro/Documents/GitHub/BlackEngineProject/build/CMakeFiles/BlackEngineProject.dir
-/Users/jesuscaro/Documents/GitHub/BlackEngineProject/build/CMakeFiles/edit_cache.dir
-/Users/jesuscaro/Documents/GitHub/BlackEngineProject/build/CMakeFiles/rebuild_cache.dir

@@ -6,6 +6,11 @@
 #include <box2d/box2d.h>
 #include <iostream>
 #include <memory>
+#include <unistd.h>
+#include <cstring>
+#include <filesystem>
+#include <mach-o/dyld.h>
+
 //#include <steam/steam_api.h>
 #include "TileGroup.hh"
 #include "Components/EntityManager.hh"
@@ -34,8 +39,51 @@ uint32 flags{};
     //flags += b2Draw::e_pairBit;
     //flags += b2Draw::e_jointBit;
 
+// Function to find the project root directory
+std::string findProjectRoot() {
+    char path[1024];
+    uint32_t size = sizeof(path);
+    if (_NSGetExecutablePath(path, &size) == 0) {
+        std::string exePath(path);
+        
+        // Find the directory containing the executable
+        size_t lastSlash = exePath.find_last_of('/');
+        if (lastSlash != std::string::npos) {
+            std::string exeDir = exePath.substr(0, lastSlash);
+            
+            // Check if we're in cmake-build-debug
+            if (exeDir.find("cmake-build-debug") != std::string::npos) {
+                std::string projectRoot = exeDir.substr(0, exeDir.find("cmake-build-debug"));
+                return projectRoot;
+            }
+        }
+    }
+    
+    // Fallback: try to find assets directory in current or parent directories
+    std::string currentDir = std::filesystem::current_path().string();
+    
+    // Check current directory and up to 3 levels up
+    for (int i = 0; i <= 3; i++) {
+        std::string testPath = currentDir;
+        for (int j = 0; j < i; j++) {
+            testPath += "/..";
+        }
+        
+        std::string assetsPath = testPath + "/assets";
+        if (std::filesystem::exists(assetsPath)) {
+            return testPath;
+        }
+    }
+    
+    return currentDir; // Fallback to current directory
+}
+
 Game::Game()
 {
+  // Find the project root and change to it
+  std::string projectRoot = findProjectRoot();
+  chdir(projectRoot.c_str());
+
   /*if(SteamAPI_Init())
   {
     std::cout << "Steam working" << std::endl;

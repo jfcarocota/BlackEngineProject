@@ -4,7 +4,7 @@ const char* GAME_NAME{"Game1"};
 const char* ASSETS_SPRITES{"assets/sprites.png"};
 const char* ASSETS_TILES{"assets/tiles.png"};
 const char* ASSETS_MAPS{"assets/maps/level1.grid"};
-const char* ASSETS_FONT_ARCADECLASSIC{"assets/fonts/ARCADECLASSIC.ttf"};
+const char* ASSETS_FONT_ARCADECLASSIC{"assets/fonts/ARCADECLASSIC.TTF"};
 
 // Game constants
 namespace GameConstants {
