@@ -96,9 +96,10 @@ Game::Game()
     std::cout << "clicked" << std::endl;
     debugPhysics = !debugPhysics;
   });
-  buttonPhysicsComp.SetTexture("../assets/GUI/button.png");
+  buttonPhysicsComp.SetTexture("assets/GUI/button.png");
 
   contactEventManager = new ContactEventManager();
+  imguiManager = new ImGuiManager();
 }
 
 Game::~Game() = default;
@@ -109,6 +110,9 @@ void Game::Initialize()
   world->SetDebugDraw(drawPhysics);
   drawPhysics->SetFlags(flags);
   world->SetContactListener(contactEventManager);
+
+  // Initialize ImGui
+  imguiManager->Initialize(*window);
 
   textObj1->SetTextStr("Hello game engine");
   MainLoop();
@@ -126,6 +130,9 @@ void Game::Update()
   gameClock->restart();
 
   entityManager.Update(deltaTime);
+  
+  // Update ImGui
+  imguiManager->Update(*window, sf::seconds(deltaTime));
 }
 
 void Game::MainLoop()
@@ -134,6 +141,9 @@ void Game::MainLoop()
   {
     while(window->pollEvent(*event))
     {
+      // Process ImGui events first
+      imguiManager->ProcessEvent(*event);
+      
       if(event->type == sf::Event::Closed)
       {
         window->close();
@@ -158,11 +168,19 @@ void Game::Render()
   {
     world->DebugDraw();
   }
+  
+  // Render ImGui on top
+  imguiManager->Render(*window);
+  
   window->display();
 }
 
 void Game::Destroy()
 {
+  // Shutdown ImGui
+  imguiManager->Shutdown();
+  
+  delete imguiManager;
   delete window;
   delete event;
 }

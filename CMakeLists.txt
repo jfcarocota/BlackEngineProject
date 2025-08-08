@@ -20,11 +20,17 @@ add_executable(BlackEngineProject
   src/DrawPhysics.cc
   src/FlipSprite.cc
   src/Game.cc
+  src/ImGuiManager.cc
   src/Movement.cc
   src/Tile.cc
   src/TileGroup.cc
   src/GUI/Button.cc
   src/GUI/TextObject.cc
+  third_party/imgui/imgui.cpp
+  third_party/imgui/imgui_demo.cpp
+  third_party/imgui/imgui_draw.cpp
+  third_party/imgui/imgui_tables.cpp
+  third_party/imgui/imgui_widgets.cpp
 )
 
 # Dependencies (use pkg-config for better compatibility)
@@ -41,10 +47,14 @@ find_package(box2d REQUIRED)
 # JsonCpp via pkg-config
 pkg_check_modules(JSONCPP REQUIRED jsoncpp)
 
+# ImGui-SFML integration (direct compilation)
+set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/imgui)
+
 target_include_directories(BlackEngineProject PRIVATE 
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${SFML_INCLUDE_DIRS}
   ${JSONCPP_INCLUDE_DIRS}
+  ${IMGUI_DIR}
 )
 
 target_link_libraries(BlackEngineProject PRIVATE
@@ -63,3 +73,10 @@ endif()
 if(APPLE)
   set(CMAKE_MACOSX_RPATH ON)
 endif()
+
+# Copy assets to build directory for standalone executable
+add_custom_command(TARGET BlackEngineProject POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+  ${CMAKE_SOURCE_DIR}/assets
+  ${CMAKE_BINARY_DIR}/assets
+)

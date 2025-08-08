@@ -3,6 +3,7 @@
 #include<SFML/Graphics.hpp>
 #include "ContactEventManager.hh"
 #include "DrawPhysics.hh"
+#include "ImGuiManager.hh"
 #include<box2d/box2d.h>
 #include<queue>
 
@@ -12,12 +13,13 @@ private:
   sf::RenderWindow* window{};
   sf::Event* event{};
   ContactEventManager* contactEventManager{};
+  ImGuiManager* imguiManager{};
   b2Vec2* gravity{};
   b2World* world{};
   b2Draw* drawPhysics{};
   bool debugPhysics{};
 
-  static void Update();
+  void Update();
   void Render();
   void MainLoop();
   void Destroy();
