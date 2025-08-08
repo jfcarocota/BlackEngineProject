@@ -63,3 +63,10 @@ endif()
 if(APPLE)
   set(CMAKE_MACOSX_RPATH ON)
 endif()
+
+# Copy assets to build directory for standalone executable
+add_custom_command(TARGET BlackEngineProject POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+  ${CMAKE_SOURCE_DIR}/assets
+  ${CMAKE_BINARY_DIR}/assets
+)
