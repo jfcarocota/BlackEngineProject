@@ -23,32 +23,18 @@ AudioClip::AudioClip(const char* audioUrl)
   }
   
   try {
-    sound = new sf::Sound();
     buffer = new sf::SoundBuffer();
-    
-    if (!sound) {
-      std::cerr << "Failed to create SFML Sound object" << std::endl;
-      return;
-    }
-    
     if (!buffer) {
       std::cerr << "Failed to create SFML SoundBuffer object" << std::endl;
-      delete sound;
-      sound = nullptr;
       return;
     }
-    
     if (!buffer->loadFromFile(audioUrl)) {
       std::cerr << "Failed to load audio file: " << audioUrl << std::endl;
-      delete sound;
-      delete buffer;
-      sound = nullptr;
-      buffer = nullptr;
+      delete buffer; buffer = nullptr;
       return;
     }
-    
-    sound->setBuffer(*buffer);
-    
+    // Construct sound with buffer (SFML 3)
+    sound = new sf::Sound(*buffer);
   } catch (const std::exception& e) {
     std::cerr << "Exception creating AudioClip: " << e.what() << std::endl;
     if (sound) { delete sound; sound = nullptr; }
@@ -83,10 +69,9 @@ AudioClip::AudioClip(const AudioClip& other)
   buffer = nullptr;
   if (!other.audioUrl.empty()) {
     try {
-      sound = new sf::Sound();
       buffer = new sf::SoundBuffer();
-      if (buffer->loadFromFile(audioUrl)) {
-        sound->setBuffer(*buffer);
+      if (buffer && buffer->loadFromFile(audioUrl)) {
+        sound = new sf::Sound(*buffer);
       }
     } catch (...) {
       if (sound) { delete sound; sound = nullptr; }
@@ -106,10 +91,9 @@ AudioClip& AudioClip::operator=(const AudioClip& other)
   if (buffer) { delete buffer; buffer = nullptr; }
   if (!other.audioUrl.empty()) {
     try {
-      sound = new sf::Sound();
       buffer = new sf::SoundBuffer();
-      if (buffer->loadFromFile(audioUrl)) {
-        sound->setBuffer(*buffer);
+      if (buffer && buffer->loadFromFile(audioUrl)) {
+        sound = new sf::Sound(*buffer);
       }
     } catch (...) {
       if (sound) { delete sound; sound = nullptr; }
@@ -136,8 +120,8 @@ AudioClip& AudioClip::operator=(AudioClip&& other) noexcept
   if (this == &other) return *this;
   audioUrl = std::move(other.audioUrl);
 #ifdef SFML_AUDIO_AVAILABLE
-  if (sound) { delete sound; }
-  if (buffer) { delete buffer; }
+  if (sound) { delete sound; sound = nullptr; }
+  if (buffer) { delete buffer; buffer = nullptr; }
   sound = other.sound; other.sound = nullptr;
   buffer = other.buffer; other.buffer = nullptr;
 #endif

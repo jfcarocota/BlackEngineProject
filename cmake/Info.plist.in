@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>@PRODUCT_NAME@-bin</string>
+	<string>@PRODUCT_NAME@</string>
 	<key>CFBundleIdentifier</key>
 	<string>@BUNDLE_IDENTIFIER@</string>
 	<key>CFBundleInfoDictionaryVersion</key>

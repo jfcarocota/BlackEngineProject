@@ -11,7 +11,6 @@ class Game
 {
 private:
   sf::RenderWindow* window{};
-  sf::Event* event{};
   ContactEventManager* contactEventManager{};
   ImGuiManager* imguiManager{};
   b2Vec2* gravity{};

@@ -1,6 +1,7 @@
 #pragma once
 #include<box2d/box2d.h>
 #include<SFML/Graphics.hpp>
+#include <cstdint>
 
 class DrawPhysics : public b2Draw
 {
@@ -11,9 +12,9 @@ public:
   ~DrawPhysics();
 
   /// Convert Box2D's OpenGL style color definition[0-1] to SFML's color definition[0-255], with optional alpha byte[Default - opaque]
-	static sf::Color GLColorToSFML(const b2Color &color, sf::Uint8 alpha = 255)
+	static sf::Color GLColorToSFML(const b2Color &color, std::uint8_t alpha = 255)
 	{
-		return sf::Color(static_cast<sf::Uint8>(color.r * 255), static_cast<sf::Uint8>(color.g * 255), static_cast<sf::Uint8>(color.b * 255), alpha);
+		return sf::Color(static_cast<std::uint8_t>(color.r * 255), static_cast<std::uint8_t>(color.g * 255), static_cast<std::uint8_t>(color.b * 255), alpha);
 	}
 
 	/// Convert Box2D's vector to SFML vector [Default - scales the vector up by SCALE constants amount]

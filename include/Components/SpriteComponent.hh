@@ -2,13 +2,14 @@
 #include "Component.hh"
 #include "TransformComponent.hh"
 #include <SFML/Graphics.hpp>
+#include <memory>
 
 class SpriteComponent: public Component
 {
 private:
   TransformComponent* transform;
   sf::Texture texture{};
-  sf::Sprite sprite{};
+  std::unique_ptr<sf::Sprite> sprite; // SFML 3: construct after texture is ready
   const char* textureUrl{};
   unsigned int col{}, row{};
   bool flipTexture{false};
