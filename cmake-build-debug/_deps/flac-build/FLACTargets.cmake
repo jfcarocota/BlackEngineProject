@@ -55,11 +55,11 @@ set_target_properties(FLAC::FLAC PROPERTIES
   INTERFACE_LINK_LIBRARIES "\$<\$<BOOL:1>:m>;Ogg::ogg"
 )
 
-# Import target "FLAC::FLAC" for configuration ""
-set_property(TARGET FLAC::FLAC APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "FLAC::FLAC" for configuration "Debug"
+set_property(TARGET FLAC::FLAC APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(FLAC::FLAC PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "C"
-  IMPORTED_LOCATION_NOCONFIG "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-build/lib/libFLAC.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"
+  IMPORTED_LOCATION_DEBUG "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-build/lib/libFLACd.a"
   )
 
 # Make sure the targets which have been exported in some other

@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../sfml-build/lib/libfreetype.a"
+  "../sfml-build/lib/libfreetyped.a"
 )

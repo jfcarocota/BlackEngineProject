@@ -34,6 +34,11 @@ add_executable(BlackEngineProject
   third_party/imgui/imgui_widgets.cpp
 )
 
+# Tile Map Editor tool
+add_executable(TileMapEditor
+  src/MapEditorMain.cpp
+)
+
 # Dependencies
 find_package(PkgConfig REQUIRED)
 
@@ -62,6 +67,11 @@ target_include_directories(BlackEngineProject PRIVATE
   ${IMGUI_DIR}
 )
 
+target_include_directories(TileMapEditor PRIVATE 
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${IMGUI_DIR}
+)
+
 target_link_libraries(BlackEngineProject PRIVATE
   sfml-graphics
   sfml-window
@@ -69,6 +79,13 @@ target_link_libraries(BlackEngineProject PRIVATE
   sfml-audio
   box2d::box2d
   ${JSONCPP_LIBRARIES}
+)
+
+target_link_libraries(TileMapEditor PRIVATE
+  sfml-graphics
+  sfml-window
+  sfml-system
+  sfml-audio
 )
 
 target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
@@ -80,8 +97,12 @@ if(APPLE)
   set_target_properties(BlackEngineProject PROPERTIES
     INSTALL_RPATH "@executable_path;@executable_path/../Frameworks"
   )
+  # Apply same rpath for the editor
+  set_target_properties(TileMapEditor PROPERTIES
+    INSTALL_RPATH "@executable_path;@executable_path/../Frameworks"
+  )
 
-  # Bundle metadata / Info.plist
+  # Bundle metadata / Info.plist for the main app
   set(BUNDLE_IDENTIFIER "com.blackengine.project")
   set(BUNDLE_ICON_FILE "AppIcon.icns")
   set(BUNDLE_ICON_SOURCE ${CMAKE_SOURCE_DIR}/assets/GUI/AppIcon.icns)
@@ -89,13 +110,29 @@ if(APPLE)
     set(BUNDLE_ICON_FILE "")
   endif()
 
+  # Ensure PRODUCT_NAME matches the executable we place in Contents/MacOS
+  set(PRODUCT_NAME "BlackEngineProject-bin")
   configure_file(${CMAKE_SOURCE_DIR}/cmake/Info.plist.in
                  ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Info.plist
+                 @ONLY)
+
+  # Editor bundle metadata (separate identifier and product name)
+  set(BUNDLE_IDENTIFIER "com.blackengine.tilemapeditor")
+  set(PRODUCT_NAME "TileMapEditor-bin")
+  configure_file(${CMAKE_SOURCE_DIR}/cmake/Info.plist.in
+                 ${CMAKE_SOURCE_DIR}/TileMapEditor.app/Contents/Info.plist
                  @ONLY)
 endif()
 
 # Copy assets to build directory for standalone executable
 add_custom_command(TARGET BlackEngineProject POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+  ${CMAKE_SOURCE_DIR}/assets
+  ${CMAKE_BINARY_DIR}/assets
+)
+
+# Copy assets so editor can run from build dir
+add_custom_command(TARGET TileMapEditor POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory
   ${CMAKE_SOURCE_DIR}/assets
   ${CMAKE_BINARY_DIR}/assets
@@ -125,6 +162,30 @@ if(APPLE)
               ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Resources/${BUNDLE_ICON_FILE}
     )
   endif()
+
+  # Create a bundle for the Tile Map Editor as well
+  add_custom_command(TARGET TileMapEditor POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+            ${CMAKE_SOURCE_DIR}/TileMapEditor.app/Contents/MacOS
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+            ${CMAKE_SOURCE_DIR}/TileMapEditor.app/Contents/Resources
+
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            $<TARGET_FILE:TileMapEditor>
+            ${CMAKE_SOURCE_DIR}/TileMapEditor.app/Contents/MacOS/TileMapEditor-bin
+
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/assets
+            ${CMAKE_SOURCE_DIR}/TileMapEditor.app/Contents/Resources/assets
+  )
+
+  if(EXISTS ${BUNDLE_ICON_SOURCE})
+    add_custom_command(TARGET TileMapEditor POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_if_different
+              ${BUNDLE_ICON_SOURCE}
+              ${CMAKE_SOURCE_DIR}/TileMapEditor.app/Contents/Resources/${BUNDLE_ICON_FILE}
+    )
+  endif()
 endif()
 
 # Install/packaging target to create dist/.app bundle copy
@@ -135,9 +196,13 @@ add_custom_target(package_app ALL
   COMMAND ${CMAKE_COMMAND} -E copy_directory
           ${CMAKE_SOURCE_DIR}/BlackEngineProject.app
           ${DIST_DIR}/BlackEngineProject.app
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+          ${CMAKE_SOURCE_DIR}/TileMapEditor.app
+          ${DIST_DIR}/TileMapEditor.app
   COMMENT "Packaging .app into dist/"
 )
 add_dependencies(package_app BlackEngineProject)
+add_dependencies(package_app TileMapEditor)
 
 # Signing / notarization targets
 option(MAC_SIGN "Code sign the app" OFF)

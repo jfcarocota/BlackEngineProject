@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../../sfml-build/lib/libvorbisenc.a CMakeFiles/vorbisenc.dir/vorbisenc.c.o
-/usr/bin/ranlib ../../sfml-build/lib/libvorbisenc.a
+/usr/bin/ar qc ../../sfml-build/lib/libvorbisencd.a CMakeFiles/vorbisenc.dir/vorbisenc.c.o
+/usr/bin/ranlib ../../sfml-build/lib/libvorbisencd.a

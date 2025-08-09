@@ -71,6 +71,7 @@ CMakeFiles/package_app:
 	/usr/local/bin/cmake -E rm -rf /Users/jesuscaro/Documents/GitHub/BlackEngineProject/dist
 	/usr/local/bin/cmake -E make_directory /Users/jesuscaro/Documents/GitHub/BlackEngineProject/dist
 	/usr/local/bin/cmake -E copy_directory /Users/jesuscaro/Documents/GitHub/BlackEngineProject/BlackEngineProject.app /Users/jesuscaro/Documents/GitHub/BlackEngineProject/dist/BlackEngineProject.app
+	/usr/local/bin/cmake -E copy_directory /Users/jesuscaro/Documents/GitHub/BlackEngineProject/TileMapEditor.app /Users/jesuscaro/Documents/GitHub/BlackEngineProject/dist/TileMapEditor.app
 
 CMakeFiles/package_app.dir/codegen:
 .PHONY : CMakeFiles/package_app.dir/codegen

@@ -195,6 +195,19 @@ BlackEngineProject/fast:
 .PHONY : BlackEngineProject/fast
 
 #=============================================================================
+# Target rules for targets named TileMapEditor
+
+# Build rule for target.
+TileMapEditor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TileMapEditor
+.PHONY : TileMapEditor
+
+# fast build rule for target.
+TileMapEditor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/build
+.PHONY : TileMapEditor/fast
+
+#=============================================================================
 # Target rules for targets named package_app
 
 # Build rule for target.
@@ -773,6 +786,30 @@ src/ImGuiManager.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BlackEngineProject.dir/build.make CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.s
 .PHONY : src/ImGuiManager.cc.s
 
+src/MapEditorMain.o: src/MapEditorMain.cpp.o
+.PHONY : src/MapEditorMain.o
+
+# target to build an object file
+src/MapEditorMain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/src/MapEditorMain.cpp.o
+.PHONY : src/MapEditorMain.cpp.o
+
+src/MapEditorMain.i: src/MapEditorMain.cpp.i
+.PHONY : src/MapEditorMain.i
+
+# target to preprocess a source file
+src/MapEditorMain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/src/MapEditorMain.cpp.i
+.PHONY : src/MapEditorMain.cpp.i
+
+src/MapEditorMain.s: src/MapEditorMain.cpp.s
+.PHONY : src/MapEditorMain.s
+
+# target to generate assembly for a file
+src/MapEditorMain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/src/MapEditorMain.cpp.s
+.PHONY : src/MapEditorMain.cpp.s
+
 src/Movement.o: src/Movement.cc.o
 .PHONY : src/Movement.o
 
@@ -1008,6 +1045,7 @@ help:
 	@echo "... sign_app"
 	@echo "... BlackEngineProject"
 	@echo "... FLAC"
+	@echo "... TileMapEditor"
 	@echo "... benchmark_residual"
 	@echo "... freetype"
 	@echo "... ogg"
@@ -1067,6 +1105,9 @@ help:
 	@echo "... src/ImGuiManager.o"
 	@echo "... src/ImGuiManager.i"
 	@echo "... src/ImGuiManager.s"
+	@echo "... src/MapEditorMain.o"
+	@echo "... src/MapEditorMain.i"
+	@echo "... src/MapEditorMain.s"
 	@echo "... src/Movement.o"
 	@echo "... src/Movement.i"
 	@echo "... src/Movement.s"

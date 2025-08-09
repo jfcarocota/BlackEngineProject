@@ -64,12 +64,14 @@ CMAKE_BINARY_DIR = /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-bu
 
 # The main recursive "all" target.
 all: CMakeFiles/BlackEngineProject.dir/all
+all: CMakeFiles/TileMapEditor.dir/all
 all: CMakeFiles/package_app.dir/all
 all: _deps/gsl-build/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/BlackEngineProject.dir/codegen
+codegen: CMakeFiles/TileMapEditor.dir/codegen
 codegen: CMakeFiles/package_app.dir/codegen
 codegen: _deps/gsl-build/codegen
 .PHONY : codegen
@@ -80,6 +82,7 @@ preinstall: _deps/gsl-build/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/BlackEngineProject.dir/clean
+clean: CMakeFiles/TileMapEditor.dir/clean
 clean: CMakeFiles/package_app.dir/clean
 clean: CMakeFiles/sign_app.dir/clean
 clean: CMakeFiles/notarize_app.dir/clean
@@ -471,7 +474,7 @@ CMakeFiles/BlackEngineProject.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisf
 
 # Build rule for subdir invocation for target.
 CMakeFiles/BlackEngineProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 91
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 92
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/BlackEngineProject.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/BlackEngineProject.dir/rule
@@ -492,18 +495,60 @@ CMakeFiles/BlackEngineProject.dir/clean:
 .PHONY : CMakeFiles/BlackEngineProject.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/TileMapEditor.dir
+
+# All Build rule for target.
+CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=24 "Built target TileMapEditor"
+.PHONY : CMakeFiles/TileMapEditor.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/TileMapEditor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 83
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TileMapEditor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/TileMapEditor.dir/rule
+
+# Convenience name for target.
+TileMapEditor: CMakeFiles/TileMapEditor.dir/rule
+.PHONY : TileMapEditor
+
+# codegen rule for target.
+CMakeFiles/TileMapEditor.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=24 "Finished codegen for target TileMapEditor"
+.PHONY : CMakeFiles/TileMapEditor.dir/codegen
+
+# clean rule for target.
+CMakeFiles/TileMapEditor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/clean
+.PHONY : CMakeFiles/TileMapEditor.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/package_app.dir
 
 # All Build rule for target.
 CMakeFiles/package_app.dir/all: CMakeFiles/BlackEngineProject.dir/all
+CMakeFiles/package_app.dir/all: CMakeFiles/TileMapEditor.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/package_app.dir/build.make CMakeFiles/package_app.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/package_app.dir/build.make CMakeFiles/package_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=44 "Built target package_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num= "Built target package_app"
 .PHONY : CMakeFiles/package_app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/package_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 92
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 93
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/package_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/package_app.dir/rule
@@ -514,8 +559,9 @@ package_app: CMakeFiles/package_app.dir/rule
 
 # codegen rule for target.
 CMakeFiles/package_app.dir/codegen: CMakeFiles/BlackEngineProject.dir/all
+CMakeFiles/package_app.dir/codegen: CMakeFiles/TileMapEditor.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/package_app.dir/build.make CMakeFiles/package_app.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=44 "Finished codegen for target package_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num= "Finished codegen for target package_app"
 .PHONY : CMakeFiles/package_app.dir/codegen
 
 # clean rule for target.
@@ -535,7 +581,7 @@ CMakeFiles/sign_app.dir/all: CMakeFiles/BlackEngineProject.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sign_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 92
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 93
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sign_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/sign_app.dir/rule
@@ -567,7 +613,7 @@ CMakeFiles/notarize_app.dir/all: CMakeFiles/sign_app.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/notarize_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 92
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 93
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/notarize_app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/notarize_app.dir/rule
@@ -766,7 +812,7 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-buil
 
 # Build rule for subdir invocation for target.
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 38
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/rule
@@ -793,12 +839,12 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/clean:
 _deps/ogg-build/CMakeFiles/ogg.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/ogg-build/CMakeFiles/ogg.dir/build.make _deps/ogg-build/CMakeFiles/ogg.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/ogg-build/CMakeFiles/ogg.dir/build.make _deps/ogg-build/CMakeFiles/ogg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=43 "Built target ogg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=43,44 "Built target ogg"
 .PHONY : _deps/ogg-build/CMakeFiles/ogg.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/ogg-build/CMakeFiles/ogg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/ogg-build/CMakeFiles/ogg.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : _deps/ogg-build/CMakeFiles/ogg.dir/rule
@@ -810,7 +856,7 @@ ogg: _deps/ogg-build/CMakeFiles/ogg.dir/rule
 # codegen rule for target.
 _deps/ogg-build/CMakeFiles/ogg.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/ogg-build/CMakeFiles/ogg.dir/build.make _deps/ogg-build/CMakeFiles/ogg.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=43 "Finished codegen for target ogg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=43,44 "Finished codegen for target ogg"
 .PHONY : _deps/ogg-build/CMakeFiles/ogg.dir/codegen
 
 # clean rule for target.
@@ -830,7 +876,7 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all: _deps/ogg-build/CMakeFiles
 
 # Build rule for subdir invocation for target.
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/rule
@@ -858,7 +904,7 @@ _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/all: _deps/ogg-bui
 _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/build.make _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/build.make _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=24,25 "Built target benchmark_residual"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=25 "Built target benchmark_residual"
 .PHONY : _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/all
 
 # Build rule for subdir invocation for target.
@@ -875,7 +921,7 @@ benchmark_residual: _deps/flac-build/microbench/CMakeFiles/benchmark_residual.di
 # codegen rule for target.
 _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/build.make _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=24,25 "Finished codegen for target benchmark_residual"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=25 "Finished codegen for target benchmark_residual"
 .PHONY : _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/codegen
 
 # clean rule for target.
@@ -895,7 +941,7 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all: _deps/ogg-build/CMakeFiles/ogg
 
 # Build rule for subdir invocation for target.
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/rule
@@ -928,7 +974,7 @@ _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all: _deps/vorbis-build/lib/CMak
 
 # Build rule for subdir invocation for target.
 _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/rule
@@ -961,7 +1007,7 @@ _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all: _deps/vorbis-build/lib/CMa
 
 # Build rule for subdir invocation for target.
 _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles 0
 .PHONY : _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/rule

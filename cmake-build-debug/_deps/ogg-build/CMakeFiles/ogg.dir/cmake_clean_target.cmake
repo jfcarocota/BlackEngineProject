@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../sfml-build/lib/libogg.a"
+  "../sfml-build/lib/liboggd.a"
 )

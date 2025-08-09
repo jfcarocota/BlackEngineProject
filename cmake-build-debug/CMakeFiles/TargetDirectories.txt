@@ -1,4 +1,5 @@
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/BlackEngineProject.dir
+/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/TileMapEditor.dir
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/package_app.dir
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/sign_app.dir
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles/notarize_app.dir

@@ -6,5 +6,5 @@ C_DEFINES = -DFT2_BUILD_LIBRARY
 
 C_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-build/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-src/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-build/include/freetype/config
 
-C_FLAGS = -fvisibility=hidden
+C_FLAGS = -g -fvisibility=hidden
 

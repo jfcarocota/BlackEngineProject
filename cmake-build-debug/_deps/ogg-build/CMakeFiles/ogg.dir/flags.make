@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-build/include
 
-C_FLAGS = 
+C_FLAGS = -g
 

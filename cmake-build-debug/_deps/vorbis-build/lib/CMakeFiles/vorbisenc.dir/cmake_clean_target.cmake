@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../../sfml-build/lib/libvorbisenc.a"
+  "../../sfml-build/lib/libvorbisencd.a"
 )
