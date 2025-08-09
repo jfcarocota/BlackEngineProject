@@ -379,7 +379,7 @@ std::cerr << "[ERROR] Failed to load texture: " << path << std::endl;
 void ImGuiManager::ShowDebugInfo() {
     if (ImGui::Begin("Debug Info")) {
         ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
-        ImGui::Text("Entities: %zu", entityManager.GetEntities().size());
+        ImGui::Text("Entities: %zu", entityManager.GetEntities().size()); // .size() works with gsl::span
         ImGui::Text("Delta Time: %.3f", deltaTime);
         
         if (ImGui::Button("Reset Game")) {

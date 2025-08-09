@@ -4,6 +4,7 @@
 #include "Entity.hh"
 #include <vector>
 #include <memory>
+#include <gsl/span>
 
 class EntityManager
 {
@@ -20,6 +21,6 @@ public:
   void Render(sf::RenderWindow& window);
   bool HasNoEntities();
   Entity& AddEntity(std::string entityName);
-  std::vector<Entity*> GetEntities() const;
+  gsl::span<Entity*> GetEntities() const;
   unsigned int GetentityCount() const;
 };

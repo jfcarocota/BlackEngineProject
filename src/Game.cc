@@ -11,6 +11,7 @@
 #include <filesystem>
 #include <mach-o/dyld.h>
 #include <optional>
+#include <gsl/gsl>
 
 //#include <steam/steam_api.h>
 #include "TileGroup.hh"
@@ -153,7 +154,8 @@ void Game::UpdatePhysics()
 void Game::Update()
 {
   if (gameClock) {
-    deltaTime = gameClock->getElapsedTime().asSeconds();
+    // Use gsl::not_null for safety
+    deltaTime = gsl::not_null<sf::Clock*>(gameClock.get())->getElapsedTime().asSeconds();
     gameClock->restart();
   }
   entityManager.Update(deltaTime);
@@ -187,21 +189,22 @@ void Game::Render()
   window->clear(sf::Color::Black);
 
   if (tileGroup) {
-    tileGroup->Draw();
+    gsl::not_null<TileGroup*>(tileGroup.get())->Draw();
   }
-  entityManager.Render(*window);
+  entityManager.Render(*gsl::not_null<sf::RenderWindow*>(window.get()));
   if(debugPhysics)
   {
-    world->DebugDraw();
+    gsl::not_null<b2World*>(world.get())->DebugDraw();
   }
   
   // Draw UI text above world/debug
   if (textObj1) {
+    gsl::not_null<TextObject*>(textObj1.get());
     window->draw(*textObj1->GetText());
   }
 
   // Render ImGui on top
-  imguiManager->Render(*window);
+  gsl::not_null<ImGuiManager*>(imguiManager.get())->Render(*window);
   
   window->display();
 }

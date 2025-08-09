@@ -68,9 +68,9 @@ bool HasNoEntities()
 Returns true if no entities exist.
 
 ```cpp
-std::vector<Entity*> GetEntities() const
+gsl::span<Entity*> GetEntities() const
 ```
-Returns a vector of all entities.
+Returns a span of pointers to all entities managed by the EntityManager. Use range-based for or `.size()` for iteration and count.
 
 ```cpp
 unsigned int GetentityCount() const

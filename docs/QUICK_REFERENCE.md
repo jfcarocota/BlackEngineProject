@@ -109,7 +109,7 @@ if (auto* component = entity.GetComponent<ComponentType>()) {
 ### Entity Iteration
 ```cpp
 // Iterate through all entities
-for (auto* entity : entityManager.GetEntities()) {
+for (auto* entity : entityManager.GetEntities()) { // Now returns gsl::span<Entity*>
     if (entity->IsActive()) {
         // Process entity
         if (auto* sprite = entity->GetComponent<SpriteComponent>()) {
@@ -219,7 +219,7 @@ std::cerr << "Error: " << errorMessage << std::endl;
 void ImGuiManager::ShowDebugInfo() {
     if (ImGui::Begin("Debug")) {
         ImGui::Text("Value: %f", myValue);
-        ImGui::Text("Entities: %zu", entityManager.GetEntities().size());
+        ImGui::Text("Entities: %zu", entityManager.GetEntities().size()); // .size() works with gsl::span
         
         if (ImGui::Button("Reset")) {
             // Reset logic

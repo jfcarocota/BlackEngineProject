@@ -65,11 +65,12 @@ Entity& EntityManager::AddEntity(std::string entityName)
   return *entity;
 }
 
-std::vector<Entity*> EntityManager::GetEntities() const {
-  std::vector<Entity*> result;
+gsl::span<Entity*> EntityManager::GetEntities() const {
+  static std::vector<Entity*> result;
+  result.clear();
   result.reserve(entities.size());
   for (const auto& e : entities) {
     result.push_back(e.get());
   }
-  return result;
+  return gsl::span<Entity*>(result.data(), result.size());
 }

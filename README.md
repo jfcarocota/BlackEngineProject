@@ -170,6 +170,21 @@ cmake --build cmake-build-debug --target sign_app
 cmake --build cmake-build-debug --target notarize_app
 ```
 
+## 🧩 Modern C++ Practices
+- Uses [Microsoft GSL](https://github.com/microsoft/GSL) for safer pointer and array handling:
+  - `gsl::not_null` ensures pointers are never null when dereferenced.
+  - `gsl::span` is used for safe, flexible array/buffer access (see `EntityManager::GetEntities`).
+
+### Example: Entity Access
+```cpp
+// Get all entities as a gsl::span
+for (auto* entity : entityManager.GetEntities()) {
+    // ...
+}
+// Get count
+size_t count = entityManager.GetEntities().size();
+```
+
 ## 📚 References
 - SFML 3 repository and docs: [SFML/SFML](https://github.com/SFML/SFML)
 
