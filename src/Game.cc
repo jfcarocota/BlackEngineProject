@@ -137,6 +137,10 @@ void Game::Initialize()
   gameClock = std::make_unique<sf::Clock>();
   
   textObj1->SetTextStr("Hello game engine");
+  // Ensure the text is positioned in-view
+  if (auto txt = textObj1->GetText()) {
+    txt->setPosition(sf::Vector2f(10.f, 10.f));
+  }
   MainLoop();
 }
 
@@ -182,9 +186,6 @@ void Game::Render()
 {
   window->clear(sf::Color::Black);
 
-  if (textObj1) {
-    window->draw(*textObj1->GetText());
-  }
   if (tileGroup) {
     tileGroup->Draw();
   }
@@ -194,6 +195,11 @@ void Game::Render()
     world->DebugDraw();
   }
   
+  // Draw UI text above world/debug
+  if (textObj1) {
+    window->draw(*textObj1->GetText());
+  }
+
   // Render ImGui on top
   imguiManager->Render(*window);
   
