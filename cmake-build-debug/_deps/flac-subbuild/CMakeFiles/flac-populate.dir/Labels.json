@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/CMakeFiles/flac-populate"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/CMakeFiles/flac-populate.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/CMakeFiles/flac-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-build.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-download.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-install.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-test.rule"
+		},
+		{
+			"file" : "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"flac-populate"
+		],
+		"name" : "flac-populate"
+	}
+}

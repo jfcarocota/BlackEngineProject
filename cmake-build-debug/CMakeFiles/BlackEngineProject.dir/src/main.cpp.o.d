@@ -414,90 +414,100 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Game.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Color.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Vector2.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Export.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Angle.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Angle.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Vector2.inl \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Export.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/is_transparent.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__node_handle \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/View.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Window.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Time.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Time.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Event.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/String.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Utf.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Utf.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/String.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Vector3.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Vector3.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Event.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Clock.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Context.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Window/Touch.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Err.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Exception.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/InputStream.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Sleep.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/ContactEventManager.hh \
   /usr/local/include/box2d/box2d.h \
   /usr/local/include/box2d/b2_settings.h \
@@ -507,8 +517,6 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h \
   /usr/local/include/box2d/b2_draw.h /usr/local/include/box2d/b2_math.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /usr/local/include/box2d/b2_timer.h \
   /usr/local/include/box2d/b2_chain_shape.h \
   /usr/local/include/box2d/b2_shape.h \
@@ -543,5 +551,4 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/ImGuiManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imgui.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imconfig.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue

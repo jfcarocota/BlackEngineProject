@@ -1,2 +1,4 @@
 # Hashes of file build rules.
+dd6301866092564ab6c14abfe8115456 CMakeFiles/notarize_app
 bcc68d979b4409674c0aa62740ede026 CMakeFiles/package_app
+b16639af68fc192d637f0712dbf782e6 CMakeFiles/sign_app

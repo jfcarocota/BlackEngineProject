@@ -153,6 +153,7 @@ CMakeFiles/BlackEngineProject.dir/src/Animation.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -239,6 +240,7 @@ CMakeFiles/BlackEngineProject.dir/src/Animation.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -268,6 +270,7 @@ CMakeFiles/BlackEngineProject.dir/src/Animation.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
@@ -289,6 +292,7 @@ CMakeFiles/BlackEngineProject.dir/src/Animation.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -317,6 +321,7 @@ CMakeFiles/BlackEngineProject.dir/src/Animation.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -430,6 +435,84 @@ CMakeFiles/BlackEngineProject.dir/src/Animation.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Animation.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/SpriteComponent.hh \
@@ -442,83 +525,7 @@ CMakeFiles/BlackEngineProject.dir/src/Animation.cc.o: /Users/jesuscaro/Documents
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/reader.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/value.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/version.h \
-  /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h
 
 CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/AudioClip.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -672,6 +679,7 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -731,7 +739,6 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -750,6 +757,7 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -757,6 +765,7 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -768,10 +777,13 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -781,13 +793,14 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -801,6 +814,8 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -829,6 +844,7 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -942,50 +958,48 @@ CMakeFiles/BlackEngineProject.dir/src/AudioClip.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl
+  _deps/sfml-src/include/SFML/Audio.hpp \
+  _deps/sfml-src/include/SFML/Audio/AudioResource.hpp \
+  _deps/sfml-src/include/SFML/Audio/Export.hpp \
+  _deps/sfml-src/include/SFML/Audio/InputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/Listener.hpp \
+  _deps/sfml-src/include/SFML/Audio/Music.hpp \
+  _deps/sfml-src/include/SFML/Audio/OutputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/PlaybackDevice.hpp \
+  _deps/sfml-src/include/SFML/Audio/Sound.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.inl \
+  _deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundSource.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundStream.hpp \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh
 
 CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/AnimatorComponent.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1139,6 +1153,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -1225,6 +1240,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -1254,6 +1270,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
@@ -1275,6 +1292,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -1303,6 +1321,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -1416,6 +1435,84 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AnimationClip.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AnimatorComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
@@ -1431,83 +1528,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o: /Users/
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/reader.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/value.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/version.h \
-  /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h
 
 CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/AudioListenerComponent.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1661,6 +1682,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -1720,7 +1742,6 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -1739,6 +1760,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -1746,6 +1768,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -1757,10 +1780,13 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -1770,14 +1796,14 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -1791,6 +1817,8 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -1819,6 +1847,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -1932,102 +1961,106 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AudioListenerComponent.cc.o: /U
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Audio.hpp \
+  _deps/sfml-src/include/SFML/Audio/AudioResource.hpp \
+  _deps/sfml-src/include/SFML/Audio/Export.hpp \
+  _deps/sfml-src/include/SFML/Audio/InputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/Listener.hpp \
+  _deps/sfml-src/include/SFML/Audio/Music.hpp \
+  _deps/sfml-src/include/SFML/Audio/OutputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/PlaybackDevice.hpp \
+  _deps/sfml-src/include/SFML/Audio/Sound.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.inl \
+  _deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundSource.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundStream.hpp \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AudioListenerComponent.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh
 
 CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/Entity.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2181,6 +2214,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -2259,6 +2293,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -2266,6 +2301,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -2277,24 +2313,30 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -2308,6 +2350,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -2336,6 +2379,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/D
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -2449,85 +2493,87 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o: /Users/jesuscaro/D
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh
 
 CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/EntityManager.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2681,6 +2727,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -2759,6 +2806,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -2766,6 +2814,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -2777,24 +2826,30 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -2808,6 +2863,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -2836,6 +2892,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -2949,85 +3006,87 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o: /Users/jesu
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh
 
 CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/RigidBodyComponent.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -3181,6 +3240,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -3259,6 +3319,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -3266,6 +3327,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -3277,13 +3339,17 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
@@ -3297,6 +3363,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -3310,6 +3377,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -3454,88 +3522,90 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/RigidBodyComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/SpriteComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp \
   /usr/local/include/box2d/b2_api.h \
   /usr/local/include/box2d/b2_block_allocator.h \
   /usr/local/include/box2d/b2_body.h \
@@ -3726,6 +3796,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -3804,6 +3875,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -3811,6 +3883,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -3822,10 +3895,13 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -3836,12 +3912,14 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -3855,6 +3933,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -3883,6 +3962,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -3996,87 +4076,89 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o: /Users/je
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/SpriteComponent.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh
 
 CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/TransformComponent.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -4230,6 +4312,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -4289,7 +4372,6 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -4308,6 +4390,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -4315,6 +4398,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -4326,24 +4410,29 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -4357,6 +4446,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -4385,6 +4475,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -4498,84 +4589,86 @@ CMakeFiles/BlackEngineProject.dir/src/Components/TransformComponent.cc.o: /Users
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh
 
 CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/ContactEventManager.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -4729,6 +4822,7 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -4807,6 +4901,7 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -4814,6 +4909,7 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -4825,11 +4921,14 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -4847,7 +4946,7 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -4861,6 +4960,8 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -5005,6 +5106,103 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Audio.hpp \
+  _deps/sfml-src/include/SFML/Audio/AudioResource.hpp \
+  _deps/sfml-src/include/SFML/Audio/Export.hpp \
+  _deps/sfml-src/include/SFML/Audio/InputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/Listener.hpp \
+  _deps/sfml-src/include/SFML/Audio/Music.hpp \
+  _deps/sfml-src/include/SFML/Audio/OutputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/PlaybackDevice.hpp \
+  _deps/sfml-src/include/SFML/Audio/Sound.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.inl \
+  _deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundSource.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundStream.hpp \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AudioListenerComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
@@ -5014,99 +5212,6 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: /Users/jesuscaro
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/SpriteComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/ContactEventManager.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp \
   /usr/local/include/box2d/b2_api.h \
   /usr/local/include/box2d/b2_block_allocator.h \
   /usr/local/include/box2d/b2_body.h \
@@ -5297,6 +5402,7 @@ CMakeFiles/BlackEngineProject.dir/src/DrawPhysics.cc.o: /Users/jesuscaro/Documen
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -5356,7 +5462,6 @@ CMakeFiles/BlackEngineProject.dir/src/DrawPhysics.cc.o: /Users/jesuscaro/Documen
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -5375,6 +5480,7 @@ CMakeFiles/BlackEngineProject.dir/src/DrawPhysics.cc.o: /Users/jesuscaro/Documen
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -5394,19 +5500,22 @@ CMakeFiles/BlackEngineProject.dir/src/DrawPhysics.cc.o: /Users/jesuscaro/Documen
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
@@ -5414,6 +5523,7 @@ CMakeFiles/BlackEngineProject.dir/src/DrawPhysics.cc.o: /Users/jesuscaro/Documen
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -5427,6 +5537,7 @@ CMakeFiles/BlackEngineProject.dir/src/DrawPhysics.cc.o: /Users/jesuscaro/Documen
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -5571,83 +5682,85 @@ CMakeFiles/BlackEngineProject.dir/src/DrawPhysics.cc.o: /Users/jesuscaro/Documen
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/DrawPhysics.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp \
   /usr/local/include/box2d/b2_api.h \
   /usr/local/include/box2d/b2_block_allocator.h \
   /usr/local/include/box2d/b2_body.h \
@@ -5838,6 +5951,7 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -5916,6 +6030,7 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -5923,6 +6038,7 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -5934,24 +6050,30 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -5965,6 +6087,7 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -5993,6 +6116,7 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -6106,89 +6230,91 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/SpriteComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/FlipSprite.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/InputSystem.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/InputSystem.hh
 
 CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/GUI/Button.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -6342,6 +6468,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -6420,6 +6547,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -6427,6 +6555,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -6438,10 +6567,13 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -6452,12 +6584,14 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -6471,6 +6605,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -6499,6 +6634,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -6612,87 +6748,89 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o: /Users/jesuscaro/Document
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Component.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/Button.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/Button.hh
 
 CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/GUI/TextObject.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -6846,6 +6984,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -6905,7 +7044,6 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -6924,6 +7062,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -6931,6 +7070,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -6942,10 +7082,13 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -6955,13 +7098,14 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -6975,6 +7119,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -7003,6 +7148,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -7116,83 +7262,85 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/TextObject.cc.o: /Users/jesuscaro/Docu
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/TextObject.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/TextObject.hh
 
 CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Game.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -7347,6 +7495,7 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -7433,6 +7582,7 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -7471,7 +7621,6 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdbool.h \
@@ -7488,6 +7637,8 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -7664,6 +7815,103 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdbool.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Audio.hpp \
+  _deps/sfml-src/include/SFML/Audio/AudioResource.hpp \
+  _deps/sfml-src/include/SFML/Audio/Export.hpp \
+  _deps/sfml-src/include/SFML/Audio/InputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/Listener.hpp \
+  _deps/sfml-src/include/SFML/Audio/Music.hpp \
+  _deps/sfml-src/include/SFML/Audio/OutputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/PlaybackDevice.hpp \
+  _deps/sfml-src/include/SFML/Audio/Sound.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.inl \
+  _deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundSource.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundStream.hpp \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AnimationClip.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AnimatorComponent.hh \
@@ -7697,99 +7945,6 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o: /Users/jesuscaro/Documents/GitH
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/value.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/version.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp \
   /usr/local/include/box2d/b2_api.h \
   /usr/local/include/box2d/b2_block_allocator.h \
   /usr/local/include/box2d/b2_body.h \
@@ -7980,6 +8135,7 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -8039,7 +8195,6 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -8058,6 +8213,7 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -8065,6 +8221,7 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -8076,11 +8233,14 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -8090,13 +8250,14 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -8110,6 +8271,7 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -8139,6 +8301,7 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -8253,85 +8416,87 @@ CMakeFiles/BlackEngineProject.dir/src/ImGuiManager.cc.o: /Users/jesuscaro/Docume
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/ImGuiManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imconfig.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imgui.h \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imgui.h
 
 CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Movement.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -8485,6 +8650,7 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o: /Users/jesuscaro/Documents/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -8571,6 +8737,7 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o: /Users/jesuscaro/Documents/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -8608,7 +8775,6 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o: /Users/jesuscaro/Documents/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
@@ -8624,6 +8790,8 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o: /Users/jesuscaro/Documents/
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -8768,6 +8936,103 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o: /Users/jesuscaro/Documents/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Audio.hpp \
+  _deps/sfml-src/include/SFML/Audio/AudioResource.hpp \
+  _deps/sfml-src/include/SFML/Audio/Export.hpp \
+  _deps/sfml-src/include/SFML/Audio/InputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/Listener.hpp \
+  _deps/sfml-src/include/SFML/Audio/Music.hpp \
+  _deps/sfml-src/include/SFML/Audio/OutputSoundFile.hpp \
+  _deps/sfml-src/include/SFML/Audio/PlaybackDevice.hpp \
+  _deps/sfml-src/include/SFML/Audio/Sound.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileFactory.inl \
+  _deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundSource.hpp \
+  _deps/sfml-src/include/SFML/Audio/SoundStream.hpp \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AnimationClip.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AnimatorComponent.hh \
@@ -8789,99 +9054,6 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o: /Users/jesuscaro/Documents/
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/value.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/version.h \
   /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp \
   /usr/local/include/box2d/b2_api.h \
   /usr/local/include/box2d/b2_block_allocator.h \
   /usr/local/include/box2d/b2_body.h \
@@ -9072,6 +9244,7 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -9131,7 +9304,6 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -9150,6 +9322,7 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -9157,6 +9330,7 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -9168,10 +9342,13 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ctype.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -9181,13 +9358,14 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -9201,6 +9379,7 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -9229,6 +9408,7 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -9342,83 +9522,85 @@ CMakeFiles/BlackEngineProject.dir/src/Tile.cc.o: /Users/jesuscaro/Documents/GitH
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Tile.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Tile.hh
 
 CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/TileGroup.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -9572,6 +9754,7 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -9631,7 +9814,6 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -9650,6 +9832,7 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -9657,6 +9840,7 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -9685,7 +9869,7 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new \
@@ -9706,6 +9890,7 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -9734,6 +9919,7 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h \
@@ -9847,84 +10033,86 @@ CMakeFiles/BlackEngineProject.dir/src/TileGroup.cc.o: /Users/jesuscaro/Documents
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Tile.hh \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/TileGroup.hh \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/TileGroup.hh
 
 CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/main.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -10078,6 +10266,7 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unwrap_ref.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/advance.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/back_insert_iterator.h \
@@ -10137,7 +10326,6 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__undef_macros \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/__decay_copy.h \
@@ -10156,6 +10344,7 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/to_underlying.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__variant/monostate.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
@@ -10163,6 +10352,7 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cerrno \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
@@ -10177,9 +10367,11 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
@@ -10189,7 +10381,6 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
@@ -10198,6 +10389,7 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -10211,6 +10403,7 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
@@ -10355,88 +10548,90 @@ CMakeFiles/BlackEngineProject.dir/src/main.cpp.o: /Users/jesuscaro/Documents/Git
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
+  _deps/sfml-src/include/SFML/Config.hpp \
+  _deps/sfml-src/include/SFML/Graphics.hpp \
+  _deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CircleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Color.inl \
+  _deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Export.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Font.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Glsl.inl \
+  _deps/sfml-src/include/SFML/Graphics/Glyph.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Image.hpp \
+  _deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Rect.inl \
+  _deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shader.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Shape.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+  _deps/sfml-src/include/SFML/Graphics/StencilMode.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Text.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Transform.inl \
+  _deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+  _deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexArray.hpp \
+  _deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+  _deps/sfml-src/include/SFML/Graphics/View.hpp \
+  _deps/sfml-src/include/SFML/System.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.hpp \
+  _deps/sfml-src/include/SFML/System/Angle.inl \
+  _deps/sfml-src/include/SFML/System/Clock.hpp \
+  _deps/sfml-src/include/SFML/System/Err.hpp \
+  _deps/sfml-src/include/SFML/System/Exception.hpp \
+  _deps/sfml-src/include/SFML/System/Export.hpp \
+  _deps/sfml-src/include/SFML/System/FileInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/InputStream.hpp \
+  _deps/sfml-src/include/SFML/System/MemoryInputStream.hpp \
+  _deps/sfml-src/include/SFML/System/Sleep.hpp \
+  _deps/sfml-src/include/SFML/System/String.hpp \
+  _deps/sfml-src/include/SFML/System/String.inl \
+  _deps/sfml-src/include/SFML/System/Time.hpp \
+  _deps/sfml-src/include/SFML/System/Time.inl \
+  _deps/sfml-src/include/SFML/System/Utf.hpp \
+  _deps/sfml-src/include/SFML/System/Utf.inl \
+  _deps/sfml-src/include/SFML/System/Vector2.hpp \
+  _deps/sfml-src/include/SFML/System/Vector2.inl \
+  _deps/sfml-src/include/SFML/System/Vector3.hpp \
+  _deps/sfml-src/include/SFML/System/Vector3.inl \
+  _deps/sfml-src/include/SFML/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Context.hpp \
+  _deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+  _deps/sfml-src/include/SFML/Window/Cursor.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.hpp \
+  _deps/sfml-src/include/SFML/Window/Event.inl \
+  _deps/sfml-src/include/SFML/Window/Export.hpp \
+  _deps/sfml-src/include/SFML/Window/GlResource.hpp \
+  _deps/sfml-src/include/SFML/Window/Joystick.hpp \
+  _deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+  _deps/sfml-src/include/SFML/Window/Mouse.hpp \
+  _deps/sfml-src/include/SFML/Window/Sensor.hpp \
+  _deps/sfml-src/include/SFML/Window/Touch.hpp \
+  _deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+  _deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+  _deps/sfml-src/include/SFML/Window/Window.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowBase.inl \
+  _deps/sfml-src/include/SFML/Window/WindowEnums.hpp \
+  _deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/ContactEventManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/DrawPhysics.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Game.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/ImGuiManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imconfig.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imgui.h \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp \
-  /usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp \
   /usr/local/include/box2d/b2_api.h \
   /usr/local/include/box2d/b2_block_allocator.h \
   /usr/local/include/box2d/b2_body.h \
@@ -11387,23 +11582,15 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imgui_draw.cpp:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/inttypes.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/inttypes.h:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui/imgui_demo.cpp:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xtestintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xsaveintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xsavecintrin.h:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/x86gprintrin.h:
-
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/wmmintrin.h:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/vaesintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/uintrintrin.h:
 
@@ -11445,13 +11632,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/clflushoptintrin.h:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/cldemoteintrin.h:
-
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/bmiintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avxvnniintrin.h:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vpopcntdqvlintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vp2intersectintrin.h:
 
@@ -11459,9 +11642,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlvp2intersectintrin.h:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlintrin.h:
-
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlcdintrin.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlbitalgintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlbf16intrin.h:
 
@@ -11476,6 +11659,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512ifmaintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512cdintrin.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx2intrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/__wmmintrin_pclmul.h:
 
@@ -11505,17 +11690,15 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_seek_set.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/message.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/vm_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/thread_state.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/vm_types.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/kern_return.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/boolean.h:
+
+/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Game.hh:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/boolean.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach-o/loader.h:
 
@@ -11524,6 +11707,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/architecture/byte_order.h:
+
+/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/TextObject.hh:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/Button.hh:
 
@@ -11539,8 +11724,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/DrawPhysics.hh:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath:
-
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/DrawPhysics.cc:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/SpriteComponent.cc:
@@ -11550,6 +11733,12 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /usr/local/include/box2d/box2d.h:
 
 /usr/local/include/box2d/b2_world.h:
+
+/usr/local/include/box2d/b2_wheel_joint.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlvnniintrin.h:
+
+/usr/local/include/box2d/b2_timer.h:
 
 /usr/local/include/box2d/b2_time_step.h:
 
@@ -11579,13 +11768,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/Entity.cc:
 
@@ -11595,6 +11780,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/AudioListenerComponent.cc:
 
+/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh:
+
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/AnimatorComponent.hh:
@@ -11603,135 +11790,35 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/Components/AnimatorComponent.cc:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundStream.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundRecorder.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileReader.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.inl:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBufferRecorder.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Music.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Listener.hpp:
-
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/AudioClip.hh:
 
-/Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/AudioClip.cc:
+_deps/sfml-src/include/SFML/Audio/SoundStream.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowHandle.hpp:
+_deps/sfml-src/include/SFML/Audio/SoundSource.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/VideoMode.hpp:
+_deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Sensor.hpp:
+_deps/sfml-src/include/SFML/Audio/SoundFileFactory.inl:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Mouse.hpp:
+_deps/sfml-src/include/SFML/Audio/SoundFileFactory.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Keyboard.hpp:
+_deps/sfml-src/include/SFML/Audio/SoundChannel.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Joystick.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Export.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Cursor.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Clipboard.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/ContextSettings.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlvnniintrin.h:
-
-/usr/local/include/box2d/b2_timer.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.inl:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector2.hpp:
-
-/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.inl:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Utf.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/GlResource.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.inl:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.inl:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Thread.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Time.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.inl:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/NonCopyable.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Mutex.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Lock.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlbitalgintrin.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/InputStream.hpp:
-
-/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Game.hh:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/boolean.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/String.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Err.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Clock.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexBuffer.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transformable.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Texture.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shader.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderWindow.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderStates.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.inl:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Rect.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/PrimitiveType.hpp:
-
-/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/GUI/TextObject.hh:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Image.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx2intrin.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glyph.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowStyle.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Export.hpp:
+_deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/pconfigintrin.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Color.hpp:
+_deps/sfml-src/include/SFML/Audio/Sound.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/CircleShape.hpp:
+_deps/sfml-src/include/SFML/Audio/OutputSoundFile.hpp:
 
-/usr/local/include/box2d/b2_wheel_joint.h:
+_deps/sfml-src/include/SFML/Audio/Music.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/BlendMode.hpp:
+_deps/sfml-src/include/SFML/Audio/Listener.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Config.hpp:
+_deps/sfml-src/include/SFML/Audio/InputSoundFile.hpp:
+
+/Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/AudioClip.cc:
 
 /usr/local/Cellar/jsoncpp/1.9.6/include/json/writer.h:
 
@@ -11755,6 +11842,120 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Animation.hh:
 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/x86gprintrin.h:
+
+_deps/sfml-src/include/SFML/Window/WindowEnums.hpp:
+
+_deps/sfml-src/include/SFML/Window/WindowBase.hpp:
+
+_deps/sfml-src/include/SFML/Window/Window.hpp:
+
+_deps/sfml-src/include/SFML/Window/Vulkan.hpp:
+
+_deps/sfml-src/include/SFML/Window/Touch.hpp:
+
+_deps/sfml-src/include/SFML/Window/Mouse.hpp:
+
+_deps/sfml-src/include/SFML/Window/Joystick.hpp:
+
+_deps/sfml-src/include/SFML/Window/Export.hpp:
+
+_deps/sfml-src/include/SFML/Window/Event.inl:
+
+_deps/sfml-src/include/SFML/Window/Event.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xtestintrin.h:
+
+_deps/sfml-src/include/SFML/Window/ContextSettings.hpp:
+
+_deps/sfml-src/include/SFML/Window/Clipboard.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/kern_return.h:
+
+_deps/sfml-src/include/SFML/Window.hpp:
+
+_deps/sfml-src/include/SFML/System/Vector2.hpp:
+
+_deps/sfml-src/include/SFML/System/Utf.inl:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/vaesintrin.h:
+
+_deps/sfml-src/include/SFML/System/Utf.hpp:
+
+_deps/sfml-src/include/SFML/System/Time.inl:
+
+_deps/sfml-src/include/SFML/System/Time.hpp:
+
+_deps/sfml-src/include/SFML/System/String.hpp:
+
+_deps/sfml-src/include/SFML/System/Sleep.hpp:
+
+_deps/sfml-src/include/SFML/System/MemoryInputStream.hpp:
+
+_deps/sfml-src/include/SFML/System/FileInputStream.hpp:
+
+_deps/sfml-src/include/SFML/System/Exception.hpp:
+
+_deps/sfml-src/include/SFML/System/Err.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/inttypes.h:
+
+_deps/sfml-src/include/SFML/System/Angle.inl:
+
+_deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/VertexArray.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Transformable.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/cldemoteintrin.h:
+
+_deps/sfml-src/include/SFML/Graphics/Transform.inl:
+
+_deps/sfml-src/include/SFML/System/InputStream.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Text.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/StencilMode.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Sprite.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Shape.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vpopcntdqvlintrin.h:
+
+_deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/message.h:
+
+_deps/sfml-src/include/SFML/Graphics/Rect.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Image.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Glyph.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Glsl.inl:
+
+_deps/sfml-src/include/SFML/Graphics/Glsl.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Font.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/Drawable.hpp:
+
+_deps/sfml-src/include/SFML/System/Angle.hpp:
+
+_deps/sfml-src/include/SFML/Graphics/ConvexShape.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/vm_types.h:
+
+_deps/sfml-src/include/SFML/Graphics/Color.inl:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlintrin.h:
+
+_deps/sfml-src/include/SFML/Graphics/CircleShape.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/__stddef_max_align_t.h:
@@ -11764,8 +11965,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale/_wchar.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512erintrin.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale/_stdlib.h:
 
@@ -11777,7 +11976,7 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundSource.hpp:
+_deps/sfml-src/include/SFML/Graphics/Rect.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:
 
@@ -11811,29 +12010,39 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/WindowBase.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uid_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/fp_reg.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int8_t.h:
+
+/usr/local/include/box2d/b2_types.h:
+
+_deps/sfml-src/include/SFML/System/Vector2.inl:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int64_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigset_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_pid_t.h:
+_deps/sfml-src/include/SFML/System/Vector3.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Vertex.hpp:
+_deps/sfml-src/include/SFML/Config.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_pid_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/front_insert_iterator.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h:
 
@@ -11850,6 +12059,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h:
+
+_deps/sfml-src/include/SFML/Audio/PlaybackDevice.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h:
 
@@ -11882,10 +12093,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types.h:
-
-/usr/local/include/box2d/b2_types.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int64_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h:
 
@@ -11943,8 +12150,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTarget.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h:
@@ -11979,10 +12184,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/endian.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/algorithm:
@@ -12009,6 +12210,16 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/version:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/partial_sort_copy.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__hash_table:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo:
@@ -12029,6 +12240,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h:
 
+_deps/sfml-src/include/SFML/Graphics/Shader.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/remove_if.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio:
@@ -12041,17 +12254,19 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/new:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RectangleShape.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex:
 
 /usr/local/include/box2d/b2_contact.h:
+
+_deps/sfml-src/include/SFML/Graphics/RectangleShape.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/declval.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map:
+
+_deps/sfml-src/include/SFML/Window/GlResource.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale:
 
@@ -12077,6 +12292,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /usr/local/include/box2d/b2_pulley_joint.h:
 
+_deps/sfml-src/include/SFML/Graphics/View.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/port.h:
@@ -12085,11 +12302,13 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:
 
+_deps/sfml-src/include/SFML/Audio/Export.hpp:
+
+_deps/sfml-src/include/SFML/System/Clock.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/locale.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Transform.hpp:
+_deps/sfml-src/include/SFML/System/Vector3.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits.h:
 
@@ -12100,8 +12319,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512bf16intrin.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Window.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timespec.h:
 
@@ -12121,9 +12338,13 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef:
 
+_deps/sfml-src/include/SFML/Window/VideoMode.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/i386/_OSByteOrder.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/compare:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/iter_swap.h:
 
@@ -12131,11 +12352,13 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/i386/OSByteOrder.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/ConvexShape.hpp:
+_deps/sfml-src/include/SFML/Window/WindowBase.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/rel_ops.h:
+
+_deps/sfml-src/include/SFML/Window/Keyboard.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_endian.h:
 
@@ -12146,6 +12369,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/piecewise_construct.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/integer_sequence.h:
+
+_deps/sfml-src/include/SFML/Graphics/Color.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/in_place.h:
 
@@ -12161,9 +12386,13 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Tile.hh:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Shape.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset:
+
+_deps/sfml-src/include/SFML/Audio/AudioResource.hpp:
+
+_deps/sfml-src/include/SFML/Window/Context.hpp:
+
+_deps/sfml-src/include/SFML/System/String.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__function_like.h:
 
@@ -12174,8 +12403,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__string:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Font.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h:
 
@@ -12197,9 +12424,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__nullptr:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__node_handle:
+_deps/sfml-src/include/SFML/Graphics/Transform.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Drawable.hpp:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__node_handle:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find_if_not.h:
 
@@ -12222,8 +12449,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/construct_at.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/allocator.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Sleep.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h:
 
@@ -12252,8 +12477,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/addressof.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Export.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cwchar:
 
@@ -12287,15 +12510,21 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/next.h:
 
+_deps/sfml-src/include/SFML/Graphics/RenderStates.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find_end.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/reverse_copy.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/istreambuf_iterator.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/shared_ptr.h:
 
 /usr/local/include/box2d/b2_block_allocator.h:
+
+_deps/sfml-src/include/SFML/Window/WindowHandle.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/incrementable_traits.h:
 
@@ -12303,9 +12532,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array:
+_deps/sfml-src/include/SFML/Graphics/Texture.hpp:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System.hpp:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional:
 
@@ -12319,15 +12548,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/concepts.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileWriter.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Context.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/count.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/VertexArray.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/iterator_traits.h:
 
@@ -12336,12 +12559,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino64_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/common_iterator.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocalPtr.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/temporary_buffer.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/access.h:
 
@@ -12361,8 +12578,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_setsize.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/InputSoundFile.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/reference_wrapper.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_if.h:
@@ -12381,13 +12596,7 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/__wmmintrin_aes.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/Vector3.inl:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/string.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundBuffer.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/AlResource.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/not_fn.h:
 
@@ -12396,6 +12605,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/insert_iterator.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/perfect_forward.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/TileGroup.hh:
 
@@ -12416,8 +12627,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__debug:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/empty.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/RenderTexture.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/ostream_iterator.h:
 
@@ -12443,6 +12652,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/set_symmetric_difference.h:
 
+_deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__errc:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/bind.h:
@@ -12461,7 +12672,11 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/generate_n.h:
 
+_deps/sfml-src/include/SFML/System/Export.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/minmax_element.h:
+
+_deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/push_heap.h:
 
@@ -12487,8 +12702,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/invoke.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/View.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_backward.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/transform.h:
@@ -12499,15 +12712,11 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/shuffle.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Glsl.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/default_sentinel.h:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/ContactEventManager.cc:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/shift_left.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Touch.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/set_intersection.h:
 
@@ -12525,11 +12734,11 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /usr/local/include/box2d/b2_distance_joint.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Event.hpp:
+_deps/sfml-src/include/SFML/Graphics.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/replace.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio.hpp:
+_deps/sfml-src/include/SFML/Graphics/CoordinateType.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/iter_move.h:
 
@@ -12540,8 +12749,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /usr/local/Cellar/jsoncpp/1.9.6/include/json/json.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_zero.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/OutputSoundFile.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/lower_bound.h:
 
@@ -12566,6 +12773,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/RigidBodyComponent.hh:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/distance.h:
+
+_deps/sfml-src/include/SFML/Window/Cursor.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h:
 
@@ -12595,6 +12804,8 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/min_element.h:
 
+_deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/partition.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono:
@@ -12617,8 +12828,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Sound.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/min.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/all_of.h:
@@ -12631,10 +12840,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/fp_reg.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int8_t.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int32_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdlib.h:
@@ -12645,11 +12850,11 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/make_heap.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Window/Vulkan.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/search.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h:
+
+_deps/sfml-src/include/SFML/Graphics/Export.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/count_if.h:
 
@@ -12679,27 +12884,21 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/weak_result_type.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/clamp.h:
+_deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/partial_sort_copy.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/clamp.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512bitalgintrin.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/Export.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_heap.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Audio/SoundFileFactory.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/stable_sort.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/generate.h:
 
 /Users/jesuscaro/Documents/GitHub/BlackEngineProject/src/ImGuiManager.cc:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/ThreadLocal.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h:
 
@@ -12711,11 +12910,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_n.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Text.hpp:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/Graphics/Sprite.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/raw_storage_iterator.h:
+
+_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/next_permutation.h:
 
@@ -12737,9 +12934,9 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_partitioned.h:
 
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/FileInputStream.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/shift_right.h:
+
+_deps/sfml-src/include/SFML/Graphics/Vertex.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h:
 
@@ -12753,9 +12950,15 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /usr/local/include/box2d/b2_mouse_joint.h:
 
+_deps/sfml-src/include/SFML/Audio.hpp:
+
+_deps/sfml-src/include/SFML/System.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/readable_traits.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/is_heap_until.h:
+
+_deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h:
 
@@ -12770,8 +12973,6 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/pop_heap.h:
-
-/usr/local/Cellar/sfml/2.6.0/include/SFML/System/MemoryInputStream.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant:
 
@@ -12849,11 +13050,17 @@ CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o: /Users/
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/fill.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/temporary_buffer.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h:
+
 /usr/local/include/box2d/b2_shape.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vlbwintrin.h:
+
+_deps/sfml-src/include/SFML/Window/Sensor.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique.h:
 

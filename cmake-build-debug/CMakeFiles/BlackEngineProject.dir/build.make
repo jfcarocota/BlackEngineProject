@@ -479,12 +479,22 @@ BlackEngineProject: CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_dr
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_tables.cpp.o
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/build.make
+BlackEngineProject: _deps/sfml-build/lib/libsfml-graphics.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-window.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-system.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-audio.a
 BlackEngineProject: /usr/local/lib/libbox2d.a
+BlackEngineProject: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
+BlackEngineProject: _deps/sfml-build/lib/libfreetype.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-system.a
+BlackEngineProject: _deps/sfml-build/lib/libvorbisfile.a
+BlackEngineProject: _deps/sfml-build/lib/libvorbisenc.a
+BlackEngineProject: _deps/sfml-build/lib/libvorbis.a
+BlackEngineProject: _deps/sfml-build/lib/libFLAC.a
+BlackEngineProject: _deps/sfml-build/lib/libogg.a
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable BlackEngineProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BlackEngineProject.dir/link.txt --verbose=$(VERBOSE)
-	/usr/local/bin/cmake -E make_directory /Users/jesuscaro/Documents/GitHub/BlackEngineProject/BlackEngineProject.app/Contents/Frameworks
-	/usr/local/bin/cmake -E copy_if_different /usr/local/lib/libopenal.1.dylib /Users/jesuscaro/Documents/GitHub/BlackEngineProject/BlackEngineProject.app/Contents/Frameworks/libopenal.1.dylib
 	/usr/local/bin/cmake -E copy_directory /Users/jesuscaro/Documents/GitHub/BlackEngineProject/assets /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/assets
 	/usr/local/bin/cmake -E make_directory /Users/jesuscaro/Documents/GitHub/BlackEngineProject/BlackEngineProject.app/Contents/MacOS
 	/usr/local/bin/cmake -E make_directory /Users/jesuscaro/Documents/GitHub/BlackEngineProject/BlackEngineProject.app/Contents/Resources
