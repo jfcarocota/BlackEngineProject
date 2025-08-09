@@ -1,7 +1,7 @@
 #include "Components/RigidBodyComponent.hh"
 #include "Components/EntityManager.hh"
 
-RigidBodyComponent::RigidBodyComponent(b2World*& world, b2BodyType bodyType, float density, float friction,
+RigidBodyComponent::RigidBodyComponent(b2World* world, b2BodyType bodyType, float density, float friction,
 float restitution, float angle, bool frezeRotation, void* userData)
 {
   this->world = world;

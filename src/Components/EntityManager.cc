@@ -16,44 +16,35 @@ void EntityManager::ClearData()
   {
     entity->Destroy();
   }
+  entities.clear();
 }
 
 bool EntityManager::HasNoEntities()
 {
-  return entities.size() == 0;
+  return entities.empty();
 }
 
 void EntityManager::Update(float& deltaTime)
 {
   activeEntities.clear();
   activeEntities.reserve(entities.size());
+  inactiveEntities.clear();
   
   for(auto& entity : entities)
   {
     if(entity->IsActive())
     {
       entity->Update(deltaTime);
-      activeEntities.push_back(entity);
+      activeEntities.push_back(std::move(entity));
     }
     else
     {
-      inactiveEntities.push_back(entity);
+      inactiveEntities.push_back(std::move(entity));
     }
   }
   
-  if(!activeEntities.empty())
-  {
-    entities = std::move(activeEntities);
-  }
-  
-  if(!inactiveEntities.empty())
-  {
-    for(auto& entity : inactiveEntities)
-    {
-      delete entity;
-    }
-    inactiveEntities.clear();
-  }
+  entities = std::move(activeEntities);
+  // inactiveEntities will be destroyed automatically
 }
 
 void EntityManager::Render(sf::RenderWindow& window)
@@ -74,7 +65,11 @@ Entity& EntityManager::AddEntity(std::string entityName)
   return *entity;
 }
 
-std::vector<Entity*> EntityManager::GetEntities() const
-{
-  return entities;
+std::vector<Entity*> EntityManager::GetEntities() const {
+  std::vector<Entity*> result;
+  result.reserve(entities.size());
+  for (const auto& e : entities) {
+    result.push_back(e.get());
+  }
+  return result;
 }

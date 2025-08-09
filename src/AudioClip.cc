@@ -1,5 +1,6 @@
 #include "AudioClip.hh"
 #include <iostream>
+#include <memory>
 
 AudioClip::AudioClip()
 {
@@ -23,22 +24,21 @@ AudioClip::AudioClip(const char* audioUrl)
   }
   
   try {
-    buffer = new sf::SoundBuffer();
+    buffer = std::make_unique<sf::SoundBuffer>();
     if (!buffer) {
       std::cerr << "Failed to create SFML SoundBuffer object" << std::endl;
       return;
     }
     if (!buffer->loadFromFile(audioUrl)) {
       std::cerr << "Failed to load audio file: " << audioUrl << std::endl;
-      delete buffer; buffer = nullptr;
+      buffer.reset();
       return;
     }
-    // Construct sound with buffer (SFML 3)
-    sound = new sf::Sound(*buffer);
+    sound = std::make_unique<sf::Sound>(*buffer);
   } catch (const std::exception& e) {
     std::cerr << "Exception creating AudioClip: " << e.what() << std::endl;
-    if (sound) { delete sound; sound = nullptr; }
-    if (buffer) { delete buffer; buffer = nullptr; }
+    sound.reset();
+    buffer.reset();
   }
 #endif
 }
@@ -55,8 +55,7 @@ void AudioClip::SetVolume(float volume)
 AudioClip::~AudioClip()
 {
 #ifdef SFML_AUDIO_AVAILABLE
-  if (sound) { delete sound; sound = nullptr; }
-  if (buffer) { delete buffer; buffer = nullptr; }
+  // Smart pointers automatically clean up
 #endif
 }
 
@@ -69,13 +68,13 @@ AudioClip::AudioClip(const AudioClip& other)
   buffer = nullptr;
   if (!other.audioUrl.empty()) {
     try {
-      buffer = new sf::SoundBuffer();
+      buffer = std::make_unique<sf::SoundBuffer>();
       if (buffer && buffer->loadFromFile(audioUrl)) {
-        sound = new sf::Sound(*buffer);
+        sound = std::make_unique<sf::Sound>(*buffer);
       }
     } catch (...) {
-      if (sound) { delete sound; sound = nullptr; }
-      if (buffer) { delete buffer; buffer = nullptr; }
+      sound.reset();
+      buffer.reset();
     }
   }
 #endif
@@ -87,17 +86,17 @@ AudioClip& AudioClip::operator=(const AudioClip& other)
   if (this == &other) return *this;
   audioUrl = other.audioUrl;
 #ifdef SFML_AUDIO_AVAILABLE
-  if (sound) { delete sound; sound = nullptr; }
-  if (buffer) { delete buffer; buffer = nullptr; }
+  sound.reset();
+  buffer.reset();
   if (!other.audioUrl.empty()) {
     try {
-      buffer = new sf::SoundBuffer();
+      buffer = std::make_unique<sf::SoundBuffer>();
       if (buffer && buffer->loadFromFile(audioUrl)) {
-        sound = new sf::Sound(*buffer);
+        sound = std::make_unique<sf::Sound>(*buffer);
       }
     } catch (...) {
-      if (sound) { delete sound; sound = nullptr; }
-      if (buffer) { delete buffer; buffer = nullptr; }
+      sound.reset();
+      buffer.reset();
     }
   }
 #endif
@@ -105,26 +104,23 @@ AudioClip& AudioClip::operator=(const AudioClip& other)
 }
 
 // Move constructor
-AudioClip::AudioClip(AudioClip&& other) noexcept
-{
-  audioUrl = std::move(other.audioUrl);
+AudioClip::AudioClip(AudioClip&& other) noexcept {
 #ifdef SFML_AUDIO_AVAILABLE
-  sound = other.sound; other.sound = nullptr;
-  buffer = other.buffer; other.buffer = nullptr;
+  sound = std::move(other.sound);
+  buffer = std::move(other.buffer);
 #endif
+  audioUrl = std::move(other.audioUrl);
 }
 
 // Move assignment
-AudioClip& AudioClip::operator=(AudioClip&& other) noexcept
-{
-  if (this == &other) return *this;
-  audioUrl = std::move(other.audioUrl);
+AudioClip& AudioClip::operator=(AudioClip&& other) noexcept {
+  if (this != &other) {
 #ifdef SFML_AUDIO_AVAILABLE
-  if (sound) { delete sound; sound = nullptr; }
-  if (buffer) { delete buffer; buffer = nullptr; }
-  sound = other.sound; other.sound = nullptr;
-  buffer = other.buffer; other.buffer = nullptr;
+    sound = std::move(other.sound);
+    buffer = std::move(other.buffer);
 #endif
+    audioUrl = std::move(other.audioUrl);
+  }
   return *this;
 }
 

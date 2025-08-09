@@ -27,7 +27,7 @@ private:
   bool frezeRotation{};
   void* userData{};
 public:
-  RigidBodyComponent(b2World*& world, b2BodyType bodyType, float density, float friction,
+  RigidBodyComponent(b2World* world, b2BodyType bodyType, float density, float friction,
   float restitution, float angle, bool frezeRotation, void* userData);
   ~RigidBodyComponent();
 

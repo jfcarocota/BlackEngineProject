@@ -6,16 +6,17 @@
 #include "ImGuiManager.hh"
 #include <box2d/box2d.h>
 #include <queue>
+#include <memory>
 
 class Game
 {
 private:
-  sf::RenderWindow* window{};
-  ContactEventManager* contactEventManager{};
-  ImGuiManager* imguiManager{};
-  b2Vec2* gravity{};
-  b2World* world{};
-  b2Draw* drawPhysics{};
+  std::unique_ptr<sf::RenderWindow> window;
+  std::unique_ptr<ContactEventManager> contactEventManager;
+  std::unique_ptr<ImGuiManager> imguiManager;
+  std::unique_ptr<b2Vec2> gravity;
+  std::unique_ptr<b2World> world;
+  std::unique_ptr<DrawPhysics> drawPhysics;
   bool debugPhysics{};
 
   void Update();

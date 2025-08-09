@@ -67,12 +67,12 @@ Game::Game()
   std::string projectRoot = findProjectRoot();
   chdir(projectRoot.c_str());
 
-  window = new sf::RenderWindow(sf::VideoMode(sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)), GAME_NAME);
-  gravity = new b2Vec2(0.f, 0.f);
-  world = new b2World(*gravity);
-  drawPhysics = new DrawPhysics(window);
+  window = std::make_unique<sf::RenderWindow>(sf::VideoMode(sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)), GAME_NAME);
+  gravity = std::make_unique<b2Vec2>(0.f, 0.f);
+  world = std::make_unique<b2World>(*gravity);
+  drawPhysics = std::make_unique<DrawPhysics>(window.get());
 
-  tileGroup = std::make_unique<TileGroup>(window, GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT, 
+  tileGroup = std::make_unique<TileGroup>(window.get(), GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT, 
                                         ASSETS_MAPS, GameConstants::TILE_SCALE, GameConstants::TILE_SIZE, 
                                         GameConstants::TILE_SIZE, ASSETS_TILES);
 
@@ -86,7 +86,7 @@ Game::Game()
 
   hero.AddComponent<TransformComponent>(500.f, 300.f, 16.f, 16.f, 4.f);
   hero.AddComponent<SpriteComponent>(ASSETS_SPRITES, 0, 5);
-  hero.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_dynamicBody, 1, 0, 0, 0.f, true, (void*) &hero);
+  hero.AddComponent<RigidBodyComponent>(world.get(), b2BodyType::b2_dynamicBody, 1, 0, 0, 0.f, true, (void*) &hero);
   hero.AddComponent<AnimatorComponent>();
   hero.AddComponent<AudioListenerComponent>();
   hero.AddComponent<Movement>(GameConstants::PLAYER_SPEED, GameConstants::PLAYER_FRICTION, AudioClip("assets/audio/steps.ogg"));
@@ -94,21 +94,21 @@ Game::Game()
 
   candle1.AddComponent<TransformComponent>(500.f, 500.f, 16.f, 16.f, 3.f);
   candle1.AddComponent<SpriteComponent>(ASSETS_SPRITES, 0, 5);
-  candle1.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &candle1);
+  candle1.AddComponent<RigidBodyComponent>(world.get(), b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &candle1);
   auto& candle1Animator = candle1.AddComponent<AnimatorComponent>();
   candle1Animator.AddAnimation("idle", AnimationClip("assets/animations/candle/idle.json"));
 
   chest1.AddComponent<TransformComponent>(300.f, 500.f, 16.f, 16.f, 4.f);
   chest1.AddComponent<SpriteComponent>(ASSETS_SPRITES, 6, 1);
-  chest1.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &chest1);
+  chest1.AddComponent<RigidBodyComponent>(world.get(), b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &chest1);
 
   chest2.AddComponent<TransformComponent>(300.f, 400.f, 16.f, 16.f, 4.f);
   chest2.AddComponent<SpriteComponent>(ASSETS_SPRITES, 6, 1);
-  chest2.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &chest2);
+  chest2.AddComponent<RigidBodyComponent>(world.get(), b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &chest2);
 
   chest3.AddComponent<TransformComponent>(300.f, 300.f, 16.f, 16.f, 4.f);
   chest3.AddComponent<SpriteComponent>(ASSETS_SPRITES, 6, 1);
-  chest3.AddComponent<RigidBodyComponent>(world, b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &chest3);
+  chest3.AddComponent<RigidBodyComponent>(world.get(), b2BodyType::b2_staticBody, 1, 0, 0, 0.f, true, (void*) &chest3);
 
   auto& btnPhysicsDebugTrs{buttonDebugPhysics.AddComponent<TransformComponent>(100.f, 100.f, 200.f, 100.f, 1.f)};
   auto& buttonPhysicsComp = buttonDebugPhysics.AddComponent<Button>(btnPhysicsDebugTrs, 0.f,
@@ -118,8 +118,8 @@ Game::Game()
   });
   buttonPhysicsComp.SetTexture("assets/GUI/button.png");
 
-  contactEventManager = new ContactEventManager();
-  imguiManager = new ImGuiManager();
+  contactEventManager = std::make_unique<ContactEventManager>();
+  imguiManager = std::make_unique<ImGuiManager>();
 }
 
 Game::~Game() = default;
@@ -127,9 +127,9 @@ Game::~Game() = default;
 void Game::Initialize()
 {
   flags += b2Draw::e_shapeBit;
-  world->SetDebugDraw(drawPhysics);
+  world->SetDebugDraw(drawPhysics.get());
   drawPhysics->SetFlags(flags);
-  world->SetContactListener(contactEventManager);
+  world->SetContactListener(contactEventManager.get());
 
   imguiManager->Initialize(*window);
 
@@ -210,7 +210,5 @@ void Game::Destroy()
 {
   // Shutdown ImGui
   imguiManager->Shutdown();
-  
-  delete imguiManager;
-  delete window;
+  // Smart pointers automatically clean up
 }

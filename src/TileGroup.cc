@@ -1,7 +1,8 @@
 #include "TileGroup.hh"
 #include <iostream>
+#include <memory>
 
-TileGroup::TileGroup(sf::RenderWindow*& window, int COLS, int ROWS, const char* filePath, 
+TileGroup::TileGroup(sf::RenderWindow* window, int COLS, int ROWS, const char* filePath, 
 float scale, float tileWidth, float tileHeight, const char* textureUrl)
 {
   this->textureUrl = textureUrl;
@@ -11,24 +12,16 @@ float scale, float tileWidth, float tileHeight, const char* textureUrl)
   this->COLS = COLS;
   this->ROWS = ROWS;
   this->filePath = filePath;
-  reader = new std::ifstream();
+  reader = std::make_unique<std::ifstream>();
   this->window = window;
-  tiles = new std::vector<Tile*>();
+  tiles = std::make_unique<std::vector<std::unique_ptr<Tile>>>();
 
   GenerateMap();
 }
 
 TileGroup::~TileGroup()
 {
-  if (reader) {
-    delete reader;
-  }
-  if (tiles) {
-    for (auto* tile : *tiles) {
-      delete tile;
-    }
-    delete tiles;
-  }
+  // Smart pointers automatically clean up
 }
 
 void TileGroup::GenerateMap()
@@ -58,8 +51,7 @@ void TileGroup::GenerateMap()
         break;
       }
       int row{coord};
-
-      tiles->push_back(new Tile(textureUrl, scale, tileWidth, tileHeight, col, row, posX, posY, window));
+      tiles->push_back(std::make_unique<Tile>(textureUrl, scale, tileWidth, tileHeight, col, row, posX, posY, window));
     }
   }
   reader->close();

@@ -1,6 +1,7 @@
 #pragma once
 
 #include<SFML/Graphics.hpp>
+#include <memory>
 
 class Tile
 {
@@ -12,8 +13,8 @@ private:
   int row{};
   float posX{};
   float posY{};
-  sf::Sprite* sprite;
-  sf::Texture* texture;
+  std::unique_ptr<sf::Sprite> sprite;
+  std::unique_ptr<sf::Texture> texture;
   sf::RenderWindow* window;
 public:
   Tile(std::string textureUrl, float scale, int width, int height, int column, int row, 

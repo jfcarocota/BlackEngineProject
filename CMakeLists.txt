@@ -170,3 +170,13 @@ if(APPLE)
     COMMENT "Notarizing app bundle"
   )
 endif()
+# Microsoft GSL
+include(FetchContent)
+FetchContent_Declare(
+  GSL
+  GIT_REPOSITORY https://github.com/microsoft/GSL.git
+  GIT_TAG v4.0.0
+)
+FetchContent_MakeAvailable(GSL)
+target_link_libraries(BlackEngineProject PRIVATE Microsoft.GSL::GSL)
+

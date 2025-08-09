@@ -3,13 +3,14 @@
 #include "Component.hh"
 #include "Entity.hh"
 #include <vector>
+#include <memory>
 
 class EntityManager
 {
 private:
-  std::vector<Entity*> entities;
-  std::vector<Entity*> activeEntities;
-  std::vector<Entity*> inactiveEntities;
+  std::vector<std::unique_ptr<Entity>> entities;
+  std::vector<std::unique_ptr<Entity>> activeEntities;
+  std::vector<std::unique_ptr<Entity>> inactiveEntities;
 public:
   EntityManager(/* args */);
   ~EntityManager();
