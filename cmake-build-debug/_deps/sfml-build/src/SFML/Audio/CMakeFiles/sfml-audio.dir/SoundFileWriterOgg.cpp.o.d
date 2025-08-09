@@ -424,10 +424,9 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileWriterOgg.cpp
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit_reference \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include/vorbis/vorbisenc.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include/vorbis/codec.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/ogg.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/os_types.h \
+  /usr/local/include/vorbis/vorbisenc.h \
+  /usr/local/include/vorbis/codec.h /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/array \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/System/Err.hpp \

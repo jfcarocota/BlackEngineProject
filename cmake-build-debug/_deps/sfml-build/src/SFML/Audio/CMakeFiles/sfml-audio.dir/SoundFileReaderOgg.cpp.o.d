@@ -355,10 +355,9 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderOgg.cpp
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique_copy.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unique.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include/vorbis/vorbisfile.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include/vorbis/codec.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/ogg.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/os_types.h \
+  /usr/local/include/vorbis/vorbisfile.h \
+  /usr/local/include/vorbis/codec.h /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h \

@@ -1,1 +1,56 @@
+# Keep vendored imgui out of VCS
 third_party/imgui/
+
+# macOS
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+
+# Build outputs
+/build/
+/cmake-build-*/
+/out/
+/bin/
+/lib/
+/dist/
+/BlackEngineProject.app/
+
+# CMake-generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+CPackConfig.cmake
+CPackSourceConfig.cmake
+install_manifest.txt
+Testing/
+
+# Compilation database (optional)
+compile_commands.json
+
+# IDE/editor files
+.idea/
+.vscode/
+*.code-workspace
+.ccls-cache/
+.clangd/
+
+# Xcode/CLion
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+DerivedData/
+*.dSYM/
+
+# Temp files
+*~
+*.swp
+*.swo
+
+# Logs
+*.log

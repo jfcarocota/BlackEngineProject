@@ -66,7 +66,7 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/window.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib/os.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/os_types.h \
+  /usr/local/include/ogg/os_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h \
@@ -109,7 +109,7 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/window.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib/misc.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include/vorbis/codec.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/ogg.h \
+  /usr/local/include/ogg/ogg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/__stddef_max_align_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/emmintrin.h \

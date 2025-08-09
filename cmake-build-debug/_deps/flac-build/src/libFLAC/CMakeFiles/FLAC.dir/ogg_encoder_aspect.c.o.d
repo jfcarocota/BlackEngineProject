@@ -36,10 +36,10 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_encoder_aspect.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/include/FLAC/assert.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/src/libFLAC/include/private/ogg_encoder_aspect.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/ogg.h \
+  /usr/local/include/ogg/ogg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/__stddef_max_align_t.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/os_types.h \
+  /usr/local/include/ogg/os_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/appleapiopts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/endian.h \

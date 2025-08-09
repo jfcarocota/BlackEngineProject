@@ -1,8 +1,4 @@
-#include "Game.hh"
-#include "Constants.hh"
-#include "InputSystem.hh"
-#include "GUI/TextObject.hh"
-#include "DrawPhysics.hh"
+// Standard and external includes
 #include <box2d/box2d.h>
 #include <iostream>
 #include <memory>
@@ -13,7 +9,11 @@
 #include <optional>
 #include <gsl/gsl>
 
-//#include <steam/steam_api.h>
+// Project includes
+#include "Game.hh"
+#include "Constants.hh"
+#include "InputSystem.hh"
+#include "GUI/TextObject.hh"
 #include "TileGroup.hh"
 #include "Components/EntityManager.hh"
 #include "Components/TransformComponent.hh"

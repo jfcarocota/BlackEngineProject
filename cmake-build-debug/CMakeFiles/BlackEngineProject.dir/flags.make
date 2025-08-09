@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DSFML_AUDIO_AVAILABLE -DSFML_STATIC
 
-CXX_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include -I/usr/local/Cellar/jsoncpp/1.9.6/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include
+CXX_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/include -I/usr/local/Cellar/jsoncpp/1.9.6/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/third_party/imgui -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include
 
 CXX_FLAGS = -std=c++2b
 

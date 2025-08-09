@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DSFML_STATIC -DSTBI_FAILURE_USERMSG
 
-CXX_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/src -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-build/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-src/include -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include
+CXX_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/src -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-build/include -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-src/include
 
 CXX_FLAGS = -std=c++2b -fvisibility=hidden -fvisibility-inlines-hidden -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -Wsuggest-override -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
 

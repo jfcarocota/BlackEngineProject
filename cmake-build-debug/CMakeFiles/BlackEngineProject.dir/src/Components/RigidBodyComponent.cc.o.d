@@ -551,4 +551,10 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o: \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/Entity.hh \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext

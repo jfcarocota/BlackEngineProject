@@ -551,6 +551,12 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/EntityManager.hh \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span \
+  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/RigidBodyComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/TransformComponent.hh \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/include/Components/SpriteComponent.hh \

@@ -10,7 +10,7 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lookup.c.o: \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib/lookup.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib/lookup_data.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib/os.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/os_types.h \
+  /usr/local/include/ogg/os_types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/appleapiopts.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
@@ -82,7 +82,7 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lookup.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib/misc.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include/vorbis/codec.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/ogg.h \
+  /usr/local/include/ogg/ogg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/__stddef_max_align_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/emmintrin.h \

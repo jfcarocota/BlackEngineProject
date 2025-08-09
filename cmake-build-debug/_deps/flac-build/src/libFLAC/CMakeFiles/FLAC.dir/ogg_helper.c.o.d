@@ -136,8 +136,7 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_helper.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/utime.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/src/libFLAC/include/private/ogg_helper.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/ogg.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/os_types.h \
+  /usr/local/include/ogg/ogg.h /usr/local/include/ogg/os_types.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/include/FLAC/stream_encoder.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h \

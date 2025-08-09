@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-build/include
+C_INCLUDES = -I/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/lib -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-src/include -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include -isystem /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-build/include
 
 C_FLAGS = 
 

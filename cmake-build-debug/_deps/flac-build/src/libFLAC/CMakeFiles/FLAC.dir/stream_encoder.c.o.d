@@ -147,8 +147,7 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/stream_encoder.c.o: \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/src/libFLAC/include/protected/stream_encoder.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/include/FLAC/stream_encoder.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/src/libFLAC/include/private/ogg_encoder_aspect.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/ogg.h \
-  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-src/include/ogg/os_types.h \
+  /usr/local/include/ogg/ogg.h /usr/local/include/ogg/os_types.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/src/libFLAC/include/private/float.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/src/libFLAC/include/private/bitwriter.h \
   /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-src/src/libFLAC/include/private/bitmath.h \

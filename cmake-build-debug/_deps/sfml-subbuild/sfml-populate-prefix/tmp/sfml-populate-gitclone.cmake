@@ -36,7 +36,7 @@ set(number_of_tries 0)
 while(error_code AND number_of_tries LESS 3)
   execute_process(
     COMMAND "/usr/local/bin/git"
-            clone --no-checkout --config "advice.detachedHead=false" "https://github.com/SFML/SFML.git" "sfml-src"
+            clone --no-checkout --depth 1 --no-single-branch --config "advice.detachedHead=false" "https://github.com/SFML/SFML.git" "sfml-src"
     WORKING_DIRECTORY "/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps"
     RESULT_VARIABLE error_code
     ${maybe_show_command}

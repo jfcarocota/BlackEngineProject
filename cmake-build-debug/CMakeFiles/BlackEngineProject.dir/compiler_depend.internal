@@ -1280,6 +1280,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
@@ -1438,6 +1439,11 @@ CMakeFiles/BlackEngineProject.dir/src/Components/AnimatorComponent.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp
@@ -2341,6 +2347,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -2498,6 +2505,11 @@ CMakeFiles/BlackEngineProject.dir/src/Components/Entity.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp
@@ -2855,6 +2867,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -3012,6 +3025,11 @@ CMakeFiles/BlackEngineProject.dir/src/Components/EntityManager.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp
@@ -3370,6 +3388,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -3529,6 +3548,11 @@ CMakeFiles/BlackEngineProject.dir/src/Components/RigidBodyComponent.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp
@@ -3927,6 +3951,7 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -4084,6 +4109,11 @@ CMakeFiles/BlackEngineProject.dir/src/Components/SpriteComponent.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp
@@ -4956,6 +4986,7 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -5116,6 +5147,11 @@ CMakeFiles/BlackEngineProject.dir/src/ContactEventManager.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio/AudioResource.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio/Export.hpp
@@ -6085,6 +6121,7 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -6242,6 +6279,11 @@ CMakeFiles/BlackEngineProject.dir/src/FlipSprite.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp
@@ -6604,6 +6646,7 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -6761,6 +6804,11 @@ CMakeFiles/BlackEngineProject.dir/src/GUI/Button.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Config.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp
@@ -7636,6 +7684,7 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdbool.h
@@ -7830,6 +7879,16 @@ CMakeFiles/BlackEngineProject.dir/src/Game.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdbool.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/algorithm
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/gsl
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/narrow
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/pointers
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/string_span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio/AudioResource.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio/Export.hpp
@@ -8792,6 +8851,7 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/span
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
@@ -8953,6 +9013,11 @@ CMakeFiles/BlackEngineProject.dir/src/Movement.cc.o
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/assert
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/byte
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/span_ext
+ /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src/include/gsl/util
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio/AudioResource.hpp
  /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src/include/SFML/Audio/Export.hpp

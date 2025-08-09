@@ -39,11 +39,12 @@ find_package(PkgConfig REQUIRED)
 
 # Vendor SFML 3 (drops OpenAL requirement; uses miniaudio internally)
 include(FetchContent)
-FetchContent_Declare(
-  SFML
-  GIT_REPOSITORY https://github.com/SFML/SFML.git
-  GIT_TAG 3.0.1
-)
+FetchContent_Declare(SFML
+    GIT_REPOSITORY https://github.com/SFML/SFML.git
+    GIT_TAG 3.0.1
+    GIT_SHALLOW ON
+    EXCLUDE_FROM_ALL
+    SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
 # Box2D via CMake

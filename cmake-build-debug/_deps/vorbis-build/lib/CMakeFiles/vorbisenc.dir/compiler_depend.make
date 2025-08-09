@@ -118,10 +118,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/vorbisenc.c.o: _deps/vorbis-src/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
-  _deps/vorbis-src/include/vorbis/codec.h \
-  _deps/vorbis-src/include/vorbis/vorbisenc.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
   _deps/vorbis-src/lib/books/coupled/res_books_51.h \
@@ -155,8 +151,16 @@ _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/vorbisenc.c.o: _deps/vorbis-src/
   _deps/vorbis-src/lib/modes/setup_X.h \
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/psy.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h \
+  /usr/local/include/vorbis/codec.h \
+  /usr/local/include/vorbis/vorbisenc.h
 
+
+/usr/local/include/ogg/os_types.h:
+
+/usr/local/include/ogg/ogg.h:
 
 _deps/vorbis-src/lib/smallft.h:
 
@@ -165,6 +169,8 @@ _deps/vorbis-src/lib/modes/setup_44p51.h:
 _deps/vorbis-src/lib/modes/setup_44.h:
 
 _deps/vorbis-src/lib/modes/setup_22.h:
+
+_deps/vorbis-src/lib/modes/setup_16.h:
 
 _deps/vorbis-src/lib/modes/setup_11.h:
 
@@ -201,12 +207,6 @@ _deps/vorbis-src/lib/books/coupled/res_books_stereo.h:
 _deps/vorbis-src/lib/books/coupled/res_books_51.h:
 
 _deps/vorbis-src/lib/bitrate.h:
-
-_deps/vorbis-src/include/vorbis/vorbisenc.h:
-
-_deps/vorbis-src/lib/modes/setup_16.h:
-
-_deps/ogg-src/include/ogg/ogg.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h:
 
@@ -280,6 +280,8 @@ _deps/vorbis-src/lib/modes/residue_44p51.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h:
 
+/usr/local/include/vorbis/vorbisenc.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/endian.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h:
@@ -313,8 +315,6 @@ _deps/vorbis-src/lib/modes/psych_11.h:
 _deps/vorbis-src/lib/modes/setup_X.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_clock_t.h:
-
-_deps/ogg-src/include/ogg/os_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h:
 
@@ -414,6 +414,8 @@ _deps/vorbis-src/lib/mdct.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h:
 
+/usr/local/include/vorbis/codec.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h:
@@ -431,8 +433,6 @@ _deps/vorbis-src/lib/vorbisenc.c:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h:
-
-_deps/vorbis-src/include/vorbis/codec.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/i386/_OSByteOrder.h:
 

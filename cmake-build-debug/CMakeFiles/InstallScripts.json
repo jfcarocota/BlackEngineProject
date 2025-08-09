@@ -16,7 +16,9 @@
 		"/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-build/src/libFLAC/cmake_install.cmake",
 		"/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-build/microbench/cmake_install.cmake",
 		"/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-build/cmake_install.cmake",
-		"/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-build/lib/cmake_install.cmake"
+		"/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-build/lib/cmake_install.cmake",
+		"/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-build/cmake_install.cmake",
+		"/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-build/include/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

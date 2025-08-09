@@ -2624,8 +2624,8 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_decoder_aspect.c.o: _deps/f
   _deps/flac-src/src/libFLAC/include/private/macros.h \
   _deps/flac-src/src/libFLAC/include/private/ogg_decoder_aspect.h \
   _deps/flac-src/src/libFLAC/include/private/ogg_mapping.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_encoder_aspect.c.o: _deps/flac-src/src/libFLAC/ogg_encoder_aspect.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2736,8 +2736,8 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_encoder_aspect.c.o: _deps/f
   _deps/flac-src/include/FLAC/stream_encoder.h \
   _deps/flac-src/src/libFLAC/include/private/ogg_encoder_aspect.h \
   _deps/flac-src/src/libFLAC/include/private/ogg_mapping.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_helper.c.o: _deps/flac-src/src/libFLAC/ogg_helper.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2890,8 +2890,8 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_helper.c.o: _deps/flac-src/
   _deps/flac-src/src/libFLAC/include/private/ogg_encoder_aspect.h \
   _deps/flac-src/src/libFLAC/include/private/ogg_helper.h \
   _deps/flac-src/src/libFLAC/include/protected/stream_encoder.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/ogg_mapping.c.o: _deps/flac-src/src/libFLAC/ogg_mapping.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
@@ -3092,8 +3092,8 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/stream_decoder.c.o: _deps/flac-
   _deps/flac-src/src/libFLAC/include/private/memory.h \
   _deps/flac-src/src/libFLAC/include/private/ogg_decoder_aspect.h \
   _deps/flac-src/src/libFLAC/include/protected/stream_decoder.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/stream_encoder.c.o: _deps/flac-src/src/libFLAC/stream_encoder.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -3265,8 +3265,8 @@ _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/stream_encoder.c.o: _deps/flac-
   _deps/flac-src/src/libFLAC/include/private/stream_encoder_framing.h \
   _deps/flac-src/src/libFLAC/include/private/window.h \
   _deps/flac-src/src/libFLAC/include/protected/stream_encoder.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/stream_encoder_framing.c.o: _deps/flac-src/src/libFLAC/stream_encoder_framing.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -3923,6 +3923,8 @@ _deps/flac-src/src/libFLAC/include/private/ogg_encoder_aspect.h:
 
 _deps/flac-src/include/FLAC/stream_encoder.h:
 
+/usr/local/include/ogg/ogg.h:
+
 _deps/flac-src/src/libFLAC/include/private/ogg_mapping.h:
 
 _deps/flac-src/src/libFLAC/include/private/ogg_decoder_aspect.h:
@@ -4131,8 +4133,6 @@ _deps/flac-src/src/libFLAC/ogg_decoder_aspect.c:
 
 _deps/flac-src/src/libFLAC/lpc_intrin_fma.c:
 
-_deps/ogg-src/include/ogg/os_types.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uid_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigaltstack.h:
@@ -4200,8 +4200,6 @@ _deps/flac-src/src/libFLAC/lpc_intrin_neon.c:
 _deps/flac-src/src/libFLAC/deduplication/lpc_compute_autocorrelation_intrin.c:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h:
-
-_deps/ogg-src/include/ogg/ogg.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h:
 
@@ -4348,6 +4346,8 @@ _deps/flac-src/src/libFLAC/include/protected/stream_decoder.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h:
+
+/usr/local/include/ogg/os_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h:
 

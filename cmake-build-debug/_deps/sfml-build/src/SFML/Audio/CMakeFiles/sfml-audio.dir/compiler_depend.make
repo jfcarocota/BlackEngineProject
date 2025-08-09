@@ -5436,13 +5436,6 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileFactory.cpp.o
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdbool.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  _deps/flac-src/include/FLAC/export.h \
-  _deps/flac-src/include/FLAC/format.h \
-  _deps/flac-src/include/FLAC/ordinals.h \
-  _deps/flac-src/include/FLAC/stream_decoder.h \
-  _deps/flac-src/include/FLAC/stream_encoder.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/sfml-src/extlibs/headers/miniaudio/miniaudio.h \
   _deps/sfml-src/extlibs/headers/minimp3/minimp3.h \
   _deps/sfml-src/extlibs/headers/minimp3/minimp3_ex.h \
@@ -5466,9 +5459,16 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileFactory.cpp.o
   _deps/sfml-src/src/SFML/Audio/SoundFileWriterOgg.hpp \
   _deps/sfml-src/src/SFML/Audio/SoundFileWriterWav.hpp \
   _deps/sfml-src/src/SFML/System/Utils.hpp \
-  _deps/vorbis-src/include/vorbis/codec.h \
-  _deps/vorbis-src/include/vorbis/vorbisenc.h \
-  _deps/vorbis-src/include/vorbis/vorbisfile.h
+  /usr/local/include/FLAC/export.h \
+  /usr/local/include/FLAC/format.h \
+  /usr/local/include/FLAC/ordinals.h \
+  /usr/local/include/FLAC/stream_decoder.h \
+  /usr/local/include/FLAC/stream_encoder.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h \
+  /usr/local/include/vorbis/codec.h \
+  /usr/local/include/vorbis/vorbisenc.h \
+  /usr/local/include/vorbis/vorbisfile.h
 
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderFlac.cpp.o: _deps/sfml-src/src/SFML/Audio/SoundFileReaderFlac.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -5888,10 +5888,6 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderFlac.cp
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdbool.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  _deps/flac-src/include/FLAC/export.h \
-  _deps/flac-src/include/FLAC/format.h \
-  _deps/flac-src/include/FLAC/ordinals.h \
-  _deps/flac-src/include/FLAC/stream_decoder.h \
   _deps/sfml-src/include/SFML/Audio/Export.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp \
@@ -5899,7 +5895,11 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderFlac.cp
   _deps/sfml-src/include/SFML/System/Err.hpp \
   _deps/sfml-src/include/SFML/System/Export.hpp \
   _deps/sfml-src/include/SFML/System/InputStream.hpp \
-  _deps/sfml-src/src/SFML/Audio/SoundFileReaderFlac.hpp
+  _deps/sfml-src/src/SFML/Audio/SoundFileReaderFlac.hpp \
+  /usr/local/include/FLAC/export.h \
+  /usr/local/include/FLAC/format.h \
+  /usr/local/include/FLAC/ordinals.h \
+  /usr/local/include/FLAC/stream_decoder.h
 
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderMp3.cpp.o: _deps/sfml-src/src/SFML/Audio/SoundFileReaderMp3.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -6825,8 +6825,6 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderOgg.cpp
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/sfml-src/include/SFML/Audio/Export.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundFileReader.hpp \
@@ -6835,8 +6833,10 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderOgg.cpp
   _deps/sfml-src/include/SFML/System/Export.hpp \
   _deps/sfml-src/include/SFML/System/InputStream.hpp \
   _deps/sfml-src/src/SFML/Audio/SoundFileReaderOgg.hpp \
-  _deps/vorbis-src/include/vorbis/codec.h \
-  _deps/vorbis-src/include/vorbis/vorbisfile.h
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h \
+  /usr/local/include/vorbis/codec.h \
+  /usr/local/include/vorbis/vorbisfile.h
 
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileReaderWav.cpp.o: _deps/sfml-src/src/SFML/Audio/SoundFileReaderWav.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -7698,11 +7698,6 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileWriterFlac.cp
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdbool.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  _deps/flac-src/include/FLAC/export.h \
-  _deps/flac-src/include/FLAC/format.h \
-  _deps/flac-src/include/FLAC/ordinals.h \
-  _deps/flac-src/include/FLAC/stream_decoder.h \
-  _deps/flac-src/include/FLAC/stream_encoder.h \
   _deps/sfml-src/include/SFML/Audio/Export.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
@@ -7710,7 +7705,12 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileWriterFlac.cp
   _deps/sfml-src/include/SFML/System/Err.hpp \
   _deps/sfml-src/include/SFML/System/Export.hpp \
   _deps/sfml-src/src/SFML/Audio/SoundFileWriterFlac.hpp \
-  _deps/sfml-src/src/SFML/System/Utils.hpp
+  _deps/sfml-src/src/SFML/System/Utils.hpp \
+  /usr/local/include/FLAC/export.h \
+  /usr/local/include/FLAC/format.h \
+  /usr/local/include/FLAC/ordinals.h \
+  /usr/local/include/FLAC/stream_decoder.h \
+  /usr/local/include/FLAC/stream_encoder.h
 
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileWriterOgg.cpp.o: _deps/sfml-src/src/SFML/Audio/SoundFileWriterOgg.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -8139,8 +8139,6 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileWriterOgg.cpp
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/sfml-src/include/SFML/Audio/Export.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundChannel.hpp \
   _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp \
@@ -8149,8 +8147,10 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileWriterOgg.cpp
   _deps/sfml-src/include/SFML/System/Export.hpp \
   _deps/sfml-src/src/SFML/Audio/SoundFileWriterOgg.hpp \
   _deps/sfml-src/src/SFML/System/Utils.hpp \
-  _deps/vorbis-src/include/vorbis/codec.h \
-  _deps/vorbis-src/include/vorbis/vorbisenc.h
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h \
+  /usr/local/include/vorbis/codec.h \
+  /usr/local/include/vorbis/vorbisenc.h
 
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundFileWriterWav.cpp.o: _deps/sfml-src/src/SFML/Audio/SoundFileWriterWav.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -9813,6 +9813,8 @@ _deps/sfml-src/src/SFML/Audio/SoundRecorder.cpp:
 
 _deps/sfml-src/src/SFML/Audio/SoundFileWriterWav.cpp:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random:
+
 _deps/sfml-src/src/SFML/Audio/SoundFileReaderOgg.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xtestintrin.h:
@@ -9849,8 +9851,6 @@ _deps/sfml-src/src/SFML/Audio/SoundFileReaderOgg.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/movdirintrin.h:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/immintrin.h:
-
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/hresetintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/fxsrintrin.h:
@@ -9861,15 +9861,11 @@ _deps/sfml-src/src/SFML/Audio/SoundFileReaderOgg.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/clwbintrin.h:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/clflushoptintrin.h:
-
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/cldemoteintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/vpclmulqdqintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/cetintrin.h:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/bmiintrin.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/avx512vpopcntdqvlintrin.h:
 
@@ -9903,9 +9899,23 @@ _deps/sfml-src/src/SFML/Audio/SoundFileReaderMp3.cpp:
 
 _deps/sfml-src/src/SFML/Audio/SoundFileReaderFlac.cpp:
 
-_deps/vorbis-src/include/vorbis/vorbisfile.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/bmiintrin.h:
 
-_deps/vorbis-src/include/vorbis/codec.h:
+/usr/local/include/vorbis/vorbisfile.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/immintrin.h:
+
+/usr/local/include/vorbis/vorbisenc.h:
+
+/usr/local/include/FLAC/stream_encoder.h:
+
+/usr/local/include/FLAC/stream_decoder.h:
+
+/usr/local/include/FLAC/ordinals.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/clflushoptintrin.h:
+
+/usr/local/include/FLAC/format.h:
 
 _deps/sfml-src/src/SFML/Audio/SoundFileWriterFlac.hpp:
 
@@ -9914,22 +9924,6 @@ _deps/sfml-src/src/SFML/Audio/SoundFileReaderMp3.hpp:
 _deps/sfml-src/extlibs/headers/minimp3/minimp3_ex.h:
 
 _deps/sfml-src/extlibs/headers/minimp3/minimp3.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random:
-
-_deps/ogg-src/include/ogg/os_types.h:
-
-_deps/ogg-src/include/ogg/ogg.h:
-
-_deps/flac-src/include/FLAC/stream_encoder.h:
-
-_deps/flac-src/include/FLAC/stream_decoder.h:
-
-_deps/flac-src/include/FLAC/ordinals.h:
-
-_deps/flac-src/include/FLAC/format.h:
-
-_deps/flac-src/include/FLAC/export.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream:
 
@@ -9956,8 +9950,6 @@ _deps/sfml-src/include/SFML/Audio/SoundSource.hpp:
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdbool.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/ptrauth.h:
-
-_deps/vorbis-src/include/vorbis/vorbisenc.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/float.h:
 
@@ -10073,6 +10065,8 @@ _deps/sfml-src/src/SFML/Audio/SoundFileFactory.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFMachPort.h:
 
+/usr/local/include/FLAC/export.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFLocale.h:
 
 _deps/sfml-src/include/SFML/Audio/SoundFileWriter.hpp:
@@ -10142,6 +10136,8 @@ _deps/sfml-src/src/SFML/Audio/SoundBufferRecorder.cpp:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioHardwareService.h:
+
+/usr/local/include/ogg/ogg.h:
 
 _deps/sfml-src/src/SFML/Audio/MiniaudioUtils.cpp:
 
@@ -10853,6 +10849,8 @@ _deps/sfml-src/src/SFML/Audio/AudioDevice.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/unwrap_iter.h:
 
+/usr/local/include/vorbis/codec.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit_reference:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/equal_range.h:
@@ -11152,6 +11150,8 @@ _deps/sfml-src/src/SFML/Audio/SoundBuffer.cpp:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_n.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/raw_storage_iterator.h:
+
+/usr/local/include/ogg/os_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBundle.h:
 

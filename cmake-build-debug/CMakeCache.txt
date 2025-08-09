@@ -191,7 +191,7 @@ CMAKE_NM:FILEPATH=/usr/bin/nm
 CMAKE_OBJCOPY:FILEPATH=CMAKE_OBJCOPY-NOTFOUND
 
 //OBJCXX compiler
-CMAKE_OBJCXX_COMPILER:FILEPATH=/usr/bin/clang++
+CMAKE_OBJCXX_COMPILER:FILEPATH=/usr/bin/c++
 
 //Flags used by the Objective-C++ compiler during all build types.
 CMAKE_OBJCXX_FLAGS:STRING=
@@ -411,6 +411,10 @@ FETCHCONTENT_SOURCE_DIR_FLAC:PATH=
 FETCHCONTENT_SOURCE_DIR_FREETYPE:PATH=
 
 //When not empty, overrides where to find pre-populated content
+// for GSL
+FETCHCONTENT_SOURCE_DIR_GSL:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for ogg
 FETCHCONTENT_SOURCE_DIR_OGG:PATH=
 
@@ -430,6 +434,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_FLAC:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of Freetype
 FETCHCONTENT_UPDATES_DISCONNECTED_FREETYPE:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of GSL
+FETCHCONTENT_UPDATES_DISCONNECTED_GSL:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of ogg
 FETCHCONTENT_UPDATES_DISCONNECTED_OGG:BOOL=OFF
@@ -454,6 +461,21 @@ FLAC_SOURCE_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmak
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/local/bin/git
+
+//Value Computed by CMake
+GSL_BINARY_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-build
+
+//Generate and install GSL target
+GSL_INSTALL:BOOL=OFF
+
+//Value Computed by CMake
+GSL_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+GSL_SOURCE_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/gsl-src
+
+//Build and perform GSL tests
+GSL_TEST:BOOL=OFF
 
 //Path to a program.
 HAVE_GIT:FILEPATH=/usr/local/bin/git
@@ -587,21 +609,6 @@ libogg_SOURCE_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cm
 
 //Path to a library.
 pkgcfg_lib_JSONCPP_jsoncpp:FILEPATH=/usr/local/Cellar/jsoncpp/1.9.6/lib/libjsoncpp.dylib
-
-//Path to a library.
-pkgcfg_lib_SFML_AUDIO_sfml-audio:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-audio.dylib
-
-//Path to a library.
-pkgcfg_lib_SFML_AUDIO_sfml-system:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-system.dylib
-
-//Path to a library.
-pkgcfg_lib_SFML_sfml-graphics:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-graphics.dylib
-
-//Path to a library.
-pkgcfg_lib_SFML_sfml-system:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-system.dylib
-
-//Path to a library.
-pkgcfg_lib_SFML_sfml-window:FILEPATH=/usr/local/Cellar/sfml/2.6.0/lib/libsfml-window.dylib
 
 //Value Computed by CMake
 vorbis_BINARY_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/vorbis-build
@@ -756,7 +763,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=16
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=18
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCXX_COMPILER
@@ -879,6 +886,8 @@ FLAC__HAS_NEONINTRIN:INTERNAL=
 FLAC__HAS_X86INTRIN:INTERNAL=1
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
+//Native visualizers are Visual Studio extension
+GSL_VS_ADD_NATIVE_VISUALIZERS:INTERNAL=FALSE
 //Test HAVE_ASSOC_MATH
 HAVE_ASSOC_MATH:INTERNAL=1
 //Test HAVE_BSWAP16
@@ -1022,87 +1031,6 @@ OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-SFML_AUDIO_CFLAGS:INTERNAL=-I/usr/local/Cellar/sfml/2.6.0/include;-I/usr/local/include;-I/usr/local/include/AL;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/flac/1.4.3/include;-I/usr/local/Cellar/libogg/1.3.5/include
-SFML_AUDIO_CFLAGS_I:INTERNAL=
-SFML_AUDIO_CFLAGS_OTHER:INTERNAL=
-SFML_AUDIO_FOUND:INTERNAL=1
-SFML_AUDIO_INCLUDEDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include
-SFML_AUDIO_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include;/usr/local/include;/usr/local/include/AL;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/flac/1.4.3/include;/usr/local/Cellar/libogg/1.3.5/include
-SFML_AUDIO_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sfml/2.6.0/lib;-lsfml-audio;-lsfml-system
-SFML_AUDIO_LDFLAGS_OTHER:INTERNAL=
-SFML_AUDIO_LIBDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
-SFML_AUDIO_LIBRARIES:INTERNAL=sfml-audio;sfml-system
-SFML_AUDIO_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
-SFML_AUDIO_LIBS:INTERNAL=
-SFML_AUDIO_LIBS_L:INTERNAL=
-SFML_AUDIO_LIBS_OTHER:INTERNAL=
-SFML_AUDIO_LIBS_PATHS:INTERNAL=
-SFML_AUDIO_MODULE_NAME:INTERNAL=sfml-audio
-SFML_AUDIO_PREFIX:INTERNAL=/usr/local/Cellar/sfml/2.6.0
-SFML_AUDIO_STATIC_CFLAGS:INTERNAL=-I/usr/local/Cellar/sfml/2.6.0/include;-I/usr/local/include;-I/usr/local/include/AL;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/flac/1.4.3/include;-I/usr/local/Cellar/libogg/1.3.5/include
-SFML_AUDIO_STATIC_CFLAGS_I:INTERNAL=
-SFML_AUDIO_STATIC_CFLAGS_OTHER:INTERNAL=
-SFML_AUDIO_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include;/usr/local/include;/usr/local/include/AL;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/flac/1.4.3/include;/usr/local/Cellar/libogg/1.3.5/include
-SFML_AUDIO_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sfml/2.6.0/lib;-lsfml-audio;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenAL.framework;-lsfml-system;-L/usr/local/lib;-lopenal;-L/usr/local/Cellar/libvorbis/1.3.7/lib;-lvorbisenc;-lvorbisfile;-lvorbis;-lm;-L/usr/local/Cellar/flac/1.4.3/lib;-lFLAC;-lm;-L/usr/local/Cellar/libogg/1.3.5/lib;-logg
-SFML_AUDIO_STATIC_LDFLAGS_OTHER:INTERNAL=/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenAL.framework
-SFML_AUDIO_STATIC_LIBDIR:INTERNAL=
-SFML_AUDIO_STATIC_LIBRARIES:INTERNAL=sfml-audio;sfml-system;openal;vorbisenc;vorbisfile;vorbis;m;FLAC;m;ogg
-SFML_AUDIO_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib;/usr/local/lib;/usr/local/Cellar/libvorbis/1.3.7/lib;/usr/local/Cellar/flac/1.4.3/lib;/usr/local/Cellar/libogg/1.3.5/lib
-SFML_AUDIO_STATIC_LIBS:INTERNAL=
-SFML_AUDIO_STATIC_LIBS_L:INTERNAL=
-SFML_AUDIO_STATIC_LIBS_OTHER:INTERNAL=
-SFML_AUDIO_STATIC_LIBS_PATHS:INTERNAL=
-SFML_AUDIO_VERSION:INTERNAL=2.6.0
-SFML_AUDIO_sfml-audio_INCLUDEDIR:INTERNAL=
-SFML_AUDIO_sfml-audio_LIBDIR:INTERNAL=
-SFML_AUDIO_sfml-audio_PREFIX:INTERNAL=
-SFML_AUDIO_sfml-audio_VERSION:INTERNAL=
-SFML_CFLAGS:INTERNAL=-I/usr/local/Cellar/sfml/2.6.0/include;-I/usr/local/opt/freetype/include/freetype2;-I/usr/local/opt/libpng/include/libpng16
-SFML_CFLAGS_I:INTERNAL=
-SFML_CFLAGS_OTHER:INTERNAL=
-SFML_FOUND:INTERNAL=1
-SFML_INCLUDEDIR:INTERNAL=
-SFML_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include;/usr/local/opt/freetype/include/freetype2;/usr/local/opt/libpng/include/libpng16
-SFML_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sfml/2.6.0/lib;-lsfml-graphics;-lsfml-window;-lsfml-system
-SFML_LDFLAGS_OTHER:INTERNAL=
-SFML_LIBDIR:INTERNAL=
-SFML_LIBRARIES:INTERNAL=sfml-graphics;sfml-window;sfml-system
-SFML_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
-SFML_LIBS:INTERNAL=
-SFML_LIBS_L:INTERNAL=
-SFML_LIBS_OTHER:INTERNAL=
-SFML_LIBS_PATHS:INTERNAL=
-SFML_MODULE_NAME:INTERNAL=
-SFML_PREFIX:INTERNAL=
-SFML_STATIC_CFLAGS:INTERNAL=-I/usr/local/Cellar/sfml/2.6.0/include;-I/usr/local/opt/freetype/include/freetype2;-I/usr/local/opt/libpng/include/libpng16
-SFML_STATIC_CFLAGS_I:INTERNAL=
-SFML_STATIC_CFLAGS_OTHER:INTERNAL=
-SFML_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include;/usr/local/opt/freetype/include/freetype2;/usr/local/opt/libpng/include/libpng16
-SFML_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sfml/2.6.0/lib;-lsfml-graphics;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework;-lsfml-window;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework;-lsfml-system;-L/usr/local/opt/freetype/lib;-lfreetype;-lbz2;-L/usr/local/opt/libpng/lib;-lpng16;-L/usr/lib;-lz
-SFML_STATIC_LDFLAGS_OTHER:INTERNAL=/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks/OpenGL.framework
-SFML_STATIC_LIBDIR:INTERNAL=
-SFML_STATIC_LIBRARIES:INTERNAL=sfml-graphics;sfml-window;sfml-system;freetype;bz2;png16;z
-SFML_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib;/usr/local/opt/freetype/lib;/usr/local/opt/libpng/lib;/usr/lib
-SFML_STATIC_LIBS:INTERNAL=
-SFML_STATIC_LIBS_L:INTERNAL=
-SFML_STATIC_LIBS_OTHER:INTERNAL=
-SFML_STATIC_LIBS_PATHS:INTERNAL=
-SFML_VERSION:INTERNAL=
-SFML_sfml-graphics_INCLUDEDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include
-SFML_sfml-graphics_LIBDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
-SFML_sfml-graphics_MODULE_NAME:INTERNAL=sfml-graphics
-SFML_sfml-graphics_PREFIX:INTERNAL=/usr/local/Cellar/sfml/2.6.0
-SFML_sfml-graphics_VERSION:INTERNAL=2.6.0
-SFML_sfml-system_INCLUDEDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include
-SFML_sfml-system_LIBDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
-SFML_sfml-system_MODULE_NAME:INTERNAL=sfml-system
-SFML_sfml-system_PREFIX:INTERNAL=/usr/local/Cellar/sfml/2.6.0
-SFML_sfml-system_VERSION:INTERNAL=2.6.0
-SFML_sfml-window_INCLUDEDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/include
-SFML_sfml-window_LIBDIR:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
-SFML_sfml-window_MODULE_NAME:INTERNAL=sfml-window
-SFML_sfml-window_PREFIX:INTERNAL=/usr/local/Cellar/sfml/2.6.0
-SFML_sfml-window_VERSION:INTERNAL=2.6.0
 //CHECK_TYPE_SIZE: sizeof(short)
 SHORT_SIZE:INTERNAL=2
 //CHECK_TYPE_SIZE: sizeof(uint16_t)
@@ -1116,22 +1044,8 @@ U_INT32_SIZE:INTERNAL=4
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 __pkg_config_arguments_JSONCPP:INTERNAL=REQUIRED;jsoncpp
-__pkg_config_arguments_SFML:INTERNAL=REQUIRED;sfml-system;sfml-window;sfml-graphics
-__pkg_config_arguments_SFML_AUDIO:INTERNAL=sfml-audio
 __pkg_config_checked_JSONCPP:INTERNAL=1
-__pkg_config_checked_SFML:INTERNAL=1
-__pkg_config_checked_SFML_AUDIO:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_JSONCPP_jsoncpp
 pkgcfg_lib_JSONCPP_jsoncpp-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_SFML_AUDIO_sfml-audio
-pkgcfg_lib_SFML_AUDIO_sfml-audio-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_SFML_AUDIO_sfml-system
-pkgcfg_lib_SFML_AUDIO_sfml-system-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_SFML_sfml-graphics
-pkgcfg_lib_SFML_sfml-graphics-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_SFML_sfml-system
-pkgcfg_lib_SFML_sfml-system-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_SFML_sfml-window
-pkgcfg_lib_SFML_sfml-window-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/usr/local/Cellar/sfml/2.6.0/lib
+prefix_result:INTERNAL=/usr/local/Cellar/jsoncpp/1.9.6/lib
 

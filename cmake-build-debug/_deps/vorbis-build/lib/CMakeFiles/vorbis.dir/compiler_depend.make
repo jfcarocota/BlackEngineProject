@@ -124,8 +124,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/analysis.c.o: _deps/vorbis-src/lib/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -139,7 +137,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/analysis.c.o: _deps/vorbis-src/lib/
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
   _deps/vorbis-src/lib/scales.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/bitrate.c.o: _deps/vorbis-src/lib/bitrate.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -258,8 +258,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/bitrate.c.o: _deps/vorbis-src/lib/b
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -271,7 +269,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/bitrate.c.o: _deps/vorbis-src/lib/b
   _deps/vorbis-src/lib/misc.h \
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/psy.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/block.c.o: _deps/vorbis-src/lib/block.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -396,8 +396,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/block.c.o: _deps/vorbis-src/lib/blo
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -412,7 +410,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/block.c.o: _deps/vorbis-src/lib/blo
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
   _deps/vorbis-src/lib/smallft.h \
-  _deps/vorbis-src/lib/window.h
+  _deps/vorbis-src/lib/window.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/codebook.c.o: _deps/vorbis-src/lib/codebook.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -531,13 +531,13 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/codebook.c.o: _deps/vorbis-src/lib/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/codebook.h \
   _deps/vorbis-src/lib/misc.h \
   _deps/vorbis-src/lib/os.h \
-  _deps/vorbis-src/lib/scales.h
+  _deps/vorbis-src/lib/scales.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/envelope.c.o: _deps/vorbis-src/lib/envelope.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -662,8 +662,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/envelope.c.o: _deps/vorbis-src/lib/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -676,7 +674,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/envelope.c.o: _deps/vorbis-src/lib/
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/scales.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/floor0.c.o: _deps/vorbis-src/lib/floor0.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -801,8 +801,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/floor0.c.o: _deps/vorbis-src/lib/fl
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -818,7 +816,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/floor0.c.o: _deps/vorbis-src/lib/fl
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
   _deps/vorbis-src/lib/scales.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/floor1.c.o: _deps/vorbis-src/lib/floor1.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -943,8 +943,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/floor1.c.o: _deps/vorbis-src/lib/fl
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -958,7 +956,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/floor1.c.o: _deps/vorbis-src/lib/fl
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
   _deps/vorbis-src/lib/scales.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/info.c.o: _deps/vorbis-src/lib/info.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1077,8 +1077,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/info.c.o: _deps/vorbis-src/lib/info
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -1092,7 +1090,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/info.c.o: _deps/vorbis-src/lib/info
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
   _deps/vorbis-src/lib/smallft.h \
-  _deps/vorbis-src/lib/window.h
+  _deps/vorbis-src/lib/window.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lookup.c.o: _deps/vorbis-src/lib/lookup.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1206,13 +1206,13 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lookup.c.o: _deps/vorbis-src/lib/lo
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/lookup.h \
   _deps/vorbis-src/lib/lookup_data.h \
   _deps/vorbis-src/lib/misc.h \
-  _deps/vorbis-src/lib/os.h
+  _deps/vorbis-src/lib/os.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lpc.c.o: _deps/vorbis-src/lib/lpc.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1331,14 +1331,14 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lpc.c.o: _deps/vorbis-src/lib/lpc.c
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/lpc.h \
   _deps/vorbis-src/lib/misc.h \
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/scales.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lsp.c.o: _deps/vorbis-src/lib/lsp.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1457,14 +1457,14 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/lsp.c.o: _deps/vorbis-src/lib/lsp.c
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/lookup.h \
   _deps/vorbis-src/lib/lsp.h \
   _deps/vorbis-src/lib/misc.h \
   _deps/vorbis-src/lib/os.h \
-  _deps/vorbis-src/lib/scales.h
+  _deps/vorbis-src/lib/scales.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/mapping0.c.o: _deps/vorbis-src/lib/mapping0.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1589,8 +1589,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/mapping0.c.o: _deps/vorbis-src/lib/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -1607,7 +1605,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/mapping0.c.o: _deps/vorbis-src/lib/
   _deps/vorbis-src/lib/registry.h \
   _deps/vorbis-src/lib/scales.h \
   _deps/vorbis-src/lib/smallft.h \
-  _deps/vorbis-src/lib/window.h
+  _deps/vorbis-src/lib/window.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/mdct.c.o: _deps/vorbis-src/lib/mdct.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1732,12 +1732,12 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/mdct.c.o: _deps/vorbis-src/lib/mdct
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/mdct.h \
   _deps/vorbis-src/lib/misc.h \
-  _deps/vorbis-src/lib/os.h
+  _deps/vorbis-src/lib/os.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/psy.c.o: _deps/vorbis-src/lib/psy.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1862,8 +1862,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/psy.c.o: _deps/vorbis-src/lib/psy.c
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -1878,7 +1876,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/psy.c.o: _deps/vorbis-src/lib/psy.c
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/scales.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/registry.c.o: _deps/vorbis-src/lib/registry.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1992,8 +1992,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/registry.c.o: _deps/vorbis-src/lib/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -2006,7 +2004,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/registry.c.o: _deps/vorbis-src/lib/
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/res0.c.o: _deps/vorbis-src/lib/res0.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2125,8 +2125,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/res0.c.o: _deps/vorbis-src/lib/res0
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -2139,7 +2137,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/res0.c.o: _deps/vorbis-src/lib/res0
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/sharedbook.c.o: _deps/vorbis-src/lib/sharedbook.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2264,13 +2264,13 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/sharedbook.c.o: _deps/vorbis-src/li
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/codebook.h \
   _deps/vorbis-src/lib/misc.h \
   _deps/vorbis-src/lib/os.h \
-  _deps/vorbis-src/lib/scales.h
+  _deps/vorbis-src/lib/scales.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/smallft.c.o: _deps/vorbis-src/lib/smallft.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2389,12 +2389,12 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/smallft.c.o: _deps/vorbis-src/lib/s
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/misc.h \
   _deps/vorbis-src/lib/os.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/synthesis.c.o: _deps/vorbis-src/lib/synthesis.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2515,8 +2515,6 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/synthesis.c.o: _deps/vorbis-src/lib
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/backends.h \
   _deps/vorbis-src/lib/bitrate.h \
@@ -2529,7 +2527,9 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/synthesis.c.o: _deps/vorbis-src/lib
   _deps/vorbis-src/lib/os.h \
   _deps/vorbis-src/lib/psy.h \
   _deps/vorbis-src/lib/registry.h \
-  _deps/vorbis-src/lib/smallft.h
+  _deps/vorbis-src/lib/smallft.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/window.c.o: _deps/vorbis-src/lib/window.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2643,12 +2643,12 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/window.c.o: _deps/vorbis-src/lib/wi
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stdint.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/xmmintrin.h \
-  _deps/ogg-src/include/ogg/ogg.h \
-  _deps/ogg-src/include/ogg/os_types.h \
   _deps/vorbis-src/include/vorbis/codec.h \
   _deps/vorbis-src/lib/misc.h \
   _deps/vorbis-src/lib/os.h \
-  _deps/vorbis-src/lib/window.h
+  _deps/vorbis-src/lib/window.h \
+  /usr/local/include/ogg/ogg.h \
+  /usr/local/include/ogg/os_types.h
 
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h:
@@ -2679,6 +2679,8 @@ _deps/vorbis-src/lib/block.c:
 
 _deps/vorbis-src/lib/bitrate.c:
 
+/usr/local/include/ogg/ogg.h:
+
 _deps/vorbis-src/lib/smallft.h:
 
 _deps/vorbis-src/lib/scales.h:
@@ -2702,8 +2704,6 @@ _deps/vorbis-src/lib/codec_internal.h:
 _deps/vorbis-src/lib/codebook.h:
 
 _deps/vorbis-src/lib/bitrate.h:
-
-_deps/ogg-src/include/ogg/ogg.h:
 
 _deps/vorbis-src/lib/sharedbook.c:
 
@@ -2813,8 +2813,6 @@ _deps/vorbis-src/lib/lookup.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_clock_t.h:
 
-_deps/ogg-src/include/ogg/os_types.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h:
@@ -2858,6 +2856,8 @@ _deps/ogg-src/include/ogg/os_types.h:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_strings.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_time_t.h:
+
+/usr/local/include/ogg/os_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:
 
