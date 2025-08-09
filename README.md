@@ -8,7 +8,7 @@ A modern C++ game engine built with SFML, Box2D, and ImGui, featuring an Entity-
 - **Entity-Component System (ECS)**: Flexible and modular game object architecture
 - **2D Physics**: Box2D integration for realistic physics simulation
 - **Graphics**: SFML-based rendering with sprite management
-- **Audio**: SFML audio system (OpenAL bundled inside the macOS app)
+- **Audio**: SFML 3 audio (miniaudio backend, no OpenAL dependency)
 - **Input System**: Keyboard and mouse input handling
 - **Animation System**: JSON-based animation clips with frame-by-frame control
 - **Debug UI**: ImGui integration for real-time debugging and development tools
@@ -56,9 +56,8 @@ Entity
 
 ### Dependencies
 ```bash
-# Install required packages via Homebrew
-brew install sfml box2d jsoncpp
-# (OpenAL is bundled in the .app; no need to install system-wide)
+# Install required packages via Homebrew (SFML 3 is fetched automatically)
+brew install box2d jsoncpp
 ```
 
 ### Building the Project (dev executable)
@@ -83,7 +82,6 @@ make
 - A self-contained `.app` is generated at the project root: `BlackEngineProject.app`
   - Binary at `Contents/MacOS/BlackEngineProject-bin`
   - Assets at `Contents/Resources/assets`
-  - OpenAL at `Contents/Frameworks/libopenal.1.dylib`
 - You can double-click the app in Finder, or run:
 ```bash
 open ./BlackEngineProject.app
@@ -105,13 +103,6 @@ make
 ```
 BlackEngineProject/
 ├── assets/                 # Game assets (copied into build and .app)
-│   ├── animations/         # Animation JSON files
-│   ├── audio/              # Sound effects and music
-│   ├── fonts/              # Font files
-│   ├── GUI/                # UI textures
-│   ├── maps/               # Level data
-│   ├── sprites.png         # Sprite sheet
-│   └── tiles.png           # Tile textures
 ├── include/                # Header files
 ├── src/                    # Source files
 ├── third_party/            # External libraries
@@ -153,11 +144,11 @@ animator.PlayAnimation("walk");
 - **ESC**: Close ImGui debug windows
 
 ## 🔊 Audio
-- Uses SFML audio with OpenAL. The `.app` bundles `libopenal.1.dylib` so end-users do not need Homebrew.
-- In development, audio also works when running the app from Finder or Terminal.
+- SFML 3 audio uses miniaudio internally. No OpenAL or extra dylibs required.
+- Audio works when running from Terminal or Finder.
 
 ## 🧰 Troubleshooting
-- If the app shows missing assets when double-clicked: the app now sets its working directory to `Contents/Resources`; assets are copied there. Rebuild if assets changed.
+- If the app shows missing assets when double-clicked: the app sets its working directory to `Contents/Resources`; rebuild if assets changed.
 - If macOS blocks the app: remove quarantine (`xattr -dr com.apple.quarantine BlackEngineProject.app`).
 
 ## 🔐 Code Signing & Notarization (optional)
@@ -178,7 +169,9 @@ cmake -B cmake-build-debug -S . \
 cmake --build cmake-build-debug --target sign_app
 cmake --build cmake-build-debug --target notarize_app
 ```
-This will sign with hardened runtime and entitlements, submit to Apple Notary Service, and staple the ticket.
+
+## 📚 References
+- SFML 3 repository and docs: [SFML/SFML](https://github.com/SFML/SFML)
 
 ## 📝 License
 This project is open source. See LICENSE file for details.
