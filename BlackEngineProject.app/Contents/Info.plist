@@ -5,7 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>-bin</string>
+	<string>BlackEngineProject</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string>com.blackengine.project</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -18,13 +20,11 @@
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
-	<key>LSMinimumSystemVersion</key>
-	<string>10.15</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.games</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.15</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
-	<key>CFBundleIconFile</key>
-	<string></string>
 </dict>
 </plist>

@@ -34,13 +34,17 @@ add_executable(BlackEngineProject
   third_party/imgui/imgui_widgets.cpp
 )
 
-# Dependencies (use pkg-config for better compatibility)
+# Dependencies
 find_package(PkgConfig REQUIRED)
 
-# SFML via pkg-config (Homebrew version)
-pkg_check_modules(SFML REQUIRED sfml-system sfml-window sfml-graphics)
-# Try to find audio separately (optional)
-pkg_check_modules(SFML_AUDIO sfml-audio)
+# Vendor SFML 3 (drops OpenAL requirement; uses miniaudio internally)
+include(FetchContent)
+FetchContent_Declare(
+  SFML
+  GIT_REPOSITORY https://github.com/SFML/SFML.git
+  GIT_TAG 3.0.1
+)
+FetchContent_MakeAvailable(SFML)
 
 # Box2D via CMake
 find_package(box2d REQUIRED)
@@ -48,74 +52,45 @@ find_package(box2d REQUIRED)
 # JsonCpp via pkg-config
 pkg_check_modules(JSONCPP REQUIRED jsoncpp)
 
-# ImGui-SFML integration (direct compilation)
+# ImGui include path
 set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/imgui)
 
 target_include_directories(BlackEngineProject PRIVATE 
   ${CMAKE_CURRENT_SOURCE_DIR}/include
-  ${SFML_INCLUDE_DIRS}
   ${JSONCPP_INCLUDE_DIRS}
   ${IMGUI_DIR}
 )
 
 target_link_libraries(BlackEngineProject PRIVATE
-  ${SFML_LIBRARIES}
+  sfml-graphics
+  sfml-window
+  sfml-system
+  sfml-audio
   box2d::box2d
   ${JSONCPP_LIBRARIES}
 )
 
-# Add audio if available
-if(SFML_AUDIO_FOUND)
-  target_link_libraries(BlackEngineProject PRIVATE ${SFML_AUDIO_LIBRARIES})
-  target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
-endif()
+target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
 
-# On macOS, ensure rpath is used so the executable can find Homebrew-installed dylibs
+# On macOS, set rpath and bundle metadata
 if(APPLE)
   set(CMAKE_MACOSX_RPATH ON)
   set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
-  # Search both next to executable and in app Frameworks
   set_target_properties(BlackEngineProject PROPERTIES
     INSTALL_RPATH "@executable_path;@executable_path/../Frameworks"
   )
 
-  # Bundle metadata
+  # Bundle metadata / Info.plist
   set(BUNDLE_IDENTIFIER "com.blackengine.project")
   set(BUNDLE_ICON_FILE "AppIcon.icns")
   set(BUNDLE_ICON_SOURCE ${CMAKE_SOURCE_DIR}/assets/GUI/AppIcon.icns)
-  # If icon is missing, clear the icon file so Info.plist doesn't reference it
   if(NOT EXISTS ${BUNDLE_ICON_SOURCE})
     set(BUNDLE_ICON_FILE "")
   endif()
 
-  # Configure Info.plist
   configure_file(${CMAKE_SOURCE_DIR}/cmake/Info.plist.in
                  ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Info.plist
                  @ONLY)
-
-  # Try to locate an OpenAL dylib from common prefixes
-  set(OPENAL_CANDIDATES
-    /usr/local/lib/libopenal.1.dylib
-    /opt/homebrew/lib/libopenal.1.dylib
-  )
-  set(OPENAL_DYLIB "")
-  foreach(p ${OPENAL_CANDIDATES})
-    if(EXISTS ${p})
-      set(OPENAL_DYLIB ${p})
-      break()
-    endif()
-  endforeach()
-
-  # Bundle OpenAL inside the app bundle if found
-  if(OPENAL_DYLIB)
-    add_custom_command(TARGET BlackEngineProject POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E make_directory
-              ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Frameworks
-      COMMAND ${CMAKE_COMMAND} -E copy_if_different
-              ${OPENAL_DYLIB}
-              ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Frameworks/libopenal.1.dylib
-    )
-  endif()
 endif()
 
 # Copy assets to build directory for standalone executable
@@ -128,24 +103,20 @@ add_custom_command(TARGET BlackEngineProject POST_BUILD
 # Package into .app bundle: copy binary and assets
 if(APPLE)
   add_custom_command(TARGET BlackEngineProject POST_BUILD
-    # Ensure destination dirs exist
     COMMAND ${CMAKE_COMMAND} -E make_directory
             ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/MacOS
     COMMAND ${CMAKE_COMMAND} -E make_directory
             ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Resources
 
-    # Copy built binary into the app bundle (as BlackEngineProject-bin to keep script as launcher)
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
             $<TARGET_FILE:BlackEngineProject>
             ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/MacOS/BlackEngineProject-bin
 
-    # Copy assets into app Resources
     COMMAND ${CMAKE_COMMAND} -E copy_directory
             ${CMAKE_SOURCE_DIR}/assets
             ${CMAKE_SOURCE_DIR}/BlackEngineProject.app/Contents/Resources/assets
   )
 
-  # Copy icon only if present
   if(EXISTS ${BUNDLE_ICON_SOURCE})
     add_custom_command(TARGET BlackEngineProject POST_BUILD
       COMMAND ${CMAKE_COMMAND} -E copy_if_different
@@ -167,7 +138,7 @@ add_custom_target(package_app ALL
 )
 add_dependencies(package_app BlackEngineProject)
 
-# Signing and Notarization options
+# Signing / notarization targets
 option(MAC_SIGN "Code sign the app" OFF)
 set(MAC_IDENTITY "" CACHE STRING "Codesign identity (e.g., Developer ID Application: Your Name (TEAMID))")
 set(MAC_TEAM_ID "" CACHE STRING "Apple Developer Team ID")
@@ -178,7 +149,6 @@ set(MAC_BUNDLE_PATH ${CMAKE_SOURCE_DIR}/BlackEngineProject.app)
 set(MAC_ENTITLEMENTS ${CMAKE_SOURCE_DIR}/cmake/Entitlements.plist)
 
 if(APPLE)
-  # Codesign target
   add_custom_target(sign_app
     COMMAND /bin/sh -c "if [ \"${MAC_SIGN}\" = \"ON\" ] && [ -n \"${MAC_IDENTITY}\" ]; then \
       codesign --force --deep --options runtime --entitlements ${MAC_ENTITLEMENTS} --sign \"${MAC_IDENTITY}\" \"${MAC_BUNDLE_PATH}\"; \
@@ -189,7 +159,6 @@ if(APPLE)
     COMMENT "Code signing app bundle"
   )
 
-  # Notarization target (uploads for notarization; requires Xcode tools and credentials)
   add_custom_target(notarize_app
     COMMAND /bin/sh -c "if [ \"${MAC_NOTARIZE}\" = \"ON\" ] && [ -n \"${APPLE_ID}\" ] && [ -n \"${APPLE_ID_PASS}\" ]; then \
       xcrun notarytool submit \"${MAC_BUNDLE_PATH}\" --apple-id \"${APPLE_ID}\" --password \"${APPLE_ID_PASS}\" --team-id \"${MAC_TEAM_ID}\" --wait; \

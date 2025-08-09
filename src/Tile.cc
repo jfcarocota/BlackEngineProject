@@ -17,10 +17,10 @@ float posX, float posY, sf::RenderWindow*& window)
   if (!texture->loadFromFile(textureUrl)) {
     std::cerr << "Failed to load tile texture: " << textureUrl << std::endl;
   }
-  sprite = new sf::Sprite(*texture, sf::IntRect(column * width, row * height, width, height));
-  sprite->setPosition(posX, posY);
+  sprite = new sf::Sprite(*texture, sf::IntRect({column * width, row * height}, {width, height}));
+  sprite->setPosition(sf::Vector2f(posX, posY));
   sprite->setColor(sf::Color::White);
-  sprite->setScale(scale, scale);
+  sprite->setScale(sf::Vector2f(scale, scale));
 }
 
 Tile::~Tile()

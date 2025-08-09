@@ -33,7 +33,7 @@ void Button::Initialize()
   float height{transform.GetHeight()};
 
   rectangleShape = sf::RectangleShape();
-  rectangleShape.setPosition(posX, posY);
+  rectangleShape.setPosition(sf::Vector2f(posX, posY));
   rectangleShape.setSize(sf::Vector2f(width, height));
   rectangleShape.setFillColor(fillColor);
   rectangleShape.setOutlineColor(borderColor);

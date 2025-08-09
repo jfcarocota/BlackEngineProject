@@ -8,7 +8,6 @@ SpriteComponent::SpriteComponent(const char* textureUrl, unsigned int col, unsig
   this->col = col;
   this->row = row;
 
-  texture = sf::Texture();
   if (!texture.loadFromFile(textureUrl)) {
     std::cerr << "Failed to load texture: " << textureUrl << std::endl;
   }
@@ -18,13 +17,21 @@ void SpriteComponent::Initialize()
 {
   transform = owner->GetComponent<TransformComponent>();
 
-  sprite = sf::Sprite(texture, sf::IntRect(col * transform->GetWidth(), row * transform->GetHeight(),
-  transform->GetWidth(), transform->GetHeight()));
+  const int w = static_cast<int>(transform->GetWidth());
+  const int h = static_cast<int>(transform->GetHeight());
+  const int left = static_cast<int>(col * transform->GetWidth());
+  const int top  = static_cast<int>(row * transform->GetHeight());
 
-  sprite.setPosition(transform->GetPosition());
-  sprite.setScale(sf::Vector2f(transform->GetScale(), transform->GetScale()));
-  sprite.setColor(sf::Color::White);
-  sprite.setOrigin(transform->GetWidth() / 2, transform->GetHeight() / 2);
+  // Create sprite once transform is available
+  sprite = std::make_unique<sf::Sprite>(
+    texture,
+    sf::IntRect({left, top}, {w, h})
+  );
+
+  sprite->setPosition(transform->GetPosition());
+  sprite->setScale(sf::Vector2f(transform->GetScale(), transform->GetScale()));
+  sprite->setColor(sf::Color::White);
+  sprite->setOrigin(sf::Vector2f(w * 0.5f, h * 0.5f));
 }
 
 SpriteComponent::~SpriteComponent()
@@ -33,21 +40,22 @@ SpriteComponent::~SpriteComponent()
 
 void SpriteComponent::Update(float& deltaTime)
 {
-  if(transform != nullptr)
+  if(transform != nullptr && sprite)
   {
-    sprite.setPosition(transform->GetPosition());
+    sprite->setPosition(transform->GetPosition());
   }
 }
 
 void SpriteComponent::Render(sf::RenderWindow& window)
 {
-  window.draw(sprite);
+  if (sprite) window.draw(*sprite);
 }
 
 void SpriteComponent::SetFlipTexture(bool flipTexture)
 {
   this->flipTexture = flipTexture;
-  sprite.setScale(flipTexture ? -transform->GetScale(): transform->GetScale(), transform->GetScale());
+  if (sprite)
+    sprite->setScale(sf::Vector2f(flipTexture ? -transform->GetScale(): transform->GetScale(), transform->GetScale()));
 }
 
 bool SpriteComponent::GetFlipTexture() const
@@ -57,10 +65,11 @@ bool SpriteComponent::GetFlipTexture() const
 
 sf::Vector2f SpriteComponent::GetOrigin() const
 {
-  return sprite.getOrigin();
+  return sprite ? sprite->getOrigin() : sf::Vector2f{};
 }
 
 void SpriteComponent::RebindRectTexture(int col, int row, float width, float height)
 {
-  sprite.setTextureRect(sf::IntRect(col, row, width, height));
+  if (sprite)
+    sprite->setTextureRect(sf::IntRect({col, row}, {static_cast<int>(width), static_cast<int>(height)}));
 }

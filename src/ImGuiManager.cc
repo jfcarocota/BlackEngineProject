@@ -31,43 +31,55 @@ void ImGuiManager::ProcessEvent(const sf::Event& event) {
     if (!m_initialized) return;
     
     ImGuiIO& io = ImGui::GetIO();
-    
-    switch (event.type) {
-        case sf::Event::MouseMoved:
-            io.MousePos.x = static_cast<float>(event.mouseMove.x);
-            io.MousePos.y = static_cast<float>(event.mouseMove.y);
-            break;
-        case sf::Event::MouseButtonPressed:
-            if (event.mouseButton.button == sf::Mouse::Left) io.MouseDown[0] = true;
-            if (event.mouseButton.button == sf::Mouse::Right) io.MouseDown[1] = true;
-            if (event.mouseButton.button == sf::Mouse::Middle) io.MouseDown[2] = true;
-            break;
-        case sf::Event::MouseButtonReleased:
-            if (event.mouseButton.button == sf::Mouse::Left) io.MouseDown[0] = false;
-            if (event.mouseButton.button == sf::Mouse::Right) io.MouseDown[1] = false;
-            if (event.mouseButton.button == sf::Mouse::Middle) io.MouseDown[2] = false;
-            break;
-        case sf::Event::MouseWheelScrolled:
-            io.MouseWheel += event.mouseWheelScroll.delta;
-            break;
-        case sf::Event::KeyPressed:
-            // Handle key input manually for now
-            if (event.key.code == sf::Keyboard::F3) {
+
+    if (event.is<sf::Event::MouseMoved>()) {
+        if (const auto* e = event.getIf<sf::Event::MouseMoved>()) {
+            io.MousePos.x = static_cast<float>(e->position.x);
+            io.MousePos.y = static_cast<float>(e->position.y);
+        }
+        return;
+    }
+    if (event.is<sf::Event::MouseButtonPressed>()) {
+        if (const auto* e = event.getIf<sf::Event::MouseButtonPressed>()) {
+            if (e->button == sf::Mouse::Button::Left) io.MouseDown[0] = true;
+            if (e->button == sf::Mouse::Button::Right) io.MouseDown[1] = true;
+            if (e->button == sf::Mouse::Button::Middle) io.MouseDown[2] = true;
+        }
+        return;
+    }
+    if (event.is<sf::Event::MouseButtonReleased>()) {
+        if (const auto* e = event.getIf<sf::Event::MouseButtonReleased>()) {
+            if (e->button == sf::Mouse::Button::Left) io.MouseDown[0] = false;
+            if (e->button == sf::Mouse::Button::Right) io.MouseDown[1] = false;
+            if (e->button == sf::Mouse::Button::Middle) io.MouseDown[2] = false;
+        }
+        return;
+    }
+    if (event.is<sf::Event::MouseWheelScrolled>()) {
+        if (const auto* e = event.getIf<sf::Event::MouseWheelScrolled>()) {
+            io.MouseWheel += e->delta;
+        }
+        return;
+    }
+    if (event.is<sf::Event::KeyPressed>()) {
+        if (const auto* e = event.getIf<sf::Event::KeyPressed>()) {
+            if (e->code == sf::Keyboard::Key::F3) {
                 m_showTestWindow = !m_showTestWindow;
                 std::cout << "ImGui Test Window: " << (m_showTestWindow ? "ON" : "OFF") << std::endl;
             }
-            if (event.key.code == sf::Keyboard::Escape) {
+            if (e->code == sf::Keyboard::Key::Escape) {
                 m_showTestWindow = false;
                 std::cout << "ImGui Test Window: OFF" << std::endl;
             }
-            break;
-        case sf::Event::KeyReleased:
-            // Handle key input manually for now
-            break;
-        case sf::Event::TextEntered:
-            if (event.text.unicode > 0 && event.text.unicode < 0x10000)
-                io.AddInputCharacter(static_cast<unsigned short>(event.text.unicode));
-            break;
+        }
+        return;
+    }
+    if (event.is<sf::Event::TextEntered>()) {
+        if (const auto* e = event.getIf<sf::Event::TextEntered>()) {
+            if (e->unicode > 0 && e->unicode < 0x10000)
+                io.AddInputCharacter(static_cast<unsigned short>(e->unicode));
+        }
+        return;
     }
 }
 
@@ -179,7 +191,7 @@ void ImGuiManager::ShowDebugInfo() {
 void ImGuiManager::RenderTestIndicator(sf::RenderWindow& window) {
     // Create a simple test indicator using SFML
     sf::RectangleShape testRect(sf::Vector2f(400, 300));
-    testRect.setPosition(50, 50);
+    testRect.setPosition(sf::Vector2f(50, 50));
     testRect.setFillColor(sf::Color(0, 100, 200, 200)); // Semi-transparent blue
     testRect.setOutlineColor(sf::Color::Yellow);
     testRect.setOutlineThickness(3);
@@ -191,18 +203,17 @@ void ImGuiManager::RenderTestIndicator(sf::RenderWindow& window) {
     static bool fontLoaded = false;
     
     if (!fontLoaded) {
-        if (font.loadFromFile("assets/fonts/ARCADECLASSIC.TTF")) {
+        if (font.openFromFile("assets/fonts/ARCADECLASSIC.TTF")) {
             fontLoaded = true;
         }
     }
     
     if (fontLoaded) {
-        sf::Text text;
-        text.setFont(font);
+        sf::Text text(font);
         text.setString("ImGui Test Window Active!\n\nPress F3 to toggle\nPress ESC to close\n\nThis is a test UI indicator\nshowing ImGui integration is working!");
         text.setCharacterSize(18);
         text.setFillColor(sf::Color::White);
-        text.setPosition(70, 70);
+        text.setPosition(sf::Vector2f(70, 70));
         
         window.draw(text);
     }
