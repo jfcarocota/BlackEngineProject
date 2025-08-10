@@ -9,6 +9,7 @@
 #include <vector>
 #include <limits.h>
 #include <cstdio>
+#include <algorithm>
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
 #endif
@@ -164,17 +165,70 @@ int main() {
   const int margin = 12;
   const int gridPxW = static_cast<int>(gridCols * tilePx * tileScale);
   const int gridPxH = static_cast<int>(gridRows * tilePx * tileScale);
-  const int winW = paletteWidth + margin + gridPxW + margin;
-  const int winH = std::max(gridPxH + margin * 2, 720);
+  int winW = paletteWidth + margin + gridPxW + margin;
+  int winH = std::max(gridPxH + margin * 2, 720);
 
   sf::RenderWindow window(sf::VideoMode(sf::Vector2u(winW, winH)), "Tile Map Editor");
   window.setFramerateLimit(60);
+
+  // Create views to isolate palette UI and prevent overlap into grid
+  sf::View defaultView = window.getView();
+  sf::View paletteView(sf::FloatRect({0.f, 0.f}, {static_cast<float>(paletteWidth), static_cast<float>(winH)}));
+  paletteView.setViewport(sf::FloatRect({0.f, 0.f}, {static_cast<float>(paletteWidth) / static_cast<float>(winW), 1.f}));
 
   // Load font for UI (SFML 3: openFromFile only)
   sf::Font font;
   if (!font.openFromFile(findAssetPath(ASSETS_FONT_ARCADECLASSIC))) {
     std::cerr << "Failed to load font: " << ASSETS_FONT_ARCADECLASSIC << std::endl;
   }
+
+  // Helper text fitting utilities to avoid overlapping UI into grid
+  auto ellipsizeEnd = [&](const std::string& text, unsigned int charSize, float maxWidth) {
+    sf::Text measure(font);
+    measure.setCharacterSize(charSize);
+    measure.setString(text);
+    float w = measure.getLocalBounds().size.x;
+    if (w <= maxWidth) return text;
+    const std::string dots = "...";
+    measure.setString(dots);
+    float dotsW = measure.getLocalBounds().size.x;
+    std::string out;
+    out.reserve(text.size());
+    for (char c : text) {
+      out.push_back(c);
+      measure.setString(out);
+      if (measure.getLocalBounds().size.x + dotsW > maxWidth) {
+        out.pop_back();
+        break;
+      }
+    }
+    return out + dots;
+  };
+  auto ellipsizeStart = [&](const std::string& text, unsigned int charSize, float maxWidth) {
+    sf::Text measure(font);
+    measure.setCharacterSize(charSize);
+    measure.setString(text);
+    float w = measure.getLocalBounds().size.x;
+    if (w <= maxWidth) return text;
+    const std::string dots = "...";
+    measure.setString(dots);
+    float dotsW = measure.getLocalBounds().size.x;
+    std::string tail;
+    tail.reserve(text.size());
+    for (auto it = text.rbegin(); it != text.rend(); ++it) {
+      tail.push_back(*it);
+      std::string rev = tail;
+      std::reverse(rev.begin(), rev.end());
+      measure.setString(rev);
+      if (measure.getLocalBounds().size.x + dotsW > maxWidth) {
+        tail.pop_back();
+        break;
+      }
+    }
+    std::string tailForward = tail;
+    std::reverse(tailForward.begin(), tailForward.end());
+    return dots + tailForward;
+  };
 
   // Tileset
   Tileset tileset;
@@ -300,6 +354,19 @@ int main() {
     while (auto ev = window.pollEvent()) {
       const sf::Event& event = *ev;
       if (event.is<sf::Event::Closed>()) window.close();
+
+      // Keep views and palette size in sync with window to avoid overlap on resize
+      if (event.is<sf::Event::Resized>()) {
+        auto sz = window.getSize();
+        winW = static_cast<int>(sz.x);
+        winH = static_cast<int>(sz.y);
+        defaultView = sf::View(sf::FloatRect({0.f, 0.f}, {static_cast<float>(winW), static_cast<float>(winH)}));
+        window.setView(defaultView);
+        paletteView.setSize(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
+        paletteView.setCenter(sf::Vector2f(static_cast<float>(paletteWidth) / 2.f, static_cast<float>(winH) / 2.f));
+        paletteView.setViewport(sf::FloatRect({0.f, 0.f}, {static_cast<float>(paletteWidth) / static_cast<float>(winW), 1.f}));
+        paletteBG.setSize(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
+      }
 
       if (event.is<sf::Event::KeyPressed>()) {
         const auto* e = event.getIf<sf::Event::KeyPressed>();
@@ -430,6 +497,9 @@ int main() {
 
     window.clear(sf::Color(18, 18, 24));
 
+    // Draw the left UI palette in its own clipped view
+    window.setView(paletteView);
+
     // Left palette background
     paletteBG.setPosition(sf::Vector2f(0.f, 0.f));
     window.draw(paletteBG);
@@ -448,7 +518,8 @@ int main() {
       help.setCharacterSize(14);
       help.setFillColor(sf::Color(180, 180, 200));
       help.setPosition(sf::Vector2f(16.f, 36.f));
-      help.setString("L: load tileset  •  S: save  •  N: new  •  O: load level1");
+      // Ensure help stays within palette
+      help.setString(ellipsizeEnd("L: load tileset  •  S: save  •  N: new  •  O: load level1", 14u, static_cast<float>(paletteWidth - 32)));
       window.draw(help);
 
       if (enteringPath) {
@@ -463,14 +534,16 @@ int main() {
         path.setCharacterSize(16);
         path.setFillColor(sf::Color::White);
         path.setPosition(sf::Vector2f(18.f, 64.f));
-        path.setString(pathBuffer);
+        // Fit input text into the box (prefer tail since paths are right-important)
+        path.setString(ellipsizeStart(pathBuffer, 16u, static_cast<float>((paletteWidth - 24) - 12)));
         window.draw(path);
       } else {
         sf::Text path(font);
         path.setCharacterSize(12);
         path.setFillColor(sf::Color(160, 160, 180));
         path.setPosition(sf::Vector2f(16.f, 62.f));
-        path.setString(std::string("Tileset: ") + tilesetPath);
+        // Fit tileset path within palette
+        path.setString(ellipsizeStart(std::string("Tileset: ") + tilesetPath, 12u, static_cast<float>(paletteWidth - 32)));
         window.draw(path);
 
         // Save folder controls
@@ -492,7 +565,8 @@ int main() {
         savePathText.setCharacterSize(14);
         savePathText.setFillColor(sf::Color::White);
         savePathText.setPosition(sf::Vector2f(18.f, static_cast<float>(saveInputY + 2)));
-        savePathText.setString(saveDirPath);
+        // Fit displayed save path into the input box
+        savePathText.setString(ellipsizeStart(saveDirPath, 14u, static_cast<float>((paletteWidth - 24) - 12)));
         window.draw(savePathText);
 
         // Save button
@@ -527,7 +601,7 @@ int main() {
       }
     }
 
-    // Draw palette thumbnails
+    // Draw palette thumbnails (still clipped by palette view)
     if (tileset.loaded) {
       const int colsPerRow = std::max(1, (paletteWidth - padding - x0) / (cell + padding));
       for (int r = 0; r < tileset.rows; ++r) {
@@ -555,6 +629,9 @@ int main() {
         }
       }
     }
+
+    // Switch back to default (full-window) view for the grid
+    window.setView(defaultView);
 
     // Grid panel
     window.draw(gridBG);
@@ -600,17 +677,21 @@ int main() {
       window.draw(hover);
     }
 
-    // Info message (auto-fade after 3s)
+    // Draw info message inside the palette view so it never overlaps grid
     if (!infoMessage.empty()) {
+      window.setView(paletteView);
       float s = infoClock.getElapsedTime().asSeconds();
       if (s < 3.0f) {
         sf::Text msg(font);
         msg.setCharacterSize(16);
         msg.setFillColor(sf::Color(240, 240, 250));
         msg.setPosition(sf::Vector2f(16.f, static_cast<float>(winH - 32)));
-        msg.setString(infoMessage);
+        // Keep within left palette to avoid overlapping the grid
+        msg.setString(ellipsizeEnd(infoMessage, 16u, static_cast<float>(paletteWidth - 32)));
         window.draw(msg);
       }
+      // Restore default view for anything drawn afterwards (none here, but keep tidy)
+      window.setView(defaultView);
     }
 
     window.display();
