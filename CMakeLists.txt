@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.21)
 project(BlackEngineProject CXX)
 set(PROJECT_VERSION 1.0.0)
 
@@ -39,9 +39,7 @@ add_executable(TileMapEditor
   src/MapEditorMain.cpp
 )
 
-# Dependencies
-find_package(PkgConfig REQUIRED)
-
+# Dependencies (cross-platform)
 # Vendor SFML 3 (drops OpenAL requirement; uses miniaudio internally)
 include(FetchContent)
 FetchContent_Declare(SFML
@@ -52,18 +50,68 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-# Box2D via CMake
-find_package(box2d REQUIRED)
+# Ensure ImGui sources exist locally (fallback to fetch into third_party/imgui)
+set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/imgui)
+if(NOT EXISTS ${IMGUI_DIR}/imgui.cpp)
+  message(STATUS "ImGui no encontrado en third_party/imgui, descargando...")
+  # Reuse FetchContent to populate directly into third_party/imgui
+  include(FetchContent)
+  FetchContent_Declare(imgui
+    GIT_REPOSITORY https://github.com/ocornut/imgui.git
+    GIT_TAG v1.90.8
+    GIT_SHALLOW ON
+    SOURCE_DIR ${IMGUI_DIR}
+  )
+  FetchContent_Populate(imgui)
+endif()
 
-# JsonCpp via pkg-config
-pkg_check_modules(JSONCPP REQUIRED jsoncpp)
+# Prefer config packages; fall back to FetchContent so it works on Windows/macOS/Linux
+# Box2D
+find_package(box2d CONFIG QUIET)
+if(NOT box2d_FOUND)
+  FetchContent_Declare(box2d
+    GIT_REPOSITORY https://github.com/erincatto/box2d.git
+    GIT_TAG v2.4.1
+    GIT_SHALLOW ON)
+  FetchContent_MakeAvailable(box2d)
+  set(BOX2D_TARGET box2d)
+else()
+  set(BOX2D_TARGET box2d::box2d)
+endif()
+
+# JsonCpp
+find_package(JsonCpp CONFIG QUIET)
+if(JsonCpp_FOUND)
+  set(JSONCPP_TARGET JsonCpp::JsonCpp)
+else()
+  FetchContent_Declare(jsoncpp
+    GIT_REPOSITORY https://github.com/open-source-parsers/jsoncpp.git
+    GIT_TAG 1.9.5
+    GIT_SHALLOW ON)
+  # Disable extras to speed up
+  set(JSONCPP_WITH_TESTS OFF CACHE BOOL "" FORCE)
+  set(JSONCPP_WITH_POST_BUILD_UNITTEST OFF CACHE BOOL "" FORCE)
+  set(JSONCPP_WITH_EXAMPLE OFF CACHE BOOL "" FORCE)
+  FetchContent_MakeAvailable(jsoncpp)
+  # Elegir el target correcto según lo que exporte jsoncpp
+  if(TARGET jsoncpp_static)
+    set(JSONCPP_TARGET jsoncpp_static)
+  elseif(TARGET jsoncpp_lib)
+    set(JSONCPP_TARGET jsoncpp_lib)
+  elseif(TARGET JsonCpp::JsonCpp)
+    set(JSONCPP_TARGET JsonCpp::JsonCpp)
+  else()
+    message(FATAL_ERROR "No se encontró el target de JsonCpp tras FetchContent")
+  endif()
+  # Asegurar rutas de cabeceras cuando usamos FetchContent (por si el target no las propaga)
+  target_include_directories(BlackEngineProject PRIVATE ${jsoncpp_SOURCE_DIR}/include ${jsoncpp_BINARY_DIR}/include)
+endif()
 
 # ImGui include path
 set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/imgui)
 
 target_include_directories(BlackEngineProject PRIVATE 
   ${CMAKE_CURRENT_SOURCE_DIR}/include
-  ${JSONCPP_INCLUDE_DIRS}
   ${IMGUI_DIR}
 )
 
@@ -77,8 +125,8 @@ target_link_libraries(BlackEngineProject PRIVATE
   sfml-window
   sfml-system
   sfml-audio
-  box2d::box2d
-  ${JSONCPP_LIBRARIES}
+  ${BOX2D_TARGET}
+  ${JSONCPP_TARGET}
 )
 
 target_link_libraries(TileMapEditor PRIVATE
@@ -88,7 +136,19 @@ target_link_libraries(TileMapEditor PRIVATE
   sfml-audio
 )
 
+# Enable SFML audio where used
 target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
+
+# On Windows, copy dependent DLLs next to the executables for easy run
+if(WIN32)
+  set(COPY_DLL_SCRIPT ${CMAKE_SOURCE_DIR}/cmake/copy_runtime_dlls.cmake)
+  add_custom_command(TARGET BlackEngineProject POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -Ddlls="$<TARGET_RUNTIME_DLLS:BlackEngineProject>" -Ddest="$<TARGET_FILE_DIR:BlackEngineProject>" -P ${COPY_DLL_SCRIPT}
+    COMMAND_EXPAND_LISTS)
+  add_custom_command(TARGET TileMapEditor POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -Ddlls="$<TARGET_RUNTIME_DLLS:TileMapEditor>" -Ddest="$<TARGET_FILE_DIR:TileMapEditor>" -P ${COPY_DLL_SCRIPT}
+    COMMAND_EXPAND_LISTS)
+endif()
 
 # On macOS, set rpath and bundle metadata
 if(APPLE)
@@ -131,11 +191,25 @@ add_custom_command(TARGET BlackEngineProject POST_BUILD
   ${CMAKE_BINARY_DIR}/assets
 )
 
+# Also copy assets next to the binary (useful for multi-config generators like MSVC)
+add_custom_command(TARGET BlackEngineProject POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+          ${CMAKE_SOURCE_DIR}/assets
+          $<TARGET_FILE_DIR:BlackEngineProject>/assets
+)
+
 # Copy assets so editor can run from build dir
 add_custom_command(TARGET TileMapEditor POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory
   ${CMAKE_SOURCE_DIR}/assets
   ${CMAKE_BINARY_DIR}/assets
+)
+
+# Also copy assets next to the editor binary
+add_custom_command(TARGET TileMapEditor POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+          ${CMAKE_SOURCE_DIR}/assets
+          $<TARGET_FILE_DIR:TileMapEditor>/assets
 )
 
 # Package into .app bundle: copy binary and assets
@@ -245,4 +319,18 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(GSL)
 target_link_libraries(BlackEngineProject PRIVATE Microsoft.GSL::GSL)
+
+# Install rules for packaging (Windows/Linux): put executables in bin/ and assets at root
+install(TARGETS BlackEngineProject RUNTIME DESTINATION bin)
+install(TARGETS TileMapEditor RUNTIME DESTINATION bin)
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/assets/ DESTINATION .)
+
+# CPack configuration to produce a ZIP
+set(CPACK_PACKAGE_NAME "BlackEngineProject")
+set(CPACK_PACKAGE_VENDOR "BlackEngine")
+set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
+set(CPACK_GENERATOR "ZIP")
+# Name like BlackEngineProject-1.0.0-Windows-x86_64.zip
+set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}-${PROJECT_VERSION}-${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
+include(CPack)
 

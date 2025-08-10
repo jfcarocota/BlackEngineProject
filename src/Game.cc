@@ -2,12 +2,16 @@
 #include <box2d/box2d.h>
 #include <iostream>
 #include <memory>
-#include <unistd.h>
 #include <cstring>
 #include <filesystem>
-#include <mach-o/dyld.h>
 #include <optional>
 #include <gsl/gsl>
+
+#ifdef _WIN32
+  #include <windows.h>
+#elif defined(__APPLE__)
+  #include <mach-o/dyld.h>
+#endif
 
 // Project includes
 #include "Game.hh"
@@ -40,33 +44,46 @@ uint32 flags{};
 
 // Function to find the project root directory
 std::string findProjectRoot() {
-    char path[1024];
-    uint32_t size = sizeof(path);
-    if (_NSGetExecutablePath(path, &size) == 0) {
-        std::string exePath(path);
-        size_t lastSlash = exePath.find_last_of('/');
-        if (lastSlash != std::string::npos) {
-            std::string exeDir = exePath.substr(0, lastSlash);
-            if (exeDir.find("cmake-build-debug") != std::string::npos) {
-                std::string projectRoot = exeDir.substr(0, exeDir.find("cmake-build-debug"));
-                return projectRoot;
-            }
+    std::filesystem::path exeDir;
+
+    #ifdef _WIN32
+      wchar_t wpath[MAX_PATH];
+      DWORD len = GetModuleFileNameW(nullptr, wpath, MAX_PATH);
+      if (len > 0) {
+          exeDir = std::filesystem::path(wpath).parent_path();
+      } else {
+          exeDir = std::filesystem::current_path();
+      }
+    #elif defined(__APPLE__)
+      char path[1024];
+      uint32_t size = sizeof(path);
+      if (_NSGetExecutablePath(path, &size) == 0) {
+          exeDir = std::filesystem::path(path).parent_path();
+      } else {
+          exeDir = std::filesystem::current_path();
+      }
+    #else
+      exeDir = std::filesystem::current_path();
+    #endif
+
+    // Walk up to 5 levels to find a folder containing "assets"
+    auto current = exeDir;
+    for (int i = 0; i <= 5; ++i) {
+        if (std::filesystem::exists(current / "assets")) {
+            return current.string();
         }
+        if (!current.has_parent_path()) break;
+        current = current.parent_path();
     }
-    std::string currentDir = std::filesystem::current_path().string();
-    for (int i = 0; i <= 3; i++) {
-        std::string testPath = currentDir;
-        for (int j = 0; j < i; j++) testPath += "/..";
-        std::string assetsPath = testPath + "/assets";
-        if (std::filesystem::exists(assetsPath)) return testPath;
-    }
-    return currentDir;
+
+    // Fallback to current working directory
+    return std::filesystem::current_path().string();
 }
 
 Game::Game()
 {
   std::string projectRoot = findProjectRoot();
-  chdir(projectRoot.c_str());
+  std::filesystem::current_path(projectRoot);
 
   window = std::make_unique<sf::RenderWindow>(sf::VideoMode(sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)), GAME_NAME);
   gravity = std::make_unique<b2Vec2>(0.f, 0.f);
