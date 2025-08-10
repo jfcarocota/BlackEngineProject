@@ -372,6 +372,27 @@ int main() {
     paletteView.setCenter(sf::Vector2f(static_cast<float>(paletteWidth) / 2.f,
                                        static_cast<float>(winH) / 2.f + paletteScrollY));
   };
+  // Helper to get scrollbar track and thumb rects in palette-view coordinates
+  auto getScrollbarRects = [&]() -> std::optional<std::pair<sf::FloatRect, sf::FloatRect>> {
+    float contentH = computePaletteContentHeight();
+    if (contentH <= static_cast<float>(winH)) return std::nullopt; // no scrollbar
+    float trackW = 8.f;                       // widened for easier interaction
+    float trackX = static_cast<float>(paletteWidth) - (trackW + 2.f); // 2px margin
+    float trackH = static_cast<float>(winH) - 8.f;
+    float viewTop = paletteView.getCenter().y - paletteView.getSize().y / 2.f;
+    float trackY = viewTop + 4.f;
+    float thumbH = std::max(24.f, trackH * (static_cast<float>(winH) / contentH));
+    float maxScroll = contentH - static_cast<float>(winH);
+    float t = (maxScroll > 0.f) ? (paletteScrollY / maxScroll) : 0.f;
+    float thumbY = trackY + t * (trackH - thumbH);
+    sf::FloatRect track(sf::Vector2f(trackX, trackY), sf::Vector2f(trackW, trackH));
+    sf::FloatRect thumb(sf::Vector2f(trackX, thumbY), sf::Vector2f(trackW, thumbH));
+    return std::make_pair(track, thumb);
+  };
+  // Dragging state for scrollbar thumb
+  bool draggingScrollThumb = false;
+  float dragOffsetY = 0.f; // distance from mouse Y to thumb top when drag starts
+
   // Initialize view center with scroll
   clampAndApplyPaletteScroll();
 
@@ -380,6 +401,11 @@ int main() {
     while (auto ev = window.pollEvent()) {
       const sf::Event& event = *ev;
       if (event.is<sf::Event::Closed>()) window.close();
+
+      // Cancel dragging when window loses focus
+      if (event.is<sf::Event::LostFocus>()) {
+        draggingScrollThumb = false;
+      }
 
       // Keep views and palette size in sync with window to avoid overlap on resize
       if (event.is<sf::Event::Resized>()) {
@@ -405,6 +431,40 @@ int main() {
             paletteScrollY -= e->delta * step;
             clampAndApplyPaletteScroll();
           }
+        }
+      }
+
+      // Handle dragging of the scrollbar thumb
+      if (event.is<sf::Event::MouseMoved>()) {
+        if (draggingScrollThumb) {
+          const auto* me = event.getIf<sf::Event::MouseMoved>();
+          if (!me) continue;
+          sf::Vector2i mp(me->position.x, me->position.y);
+          sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
+          if (auto rects = getScrollbarRects()) {
+            const auto& track = rects->first;
+            const auto& thumb = rects->second;
+            float trackY = track.position.y;
+            float trackH = track.size.y;
+            float thumbH = thumb.size.y;
+            float contentH = computePaletteContentHeight();
+            float maxScroll = contentH - static_cast<float>(winH);
+            float newThumbTop = mpPaletteF.y - dragOffsetY;
+            // clamp thumb within track
+            float minThumbTop = trackY;
+            float maxThumbTop = trackY + trackH - thumbH;
+            if (newThumbTop < minThumbTop) newThumbTop = minThumbTop;
+            if (newThumbTop > maxThumbTop) newThumbTop = maxThumbTop;
+            float t = (trackH - thumbH) > 0.f ? (newThumbTop - trackY) / (trackH - thumbH) : 0.f;
+            paletteScrollY = t * std::max(0.f, maxScroll);
+            clampAndApplyPaletteScroll();
+          }
+        }
+      }
+      if (event.is<sf::Event::MouseButtonReleased>()) {
+        const auto* e = event.getIf<sf::Event::MouseButtonReleased>();
+        if (e && e->button == sf::Mouse::Button::Left) {
+          draggingScrollThumb = false;
         }
       }
 
@@ -471,7 +531,8 @@ int main() {
       if (event.is<sf::Event::MouseButtonPressed>()) {
         const auto* e = event.getIf<sf::Event::MouseButtonPressed>();
         if (!e) continue;
-        sf::Vector2i mp = sf::Mouse::getPosition(window);
+        // Use event-provided position to avoid HiDPI scaling issues
+        sf::Vector2i mp(e->position.x, e->position.y);
         // Map to palette coordinate space for accurate hit testing while scrolled
         sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
         sf::Vector2i mpPalette(static_cast<int>(mpPaletteF.x), static_cast<int>(mpPaletteF.y));
@@ -503,6 +564,38 @@ int main() {
             showInfo("Folder picker not supported on this platform");
 #endif
             continue;
+          }
+        }
+
+        // Scrollbar hit-tests (track and thumb) when clicking in palette area
+        if (mp.x >= 0 && mp.x < paletteWidth && e->button == sf::Mouse::Button::Left) {
+          if (auto rects = getScrollbarRects()) {
+            const auto& track = rects->first;
+            const auto& thumb = rects->second;
+            // Enlarge hit area horizontally for easier grabbing
+            sf::FloatRect hitTrack = track;
+            hitTrack.position.x -= 4.f;
+            hitTrack.size.x += 8.f;
+            if (hitTrack.contains(mpPaletteF)) {
+              if (thumb.contains(mpPaletteF)) {
+                // Start dragging
+                draggingScrollThumb = true;
+                dragOffsetY = mpPaletteF.y - thumb.position.y; // preserve grab offset inside the thumb
+                continue; // consume
+              } else {
+                // Jump to clicked position on track
+                float trackY = track.position.y;
+                float trackH = track.size.y;
+                float thumbH = thumb.size.y;
+                float contentH = computePaletteContentHeight();
+                float maxScroll = contentH - static_cast<float>(winH);
+                float t = (trackH - thumbH) > 0.f ? (mpPaletteF.y - trackY - thumbH * 0.5f) / (trackH - thumbH) : 0.f;
+                if (t < 0.f) t = 0.f; if (t > 1.f) t = 1.f;
+                paletteScrollY = t * std::max(0.f, maxScroll);
+                clampAndApplyPaletteScroll();
+                continue; // consume
+              }
+            }
           }
         }
 
@@ -688,8 +781,8 @@ int main() {
     {
       float contentH = computePaletteContentHeight();
       if (contentH > static_cast<float>(winH)) {
-        float trackX = static_cast<float>(paletteWidth) - 6.f;
-        float trackW = 4.f;
+        float trackW = 8.f;
+        float trackX = static_cast<float>(paletteWidth) - (trackW + 2.f);
         float trackH = static_cast<float>(winH) - 8.f;
         float viewTop = paletteView.getCenter().y - paletteView.getSize().y / 2.f;
         // Thumb size proportional to visible fraction
