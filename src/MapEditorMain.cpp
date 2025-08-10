@@ -349,6 +349,32 @@ int main() {
   const int saveInputY = 112;
   const int saveButtonsY = 144;
 
+  // --- Palette vertical scrolling state & helpers ---
+  float paletteScrollY = 0.f; // in palette coordinate space
+  auto computePaletteContentHeight = [&]() -> float {
+    // Base content up to start of thumbnails
+    float content = static_cast<float>(y0);
+    if (tileset.loaded) {
+      int colsPerRow = std::max(1, (paletteWidth - padding - x0) / (cell + padding));
+      int total = tileset.rows * tileset.cols;
+      int rowsNeeded = (total + colsPerRow - 1) / colsPerRow;
+      content = std::max(content, static_cast<float>(y0 + rowsNeeded * (cell + padding) + padding));
+    }
+    // Ensure at least window height so we don't get negative maxScroll
+    return std::max(content, static_cast<float>(winH));
+  };
+  auto clampAndApplyPaletteScroll = [&]() {
+    float contentH = computePaletteContentHeight();
+    float maxScroll = std::max(0.f, contentH - static_cast<float>(winH));
+    if (paletteScrollY < 0.f) paletteScrollY = 0.f;
+    if (paletteScrollY > maxScroll) paletteScrollY = maxScroll;
+    paletteView.setSize(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
+    paletteView.setCenter(sf::Vector2f(static_cast<float>(paletteWidth) / 2.f,
+                                       static_cast<float>(winH) / 2.f + paletteScrollY));
+  };
+  // Initialize view center with scroll
+  clampAndApplyPaletteScroll();
+
   while (window.isOpen()) {
     // SFML 3 event polling
     while (auto ev = window.pollEvent()) {
@@ -362,10 +388,24 @@ int main() {
         winH = static_cast<int>(sz.y);
         defaultView = sf::View(sf::FloatRect({0.f, 0.f}, {static_cast<float>(winW), static_cast<float>(winH)}));
         window.setView(defaultView);
-        paletteView.setSize(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
-        paletteView.setCenter(sf::Vector2f(static_cast<float>(paletteWidth) / 2.f, static_cast<float>(winH) / 2.f));
         paletteView.setViewport(sf::FloatRect({0.f, 0.f}, {static_cast<float>(paletteWidth) / static_cast<float>(winW), 1.f}));
         paletteBG.setSize(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
+        clampAndApplyPaletteScroll();
+      }
+
+      // Mouse wheel scroll to move palette
+      if (event.is<sf::Event::MouseWheelScrolled>()) {
+        const auto* e = event.getIf<sf::Event::MouseWheelScrolled>();
+        if (e) {
+          // Only scroll when mouse is over the left palette area
+          sf::Vector2i mp = sf::Mouse::getPosition(window);
+          if (mp.x >= 0 && mp.x < paletteWidth) {
+            // delta > 0 typically means scroll up
+            float step = 60.f; // pixels per notch; trackpads provide fractional deltas
+            paletteScrollY -= e->delta * step;
+            clampAndApplyPaletteScroll();
+          }
+        }
       }
 
       if (event.is<sf::Event::KeyPressed>()) {
@@ -387,6 +427,11 @@ int main() {
             if (e->code == sf::Keyboard::Key::O) {
               loadGridFromFile(ASSETS_MAPS);
             }
+            // Optional keyboard scroll helpers
+            if (e->code == sf::Keyboard::Key::PageDown) { paletteScrollY += 0.9f * static_cast<float>(winH); clampAndApplyPaletteScroll(); }
+            if (e->code == sf::Keyboard::Key::PageUp)   { paletteScrollY -= 0.9f * static_cast<float>(winH); clampAndApplyPaletteScroll(); }
+            if (e->code == sf::Keyboard::Key::Home)     { paletteScrollY = 0.f; clampAndApplyPaletteScroll(); }
+            if (e->code == sf::Keyboard::Key::End)      { paletteScrollY = 1e9f; clampAndApplyPaletteScroll(); }
           } else {
             if (e->code == sf::Keyboard::Key::Enter) {
               if (enteringPath) {
@@ -427,6 +472,9 @@ int main() {
         const auto* e = event.getIf<sf::Event::MouseButtonPressed>();
         if (!e) continue;
         sf::Vector2i mp = sf::Mouse::getPosition(window);
+        // Map to palette coordinate space for accurate hit testing while scrolled
+        sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
+        sf::Vector2i mpPalette(static_cast<int>(mpPaletteF.x), static_cast<int>(mpPaletteF.y));
 
         // Save controls hit-tests (take precedence over palette)
         if (mp.x >= 0 && mp.x < paletteWidth) {
@@ -434,16 +482,16 @@ int main() {
           sf::IntRect inputRect({12, saveInputY}, {paletteWidth - 24, 26});
           sf::IntRect saveBtnRect({12, saveButtonsY}, {100, 28});
           sf::IntRect browseBtnRect({12 + 110, saveButtonsY}, {100, 28});
-          if (inputRect.contains(mp)) {
+          if (inputRect.contains(mpPalette)) {
             enteringSaveDir = true;
             enteringPath = false;
             continue;
           }
-          if (saveBtnRect.contains(mp) && e->button == sf::Mouse::Button::Left) {
+          if (saveBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
             saveGrid();
             continue;
           }
-          if (browseBtnRect.contains(mp) && e->button == sf::Mouse::Button::Left) {
+          if (browseBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
 #ifdef __APPLE__
             if (auto chosen = macChooseFolder()) {
               saveDirPath = *chosen;
@@ -463,8 +511,8 @@ int main() {
           if (!tileset.loaded) continue;
           const int colsPerRow = std::max(1, (paletteWidth - padding - x0) / (cell + padding));
 
-          int localX = mp.x - x0;
-          int localY = mp.y - y0;
+          int localX = mpPalette.x - x0;
+          int localY = mpPalette.y - y0;
           if (localX >= 0 && localY >= 0) {
             int tx = localX / (cell + padding);
             int ty = localY / (cell + padding);
@@ -499,6 +547,12 @@ int main() {
 
     // Draw the left UI palette in its own clipped view
     window.setView(paletteView);
+
+    // Update background height to cover full content when scrolled
+    {
+      float contentH = computePaletteContentHeight();
+      paletteBG.setSize(sf::Vector2f(static_cast<float>(paletteWidth), std::max(static_cast<float>(winH), contentH)));
+    }
 
     // Left palette background
     paletteBG.setPosition(sf::Vector2f(0.f, 0.f));
@@ -630,6 +684,33 @@ int main() {
       }
     }
 
+    // Simple vertical scrollbar (right edge of the palette)
+    {
+      float contentH = computePaletteContentHeight();
+      if (contentH > static_cast<float>(winH)) {
+        float trackX = static_cast<float>(paletteWidth) - 6.f;
+        float trackW = 4.f;
+        float trackH = static_cast<float>(winH) - 8.f;
+        float viewTop = paletteView.getCenter().y - paletteView.getSize().y / 2.f;
+        // Thumb size proportional to visible fraction
+        float thumbH = std::max(24.f, trackH * (static_cast<float>(winH) / contentH));
+        float maxScroll = contentH - static_cast<float>(winH);
+        float t = (maxScroll > 0.f) ? (paletteScrollY / maxScroll) : 0.f;
+        float thumbY = (viewTop + 4.f) + t * (trackH - thumbH);
+
+        // Track (subtle)
+        sf::RectangleShape track(sf::Vector2f(trackW, trackH));
+        track.setPosition(sf::Vector2f(trackX, viewTop + 4.f));
+        track.setFillColor(sf::Color(40, 40, 50, 120));
+        window.draw(track);
+        // Thumb
+        sf::RectangleShape thumb(sf::Vector2f(trackW, thumbH));
+        thumb.setPosition(sf::Vector2f(trackX, thumbY));
+        thumb.setFillColor(sf::Color(90, 110, 140, 200));
+        window.draw(thumb);
+      }
+    }
+
     // Switch back to default (full-window) view for the grid
     window.setView(defaultView);
 
@@ -685,7 +766,9 @@ int main() {
         sf::Text msg(font);
         msg.setCharacterSize(16);
         msg.setFillColor(sf::Color(240, 240, 250));
-        msg.setPosition(sf::Vector2f(16.f, static_cast<float>(winH - 32)));
+        // Pin to the visible bottom of the palette view
+        float viewBottom = paletteView.getCenter().y + paletteView.getSize().y / 2.f;
+        msg.setPosition(sf::Vector2f(16.f, viewBottom - 32.f));
         // Keep within left palette to avoid overlapping the grid
         msg.setString(ellipsizeEnd(infoMessage, 16u, static_cast<float>(paletteWidth - 32)));
         window.draw(msg);
