@@ -393,6 +393,31 @@ int main() {
   bool draggingScrollThumb = false;
   float dragOffsetY = 0.f; // distance from mouse Y to thumb top when drag starts
 
+  // Painting state for grid drag drawing/erasing
+  bool paintingLeft = false;
+  bool paintingRight = false;
+  int lastPaintGX = -1;
+  int lastPaintGY = -1;
+  auto paintCell = [&](int gx, int gy, bool leftButton) {
+    if (gx >= 0 && gx < gridCols && gy >= 0 && gy < gridRows) {
+      if (leftButton) grid[gy][gx] = selected; else grid[gy][gx] = TileCR{0, 0};
+    }
+  };
+  auto paintLine = [&](int x0, int y0, int x1, int y1, bool leftButton) {
+    int dx = x1 - x0;
+    int dy = y1 - y0;
+    int adx = dx < 0 ? -dx : dx;
+    int ady = dy < 0 ? -dy : dy;
+    int steps = std::max(adx, ady);
+    if (steps <= 0) { paintCell(x1, y1, leftButton); return; }
+    // Step-inclusive from previous cell toward current to avoid gaps on fast mouse moves
+    for (int i = 1; i <= steps; ++i) {
+      int x = x0 + (dx * i + (dx >= 0 ? steps / 2 : -steps / 2)) / steps;
+      int y = y0 + (dy * i + (dy >= 0 ? steps / 2 : -steps / 2)) / steps;
+      paintCell(x, y, leftButton);
+    }
+  };
+
   // Initialize view center with scroll
   clampAndApplyPaletteScroll();
 
@@ -403,8 +428,12 @@ int main() {
       if (event.is<sf::Event::Closed>()) window.close();
 
       // Cancel dragging when window loses focus
-      if (event.is<sf::Event::LostFocus>()) {
+      if (event.is<sf::Event::FocusLost>()) {
         draggingScrollThumb = false;
+        // Cancel any in-progress painting to avoid stuck state
+        paintingLeft = false;
+        paintingRight = false;
+        lastPaintGX = lastPaintGY = -1;
       }
 
       // Keep views and palette size in sync with window to avoid overlap on resize
@@ -434,11 +463,13 @@ int main() {
         }
       }
 
-      // Handle dragging of the scrollbar thumb
+      // Handle dragging of the scrollbar thumb and grid paint-drag
       if (event.is<sf::Event::MouseMoved>()) {
+        const auto* me = event.getIf<sf::Event::MouseMoved>();
+        if (!me) continue;
+
+        // Scrollbar thumb dragging (palette view coords)
         if (draggingScrollThumb) {
-          const auto* me = event.getIf<sf::Event::MouseMoved>();
-          if (!me) continue;
           sf::Vector2i mp(me->position.x, me->position.y);
           sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
           if (auto rects = getScrollbarRects()) {
@@ -460,11 +491,33 @@ int main() {
             clampAndApplyPaletteScroll();
           }
         }
+
+        // Grid painting while holding mouse button (default view coords)
+        if (paintingLeft || paintingRight) {
+          sf::Vector2i mp(me->position.x, me->position.y);
+          sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {static_cast<float>(gridPxW), static_cast<float>(gridPxH)});
+          if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
+            int gx = static_cast<int>((mp.x - gridOrigin.x) / (tilePx * tileScale));
+            int gy = static_cast<int>((mp.y - gridOrigin.y) / (tilePx * tileScale));
+            if (gx != lastPaintGX || gy != lastPaintGY) {
+              bool leftBtn = paintingLeft;
+              if (lastPaintGX >= 0 && lastPaintGY >= 0) paintLine(lastPaintGX, lastPaintGY, gx, gy, leftBtn);
+              else paintCell(gx, gy, leftBtn);
+              lastPaintGX = gx; lastPaintGY = gy;
+            }
+          }
+        }
       }
       if (event.is<sf::Event::MouseButtonReleased>()) {
         const auto* e = event.getIf<sf::Event::MouseButtonReleased>();
         if (e && e->button == sf::Mouse::Button::Left) {
           draggingScrollThumb = false;
+          paintingLeft = false;
+          lastPaintGX = lastPaintGY = -1;
+        }
+        if (e && e->button == sf::Mouse::Button::Right) {
+          paintingRight = false;
+          lastPaintGX = lastPaintGY = -1;
         }
       }
 
@@ -627,9 +680,13 @@ int main() {
           int gy = static_cast<int>((mp.y - gridOrigin.y) / (tilePx * tileScale));
           if (gx >= 0 && gx < gridCols && gy >= 0 && gy < gridRows) {
             if (e->button == sf::Mouse::Button::Left) {
-              grid[gy][gx] = selected;
+              paintCell(gx, gy, true);
+              paintingLeft = true;
+              lastPaintGX = gx; lastPaintGY = gy;
             } else if (e->button == sf::Mouse::Button::Right) {
-              grid[gy][gx] = TileCR{0, 0};
+              paintCell(gx, gy, false);
+              paintingRight = true;
+              lastPaintGX = gx; lastPaintGY = gy;
             }
           }
         }

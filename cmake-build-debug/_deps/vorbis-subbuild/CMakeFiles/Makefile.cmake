@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.0.3/CMakeSystem.cmake"
   "CMakeLists.txt"
   "vorbis-populate-prefix/tmp/vorbis-populate-mkdirs.cmake"
-  "/usr/local/share/cmake/Modules/CMakeDetermineSystem.cmake"
   "/usr/local/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/usr/local/share/cmake/Modules/CMakeInitializeConfigs.cmake"
-  "/usr/local/share/cmake/Modules/CMakeSystem.cmake.in"
   "/usr/local/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/local/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/local/share/cmake/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/4.0.3/CMakeSystem.cmake"
   "vorbis-populate-prefix/tmp/vorbis-populate-mkdirs.cmake"
   "vorbis-populate-prefix/tmp/vorbis-populate-gitclone.cmake"
   "vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-gitinfo.txt"

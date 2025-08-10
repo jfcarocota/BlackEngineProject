@@ -457,9 +457,8 @@ _deps/vorbis-build/lib/clean: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/c
 # Target rules for target CMakeFiles/BlackEngineProject.dir
 
 # All Build rule for target.
-CMakeFiles/BlackEngineProject.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 CMakeFiles/BlackEngineProject.dir/all: _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
-CMakeFiles/BlackEngineProject.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
+CMakeFiles/BlackEngineProject.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 CMakeFiles/BlackEngineProject.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
 CMakeFiles/BlackEngineProject.dir/all: _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
 CMakeFiles/BlackEngineProject.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
@@ -467,6 +466,7 @@ CMakeFiles/BlackEngineProject.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/F
 CMakeFiles/BlackEngineProject.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 CMakeFiles/BlackEngineProject.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all
 CMakeFiles/BlackEngineProject.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
+CMakeFiles/BlackEngineProject.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BlackEngineProject.dir/build.make CMakeFiles/BlackEngineProject.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BlackEngineProject.dir/build.make CMakeFiles/BlackEngineProject.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target BlackEngineProject"
@@ -498,9 +498,8 @@ CMakeFiles/BlackEngineProject.dir/clean:
 # Target rules for target CMakeFiles/TileMapEditor.dir
 
 # All Build rule for target.
-CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
-CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 CMakeFiles/TileMapEditor.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
 CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all
 CMakeFiles/TileMapEditor.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
@@ -508,6 +507,7 @@ CMakeFiles/TileMapEditor.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.d
 CMakeFiles/TileMapEditor.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 CMakeFiles/TileMapEditor.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all
 CMakeFiles/TileMapEditor.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
+CMakeFiles/TileMapEditor.dir/all: _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TileMapEditor.dir/build.make CMakeFiles/TileMapEditor.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=24 "Built target TileMapEditor"
@@ -733,8 +733,8 @@ _deps/sfml-build/src/SFML/Network/CMakeFiles/sfml-network.dir/clean:
 # Target rules for target _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
 # All Build rule for target.
-_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/all
+_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/all
 _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/build.make _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/build.make _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/build
