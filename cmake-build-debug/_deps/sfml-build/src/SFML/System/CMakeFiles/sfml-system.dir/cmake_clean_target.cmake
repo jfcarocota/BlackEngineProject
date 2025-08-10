@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../../../lib/libsfml-system-s-d.a"
+  "../../../lib/libsfml-system.a"
 )

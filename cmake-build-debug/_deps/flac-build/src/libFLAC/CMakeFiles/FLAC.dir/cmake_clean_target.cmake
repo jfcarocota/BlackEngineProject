@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../../../sfml-build/lib/libFLACd.a"
+  "../../../sfml-build/lib/libFLAC.a"
 )

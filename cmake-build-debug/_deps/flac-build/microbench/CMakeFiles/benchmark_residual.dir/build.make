@@ -111,8 +111,8 @@ benchmark_residual_EXTERNAL_OBJECTS =
 _deps/sfml-build/bin/benchmark_residual: _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/benchmark_residual.c.o
 _deps/sfml-build/bin/benchmark_residual: _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/util.c.o
 _deps/sfml-build/bin/benchmark_residual: _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/build.make
-_deps/sfml-build/bin/benchmark_residual: _deps/sfml-build/lib/libFLACd.a
-_deps/sfml-build/bin/benchmark_residual: _deps/sfml-build/lib/liboggd.a
+_deps/sfml-build/bin/benchmark_residual: _deps/sfml-build/lib/libFLAC.a
+_deps/sfml-build/bin/benchmark_residual: _deps/sfml-build/lib/libogg.a
 _deps/sfml-build/bin/benchmark_residual: _deps/flac-build/microbench/CMakeFiles/benchmark_residual.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable ../../sfml-build/bin/benchmark_residual"
 	cd /Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/flac-build/microbench && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/benchmark_residual.dir/link.txt --verbose=$(VERBOSE)

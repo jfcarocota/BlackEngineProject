@@ -479,19 +479,19 @@ BlackEngineProject: CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_dr
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_tables.cpp.o
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/third_party/imgui/imgui_widgets.cpp.o
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/build.make
-BlackEngineProject: _deps/sfml-build/lib/libsfml-graphics-s-d.a
-BlackEngineProject: _deps/sfml-build/lib/libsfml-window-s-d.a
-BlackEngineProject: _deps/sfml-build/lib/libsfml-system-s-d.a
-BlackEngineProject: _deps/sfml-build/lib/libsfml-audio-s-d.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-graphics.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-window.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-system.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-audio.a
 BlackEngineProject: /usr/local/lib/libbox2d.a
 BlackEngineProject: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
-BlackEngineProject: _deps/sfml-build/lib/libfreetyped.a
-BlackEngineProject: _deps/sfml-build/lib/libsfml-system-s-d.a
-BlackEngineProject: _deps/sfml-build/lib/libvorbisfiled.a
-BlackEngineProject: _deps/sfml-build/lib/libvorbisencd.a
-BlackEngineProject: _deps/sfml-build/lib/libvorbisd.a
-BlackEngineProject: _deps/sfml-build/lib/libFLACd.a
-BlackEngineProject: _deps/sfml-build/lib/liboggd.a
+BlackEngineProject: _deps/sfml-build/lib/libfreetype.a
+BlackEngineProject: _deps/sfml-build/lib/libsfml-system.a
+BlackEngineProject: _deps/sfml-build/lib/libvorbisfile.a
+BlackEngineProject: _deps/sfml-build/lib/libvorbisenc.a
+BlackEngineProject: _deps/sfml-build/lib/libvorbis.a
+BlackEngineProject: _deps/sfml-build/lib/libFLAC.a
+BlackEngineProject: _deps/sfml-build/lib/libogg.a
 BlackEngineProject: CMakeFiles/BlackEngineProject.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable BlackEngineProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BlackEngineProject.dir/link.txt --verbose=$(VERBOSE)

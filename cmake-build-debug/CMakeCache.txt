@@ -39,7 +39,7 @@ CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build (Debug or Release)
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -415,10 +415,6 @@ FETCHCONTENT_SOURCE_DIR_FREETYPE:PATH=
 FETCHCONTENT_SOURCE_DIR_GSL:PATH=
 
 //When not empty, overrides where to find pre-populated content
-// for ImGui-SFML
-FETCHCONTENT_SOURCE_DIR_IMGUI-SFML:PATH=
-
-//When not empty, overrides where to find pre-populated content
 // for ogg
 FETCHCONTENT_SOURCE_DIR_OGG:PATH=
 
@@ -441,9 +437,6 @@ FETCHCONTENT_UPDATES_DISCONNECTED_FREETYPE:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of GSL
 FETCHCONTENT_UPDATES_DISCONNECTED_GSL:BOOL=OFF
-
-//Enables UPDATE_DISCONNECTED behavior just for population of ImGui-SFML
-FETCHCONTENT_UPDATES_DISCONNECTED_IMGUI-SFML:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of ogg
 FETCHCONTENT_UPDATES_DISCONNECTED_OGG:BOOL=OFF
@@ -486,27 +479,6 @@ GSL_TEST:BOOL=OFF
 
 //Path to a program.
 HAVE_GIT:FILEPATH=/usr/local/bin/git
-
-//Path to a directory containing user ImGui config
-IMGUI_SFML_CONFIG_DIR:PATH=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/imgui-sfml-src
-
-//Path where user's config header will be installed
-IMGUI_SFML_CONFIG_INSTALL_DIR:PATH=
-
-//Name of a custom user ImGui config header
-IMGUI_SFML_CONFIG_NAME:STRING=imconfig-SFML.h
-
-//Disable obsolete ImGui functions
-IMGUI_SFML_DISABLE_OBSOLETE_FUNCTIONS:BOOL=OFF
-
-//Enable compiler warnings
-IMGUI_SFML_ENABLE_WARNINGS:BOOL=OFF
-
-//Use find_package to find SFML
-IMGUI_SFML_FIND_SFML:BOOL=ON
-
-//Use default imconfig-SFML.h
-IMGUI_SFML_USE_DEFAULT_CONFIG:BOOL=ON
 
 //Install CMake package-config module
 INSTALL_CMAKE_CONFIG_MODULE:BOOL=ON
@@ -574,12 +546,6 @@ SFML_BUILD_WINDOW:BOOL=ON
 //ON to configure extras, OFF to ignore them
 SFML_CONFIGURE_EXTRAS:BOOL=OFF
 
-//The directory containing a CMake configuration file for SFML.
-SFML_DIR:PATH=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-build
-
-//Path to a file.
-SFML_DOC_DIR:PATH=/usr/local/share/doc/SFML
-
 //ON to enable precompiled headers for SFML builds -- only supported
 // on Windows/Linux and for static library builds
 SFML_ENABLE_PCH:BOOL=OFF
@@ -608,9 +574,6 @@ SFML_OPENGL_ES:BOOL=0
 //Value Computed by CMake
 SFML_SOURCE_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/sfml-src
 
-//Use SFML static libraries
-SFML_STATIC_LIBRARIES:BOOL=OFF
-
 //ON to use system dependencies, OFF to use the bundled ones.
 SFML_USE_SYSTEM_DEPS:BOOL=OFF
 
@@ -634,15 +597,6 @@ freetype_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 freetype_SOURCE_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/freetype-src
-
-//Value Computed by CMake
-imgui_sfml_BINARY_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/imgui-sfml-build
-
-//Value Computed by CMake
-imgui_sfml_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-imgui_sfml_SOURCE_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/imgui-sfml-src
 
 //Value Computed by CMake
 libogg_BINARY_DIR:STATIC=/Users/jesuscaro/Documents/GitHub/BlackEngineProject/cmake-build-debug/_deps/ogg-build

@@ -74,7 +74,7 @@ Game::Game()
   drawPhysics = std::make_unique<DrawPhysics>(window.get());
 
   tileGroup = std::make_unique<TileGroup>(window.get(), GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT, 
-                                        ASSETS_MAPS, GameConstants::TILE_SCALE, GameConstants::TILE_SIZE, 
+                                        ASSETS_MAPS_NEW, GameConstants::TILE_SCALE, GameConstants::TILE_SIZE, 
                                         GameConstants::TILE_SIZE, ASSETS_TILES);
 
   auto& hero{entityManager.AddEntity("hero")};

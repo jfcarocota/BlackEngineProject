@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../sfml-build/lib/libfreetyped.a"
-  "../sfml-build/lib/libfreetyped.pdb"
+  "../sfml-build/lib/libfreetype.a"
+  "../sfml-build/lib/libfreetype.pdb"
   "CMakeFiles/freetype.dir/builds/unix/ftsystem.c.o"
   "CMakeFiles/freetype.dir/builds/unix/ftsystem.c.o.d"
   "CMakeFiles/freetype.dir/src/autofit/autofit.c.o"

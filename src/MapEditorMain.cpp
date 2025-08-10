@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <limits.h>
+#include <cstdio>
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
 #endif
@@ -88,6 +89,27 @@ static std::filesystem::path getUserMapsDir() {
 #endif
 #endif
 }
+
+// macOS-only: show a folder picker using AppleScript (osascript)
+#ifdef __APPLE__
+static std::optional<std::string> macChooseFolder() {
+  const char* cmd = "osascript -e 'POSIX path of (choose folder with prompt \"Select save folder\")' 2>/dev/null";
+  std::string result;
+  FILE* pipe = popen(cmd, "r");
+  if (!pipe) return std::nullopt;
+  char buffer[4096];
+  while (fgets(buffer, sizeof(buffer), pipe)) {
+    result += buffer;
+  }
+  pclose(pipe);
+  // trim whitespace/newlines
+  auto isSpace = [](unsigned char c){ return std::isspace(c); };
+  while (!result.empty() && isSpace(result.back())) result.pop_back();
+  while (!result.empty() && isSpace(result.front())) result.erase(result.begin());
+  if (result.empty()) return std::nullopt;
+  return result;
+}
+#endif
 
 static std::string timestampName() {
   std::time_t t = std::time(nullptr);
@@ -170,6 +192,9 @@ int main() {
   // Text input state for loading tileset
   bool enteringPath = false;
   std::string pathBuffer = tilesetPath;
+  // Save directory input state
+  bool enteringSaveDir = false;
+  std::string saveDirPath = getUserMapsDir().string();
   std::string infoMessage;
   sf::Clock infoClock;
 
@@ -186,11 +211,16 @@ int main() {
   }
 
   auto saveGrid = [&]() {
-    auto mapsDir = getUserMapsDir();
+    std::filesystem::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : std::filesystem::path(saveDirPath);
     std::error_code ec;
-    std::filesystem::create_directories(mapsDir, ec);
-    if (ec) {
-      showInfo(std::string("Failed to create maps dir: ") + mapsDir.string());
+    if (!std::filesystem::exists(mapsDir)) {
+      std::filesystem::create_directories(mapsDir, ec);
+      if (ec) {
+        showInfo(std::string("Failed to create maps dir: ") + mapsDir.string());
+        return;
+      }
+    } else if (!std::filesystem::is_directory(mapsDir)) {
+      showInfo(std::string("Not a directory: ") + mapsDir.string());
       return;
     }
 
@@ -258,7 +288,12 @@ int main() {
   const int cell = static_cast<int>(tilePx * thumbScale);
   const int padding = 6;
   const int x0 = 8;
-  const int y0 = 92;
+  // Shift tileset thumbnails down to make space for save controls
+  const int y0 = 180;
+  // Save controls layout
+  const int saveLabelY = 92;
+  const int saveInputY = 112;
+  const int saveButtonsY = 144;
 
   while (window.isOpen()) {
     // SFML 3 event polling
@@ -269,7 +304,7 @@ int main() {
       if (event.is<sf::Event::KeyPressed>()) {
         const auto* e = event.getIf<sf::Event::KeyPressed>();
         if (e) {
-          if (!enteringPath) {
+          if (!enteringPath && !enteringSaveDir) {
             if (e->code == sf::Keyboard::Key::Escape) window.close();
             if (e->code == sf::Keyboard::Key::S) saveGrid();
             if (e->code == sf::Keyboard::Key::N) {
@@ -278,6 +313,7 @@ int main() {
             }
             if (e->code == sf::Keyboard::Key::L) {
               enteringPath = true;
+              enteringSaveDir = false;
               pathBuffer = tilesetPath;
               showInfo("Type tileset path and press Enter");
             }
@@ -286,28 +322,36 @@ int main() {
             }
           } else {
             if (e->code == sf::Keyboard::Key::Enter) {
-              if (tileset.loadFromFile(pathBuffer, tilePx)) {
-                tilesetPath = pathBuffer;
-                showInfo("Loaded tileset: " + tilesetPath);
-              } else {
-                showInfo("Failed tileset: " + pathBuffer);
+              if (enteringPath) {
+                if (tileset.loadFromFile(pathBuffer, tilePx)) {
+                  tilesetPath = pathBuffer;
+                  showInfo("Loaded tileset: " + tilesetPath);
+                } else {
+                  showInfo("Failed tileset: " + pathBuffer);
+                }
+                enteringPath = false;
+              } else if (enteringSaveDir) {
+                enteringSaveDir = false;
+                showInfo(std::string("Save folder set: ") + saveDirPath);
               }
-              enteringPath = false;
             }
             if (e->code == sf::Keyboard::Key::Escape) {
               enteringPath = false;
+              enteringSaveDir = false;
             }
           }
         }
       }
 
-      if (enteringPath && event.is<sf::Event::TextEntered>()) {
+      if ((enteringPath || enteringSaveDir) && event.is<sf::Event::TextEntered>()) {
         const auto* e = event.getIf<sf::Event::TextEntered>();
         if (e) {
           if (e->unicode == 8) { // backspace
-            if (!pathBuffer.empty()) pathBuffer.pop_back();
+            if (enteringPath) { if (!pathBuffer.empty()) pathBuffer.pop_back(); }
+            else if (enteringSaveDir) { if (!saveDirPath.empty()) saveDirPath.pop_back(); }
           } else if (e->unicode >= 32 && e->unicode < 127) {
-            pathBuffer += static_cast<char>(e->unicode);
+            if (enteringPath) pathBuffer += static_cast<char>(e->unicode);
+            else if (enteringSaveDir) saveDirPath += static_cast<char>(e->unicode);
           }
         }
       }
@@ -316,6 +360,36 @@ int main() {
         const auto* e = event.getIf<sf::Event::MouseButtonPressed>();
         if (!e) continue;
         sf::Vector2i mp = sf::Mouse::getPosition(window);
+
+        // Save controls hit-tests (take precedence over palette)
+        if (mp.x >= 0 && mp.x < paletteWidth) {
+          // Input box
+          sf::IntRect inputRect({12, saveInputY}, {paletteWidth - 24, 26});
+          sf::IntRect saveBtnRect({12, saveButtonsY}, {100, 28});
+          sf::IntRect browseBtnRect({12 + 110, saveButtonsY}, {100, 28});
+          if (inputRect.contains(mp)) {
+            enteringSaveDir = true;
+            enteringPath = false;
+            continue;
+          }
+          if (saveBtnRect.contains(mp) && e->button == sf::Mouse::Button::Left) {
+            saveGrid();
+            continue;
+          }
+          if (browseBtnRect.contains(mp) && e->button == sf::Mouse::Button::Left) {
+#ifdef __APPLE__
+            if (auto chosen = macChooseFolder()) {
+              saveDirPath = *chosen;
+              showInfo(std::string("Save folder set: ") + saveDirPath);
+            } else {
+              showInfo("Folder selection canceled");
+            }
+#else
+            showInfo("Folder picker not supported on this platform");
+#endif
+            continue;
+          }
+        }
 
         // Click in palette area to select tile
         if (mp.x >= 0 && mp.x < paletteWidth) {
@@ -399,13 +473,57 @@ int main() {
         path.setString(std::string("Tileset: ") + tilesetPath);
         window.draw(path);
 
-        // Show where files are saved
-        sf::Text saveHint(font);
-        saveHint.setCharacterSize(12);
-        saveHint.setFillColor(sf::Color(150, 200, 160));
-        saveHint.setPosition(sf::Vector2f(16.f, 78.f));
-        saveHint.setString(std::string("Saves in: ") + getUserMapsDir().string());
-        window.draw(saveHint);
+        // Save folder controls
+        sf::Text saveLabel(font);
+        saveLabel.setCharacterSize(14);
+        saveLabel.setFillColor(sf::Color(180, 180, 200));
+        saveLabel.setPosition(sf::Vector2f(16.f, static_cast<float>(saveLabelY)));
+        saveLabel.setString("Save folder:");
+        window.draw(saveLabel);
+
+        sf::RectangleShape saveBox(sf::Vector2f(static_cast<float>(paletteWidth - 24), 26.f));
+        saveBox.setFillColor(sf::Color(50, 50, 60));
+        saveBox.setOutlineThickness(1);
+        saveBox.setOutlineColor(sf::Color(90, 90, 110));
+        saveBox.setPosition(sf::Vector2f(12.f, static_cast<float>(saveInputY)));
+        window.draw(saveBox);
+
+        sf::Text savePathText(font);
+        savePathText.setCharacterSize(14);
+        savePathText.setFillColor(sf::Color::White);
+        savePathText.setPosition(sf::Vector2f(18.f, static_cast<float>(saveInputY + 2)));
+        savePathText.setString(saveDirPath);
+        window.draw(savePathText);
+
+        // Save button
+        sf::RectangleShape saveBtn(sf::Vector2f(100.f, 28.f));
+        saveBtn.setFillColor(sf::Color(70, 120, 90));
+        saveBtn.setOutlineThickness(1);
+        saveBtn.setOutlineColor(sf::Color(90, 140, 110));
+        saveBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(saveButtonsY)));
+        window.draw(saveBtn);
+
+        sf::Text saveBtnText(font);
+        saveBtnText.setCharacterSize(16);
+        saveBtnText.setFillColor(sf::Color(240, 255, 240));
+        saveBtnText.setPosition(sf::Vector2f(12.f + 20.f, static_cast<float>(saveButtonsY) + 4.f));
+        saveBtnText.setString("Save");
+        window.draw(saveBtnText);
+
+        // Browse button
+        sf::RectangleShape browseBtn(sf::Vector2f(100.f, 28.f));
+        browseBtn.setFillColor(sf::Color(70, 90, 120));
+        browseBtn.setOutlineThickness(1);
+        browseBtn.setOutlineColor(sf::Color(90, 110, 140));
+        browseBtn.setPosition(sf::Vector2f(12.f + 110.f, static_cast<float>(saveButtonsY)));
+        window.draw(browseBtn);
+
+        sf::Text browseBtnText(font);
+        browseBtnText.setCharacterSize(16);
+        browseBtnText.setFillColor(sf::Color(235, 240, 255));
+        browseBtnText.setPosition(sf::Vector2f(12.f + 110.f + 14.f, static_cast<float>(saveButtonsY) + 4.f));
+        browseBtnText.setString("Browse");
+        window.draw(browseBtnText);
       }
     }
 
