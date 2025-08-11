@@ -2,7 +2,7 @@
 #include <iostream>
 #include <memory>
 
-Tile::Tile(std::string textureUrl, float scale, int width, int height, int column, int row,
+Tile::Tile(const std::string& textureUrl, float scale, int width, int height, int column, int row,
 float posX, float posY, sf::RenderWindow*& window)
 {
   try {

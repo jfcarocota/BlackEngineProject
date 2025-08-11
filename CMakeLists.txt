@@ -140,6 +140,13 @@ target_link_libraries(TileMapEditor PRIVATE
   sfml-audio
 )
 
+# Enable native Windows file dialogs for the editor
+if(WIN32)
+  target_compile_definitions(TileMapEditor PRIVATE MAPEDITOR_ENABLE_WIN32_DIALOGS=1)
+  # Link common Windows system libs for COM and dialogs (pragma should handle MSVC, this is explicit)
+  target_link_libraries(TileMapEditor PRIVATE ole32 shell32 comdlg32)
+endif()
+
 # Enable SFML audio where used
 target_compile_definitions(BlackEngineProject PRIVATE SFML_AUDIO_AVAILABLE)
 

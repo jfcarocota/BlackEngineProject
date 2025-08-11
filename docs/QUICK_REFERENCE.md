@@ -207,7 +207,30 @@ const char* ASSETS_MY_SOUND = "assets/my_sound.ogg";
 auto& sprite = entity.AddComponent<SpriteComponent>(ASSETS_MY_TEXTURE, 0, 0);
 ```
 
-## 🐛 Debugging
+## � Map formats
+
+The engine supports legacy .grid files and a new JSON format.
+
+- .grid: pairs of integers per cell: col row. New editor can also save a sparse variant with header `# BEP_GRID_SPARSE v1` storing only non-zero tiles.
+- .json: two fields required:
+    - `tileset` string path to the tileset image (prefer relative like `assets/tiles.png`).
+    - `grid` 2D array of `[col,row]` pairs with size `GameConstants::MAP_WIDTH x GameConstants::MAP_HEIGHT`.
+
+Example JSON:
+
+```json
+{
+    "tileset": "assets/tiles.png",
+    "grid": [
+        [[0,0],[1,0]],
+        [[0,1],[1,1]]
+    ]
+}
+```
+
+Runtime auto-detects the format by file extension.
+
+## �🐛 Debugging
 
 ### Debug Output
 ```cpp

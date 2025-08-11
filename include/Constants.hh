@@ -5,6 +5,7 @@ const char* ASSETS_SPRITES{"assets/sprites.png"};
 const char* ASSETS_TILES{"assets/tiles.png"};
 const char* ASSETS_MAPS{"assets/maps/level1.grid"};
 const char* ASSETS_MAPS_NEW{"assets/maps/map_20250809_183540.grid"};
+const char* ASSETS_MAPS_JSON{"assets/maps/level1.json"};
 const char* ASSETS_FONT_ARCADECLASSIC{"assets/fonts/ARCADECLASSIC.TTF"};
 
 // Game constants

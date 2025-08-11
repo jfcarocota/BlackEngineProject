@@ -1,9 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include <filesystem>
 #include <fstream>
 #include <iostream>
-#include <optional>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -12,10 +10,45 @@
 #include <algorithm>
 #include <cmath>
 #include <unordered_map>
+#include <cctype>
+#include <ctime>
+#include <cstdint>
+#include <cwchar>
+#include <iterator>
+#include <system_error>
+
+// Define to enable native Win32 file dialogs. Requires Windows SDK headers/libs.
+// #define MAPEDITOR_ENABLE_WIN32_DIALOGS 1
+
+// Fallback for compilers without __has_include
+#ifndef __has_include
+  #define __has_include(x) 0
+#endif
+
+// Filesystem compatibility shim: prefer <filesystem>, fallback to <experimental/filesystem>
+#if __has_include(<filesystem>)
+  #include <filesystem>
+  namespace fs = std::filesystem;
+#elif __has_include(<experimental/filesystem>)
+  #include <experimental/filesystem>
+  namespace fs = std::experimental::filesystem;
+#else
+  #error "No <filesystem> support available"
+#endif
+
+// Optional compatibility: prefer <optional>, fallback to experimental
+#if __has_include(<optional>)
+  #include <optional>
+#elif __has_include(<experimental/optional>)
+  #include <experimental/optional>
+  namespace std { using experimental::optional; using experimental::nullopt; using experimental::nullopt_t; }
+#else
+  #error "No <optional> support available"
+#endif
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
 #endif
-#ifdef _WIN32
+#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
   #ifndef NOMINMAX
   #define NOMINMAX
   #endif
@@ -45,7 +78,7 @@ static std::string getExecutableDir() {
   uint32_t size = sizeof(buf);
   if (_NSGetExecutablePath(buf, &size) == 0) {
     std::error_code ec;
-    auto p = std::filesystem::weakly_canonical(std::filesystem::path(buf), ec);
+  auto p = fs::weakly_canonical(fs::path(buf), ec);
     if (!ec) dir = p.parent_path().string();
   }
 #else
@@ -56,28 +89,28 @@ static std::string getExecutableDir() {
 
 static std::string findAssetPath(const std::string& relative) {
   // 1) As provided (relative to CWD or absolute)
-  std::filesystem::path p(relative);
-  if (std::filesystem::exists(p)) return p.string();
+  fs::path p(relative);
+  if (fs::exists(p)) return p.string();
 
   // 2) Try common fallbacks relative to CWD
   std::vector<std::string> relPrefixes = {"./", "../", "../../", "../../../"};
   for (const auto& pref : relPrefixes) {
-    std::filesystem::path cand = std::filesystem::path(pref) / relative;
-    if (std::filesystem::exists(cand)) return cand.string();
+    fs::path cand = fs::path(pref) / relative;
+    if (fs::exists(cand)) return cand.string();
   }
 
   // 3) Try relative to the executable location
   std::string exeDir = getExecutableDir();
   if (!exeDir.empty()) {
-    std::filesystem::path cand = std::filesystem::path(exeDir) / relative;
-    if (std::filesystem::exists(cand)) return cand.string();
+    fs::path cand = fs::path(exeDir) / relative;
+    if (fs::exists(cand)) return cand.string();
 
 #ifdef __APPLE__
     // If inside a .app bundle: exeDir = <App>.app/Contents/MacOS
-    auto macosDir = std::filesystem::path(exeDir);
+    auto macosDir = fs::path(exeDir);
     if (macosDir.filename() == "MacOS" && macosDir.parent_path().filename() == "Contents") {
-      std::filesystem::path resources = macosDir.parent_path() / "Resources" / relative;
-      if (std::filesystem::exists(resources)) return resources.string();
+      fs::path resources = macosDir.parent_path() / "Resources" / relative;
+      if (fs::exists(resources)) return resources.string();
       // Also support apps where assets are placed directly under Resources without the leading folder
       // e.g., relative = "assets/tiles.png" might also exist as Resources/assets/tiles.png (already checked)
     }
@@ -114,18 +147,18 @@ static std::string findDefaultUIFont() {
 #endif
   for (const auto& p : candidates) {
     std::error_code ec;
-    if (std::filesystem::exists(p, ec)) return p;
+    if (fs::exists(p, ec)) return p;
   }
   return {};
 }
 
 // User-writable directory for saved maps
-static std::filesystem::path getUserMapsDir() {
-  std::filesystem::path home;
+static fs::path getUserMapsDir() {
+  fs::path home;
 #ifdef _WIN32
   const char* appData = std::getenv("APPDATA");
   if (appData) home = appData;
-  else home = std::filesystem::path(".");
+  else home = fs::path(".");
   return home / "BlackEngineProject" / "Maps";
 #else
   const char* h = std::getenv("HOME");
@@ -169,6 +202,19 @@ static std::string timestampName() {
 #endif
   char buf[32];
   std::strftime(buf, sizeof(buf), "map_%Y%m%d_%H%M%S.grid", &tm);
+  return std::string(buf);
+}
+
+static std::string timestampNameJson() {
+  std::time_t t = std::time(nullptr);
+  std::tm tm{};
+#ifdef _WIN32
+  localtime_s(&tm, &t);
+#else
+  localtime_r(&t, &tm);
+#endif
+  char buf[32];
+  std::strftime(buf, sizeof(buf), "map_%Y%m%d_%H%M%S.json", &tm);
   return std::string(buf);
 }
 
@@ -253,7 +299,7 @@ static inline void toLocal(int gx, int gy, int& lx, int& ly) {
   if (lx < 0) lx += BEP_CHUNK_SIZE; if (ly < 0) ly += BEP_CHUNK_SIZE;
 }
 
-#ifdef _WIN32
+#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
 // Try to use modern IFileDialog for picking files/folders; fallback to legacy APIs if needed
 static std::optional<std::string> winPickImageFile() {
   // Preferred: IFileOpenDialog with filters
@@ -357,16 +403,21 @@ static std::optional<std::string> winPickFolder(const wchar_t* title = L"Select 
   if (ok && path[0] != '\0') return std::string(path);
   return std::nullopt;
 }
-#endif
+#endif // _WIN32 && MAPEDITOR_ENABLE_WIN32_DIALOGS
 
-#ifdef _WIN32
+#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
 // Open a .grid file using modern IFileOpenDialog; fallback to GetOpenFileName
-static std::optional<std::string> winPickGridFile(const wchar_t* title = L"Open grid file") {
+static std::optional<std::string> winPickMapFile(const wchar_t* title = L"Open map file") {
   IFileOpenDialog* pDlg = nullptr;
   HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
   if (SUCCEEDED(hr) && pDlg) {
-    COMDLG_FILTERSPEC filters[] = { {L"Grid Files (*.grid)", L"*.grid"}, {L"All Files (*.*)", L"*.*"} };
-    pDlg->SetFileTypes(2, filters);
+    COMDLG_FILTERSPEC filters[] = {
+      {L"Map Files (*.json;*.grid)", L"*.json;*.grid"},
+      {L"JSON Files (*.json)", L"*.json"},
+      {L"Grid Files (*.grid)", L"*.grid"},
+      {L"All Files (*.*)", L"*.*"}
+    };
+    pDlg->SetFileTypes(4, filters);
     if (title) pDlg->SetTitle(title);
     hr = pDlg->Show(nullptr);
     if (SUCCEEDED(hr)) {
@@ -396,7 +447,7 @@ static std::optional<std::string> winPickGridFile(const wchar_t* title = L"Open 
   OPENFILENAMEA ofn{};
   ofn.lStructSize = sizeof(ofn);
   ofn.hwndOwner = nullptr;
-  ofn.lpstrFilter = "Grid Files\0*.grid\0All Files\0*.*\0";
+  ofn.lpstrFilter = "Map Files (*.json;*.grid)\0*.json;*.grid\0JSON Files (*.json)\0*.json\0Grid Files (*.grid)\0*.grid\0All Files\0*.*\0";
   ofn.lpstrFile = file;
   ofn.nMaxFile = MAX_PATH;
   ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
@@ -405,13 +456,18 @@ static std::optional<std::string> winPickGridFile(const wchar_t* title = L"Open 
 }
 
 // Save As dialog for .grid using IFileSaveDialog; fallback to GetSaveFileName
-static std::optional<std::string> winSaveGridAs(const wchar_t* title = L"Save grid as") {
+static std::optional<std::string> winSaveMapAs(const wchar_t* title = L"Save map as") {
   IFileSaveDialog* pDlg = nullptr;
   HRESULT hr = CoCreateInstance(CLSID_FileSaveDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
   if (SUCCEEDED(hr) && pDlg) {
-    COMDLG_FILTERSPEC filters[] = { {L"Grid Files (*.grid)", L"*.grid"}, {L"All Files (*.*)", L"*.*"} };
-    pDlg->SetFileTypes(2, filters);
-    pDlg->SetDefaultExtension(L"grid");
+    COMDLG_FILTERSPEC filters[] = {
+      {L"JSON Files (*.json)", L"*.json"},
+      {L"Map Files (*.json;*.grid)", L"*.json;*.grid"},
+      {L"Grid Files (*.grid)", L"*.grid"},
+      {L"All Files (*.*)", L"*.*"}
+    };
+    pDlg->SetFileTypes(4, filters);
+    pDlg->SetDefaultExtension(L"json");
     if (title) pDlg->SetTitle(title);
     hr = pDlg->Show(nullptr);
     if (SUCCEEDED(hr)) {
@@ -426,7 +482,8 @@ static std::optional<std::string> winSaveGridAs(const wchar_t* title = L"Save gr
           std::string out;
           out.resize(WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), (int)ws.size(), nullptr, 0, nullptr, nullptr));
           WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), (int)ws.size(), out.data(), (int)out.size(), nullptr, nullptr);
-          if (out.size() < 5 || out.substr(out.size() - 5) != ".grid") out += ".grid";
+          // Sugerir .json si no hay extensión
+          if (out.find('.') == std::string::npos) out += ".json";
           return out;
         }
         if (pszFilePath) CoTaskMemFree(pszFilePath);
@@ -441,22 +498,67 @@ static std::optional<std::string> winSaveGridAs(const wchar_t* title = L"Save gr
   OPENFILENAMEA ofn{};
   ofn.lStructSize = sizeof(ofn);
   ofn.hwndOwner = nullptr;
-  ofn.lpstrFilter = "Grid Files\0*.grid\0All Files\0*.*\0";
-  ofn.lpstrDefExt = "grid";
+  ofn.lpstrFilter = "Map Files (*.json;*.grid)\0*.json;*.grid\0JSON Files (*.json)\0*.json\0Grid Files (*.grid)\0*.grid\0All Files\0*.*\0";
+  ofn.lpstrDefExt = "json";
   ofn.lpstrFile = file;
   ofn.nMaxFile = MAX_PATH;
   ofn.Flags = OFN_OVERWRITEPROMPT | OFN_PATHMUSTEXIST;
   if (GetSaveFileNameA(&ofn)) {
     std::string out(file);
-    if (out.size() < 5 || out.substr(out.size() - 5) != ".grid") out += ".grid";
+    if (out.find('.') == std::string::npos) out += ".json";
     return out;
   }
   return std::nullopt;
 }
+
+// Save As dialog for .json using IFileSaveDialog
+static std::optional<std::string> winSaveJsonAs(const wchar_t* title = L"Save JSON as") {
+  IFileSaveDialog* pDlg = nullptr;
+  HRESULT hr = CoCreateInstance(CLSID_FileSaveDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
+  if (SUCCEEDED(hr) && pDlg) {
+    COMDLG_FILTERSPEC filters[] = { {L"JSON Files (*.json)", L"*.json"}, {L"All Files (*.*)", L"*.*"} };
+    pDlg->SetFileTypes(2, filters);
+    pDlg->SetDefaultExtension(L"json");
+    if (title) pDlg->SetTitle(title);
+    hr = pDlg->Show(nullptr);
+    if (SUCCEEDED(hr)) {
+      IShellItem* pItem = nullptr;
+      if (SUCCEEDED(pDlg->GetResult(&pItem)) && pItem) {
+        PWSTR pszFilePath = nullptr;
+        if (SUCCEEDED(pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath)) && pszFilePath) {
+          std::wstring ws(pszFilePath);
+          CoTaskMemFree(pszFilePath);
+          pItem->Release();
+          pDlg->Release();
+          std::string out;
+          out.resize(WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), (int)ws.size(), nullptr, 0, nullptr, nullptr));
+          WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), (int)ws.size(), out.data(), (int)out.size(), nullptr, nullptr);
+          if (out.size() < 5 || out.substr(out.size() - 5) != ".json") out += ".json";
+          return out;
+        }
+        if (pszFilePath) CoTaskMemFree(pszFilePath);
+        pItem->Release();
+      }
+      pDlg->Release();
+    } else {
+      pDlg->Release();
+    }
+  }
+  return std::nullopt;
+}
+#endif // _WIN32 && MAPEDITOR_ENABLE_WIN32_DIALOGS
+
+#if defined(_WIN32) && !defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
+// Stubs when dialogs are disabled; callers should be behind the same macro
+static std::optional<std::string> winPickImageFile() { return std::nullopt; }
+static std::optional<std::string> winPickFolder(const wchar_t* = L"") { return std::nullopt; }
+static std::optional<std::string> winPickGridFile(const wchar_t* = L"") { return std::nullopt; }
+static std::optional<std::string> winSaveGridAs(const wchar_t* = L"") { return std::nullopt; }
+static std::optional<std::string> winSaveJsonAs(const wchar_t* = L"") { return std::nullopt; }
 #endif
 
 int main() {
-#ifdef _WIN32
+#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
   // Initialize COM for modern file/folder pickers
   HRESULT comInit = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
   (void)comInit; // ignore failures; we have fallbacks
@@ -644,7 +746,44 @@ int main() {
   };
 
   // Save helpers
-  auto saveGridToPath = [&](const std::filesystem::path& outPath) {
+  auto saveJsonToPath = [&](const fs::path& outPath) {
+    auto jsonEscape = [](const std::string& s) {
+      std::string out; out.reserve(s.size() + 8);
+      for (char ch : s) {
+        switch (ch) {
+          case '\\': out += "\\\\"; break;
+          case '"': out += "\\\""; break;
+          case '\n': out += "\\n"; break;
+          case '\r': out += "\\r"; break;
+          case '\t': out += "\\t"; break;
+          default: out.push_back(ch); break;
+        }
+      }
+      return out;
+    };
+    std::ofstream out(outPath);
+    if (!out.is_open()) { showInfo("Failed to save: " + outPath.string()); return; }
+    std::string tilesetOut = tilesetPath;
+    auto posAssets = tilesetOut.find("assets/");
+    if (posAssets != std::string::npos) tilesetOut = tilesetOut.substr(posAssets);
+    out << "{\n  \"tileset\": \"" << jsonEscape(tilesetOut) << "\",\n  \"grid\": [\n";
+    for (int y = 0; y < gridRows; ++y) {
+      out << "    [";
+      for (int x = 0; x < gridCols; ++x) {
+        TileCR t = getTileAt(x, y);
+        out << "[" << t.col << "," << t.row << "]";
+        if (x + 1 < gridCols) out << ",";
+      }
+      out << "]";
+      if (y + 1 < gridRows) out << ",";
+      out << "\n";
+    }
+    out << "  ]\n}\n";
+    out.close();
+    showInfo(std::string("Saved JSON -> ") + outPath.string());
+  };
+
+  auto saveGridToPath = [&](const fs::path& outPath) {
     std::ofstream out(outPath);
     if (!out.is_open()) { showInfo("Failed to save: " + outPath.string()); return; }
     out << "# BEP_GRID_SPARSE v1\n";
@@ -667,18 +806,34 @@ int main() {
 
   // Save current grid to file in chosen folder (sparse format)
   auto saveGrid = [&]() {
-    std::filesystem::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : std::filesystem::path(saveDirPath);
+    fs::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : fs::path(saveDirPath);
     std::error_code ec;
-    if (!std::filesystem::exists(mapsDir)) {
-      std::filesystem::create_directories(mapsDir, ec);
+    if (!fs::exists(mapsDir)) {
+      fs::create_directories(mapsDir, ec);
       if (ec) { showInfo(std::string("Failed to create maps dir: ") + mapsDir.string()); return; }
-    } else if (!std::filesystem::is_directory(mapsDir)) {
+    } else if (!fs::is_directory(mapsDir)) {
       showInfo(std::string("Not a directory: ") + mapsDir.string());
       return;
     }
     std::string fileName = timestampName();
-    std::filesystem::path outPath = mapsDir / fileName;
+    fs::path outPath = mapsDir / fileName;
     saveGridToPath(outPath);
+  };
+
+  // Save current grid to JSON in chosen folder (fixed size grid + tileset path)
+  auto saveJson = [&]() {
+    fs::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : fs::path(saveDirPath);
+    std::error_code ec;
+    if (!fs::exists(mapsDir)) {
+      fs::create_directories(mapsDir, ec);
+      if (ec) { showInfo(std::string("Failed to create maps dir: ") + mapsDir.string()); return; }
+    } else if (!fs::is_directory(mapsDir)) {
+      showInfo(std::string("Not a directory: ") + mapsDir.string());
+      return;
+    }
+    std::string fileName = timestampNameJson();
+  fs::path outPath = mapsDir / fileName;
+    saveJsonToPath(outPath);
   };
 
   // Load grid from a .grid file (supports sparse v1 and legacy dense)
@@ -706,11 +861,94 @@ int main() {
     showInfo("Loaded grid from: " + resolved);
   };
 
+  // Load from JSON map (tileset + 2D grid of [c,r])
+  auto loadJsonFromFile = [&](const std::string& filePath) {
+    std::string resolved = findAssetPath(filePath);
+    std::ifstream in(resolved, std::ios::in | std::ios::binary);
+    if (!in.is_open()) { showInfo("Failed to open: " + resolved); return; }
+    std::ostringstream ss; ss << in.rdbuf(); in.close();
+    std::string json = ss.str();
+
+    auto extractStringField = [](const std::string& src, const std::string& key) -> std::string {
+      const std::string quoted = '"' + key + '"';
+      size_t pos = src.find(quoted);
+      if (pos == std::string::npos) return {};
+      pos = src.find(':', pos);
+      if (pos == std::string::npos) return {};
+      pos = src.find('"', pos);
+      if (pos == std::string::npos) return {};
+      ++pos;
+      std::string out; bool escape=false; for (; pos < src.size(); ++pos) {
+        char ch = src[pos];
+        if (escape) { out.push_back(ch); escape = false; continue; }
+        if (ch == '\\') { escape = true; continue; }
+        if (ch == '"') break; out.push_back(ch);
+      }
+      return out;
+    };
+    auto extractGridStart = [](const std::string& src) -> size_t {
+      size_t pos = src.find("\"grid\"");
+      if (pos == std::string::npos) return std::string::npos;
+      pos = src.find(':', pos);
+      if (pos == std::string::npos) return std::string::npos;
+      pos = src.find('[', pos);
+      return pos;
+    };
+    auto parseGrid = [](const std::string& src, size_t startIdx)
+        -> std::vector<std::vector<TileCR>> {
+      std::vector<std::vector<TileCR>> grid;
+      std::vector<TileCR> currentRow;
+      int depth = 0; std::string num; std::vector<int> pair;
+      auto flush = [&]() { if (!num.empty()) { try { pair.push_back(std::stoi(num)); } catch (...) {} num.clear(); } };
+      for (size_t i = startIdx; i < src.size(); ++i) {
+        char ch = src[i];
+        if (ch == '[') { ++depth; continue; }
+        if (ch == ']') {
+          flush();
+          if (depth == 3) { if (pair.size() == 2) currentRow.push_back(TileCR{pair[0], pair[1]}); pair.clear(); }
+          else if (depth == 2) { /* end of row */ }
+          else if (depth == 1) { grid.push_back(std::move(currentRow)); currentRow = {}; break; }
+          --depth;
+          if (depth == 1) { if (!currentRow.empty()) { grid.push_back(std::move(currentRow)); currentRow = {}; } }
+          continue;
+        }
+        if (std::isdigit(static_cast<unsigned char>(ch)) || ch == '-' || ch == '+') num.push_back(ch);
+        else if (ch == ',' || std::isspace(static_cast<unsigned char>(ch))) flush();
+      }
+      while (!grid.empty() && grid.back().empty()) grid.pop_back();
+      return grid;
+    };
+
+    // Apply tileset if present
+    std::string ts = extractStringField(json, "tileset");
+    if (!ts.empty()) {
+      std::string resolvedTs = findAssetPath(ts);
+      if (tileset.loadTexture(resolvedTs)) { tilesetPath = resolvedTs; showInfo("Loaded tileset: " + tilesetPath); }
+    }
+
+    size_t gs = extractGridStart(json);
+    if (gs == std::string::npos) { showInfo("Invalid JSON: missing grid"); return; }
+    auto grid = parseGrid(json, gs);
+    chunks.clear();
+    for (int y = 0; y < static_cast<int>(grid.size()); ++y) {
+      for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
+        TileCR t = grid[y][x];
+        if (t.col != 0 || t.row != 0) setTileAt(x, y, t);
+      }
+    }
+    showInfo("Loaded JSON map: " + resolved);
+  };
+
   // Load default map if available
   {
-    std::string defaultMap = findAssetPath(ASSETS_MAPS);
-    if (!defaultMap.empty() && std::filesystem::exists(defaultMap)) {
-      loadGridFromFile(defaultMap);
+    std::string jsonDefault = findAssetPath(ASSETS_MAPS_JSON);
+    if (!jsonDefault.empty() && fs::exists(jsonDefault)) {
+      loadJsonFromFile(jsonDefault);
+    } else {
+      std::string defaultMap = findAssetPath(ASSETS_MAPS);
+      if (!defaultMap.empty() && fs::exists(defaultMap)) {
+        loadGridFromFile(defaultMap);
+      }
     }
   }
 
@@ -726,6 +964,7 @@ int main() {
   const int saveLabelY = 214;
   const int saveInputY = 234;
   const int saveButtonsY = 266;
+  const int saveButtonsY2 = saveButtonsY + 34;
   // Shift tileset thumbnails down to make space for config + save controls
   const int y0 = 302;
 
@@ -958,6 +1197,7 @@ int main() {
           if (!enteringPath && !enteringSaveDir && !enteringTileW && !enteringTileH && !enteringRows && !enteringCols) {
             if (e->code == sf::Keyboard::Key::Escape) window.close();
             if (e->code == sf::Keyboard::Key::S) saveGrid();
+            if (e->code == sf::Keyboard::Key::J) saveJson();
             if (e->code == sf::Keyboard::Key::N) { chunks.clear(); showInfo("New empty grid"); }
             if (e->code == sf::Keyboard::Key::L) {
               enteringPath = true;
@@ -968,7 +1208,7 @@ int main() {
             }
             if (e->code == sf::Keyboard::Key::O) {
 #if defined(_WIN32)
-              if (auto sel = winPickGridFile(L"Open grid file")) loadGridFromFile(*sel);
+              if (auto sel = winPickMapFile(L"Open map file")) loadGridFromFile(*sel);
               else showInfo("Open canceled");
 #else
               loadGridFromFile(ASSETS_MAPS);
@@ -1108,18 +1348,33 @@ int main() {
           sf::IntRect inputRect({12, saveInputY}, {paletteWidth - 24, 26});
           sf::IntRect saveBtnRect({12, saveButtonsY}, {100, 28});
           sf::IntRect saveAsBtnRect({12 + 110, saveButtonsY}, {100, 28});
+          sf::IntRect saveJsonRect({12, saveButtonsY2}, {100, 28});
+          sf::IntRect saveJsonAsRect({12 + 110, saveButtonsY2}, {120, 28});
           if (inputRect.contains(mpPalette)) {
             enteringSaveDir = true;
             enteringPath = enteringTileW = enteringTileH = enteringRows = enteringCols = false;
             continue;
           }
-          if (saveBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { saveGrid(); continue; }
+          if (saveBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { saveJson(); continue; }
           if (saveAsBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
-#if defined(_WIN32)
-            if (auto out = winSaveGridAs(L"Save grid as")) { saveGridToPath(*out); }
-            else { showInfo("Save As canceled"); }
+#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
+            if (auto out = winSaveMapAs(L"Save map as")) {
+              std::string path = *out;
+              if (path.size() >= 5 && path.substr(path.size()-5) == ".json") saveJsonToPath(fs::path(path));
+              else saveGridToPath(fs::path(path));
+            } else { showInfo("Save As canceled"); }
 #else
-            saveGrid();
+            saveJson();
+#endif
+            continue;
+          }
+          if (saveJsonRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { saveJson(); continue; }
+          if (saveJsonAsRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
+            if (auto out = winSaveJsonAs(L"Save JSON as")) { saveJsonToPath(fs::path(*out)); }
+            else { showInfo("Save As JSON canceled"); }
+#else
+            saveJson();
 #endif
             continue;
           }
@@ -1322,7 +1577,7 @@ int main() {
       savePathText.setString(ellipsizeStart(saveDirPath, 14u, static_cast<float>((paletteWidth - 24) - 12)));
       window.draw(savePathText);
 
-      // Save button
+  // Save button
       sf::RectangleShape saveBtn(sf::Vector2f(100.f, 28.f));
       saveBtn.setFillColor(sf::Color(70, 120, 90));
       saveBtn.setOutlineThickness(1);
@@ -1330,15 +1585,15 @@ int main() {
       saveBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(saveButtonsY)));
       window.draw(saveBtn);
 
-      sf::Text saveBtnText(font);
-      saveBtnText.setCharacterSize(16);
-      saveBtnText.setFillColor(sf::Color(240, 255, 240));
-      saveBtnText.setPosition(sf::Vector2f(12.f + 20.f, static_cast<float>(saveButtonsY) + 4.f));
-      saveBtnText.setString("Save");
-      window.draw(saveBtnText);
+    sf::Text saveBtnText(font);
+    saveBtnText.setCharacterSize(16);
+    saveBtnText.setFillColor(sf::Color(240, 255, 240));
+    saveBtnText.setPosition(sf::Vector2f(12.f + 8.f, static_cast<float>(saveButtonsY) + 4.f));
+  saveBtnText.setString("Save JSON");
+    window.draw(saveBtnText);
 
   // Save As button
-  sf::RectangleShape saveAsBtn(sf::Vector2f(100.f, 28.f));
+  sf::RectangleShape saveAsBtn(sf::Vector2f(140.f, 28.f));
   saveAsBtn.setFillColor(sf::Color(70, 90, 120));
   saveAsBtn.setOutlineThickness(1);
   saveAsBtn.setOutlineColor(sf::Color(90, 110, 140));
@@ -1347,8 +1602,8 @@ int main() {
   sf::Text saveAsBtnText(font);
   saveAsBtnText.setCharacterSize(16);
   saveAsBtnText.setFillColor(sf::Color(235, 240, 255));
-  saveAsBtnText.setPosition(sf::Vector2f(12.f + 110.f + 10.f, static_cast<float>(saveButtonsY) + 4.f));
-  saveAsBtnText.setString("Save As");
+  saveAsBtnText.setPosition(sf::Vector2f(12.f + 110.f + 8.f, static_cast<float>(saveButtonsY) + 4.f));
+  saveAsBtnText.setString("Save As...");
   window.draw(saveAsBtnText);
 
   // (Browse button removed)
