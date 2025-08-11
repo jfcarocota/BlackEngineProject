@@ -359,6 +359,102 @@ static std::optional<std::string> winPickFolder(const wchar_t* title = L"Select 
 }
 #endif
 
+#ifdef _WIN32
+// Open a .grid file using modern IFileOpenDialog; fallback to GetOpenFileName
+static std::optional<std::string> winPickGridFile(const wchar_t* title = L"Open grid file") {
+  IFileOpenDialog* pDlg = nullptr;
+  HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
+  if (SUCCEEDED(hr) && pDlg) {
+    COMDLG_FILTERSPEC filters[] = { {L"Grid Files (*.grid)", L"*.grid"}, {L"All Files (*.*)", L"*.*"} };
+    pDlg->SetFileTypes(2, filters);
+    if (title) pDlg->SetTitle(title);
+    hr = pDlg->Show(nullptr);
+    if (SUCCEEDED(hr)) {
+      IShellItem* pItem = nullptr;
+      if (SUCCEEDED(pDlg->GetResult(&pItem)) && pItem) {
+        PWSTR pszFilePath = nullptr;
+        if (SUCCEEDED(pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath)) && pszFilePath) {
+          size_t len = wcslen(pszFilePath);
+          std::string out;
+          out.resize(WideCharToMultiByte(CP_UTF8, 0, pszFilePath, (int)len, nullptr, 0, nullptr, nullptr));
+          WideCharToMultiByte(CP_UTF8, 0, pszFilePath, (int)len, out.data(), (int)out.size(), nullptr, nullptr);
+          CoTaskMemFree(pszFilePath);
+          pItem->Release();
+          pDlg->Release();
+          return out;
+        }
+        if (pszFilePath) CoTaskMemFree(pszFilePath);
+        pItem->Release();
+      }
+      pDlg->Release();
+    } else {
+      pDlg->Release();
+    }
+  }
+  // Fallback common dialog
+  char file[MAX_PATH] = "";
+  OPENFILENAMEA ofn{};
+  ofn.lStructSize = sizeof(ofn);
+  ofn.hwndOwner = nullptr;
+  ofn.lpstrFilter = "Grid Files\0*.grid\0All Files\0*.*\0";
+  ofn.lpstrFile = file;
+  ofn.nMaxFile = MAX_PATH;
+  ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
+  if (GetOpenFileNameA(&ofn)) return std::string(file);
+  return std::nullopt;
+}
+
+// Save As dialog for .grid using IFileSaveDialog; fallback to GetSaveFileName
+static std::optional<std::string> winSaveGridAs(const wchar_t* title = L"Save grid as") {
+  IFileSaveDialog* pDlg = nullptr;
+  HRESULT hr = CoCreateInstance(CLSID_FileSaveDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
+  if (SUCCEEDED(hr) && pDlg) {
+    COMDLG_FILTERSPEC filters[] = { {L"Grid Files (*.grid)", L"*.grid"}, {L"All Files (*.*)", L"*.*"} };
+    pDlg->SetFileTypes(2, filters);
+    pDlg->SetDefaultExtension(L"grid");
+    if (title) pDlg->SetTitle(title);
+    hr = pDlg->Show(nullptr);
+    if (SUCCEEDED(hr)) {
+      IShellItem* pItem = nullptr;
+      if (SUCCEEDED(pDlg->GetResult(&pItem)) && pItem) {
+        PWSTR pszFilePath = nullptr;
+        if (SUCCEEDED(pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath)) && pszFilePath) {
+          std::wstring ws(pszFilePath);
+          CoTaskMemFree(pszFilePath);
+          pItem->Release();
+          pDlg->Release();
+          std::string out;
+          out.resize(WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), (int)ws.size(), nullptr, 0, nullptr, nullptr));
+          WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), (int)ws.size(), out.data(), (int)out.size(), nullptr, nullptr);
+          if (out.size() < 5 || out.substr(out.size() - 5) != ".grid") out += ".grid";
+          return out;
+        }
+        if (pszFilePath) CoTaskMemFree(pszFilePath);
+        pItem->Release();
+      }
+      pDlg->Release();
+    } else {
+      pDlg->Release();
+    }
+  }
+  char file[MAX_PATH] = "";
+  OPENFILENAMEA ofn{};
+  ofn.lStructSize = sizeof(ofn);
+  ofn.hwndOwner = nullptr;
+  ofn.lpstrFilter = "Grid Files\0*.grid\0All Files\0*.*\0";
+  ofn.lpstrDefExt = "grid";
+  ofn.lpstrFile = file;
+  ofn.nMaxFile = MAX_PATH;
+  ofn.Flags = OFN_OVERWRITEPROMPT | OFN_PATHMUSTEXIST;
+  if (GetSaveFileNameA(&ofn)) {
+    std::string out(file);
+    if (out.size() < 5 || out.substr(out.size() - 5) != ".grid") out += ".grid";
+    return out;
+  }
+  return std::nullopt;
+}
+#endif
+
 int main() {
 #ifdef _WIN32
   // Initialize COM for modern file/folder pickers
@@ -547,22 +643,10 @@ int main() {
     }
   };
 
-  // Save current grid to file in chosen folder (sparse format)
-  auto saveGrid = [&]() {
-    std::filesystem::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : std::filesystem::path(saveDirPath);
-    std::error_code ec;
-    if (!std::filesystem::exists(mapsDir)) {
-      std::filesystem::create_directories(mapsDir, ec);
-      if (ec) { showInfo(std::string("Failed to create maps dir: ") + mapsDir.string()); return; }
-    } else if (!std::filesystem::is_directory(mapsDir)) {
-      showInfo(std::string("Not a directory: ") + mapsDir.string());
-      return;
-    }
-    std::string fileName = timestampName();
-    std::filesystem::path outPath = mapsDir / fileName;
+  // Save helpers
+  auto saveGridToPath = [&](const std::filesystem::path& outPath) {
     std::ofstream out(outPath);
     if (!out.is_open()) { showInfo("Failed to save: " + outPath.string()); return; }
-    // Sparse format header
     out << "# BEP_GRID_SPARSE v1\n";
     for (const auto& kv : chunks) {
       const ChunkCoord& cc = kv.first; const Chunk& ch = kv.second;
@@ -579,6 +663,22 @@ int main() {
     }
     out.close();
     showInfo(std::string("Saved -> ") + outPath.string());
+  };
+
+  // Save current grid to file in chosen folder (sparse format)
+  auto saveGrid = [&]() {
+    std::filesystem::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : std::filesystem::path(saveDirPath);
+    std::error_code ec;
+    if (!std::filesystem::exists(mapsDir)) {
+      std::filesystem::create_directories(mapsDir, ec);
+      if (ec) { showInfo(std::string("Failed to create maps dir: ") + mapsDir.string()); return; }
+    } else if (!std::filesystem::is_directory(mapsDir)) {
+      showInfo(std::string("Not a directory: ") + mapsDir.string());
+      return;
+    }
+    std::string fileName = timestampName();
+    std::filesystem::path outPath = mapsDir / fileName;
+    saveGridToPath(outPath);
   };
 
   // Load grid from a .grid file (supports sparse v1 and legacy dense)
@@ -867,7 +967,12 @@ int main() {
               showInfo("Type tileset path and press Enter");
             }
             if (e->code == sf::Keyboard::Key::O) {
+#if defined(_WIN32)
+              if (auto sel = winPickGridFile(L"Open grid file")) loadGridFromFile(*sel);
+              else showInfo("Open canceled");
+#else
               loadGridFromFile(ASSETS_MAPS);
+#endif
             }
             // Optional keyboard scroll helpers
             if (e->code == sf::Keyboard::Key::PageDown) { paletteScrollY += 0.9f * static_cast<float>(winH); clampAndApplyPaletteScroll(); }
@@ -1002,22 +1107,19 @@ int main() {
         if (mp.x >= 0 && mp.x < paletteWidth) {
           sf::IntRect inputRect({12, saveInputY}, {paletteWidth - 24, 26});
           sf::IntRect saveBtnRect({12, saveButtonsY}, {100, 28});
-          sf::IntRect browseBtnRect({12 + 110, saveButtonsY}, {100, 28});
+          sf::IntRect saveAsBtnRect({12 + 110, saveButtonsY}, {100, 28});
           if (inputRect.contains(mpPalette)) {
             enteringSaveDir = true;
             enteringPath = enteringTileW = enteringTileH = enteringRows = enteringCols = false;
             continue;
           }
           if (saveBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { saveGrid(); continue; }
-          if (browseBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+          if (saveAsBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
 #if defined(_WIN32)
-            if (auto chosen = winPickFolder(L"Select folder to save maps")) { saveDirPath = *chosen; showInfo(std::string("Save folder set: ") + saveDirPath); }
-            else { showInfo("Folder selection canceled"); }
-#elif defined(__APPLE__)
-            if (auto chosen = macChooseFolder()) { saveDirPath = *chosen; showInfo(std::string("Save folder set: ") + saveDirPath); }
-            else { showInfo("Folder selection canceled"); }
+            if (auto out = winSaveGridAs(L"Save grid as")) { saveGridToPath(*out); }
+            else { showInfo("Save As canceled"); }
 #else
-            showInfo("Folder picker not supported on this platform");
+            saveGrid();
 #endif
             continue;
           }
@@ -1235,20 +1337,21 @@ int main() {
       saveBtnText.setString("Save");
       window.draw(saveBtnText);
 
-      // Browse button
-      sf::RectangleShape browseBtn(sf::Vector2f(100.f, 28.f));
-      browseBtn.setFillColor(sf::Color(70, 90, 120));
-      browseBtn.setOutlineThickness(1);
-      browseBtn.setOutlineColor(sf::Color(90, 110, 140));
-      browseBtn.setPosition(sf::Vector2f(12.f + 110.f, static_cast<float>(saveButtonsY)));
-      window.draw(browseBtn);
+  // Save As button
+  sf::RectangleShape saveAsBtn(sf::Vector2f(100.f, 28.f));
+  saveAsBtn.setFillColor(sf::Color(70, 90, 120));
+  saveAsBtn.setOutlineThickness(1);
+  saveAsBtn.setOutlineColor(sf::Color(90, 110, 140));
+  saveAsBtn.setPosition(sf::Vector2f(12.f + 110.f, static_cast<float>(saveButtonsY)));
+  window.draw(saveAsBtn);
+  sf::Text saveAsBtnText(font);
+  saveAsBtnText.setCharacterSize(16);
+  saveAsBtnText.setFillColor(sf::Color(235, 240, 255));
+  saveAsBtnText.setPosition(sf::Vector2f(12.f + 110.f + 10.f, static_cast<float>(saveButtonsY) + 4.f));
+  saveAsBtnText.setString("Save As");
+  window.draw(saveAsBtnText);
 
-      sf::Text browseBtnText(font);
-      browseBtnText.setCharacterSize(16);
-      browseBtnText.setFillColor(sf::Color(235, 240, 255));
-      browseBtnText.setPosition(sf::Vector2f(12.f + 110.f + 14.f, static_cast<float>(saveButtonsY) + 4.f));
-      browseBtnText.setString("Browse");
-      window.draw(browseBtnText);
+  // (Browse button removed)
     }
 
     // Draw palette thumbnails (still clipped by palette view)
