@@ -923,7 +923,12 @@ int main() {
     std::string ts = extractStringField(json, "tileset");
     if (!ts.empty()) {
       std::string resolvedTs = findAssetPath(ts);
-      if (tileset.loadTexture(resolvedTs)) { tilesetPath = resolvedTs; showInfo("Loaded tileset: " + tilesetPath); }
+      if (tileset.loadTexture(resolvedTs)) {
+        tilesetPath = resolvedTs;
+        // Configure grid using current UI tile size values so palette can render
+  applyTilesetConfig();
+        showInfo(std::string("Loaded tileset: ") + tilesetPath);
+      }
     }
 
     size_t gs = extractGridStart(json);
@@ -1207,11 +1212,16 @@ int main() {
               showInfo("Type tileset path and press Enter");
             }
             if (e->code == sf::Keyboard::Key::O) {
-#if defined(_WIN32)
-              if (auto sel = winPickMapFile(L"Open map file")) loadGridFromFile(*sel);
-              else showInfo("Open canceled");
+#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
+              if (auto sel = winPickMapFile(L"Open map file")) {
+                std::string p = *sel;
+                if (p.size() >= 5 && p.substr(p.size()-5) == ".json") loadJsonFromFile(p);
+                else loadGridFromFile(p);
+              } else showInfo("Open canceled");
 #else
-              loadGridFromFile(ASSETS_MAPS);
+              std::string jsonDefault = findAssetPath(ASSETS_MAPS_JSON);
+              if (!jsonDefault.empty() && fs::exists(jsonDefault)) loadJsonFromFile(jsonDefault);
+              else loadGridFromFile(ASSETS_MAPS);
 #endif
             }
             // Optional keyboard scroll helpers
@@ -1348,8 +1358,7 @@ int main() {
           sf::IntRect inputRect({12, saveInputY}, {paletteWidth - 24, 26});
           sf::IntRect saveBtnRect({12, saveButtonsY}, {100, 28});
           sf::IntRect saveAsBtnRect({12 + 110, saveButtonsY}, {100, 28});
-          sf::IntRect saveJsonRect({12, saveButtonsY2}, {100, 28});
-          sf::IntRect saveJsonAsRect({12 + 110, saveButtonsY2}, {120, 28});
+          sf::IntRect openMapRect({12, saveButtonsY2}, {230, 28});
           if (inputRect.contains(mpPalette)) {
             enteringSaveDir = true;
             enteringPath = enteringTileW = enteringTileH = enteringRows = enteringCols = false;
@@ -1368,13 +1377,17 @@ int main() {
 #endif
             continue;
           }
-          if (saveJsonRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { saveJson(); continue; }
-          if (saveJsonAsRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+          if (openMapRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
 #if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
-            if (auto out = winSaveJsonAs(L"Save JSON as")) { saveJsonToPath(fs::path(*out)); }
-            else { showInfo("Save As JSON canceled"); }
+            if (auto sel = winPickMapFile(L"Open map file")) {
+              std::string p = *sel;
+              if (p.size() >= 5 && p.substr(p.size()-5) == ".json") loadJsonFromFile(p);
+              else loadGridFromFile(p);
+            } else { showInfo("Open canceled"); }
 #else
-            saveJson();
+            std::string jsonDefault = findAssetPath(ASSETS_MAPS_JSON);
+            if (!jsonDefault.empty() && fs::exists(jsonDefault)) loadJsonFromFile(jsonDefault);
+            else loadGridFromFile(ASSETS_MAPS);
 #endif
             continue;
           }
@@ -1605,6 +1618,22 @@ int main() {
   saveAsBtnText.setPosition(sf::Vector2f(12.f + 110.f + 8.f, static_cast<float>(saveButtonsY) + 4.f));
   saveAsBtnText.setString("Save As...");
   window.draw(saveAsBtnText);
+
+  // Open Map... button (second row)
+  {
+    sf::RectangleShape openBtn(sf::Vector2f(230.f, 28.f));
+    openBtn.setFillColor(sf::Color(90, 100, 140));
+    openBtn.setOutlineThickness(1);
+    openBtn.setOutlineColor(sf::Color(110, 120, 160));
+    openBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(saveButtonsY2)));
+    window.draw(openBtn);
+    sf::Text openTxt(font);
+    openTxt.setCharacterSize(16);
+    openTxt.setFillColor(sf::Color(235, 240, 255));
+    openTxt.setPosition(sf::Vector2f(12.f + 8.f, static_cast<float>(saveButtonsY2) + 4.f));
+    openTxt.setString("Open Map...");
+    window.draw(openTxt);
+  }
 
   // (Browse button removed)
     }
