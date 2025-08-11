@@ -50,9 +50,9 @@ Entity
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **macOS** (tested on macOS 12)
+- **Windows 10/11** or **macOS** (tested on macOS 12)
 - **CMake** 3.16 or higher
-- **Homebrew** (for dependency management)
+- On macOS: **Homebrew** (for dependency management)
 
 ### Dependencies
 ```bash
@@ -60,7 +60,27 @@ Entity
 brew install box2d jsoncpp
 ```
 
-### Building the Project (dev executable)
+### Building the Project on Windows (MSVC + CMake)
+```powershell
+# From a Developer PowerShell / PowerShell
+git clone https://github.com/jfcarocota/BlackEngineProject.git
+cd BlackEngineProject
+
+# Configure and build (generates Visual Studio solution and builds Release)
+cmake -S . -B build
+cmake --build build --config Release --parallel
+
+# Run from distribution output
+dist-win/bin/BlackEngineProject.exe
+dist-win/bin/TileMapEditor.exe
+```
+
+Optional: package the app and assets into dist-win and a ZIP:
+```powershell
+cmake --build build --target package_app --config Release
+```
+
+### Building the Project on macOS (dev executable)
 ```bash
 # Clone the repository
 git clone https://github.com/jfcarocota/BlackEngineProject.git
@@ -91,7 +111,7 @@ open ./BlackEngineProject.app
 xattr -dr com.apple.quarantine ./BlackEngineProject.app
 ```
 
-### Packaging to dist/
+### Packaging to dist/ (macOS)
 - A distribution copy is produced via the custom target `package_app`:
 ```bash
 # From build directory
@@ -108,10 +128,28 @@ BlackEngineProject/
 ├── third_party/            # External libraries
 ├── CMakeLists.txt          # Build configuration
 ├── BlackEngineProject.app  # macOS app bundle (dev output)
-└── dist/                   # Packaged app for distribution
+├── dist/                   # Packaged app for macOS distribution
+└── dist-win/               # Packaged app for Windows (bin/, assets/, libs/include)
 ```
 
 ## 🎯 Usage
+
+### Tile Map Editor
+- Launch: `dist-win/bin/TileMapEditor.exe` (Windows) or from the build dir on macOS.
+- Load tileset image:
+  - Click "Load" to open a file dialog and pick an image (png/jpg/bmp/gif).
+  - The editor previews the tiles in a scrollable palette.
+- Configure tiles:
+  - Only W and H are needed. Rows/Cols are computed automatically from the image size.
+  - Click "Apply" to re-slice the tileset.
+- Paint the grid:
+  - Left click to paint, right click to erase. Drag to paint continuously.
+- Save level:
+  - "Save folder" shows the target directory; click "Browse" to choose a folder.
+  - Click "Save" to write a timestamped `.grid` file with the tile indices.
+
+Notes:
+- The editor uses a system UI font by default (Segoe UI/Arial on Windows; DejaVu/Arial on Linux/macOS), with fallback to the bundled Arcade font. This avoids missing glyphs in labels.
 
 ### Creating Game Objects
 ```cpp
@@ -146,6 +184,10 @@ animator.PlayAnimation("walk");
 ## 🔊 Audio
 - SFML 3 audio uses miniaudio internally. No OpenAL or extra dylibs required.
 - Audio works when running from Terminal or Finder.
+
+## 🪟 Windows Notes
+- Binaries and assets ready-to-run are placed under `dist-win/` after building.
+- A ZIP package (e.g., `BlackEngineProject-<version>-Windows-AMD64.zip`) is produced in `build/` when using `package_app`.
 
 ## 🧰 Troubleshooting
 - If the app shows missing assets when double-clicked: the app sets its working directory to `Contents/Resources`; rebuild if assets changed.
