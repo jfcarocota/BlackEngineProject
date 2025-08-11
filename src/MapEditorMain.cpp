@@ -433,12 +433,12 @@ int main() {
   bool enteringPath = false;
   std::string pathBuffer = tilesetPath;
 
-  // Inputs for tileset config (W, H, Rows, Cols)
+  // Inputs for tileset config (W, H)
   bool enteringTileW = false, enteringTileH = false, enteringRows = false, enteringCols = false;
   std::string tileWBuf = std::to_string(defaultW);
   std::string tileHBuf = std::to_string(defaultH);
-  std::string rowsBuf = "";
-  std::string colsBuf = "";
+  std::string rowsBuf = ""; // removed from UI; kept for minimal change
+  std::string colsBuf = ""; // removed from UI; kept for minimal change
 
   // Save directory input state
   bool enteringSaveDir = false;
@@ -459,8 +459,8 @@ int main() {
     int w = defaultW, h = defaultH, r = 0, c = 0;
     try { if (!tileWBuf.empty()) w = std::max(1, std::stoi(tileWBuf)); } catch (...) {}
     try { if (!tileHBuf.empty()) h = std::max(1, std::stoi(tileHBuf)); } catch (...) {}
-    try { if (!rowsBuf.empty()) r = std::max(0, std::stoi(rowsBuf)); } catch (...) {}
-    try { if (!colsBuf.empty()) c = std::max(0, std::stoi(colsBuf)); } catch (...) {}
+    // Rows/Cols no longer set by UI; let tileset compute automatically
+    r = 0; c = 0;
     if (tileset.configureGrid(w, h, c, r)) {
       selected = TileCR{0, 0};
       showInfo("Tileset config applied");
@@ -754,7 +754,7 @@ int main() {
               } else if (enteringSaveDir) {
                 enteringSaveDir = false;
                 showInfo(std::string("Save folder set: ") + saveDirPath);
-              } else if (enteringTileW || enteringTileH || enteringRows || enteringCols) {
+              } else if (enteringTileW || enteringTileH) {
                 enteringTileW = enteringTileH = enteringRows = enteringCols = false;
                 applyTilesetConfig();
                 clampAndApplyPaletteScroll();
@@ -786,8 +786,6 @@ int main() {
             if (e->unicode >= '0' && e->unicode <= '9') {
               if (enteringTileW) tileWBuf += static_cast<char>(e->unicode);
               else if (enteringTileH) tileHBuf += static_cast<char>(e->unicode);
-              else if (enteringRows) rowsBuf += static_cast<char>(e->unicode);
-              else if (enteringCols) colsBuf += static_cast<char>(e->unicode);
             }
           }
         }
@@ -844,26 +842,18 @@ int main() {
           }
         }
 
-        // Tileset config controls (take top precedence)
+    // Tileset config controls (take top precedence)
         if (mp.x >= 0 && mp.x < paletteWidth) {
           // Input rects
           sf::IntRect wRect({12, cfgInputsY}, {52, 26});
           sf::IntRect hRect({12 + 60, cfgInputsY}, {52, 26});
-          sf::IntRect rRect({12 + 60 * 2, cfgInputsY}, {52, 26});
-          sf::IntRect cRect({12 + 60 * 3, cfgInputsY}, {52, 26});
           // Move Apply below inputs to fit within palette width
           sf::IntRect applyRect({12, cfgButtonsY}, {100, 26});
           if (wRect.contains(mpPalette)) {
-            enteringTileW = true; enteringTileH = enteringRows = enteringCols = enteringSaveDir = enteringPath = false; continue;
+      enteringTileW = true; enteringTileH = enteringRows = enteringCols = enteringSaveDir = enteringPath = false; continue;
           }
           if (hRect.contains(mpPalette)) {
-            enteringTileH = true; enteringTileW = enteringRows = enteringCols = enteringSaveDir = enteringPath = false; continue;
-          }
-          if (rRect.contains(mpPalette)) {
-            enteringRows = true; enteringTileW = enteringTileH = enteringCols = enteringSaveDir = enteringPath = false; continue;
-          }
-          if (cRect.contains(mpPalette)) {
-            enteringCols = true; enteringTileW = enteringTileH = enteringRows = enteringSaveDir = enteringPath = false; continue;
+      enteringTileH = true; enteringTileW = enteringRows = enteringCols = enteringSaveDir = enteringPath = false; continue;
           }
           if (applyRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
             enteringTileW = enteringTileH = enteringRows = enteringCols = false;
@@ -994,15 +984,8 @@ int main() {
     title.setPosition(sf::Vector2f(16.f, 10.f));
     window.draw(title);
 
-    // Tileset path input + help
+  // Tileset path input
     {
-      sf::Text help(font);
-      help.setCharacterSize(14);
-      help.setFillColor(sf::Color(180, 180, 200));
-      help.setPosition(sf::Vector2f(16.f, 36.f));
-      help.setString(ellipsizeEnd("L: load tileset  •  S: save  •  N: new  •  O: load level1", 14u, static_cast<float>(paletteWidth - 32)));
-      window.draw(help);
-
       int pathInputW = paletteWidth - 24 - 100 - 6; // input + gap + Load button
       // Input box
       sf::RectangleShape box(sf::Vector2f(static_cast<float>(pathInputW), 26.f));
@@ -1035,12 +1018,12 @@ int main() {
 
   // (Top Browse button removed; Load already opens a file dialog)
 
-      // Tileset config label
+  // Tileset config label
       sf::Text cfgLabel(font);
       cfgLabel.setCharacterSize(14);
       cfgLabel.setFillColor(sf::Color(180, 180, 200));
       cfgLabel.setPosition(sf::Vector2f(16.f, static_cast<float>(cfgLabelY)));
-      cfgLabel.setString("Config (W,H,Rows,Cols):");
+  cfgLabel.setString("Config (W,H):");
       window.draw(cfgLabel);
 
       // Inputs W, H, Rows, Cols and Apply button
@@ -1058,10 +1041,8 @@ int main() {
         t.setString(text.empty() ? "" : text);
         window.draw(t);
       };
-      drawInput(sf::Vector2f(12.f, static_cast<float>(cfgInputsY)), tileWBuf, enteringTileW);
-      drawInput(sf::Vector2f(72.f, static_cast<float>(cfgInputsY)), tileHBuf, enteringTileH);
-      drawInput(sf::Vector2f(132.f, static_cast<float>(cfgInputsY)), rowsBuf, enteringRows);
-      drawInput(sf::Vector2f(192.f, static_cast<float>(cfgInputsY)), colsBuf, enteringCols);
+  drawInput(sf::Vector2f(12.f, static_cast<float>(cfgInputsY)), tileWBuf, enteringTileW);
+  drawInput(sf::Vector2f(72.f, static_cast<float>(cfgInputsY)), tileHBuf, enteringTileH);
       // Apply button (moved below inputs to avoid overlap and stay within palette)
       sf::RectangleShape applyBtn(sf::Vector2f(100.f, 26.f));
       applyBtn.setFillColor(sf::Color(85, 120, 160));
