@@ -144,9 +144,14 @@ BlackEngineProject/
   - Click "Apply" to re-slice the tileset.
 - Paint the grid:
   - Left click to paint, right click to erase. Drag to paint continuously.
+  - Zoom with the mouse wheel over the grid; pan with the middle mouse button. Zoom anchors under the cursor.
 - Save level:
   - "Save folder" shows the target directory; click "Browse" to choose a folder.
-  - Click "Save" to write a timestamped `.grid` file with the tile indices.
+  - Click "Save" to write a timestamped `.grid` file.
+
+Map file format:
+- New sparse format for large/infinite maps: the file starts with `# BEP_GRID_SPARSE v1`, followed by one line per painted cell: `gx gy col row`.
+- Legacy dense `.grid` files without the header are still supported for loading.
 
 Notes:
 - The editor uses a system UI font by default (Segoe UI/Arial on Windows; DejaVu/Arial on Linux/macOS), with fallback to the bundled Arcade font. This avoids missing glyphs in labels.

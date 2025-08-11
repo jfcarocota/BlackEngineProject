@@ -11,6 +11,7 @@
 #include <cstdio>
 #include <algorithm>
 #include <cmath>
+#include <unordered_map>
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
 #endif
@@ -210,6 +211,47 @@ struct Tileset {
     return loaded;
   }
 };
+
+#ifndef BEP_CHUNK_SIZE
+#define BEP_CHUNK_SIZE 64
+#endif
+
+// Sparse, chunked grid for effectively infinite maps
+struct ChunkCoord { int cx{0}; int cy{0}; };
+struct ChunkCoordHash {
+  std::size_t operator()(const ChunkCoord& k) const noexcept {
+    // 32-bit pair to 64-bit key, then hash
+    uint64_t ux = static_cast<uint32_t>(k.cx);
+    uint64_t uy = static_cast<uint32_t>(k.cy);
+    uint64_t key = (ux << 32) ^ uy;
+    return std::hash<uint64_t>{}(key);
+  }
+};
+inline bool operator==(const ChunkCoord& a, const ChunkCoord& b) { return a.cx == b.cx && a.cy == b.cy; }
+
+struct Chunk {
+  // Stored as dense 2D array within the chunk for fast access
+  std::vector<TileCR> cells; // size = BEP_CHUNK_SIZE * BEP_CHUNK_SIZE
+  Chunk() : cells(BEP_CHUNK_SIZE * BEP_CHUNK_SIZE, TileCR{0,0}) {}
+  inline TileCR get(int lx, int ly) const { return cells[ly * BEP_CHUNK_SIZE + lx]; }
+  inline void set(int lx, int ly, TileCR v) { cells[ly * BEP_CHUNK_SIZE + lx] = v; }
+  bool empty() const {
+    for (const auto& c : cells) if (c.col != 0 || c.row != 0) return false; return true;
+  }
+};
+
+static inline ChunkCoord toChunk(int gx, int gy) {
+  auto divFloor = [](int a, int b){ int q = a / b; int r = a % b; if ((r != 0) && ((r > 0) != (b > 0))) --q; return q; };
+  int cx = divFloor(gx, BEP_CHUNK_SIZE);
+  int cy = divFloor(gy, BEP_CHUNK_SIZE);
+  return ChunkCoord{cx, cy};
+}
+static inline void toLocal(int gx, int gy, int& lx, int& ly) {
+  int cx = std::floor(static_cast<float>(gx) / static_cast<float>(BEP_CHUNK_SIZE));
+  int cy = std::floor(static_cast<float>(gy) / static_cast<float>(BEP_CHUNK_SIZE));
+  lx = gx - cx * BEP_CHUNK_SIZE; ly = gy - cy * BEP_CHUNK_SIZE;
+  if (lx < 0) lx += BEP_CHUNK_SIZE; if (ly < 0) ly += BEP_CHUNK_SIZE;
+}
 
 #ifdef _WIN32
 // Try to use modern IFileDialog for picking files/folders; fallback to legacy APIs if needed
@@ -425,7 +467,38 @@ int main() {
   int defaultH = tilePx;
 
   // Grid data (col,row for each cell)
-  std::vector<std::vector<TileCR>> grid(gridRows, std::vector<TileCR>(gridCols, TileCR{0, 0}));
+  // Sparse grid by chunks instead of fixed dense grid
+  std::unordered_map<ChunkCoord, Chunk, ChunkCoordHash> chunks;
+  auto getChunkPtr = [&](const ChunkCoord& cc) -> Chunk* {
+    auto it = chunks.find(cc);
+    if (it == chunks.end()) return nullptr;
+    return &it->second;
+  };
+  auto getOrCreateChunk = [&](const ChunkCoord& cc) -> Chunk& {
+    auto it = chunks.find(cc);
+    if (it == chunks.end()) it = chunks.emplace(cc, Chunk{}).first;
+    return it->second;
+  };
+  auto getTileAt = [&](int gx, int gy) -> TileCR {
+    ChunkCoord cc = toChunk(gx, gy);
+    int lx, ly; toLocal(gx, gy, lx, ly);
+    if (Chunk* ch = getChunkPtr(cc)) return ch->get(lx, ly);
+    return TileCR{0, 0};
+  };
+  auto setTileAt = [&](int gx, int gy, TileCR v) {
+    ChunkCoord cc = toChunk(gx, gy);
+    int lx, ly; toLocal(gx, gy, lx, ly);
+    if (v.col == 0 && v.row == 0) {
+      auto it = chunks.find(cc);
+      if (it != chunks.end()) {
+        it->second.set(lx, ly, v);
+        if (it->second.empty()) chunks.erase(it);
+      }
+    } else {
+      auto& ch = getOrCreateChunk(cc);
+      ch.set(lx, ly, v);
+    }
+  };
 
   // Selected tile in palette (col,row)
   TileCR selected{0, 0};
@@ -474,7 +547,7 @@ int main() {
     }
   };
 
-  // Save current grid to file in chosen folder
+  // Save current grid to file in chosen folder (sparse format)
   auto saveGrid = [&]() {
     std::filesystem::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : std::filesystem::path(saveDirPath);
     std::error_code ec;
@@ -489,26 +562,45 @@ int main() {
     std::filesystem::path outPath = mapsDir / fileName;
     std::ofstream out(outPath);
     if (!out.is_open()) { showInfo("Failed to save: " + outPath.string()); return; }
-    for (int y = 0; y < gridRows; ++y) {
-      for (int x = 0; x < gridCols; ++x) {
-        out << grid[y][x].col << ' ' << grid[y][x].row;
-        if (x != gridCols - 1) out << ' ';
+    // Sparse format header
+    out << "# BEP_GRID_SPARSE v1\n";
+    for (const auto& kv : chunks) {
+      const ChunkCoord& cc = kv.first; const Chunk& ch = kv.second;
+      for (int ly = 0; ly < BEP_CHUNK_SIZE; ++ly) {
+        for (int lx = 0; lx < BEP_CHUNK_SIZE; ++lx) {
+          TileCR t = ch.get(lx, ly);
+          if (t.col != 0 || t.row != 0) {
+            int gx = cc.cx * BEP_CHUNK_SIZE + lx;
+            int gy = cc.cy * BEP_CHUNK_SIZE + ly;
+            out << gx << ' ' << gy << ' ' << t.col << ' ' << t.row << '\n';
+          }
+        }
       }
-      out << '\n';
     }
     out.close();
     showInfo(std::string("Saved -> ") + outPath.string());
   };
 
-  // Load grid from a .grid file
+  // Load grid from a .grid file (supports sparse v1 and legacy dense)
   auto loadGridFromFile = [&](const std::string& filePath) {
     std::string resolved = findAssetPath(filePath);
     std::ifstream in(resolved);
     if (!in.is_open()) { showInfo("Failed to open: " + resolved); return; }
-    for (int y = 0; y < gridRows; ++y) {
-      for (int x = 0; x < gridCols; ++x) {
-        int c, r; if (!(in >> c >> r)) { showInfo("Invalid grid file format"); return; }
-        grid[y][x] = TileCR{c, r};
+    chunks.clear();
+    in >> std::ws;
+    if (in.peek() == '#') {
+      std::string header; std::getline(in, header);
+      int gx, gy, c, r;
+      while (in >> gx >> gy >> c >> r) {
+        setTileAt(gx, gy, TileCR{c, r});
+      }
+    } else {
+      in.clear(); in.seekg(0, std::ios::beg);
+      for (int y = 0; y < gridRows; ++y) {
+        for (int x = 0; x < gridCols; ++x) {
+          int c, r; if (!(in >> c >> r)) { showInfo("Invalid grid file format"); return; }
+          if (c != 0 || r != 0) setTileAt(x, y, TileCR{c, r});
+        }
       }
     }
     showInfo("Loaded grid from: " + resolved);
@@ -587,9 +679,8 @@ int main() {
   int lastPaintGX = -1;
   int lastPaintGY = -1;
   auto paintCell = [&](int gx, int gy, bool leftButton) {
-    if (gx >= 0 && gx < gridCols && gy >= 0 && gy < gridRows) {
-      if (leftButton) grid[gy][gx] = selected; else grid[gy][gx] = TileCR{0, 0};
-    }
+  // No fixed bounds: infinite grid
+  setTileAt(gx, gy, leftButton ? selected : TileCR{0, 0});
   };
   auto paintLine = [&](int x0, int y0, int x1, int y1, bool leftButton) {
     int dx = x1 - x0;
@@ -659,13 +750,15 @@ int main() {
             paletteScrollY -= e->delta * step;
             clampAndApplyPaletteScroll();
           } else {
-            // Zoom grid when mouse is over the grid area
-            float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
-            float gridW = static_cast<float>(gridCols) * cellPx;
-            float gridH = static_cast<float>(gridRows) * cellPx;
-            sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
-            if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
+            // Zoom grid when mouse is over the grid panel area
+            float panelLeft = static_cast<float>(paletteWidth + margin);
+            float panelTop = static_cast<float>(margin);
+            float panelW = std::max(0.f, static_cast<float>(winW) - (panelLeft + static_cast<float>(margin)));
+            float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
+            sf::FloatRect panelRect({panelLeft, panelTop}, {panelW, panelH});
+            if (panelRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
               float oldZoom = gridZoom;
+              float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
               // Zoom speed factor
               float zoomStep = 1.1f;
               if (e->delta > 0) gridZoom *= zoomStep; else gridZoom /= zoomStep;
@@ -675,10 +768,8 @@ int main() {
               // Keep tile under cursor stable by adjusting origin
               if (gridZoom != oldZoom && oldCellPx > 0.0f) {
                 sf::Vector2f mouseF(static_cast<float>(mp.x), static_cast<float>(mp.y));
-                // world coords in tile-space before zoom
                 sf::Vector2f rel = mouseF - gridOrigin;
                 sf::Vector2f world(rel.x / oldCellPx, rel.y / oldCellPx);
-                // recompute origin so that world under cursor stays put
                 sf::Vector2f newRel(world.x * newCellPx, world.y * newCellPx);
                 gridOrigin = mouseF - newRel;
               }
@@ -720,12 +811,14 @@ int main() {
         if (paintingLeft || paintingRight) {
           sf::Vector2i mp(me->position.x, me->position.y);
           float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
-          float gridW = static_cast<float>(gridCols) * cellPx;
-          float gridH = static_cast<float>(gridRows) * cellPx;
-          sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
-          if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
-            int gx = static_cast<int>((mp.x - gridOrigin.x) / cellPx);
-            int gy = static_cast<int>((mp.y - gridOrigin.y) / cellPx);
+          float panelLeft = static_cast<float>(paletteWidth + margin);
+          float panelTop = static_cast<float>(margin);
+          float panelW = std::max(0.f, static_cast<float>(winW) - (panelLeft + static_cast<float>(margin)));
+          float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
+          sf::FloatRect panelRect({panelLeft, panelTop}, {panelW, panelH});
+          if (panelRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
+            int gx = static_cast<int>(std::floor((static_cast<float>(mp.x) - gridOrigin.x) / cellPx));
+            int gy = static_cast<int>(std::floor((static_cast<float>(mp.y) - gridOrigin.y) / cellPx));
             if (gx != lastPaintGX || gy != lastPaintGY) {
               bool leftBtn = paintingLeft;
               if (lastPaintGX >= 0 && lastPaintGY >= 0) paintLine(lastPaintGX, lastPaintGY, gx, gy, leftBtn);
@@ -765,10 +858,7 @@ int main() {
           if (!enteringPath && !enteringSaveDir && !enteringTileW && !enteringTileH && !enteringRows && !enteringCols) {
             if (e->code == sf::Keyboard::Key::Escape) window.close();
             if (e->code == sf::Keyboard::Key::S) saveGrid();
-            if (e->code == sf::Keyboard::Key::N) {
-              for (auto& row : grid) for (auto& cell : row) cell = TileCR{0, 0};
-              showInfo("New empty grid");
-            }
+            if (e->code == sf::Keyboard::Key::N) { chunks.clear(); showInfo("New empty grid"); }
             if (e->code == sf::Keyboard::Key::L) {
               enteringPath = true;
               enteringSaveDir = false;
@@ -986,27 +1076,27 @@ int main() {
           }
         }
 
-        // Click in grid to paint / erase or start panning
+        // Click in grid panel to paint / erase or start panning
         float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
-        float gridW = static_cast<float>(gridCols) * cellPx;
-        float gridH = static_cast<float>(gridRows) * cellPx;
-        sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
-        if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
-          int gx = static_cast<int>((mp.x - gridOrigin.x) / cellPx);
-          int gy = static_cast<int>((mp.y - gridOrigin.y) / cellPx);
-          if (gx >= 0 && gx < gridCols && gy >= 0 && gy < gridRows) {
-            if (e->button == sf::Mouse::Button::Left) {
-              paintCell(gx, gy, true);
-              paintingLeft = true;
-              lastPaintGX = gx; lastPaintGY = gy;
-            } else if (e->button == sf::Mouse::Button::Right) {
-              paintCell(gx, gy, false);
-              paintingRight = true;
-              lastPaintGX = gx; lastPaintGY = gy;
-            } else if (e->button == sf::Mouse::Button::Middle) {
-              panningGrid = true;
-              lastPanMouse = mp;
-            }
+        float panelLeft = static_cast<float>(paletteWidth + margin);
+        float panelTop = static_cast<float>(margin);
+        float panelW = std::max(0.f, static_cast<float>(winW) - (panelLeft + static_cast<float>(margin)));
+        float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
+        sf::FloatRect panelRect({panelLeft, panelTop}, {panelW, panelH});
+        if (panelRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
+          int gx = static_cast<int>(std::floor((static_cast<float>(mp.x) - gridOrigin.x) / cellPx));
+          int gy = static_cast<int>(std::floor((static_cast<float>(mp.y) - gridOrigin.y) / cellPx));
+          if (e->button == sf::Mouse::Button::Left) {
+            paintCell(gx, gy, true);
+            paintingLeft = true;
+            lastPaintGX = gx; lastPaintGY = gy;
+          } else if (e->button == sf::Mouse::Button::Right) {
+            paintCell(gx, gy, false);
+            paintingRight = true;
+            lastPaintGX = gx; lastPaintGY = gy;
+          } else if (e->button == sf::Mouse::Button::Middle) {
+            panningGrid = true;
+            lastPanMouse = mp;
           }
         }
       }
@@ -1224,61 +1314,86 @@ int main() {
     // Switch back to default (full-window) view for the grid
     window.setView(defaultView);
 
-    // Grid panel (size adapts to zoom)
+    // Grid panel background (fixed to the right of palette)
     {
-      float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
-      float gridW = static_cast<float>(gridCols) * cellPx;
-      float gridH = static_cast<float>(gridRows) * cellPx;
-      gridBG.setSize(sf::Vector2f(gridW, gridH));
-      gridBG.setPosition(gridOrigin);
+      float panelLeft = static_cast<float>(paletteWidth + margin);
+      float panelTop = static_cast<float>(margin);
+      float panelW = std::max(0.f, static_cast<float>(winW) - (panelLeft + static_cast<float>(margin)));
+      float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
+      gridBG.setSize(sf::Vector2f(panelW, panelH));
+      gridBG.setPosition(sf::Vector2f(panelLeft, panelTop));
       window.draw(gridBG);
     }
 
-    // Grid lines
+    // Grid lines (visible range only)
     {
       float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
-      float gridW = static_cast<float>(gridCols) * cellPx;
-      float gridH = static_cast<float>(gridRows) * cellPx;
-      for (int x = 0; x <= gridCols; ++x) {
-        sf::RectangleShape line(sf::Vector2f(1.f, gridH));
+      float panelLeft = static_cast<float>(paletteWidth + margin);
+      float panelTop = static_cast<float>(margin);
+      float panelW = std::max(0.f, static_cast<float>(winW) - (panelLeft + static_cast<float>(margin)));
+      float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
+      float panelRight = panelLeft + panelW;
+      float panelBottom = panelTop + panelH;
+      int minGX = static_cast<int>(std::floor((panelLeft - gridOrigin.x) / cellPx)) - 1;
+      int maxGX = static_cast<int>(std::floor((panelRight - gridOrigin.x) / cellPx)) + 1;
+      int minGY = static_cast<int>(std::floor((panelTop - gridOrigin.y) / cellPx)) - 1;
+      int maxGY = static_cast<int>(std::floor((panelBottom - gridOrigin.y) / cellPx)) + 1;
+      for (int gx = minGX; gx <= maxGX; ++gx) {
+        float x = gridOrigin.x + gx * cellPx;
+        if (x < panelLeft - 2.f || x > panelRight + 2.f) continue;
+        sf::RectangleShape line(sf::Vector2f(1.f, panelH));
         line.setFillColor(sf::Color(45, 45, 55));
-        line.setPosition(sf::Vector2f(gridOrigin.x + x * cellPx, gridOrigin.y));
+        line.setPosition(sf::Vector2f(x, panelTop));
         window.draw(line);
       }
-      for (int y = 0; y <= gridRows; ++y) {
-        sf::RectangleShape line(sf::Vector2f(gridW, 1.f));
+      for (int gy = minGY; gy <= maxGY; ++gy) {
+        float y = gridOrigin.y + gy * cellPx;
+        if (y < panelTop - 2.f || y > panelBottom + 2.f) continue;
+        sf::RectangleShape line(sf::Vector2f(panelW, 1.f));
         line.setFillColor(sf::Color(45, 45, 55));
-        line.setPosition(sf::Vector2f(gridOrigin.x, gridOrigin.y + y * cellPx));
+        line.setPosition(sf::Vector2f(panelLeft, y));
         window.draw(line);
       }
     }
 
-    // Draw placed tiles
+    // Draw placed tiles (visible range only)
     if (tileset.loaded) {
       float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
-      for (int y = 0; y < gridRows; ++y) {
-        for (int x = 0; x < gridCols; ++x) {
-          const TileCR& t = grid[y][x];
+      float panelLeft = static_cast<float>(paletteWidth + margin);
+      float panelTop = static_cast<float>(margin);
+      float panelW = std::max(0.f, static_cast<float>(winW) - (panelLeft + static_cast<float>(margin)));
+      float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
+      float panelRight = panelLeft + panelW;
+      float panelBottom = panelTop + panelH;
+      int minGX = static_cast<int>(std::floor((panelLeft - gridOrigin.x) / cellPx)) - 1;
+      int maxGX = static_cast<int>(std::floor((panelRight - gridOrigin.x) / cellPx)) + 1;
+      int minGY = static_cast<int>(std::floor((panelTop - gridOrigin.y) / cellPx)) - 1;
+      int maxGY = static_cast<int>(std::floor((panelBottom - gridOrigin.y) / cellPx)) + 1;
+      for (int gy = minGY; gy <= maxGY; ++gy) {
+        for (int gx = minGX; gx <= maxGX; ++gx) {
+          TileCR t = getTileAt(gx, gy);
+          if (t.col == 0 && t.row == 0) continue;
           sf::Sprite spr(tileset.texture, sf::IntRect({t.col * tileset.tileW, t.row * tileset.tileH}, {tileset.tileW, tileset.tileH}));
-          // Scale to fit grid cell size (may be non-uniform if tileW != tileH)
           float scaleX = (cellPx) / static_cast<float>(tileset.tileW);
           float scaleY = (cellPx) / static_cast<float>(tileset.tileH);
           spr.setScale(sf::Vector2f(scaleX, scaleY));
-          spr.setPosition(sf::Vector2f(gridOrigin.x + x * cellPx, gridOrigin.y + y * cellPx));
+          spr.setPosition(sf::Vector2f(gridOrigin.x + gx * cellPx, gridOrigin.y + gy * cellPx));
           window.draw(spr);
         }
       }
     }
 
-    // Hover highlight on grid
+    // Hover highlight on grid (panel area)
     sf::Vector2i mp = sf::Mouse::getPosition(window);
     float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
-    float gridW = static_cast<float>(gridCols) * cellPx;
-    float gridH = static_cast<float>(gridRows) * cellPx;
-    sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
-    if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
-      int gx = static_cast<int>((mp.x - gridOrigin.x) / cellPx);
-      int gy = static_cast<int>((mp.y - gridOrigin.y) / cellPx);
+    float panelLeft = static_cast<float>(paletteWidth + margin);
+    float panelTop = static_cast<float>(margin);
+    float panelW = std::max(0.f, static_cast<float>(winW) - (panelLeft + static_cast<float>(margin)));
+    float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
+    sf::FloatRect panelRect({panelLeft, panelTop}, {panelW, panelH});
+    if (panelRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
+      int gx = static_cast<int>(std::floor((static_cast<float>(mp.x) - gridOrigin.x) / cellPx));
+      int gy = static_cast<int>(std::floor((static_cast<float>(mp.y) - gridOrigin.y) / cellPx));
       sf::RectangleShape hover(sf::Vector2f(cellPx, cellPx));
       hover.setPosition(sf::Vector2f(gridOrigin.x + gx * cellPx, gridOrigin.y + gy * cellPx));
       hover.setFillColor(sf::Color(255, 255, 255, 20));
