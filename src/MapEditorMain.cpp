@@ -129,28 +129,39 @@ struct Tileset {
   sf::Texture texture;
   sf::Image image; // optional for future use
   std::string path;
-  int tileSize{static_cast<int>(GameConstants::TILE_SIZE)};
+  int tileW{32};
+  int tileH{32};
   int cols{0};
   int rows{0};
-  bool loaded{false};
+  bool loaded{false}; // true when texture and grid are valid
 
-  bool loadFromFile(const std::string& p, int tile) {
+  bool loadTexture(const std::string& p) {
     path = p;
-    tileSize = tile;
     loaded = false;
     if (!texture.loadFromFile(path)) {
       std::cerr << "Failed to load tileset: " << path << std::endl;
       return false;
     }
     image = texture.copyToImage();
-    cols = texture.getSize().x / tileSize;
-    rows = texture.getSize().y / tileSize;
-    if (cols <= 0 || rows <= 0) {
-      std::cerr << "Tileset size smaller than tile size." << std::endl;
-      return false;
-    }
-    loaded = true;
     return true;
+  }
+
+  bool configureGrid(int w, int h, int c, int r) {
+    if (texture.getSize().x == 0 || texture.getSize().y == 0) return false;
+    tileW = std::max(1, w);
+    tileH = std::max(1, h);
+    if (c > 0 && r > 0) {
+      cols = c;
+      rows = r;
+    } else {
+      cols = static_cast<int>(texture.getSize().x) / tileW;
+      rows = static_cast<int>(texture.getSize().y) / tileH;
+    }
+    loaded = cols > 0 && rows > 0;
+    if (!loaded) {
+      std::cerr << "Tileset grid invalid (cols/rows <= 0)." << std::endl;
+    }
+    return loaded;
   }
 };
 
@@ -174,7 +185,15 @@ int main() {
   // Create views to isolate palette UI and prevent overlap into grid
   sf::View defaultView = window.getView();
   sf::View paletteView(sf::FloatRect({0.f, 0.f}, {static_cast<float>(paletteWidth), static_cast<float>(winH)}));
-  paletteView.setViewport(sf::FloatRect({0.f, 0.f}, {static_cast<float>(paletteWidth) / static_cast<float>(winW), 1.f}));
+  // Helper to keep palette viewport within window bounds and avoid overlap
+  auto setPaletteViewport = [&]() {
+    float vw = static_cast<float>(winW);
+    float fraction = vw > 0.f ? static_cast<float>(paletteWidth) / vw : 1.f;
+    if (fraction < 0.f) fraction = 0.f;
+    if (fraction > 1.f) fraction = 1.f;
+    paletteView.setViewport(sf::FloatRect({0.f, 0.f}, {fraction, 1.f}));
+  };
+  setPaletteViewport();
 
   // Load font for UI (SFML 3: openFromFile only)
   sf::Font font;
@@ -233,9 +252,9 @@ int main() {
   // Tileset
   Tileset tileset;
   std::string tilesetPath = findAssetPath(ASSETS_TILES); // default
-  if (!tileset.loadFromFile(tilesetPath, tilePx)) {
-    // Defer info message setup; will be initialized below
-  }
+  // Default config buffers
+  int defaultW = tilePx;
+  int defaultH = tilePx;
 
   // Grid data (col,row for each cell)
   std::vector<std::vector<TileCR>> grid(gridRows, std::vector<TileCR>(gridCols, TileCR{0, 0}));
@@ -246,6 +265,14 @@ int main() {
   // Text input state for loading tileset
   bool enteringPath = false;
   std::string pathBuffer = tilesetPath;
+
+  // Inputs for tileset config (W, H, Rows, Cols)
+  bool enteringTileW = false, enteringTileH = false, enteringRows = false, enteringCols = false;
+  std::string tileWBuf = std::to_string(defaultW);
+  std::string tileHBuf = std::to_string(defaultH);
+  std::string rowsBuf = "";
+  std::string colsBuf = "";
+
   // Save directory input state
   bool enteringSaveDir = false;
   std::string saveDirPath = getUserMapsDir().string();
@@ -259,35 +286,37 @@ int main() {
     infoClock.restart();
   };
 
-  // If initial tileset load failed, show a hint on screen (useful when launched from Finder)
-  if (!tileset.loaded) {
-    showInfo(std::string("Failed to load default tileset. Press L to select path or ensure assets are in the app Resources folder. Tried: ") + tilesetPath);
-  }
+  // Helper to apply current buffers into tileset grid
+  auto applyTilesetConfig = [&]() {
+    if (tileset.texture.getSize().x == 0) { showInfo("Load a tileset path first (press L)"); return; }
+    int w = defaultW, h = defaultH, r = 0, c = 0;
+    try { if (!tileWBuf.empty()) w = std::max(1, std::stoi(tileWBuf)); } catch (...) {}
+    try { if (!tileHBuf.empty()) h = std::max(1, std::stoi(tileHBuf)); } catch (...) {}
+    try { if (!rowsBuf.empty()) r = std::max(0, std::stoi(rowsBuf)); } catch (...) {}
+    try { if (!colsBuf.empty()) c = std::max(0, std::stoi(colsBuf)); } catch (...) {}
+    if (tileset.configureGrid(w, h, c, r)) {
+      selected = TileCR{0, 0};
+      showInfo("Tileset config applied");
+    } else {
+      showInfo("Invalid tileset configuration");
+    }
+  };
 
+  // Save current grid to file in chosen folder
   auto saveGrid = [&]() {
     std::filesystem::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : std::filesystem::path(saveDirPath);
     std::error_code ec;
     if (!std::filesystem::exists(mapsDir)) {
       std::filesystem::create_directories(mapsDir, ec);
-      if (ec) {
-        showInfo(std::string("Failed to create maps dir: ") + mapsDir.string());
-        return;
-      }
+      if (ec) { showInfo(std::string("Failed to create maps dir: ") + mapsDir.string()); return; }
     } else if (!std::filesystem::is_directory(mapsDir)) {
       showInfo(std::string("Not a directory: ") + mapsDir.string());
       return;
     }
-
     std::string fileName = timestampName();
     std::filesystem::path outPath = mapsDir / fileName;
-
     std::ofstream out(outPath);
-    if (!out.is_open()) {
-      showInfo("Failed to save: " + outPath.string());
-      return;
-    }
-
-    // Write pairs: col row per tile, rows by lines
+    if (!out.is_open()) { showInfo("Failed to save: " + outPath.string()); return; }
     for (int y = 0; y < gridRows; ++y) {
       for (int x = 0; x < gridCols; ++x) {
         out << grid[y][x].col << ' ' << grid[y][x].row;
@@ -299,27 +328,21 @@ int main() {
     showInfo(std::string("Saved -> ") + outPath.string());
   };
 
+  // Load grid from a .grid file
   auto loadGridFromFile = [&](const std::string& filePath) {
     std::string resolved = findAssetPath(filePath);
     std::ifstream in(resolved);
-    if (!in.is_open()) {
-      showInfo("Failed to open: " + resolved);
-      return;
-    }
+    if (!in.is_open()) { showInfo("Failed to open: " + resolved); return; }
     for (int y = 0; y < gridRows; ++y) {
       for (int x = 0; x < gridCols; ++x) {
-        int c, r;
-        if (!(in >> c >> r)) {
-          showInfo("Invalid grid file format");
-          return;
-        }
+        int c, r; if (!(in >> c >> r)) { showInfo("Invalid grid file format"); return; }
         grid[y][x] = TileCR{c, r};
       }
     }
     showInfo("Loaded grid from: " + resolved);
   };
 
-  // Load default map if available (works both from CLI and .app bundle)
+  // Load default map if available
   {
     std::string defaultMap = findAssetPath(ASSETS_MAPS);
     if (!defaultMap.empty() && std::filesystem::exists(defaultMap)) {
@@ -327,27 +350,20 @@ int main() {
     }
   }
 
-  // Simple helpers for drawing
-  sf::RectangleShape paletteBG(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
-  paletteBG.setFillColor(sf::Color(30, 30, 40));
-
-  sf::RectangleShape gridBG(sf::Vector2f(static_cast<float>(gridPxW), static_cast<float>(gridPxH)));
-  gridBG.setFillColor(sf::Color(10, 15, 20));
-  gridBG.setPosition(gridOrigin);
-  gridBG.setOutlineThickness(1);
-  gridBG.setOutlineColor(sf::Color(60, 60, 70));
-
   // Palette draw origin and layout (shared by draw and hit-test)
   const float thumbScale = 2.0f;
   const int cell = static_cast<int>(tilePx * thumbScale);
   const int padding = 6;
   const int x0 = 8;
-  // Shift tileset thumbnails down to make space for save controls
-  const int y0 = 180;
-  // Save controls layout
-  const int saveLabelY = 92;
-  const int saveInputY = 112;
-  const int saveButtonsY = 144;
+  // Layout for tileset config and save controls
+  const int cfgLabelY = 86;
+  const int cfgInputsY = 106;
+  const int cfgButtonsY = 136;
+  const int saveLabelY = 172;
+  const int saveInputY = 192;
+  const int saveButtonsY = 224;
+  // Shift tileset thumbnails down to make space for config + save controls
+  const int y0 = 260;
 
   // --- Palette vertical scrolling state & helpers ---
   float paletteScrollY = 0.f; // in palette coordinate space
@@ -421,6 +437,16 @@ int main() {
   // Initialize view center with scroll
   clampAndApplyPaletteScroll();
 
+  // Simple helpers for drawing
+  sf::RectangleShape paletteBG(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
+  paletteBG.setFillColor(sf::Color(30, 30, 40));
+
+  sf::RectangleShape gridBG(sf::Vector2f(static_cast<float>(gridPxW), static_cast<float>(gridPxH)));
+  gridBG.setFillColor(sf::Color(10, 15, 20));
+  gridBG.setPosition(gridOrigin);
+  gridBG.setOutlineThickness(1);
+  gridBG.setOutlineColor(sf::Color(60, 60, 70));
+
   while (window.isOpen()) {
     // SFML 3 event polling
     while (auto ev = window.pollEvent()) {
@@ -443,7 +469,7 @@ int main() {
         winH = static_cast<int>(sz.y);
         defaultView = sf::View(sf::FloatRect({0.f, 0.f}, {static_cast<float>(winW), static_cast<float>(winH)}));
         window.setView(defaultView);
-        paletteView.setViewport(sf::FloatRect({0.f, 0.f}, {static_cast<float>(paletteWidth) / static_cast<float>(winW), 1.f}));
+        setPaletteViewport();
         paletteBG.setSize(sf::Vector2f(static_cast<float>(paletteWidth), static_cast<float>(winH)));
         clampAndApplyPaletteScroll();
       }
@@ -524,7 +550,7 @@ int main() {
       if (event.is<sf::Event::KeyPressed>()) {
         const auto* e = event.getIf<sf::Event::KeyPressed>();
         if (e) {
-          if (!enteringPath && !enteringSaveDir) {
+          if (!enteringPath && !enteringSaveDir && !enteringTileW && !enteringTileH && !enteringRows && !enteringCols) {
             if (e->code == sf::Keyboard::Key::Escape) window.close();
             if (e->code == sf::Keyboard::Key::S) saveGrid();
             if (e->code == sf::Keyboard::Key::N) {
@@ -534,6 +560,7 @@ int main() {
             if (e->code == sf::Keyboard::Key::L) {
               enteringPath = true;
               enteringSaveDir = false;
+              enteringTileW = enteringTileH = enteringRows = enteringCols = false;
               pathBuffer = tilesetPath;
               showInfo("Type tileset path and press Enter");
             }
@@ -548,8 +575,10 @@ int main() {
           } else {
             if (e->code == sf::Keyboard::Key::Enter) {
               if (enteringPath) {
-                if (tileset.loadFromFile(pathBuffer, tilePx)) {
+                if (tileset.loadTexture(pathBuffer)) {
                   tilesetPath = pathBuffer;
+                  // Keep current buffers for grid config, or defaults if empty
+                  applyTilesetConfig();
                   showInfo("Loaded tileset: " + tilesetPath);
                 } else {
                   showInfo("Failed tileset: " + pathBuffer);
@@ -558,25 +587,41 @@ int main() {
               } else if (enteringSaveDir) {
                 enteringSaveDir = false;
                 showInfo(std::string("Save folder set: ") + saveDirPath);
+              } else if (enteringTileW || enteringTileH || enteringRows || enteringCols) {
+                enteringTileW = enteringTileH = enteringRows = enteringCols = false;
+                applyTilesetConfig();
+                clampAndApplyPaletteScroll();
               }
             }
             if (e->code == sf::Keyboard::Key::Escape) {
               enteringPath = false;
               enteringSaveDir = false;
+              enteringTileW = enteringTileH = enteringRows = enteringCols = false;
             }
           }
         }
       }
 
-      if ((enteringPath || enteringSaveDir) && event.is<sf::Event::TextEntered>()) {
+      if ((enteringPath || enteringSaveDir || enteringTileW || enteringTileH || enteringRows || enteringCols) && event.is<sf::Event::TextEntered>()) {
         const auto* e = event.getIf<sf::Event::TextEntered>();
         if (e) {
           if (e->unicode == 8) { // backspace
             if (enteringPath) { if (!pathBuffer.empty()) pathBuffer.pop_back(); }
             else if (enteringSaveDir) { if (!saveDirPath.empty()) saveDirPath.pop_back(); }
-          } else if (e->unicode >= 32 && e->unicode < 127) {
-            if (enteringPath) pathBuffer += static_cast<char>(e->unicode);
-            else if (enteringSaveDir) saveDirPath += static_cast<char>(e->unicode);
+            else if (enteringTileW) { if (!tileWBuf.empty()) tileWBuf.pop_back(); }
+            else if (enteringTileH) { if (!tileHBuf.empty()) tileHBuf.pop_back(); }
+            else if (enteringRows) { if (!rowsBuf.empty()) rowsBuf.pop_back(); }
+            else if (enteringCols) { if (!colsBuf.empty()) colsBuf.pop_back(); }
+          } else if (enteringPath) {
+            if (e->unicode >= 32 && e->unicode < 127) pathBuffer += static_cast<char>(e->unicode);
+          } else {
+            // Numeric-only for config
+            if (e->unicode >= '0' && e->unicode <= '9') {
+              if (enteringTileW) tileWBuf += static_cast<char>(e->unicode);
+              else if (enteringTileH) tileHBuf += static_cast<char>(e->unicode);
+              else if (enteringRows) rowsBuf += static_cast<char>(e->unicode);
+              else if (enteringCols) colsBuf += static_cast<char>(e->unicode);
+            }
           }
         }
       }
@@ -590,29 +635,50 @@ int main() {
         sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
         sf::Vector2i mpPalette(static_cast<int>(mpPaletteF.x), static_cast<int>(mpPaletteF.y));
 
-        // Save controls hit-tests (take precedence over palette)
+        // Tileset config controls (take top precedence)
         if (mp.x >= 0 && mp.x < paletteWidth) {
-          // Input box
+          // Input rects
+          sf::IntRect wRect({12, cfgInputsY}, {52, 26});
+          sf::IntRect hRect({12 + 60, cfgInputsY}, {52, 26});
+          sf::IntRect rRect({12 + 60 * 2, cfgInputsY}, {52, 26});
+          sf::IntRect cRect({12 + 60 * 3, cfgInputsY}, {52, 26});
+          // Move Apply below inputs to fit within palette width
+          sf::IntRect applyRect({12, cfgButtonsY}, {100, 26});
+          if (wRect.contains(mpPalette)) {
+            enteringTileW = true; enteringTileH = enteringRows = enteringCols = enteringSaveDir = enteringPath = false; continue;
+          }
+          if (hRect.contains(mpPalette)) {
+            enteringTileH = true; enteringTileW = enteringRows = enteringCols = enteringSaveDir = enteringPath = false; continue;
+          }
+          if (rRect.contains(mpPalette)) {
+            enteringRows = true; enteringTileW = enteringTileH = enteringCols = enteringSaveDir = enteringPath = false; continue;
+          }
+          if (cRect.contains(mpPalette)) {
+            enteringCols = true; enteringTileW = enteringTileH = enteringRows = enteringSaveDir = enteringPath = false; continue;
+          }
+          if (applyRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+            enteringTileW = enteringTileH = enteringRows = enteringCols = false;
+            applyTilesetConfig();
+            clampAndApplyPaletteScroll();
+            continue;
+          }
+        }
+
+        // Save controls hit-tests
+        if (mp.x >= 0 && mp.x < paletteWidth) {
           sf::IntRect inputRect({12, saveInputY}, {paletteWidth - 24, 26});
           sf::IntRect saveBtnRect({12, saveButtonsY}, {100, 28});
           sf::IntRect browseBtnRect({12 + 110, saveButtonsY}, {100, 28});
           if (inputRect.contains(mpPalette)) {
             enteringSaveDir = true;
-            enteringPath = false;
+            enteringPath = enteringTileW = enteringTileH = enteringRows = enteringCols = false;
             continue;
           }
-          if (saveBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
-            saveGrid();
-            continue;
-          }
+          if (saveBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { saveGrid(); continue; }
           if (browseBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
 #ifdef __APPLE__
-            if (auto chosen = macChooseFolder()) {
-              saveDirPath = *chosen;
-              showInfo(std::string("Save folder set: ") + saveDirPath);
-            } else {
-              showInfo("Folder selection canceled");
-            }
+            if (auto chosen = macChooseFolder()) { saveDirPath = *chosen; showInfo(std::string("Save folder set: ") + saveDirPath); }
+            else { showInfo("Folder selection canceled"); }
 #else
             showInfo("Folder picker not supported on this platform");
 #endif
@@ -722,7 +788,6 @@ int main() {
       help.setCharacterSize(14);
       help.setFillColor(sf::Color(180, 180, 200));
       help.setPosition(sf::Vector2f(16.f, 36.f));
-      // Ensure help stays within palette
       help.setString(ellipsizeEnd("L: load tileset  •  S: save  •  N: new  •  O: load level1", 14u, static_cast<float>(paletteWidth - 32)));
       window.draw(help);
 
@@ -738,7 +803,6 @@ int main() {
         path.setCharacterSize(16);
         path.setFillColor(sf::Color::White);
         path.setPosition(sf::Vector2f(18.f, 64.f));
-        // Fit input text into the box (prefer tail since paths are right-important)
         path.setString(ellipsizeStart(pathBuffer, 16u, static_cast<float>((paletteWidth - 24) - 12)));
         window.draw(path);
       } else {
@@ -746,9 +810,49 @@ int main() {
         path.setCharacterSize(12);
         path.setFillColor(sf::Color(160, 160, 180));
         path.setPosition(sf::Vector2f(16.f, 62.f));
-        // Fit tileset path within palette
         path.setString(ellipsizeStart(std::string("Tileset: ") + tilesetPath, 12u, static_cast<float>(paletteWidth - 32)));
         window.draw(path);
+
+        // Tileset config label
+        sf::Text cfgLabel(font);
+        cfgLabel.setCharacterSize(14);
+        cfgLabel.setFillColor(sf::Color(180, 180, 200));
+        cfgLabel.setPosition(sf::Vector2f(16.f, static_cast<float>(cfgLabelY)));
+        cfgLabel.setString("Config (W,H,Rows,Cols):");
+        window.draw(cfgLabel);
+
+        // Inputs W, H, Rows, Cols and Apply button
+        auto drawInput = [&](sf::Vector2f pos, const std::string& text, bool focused) {
+          sf::RectangleShape box(sf::Vector2f(52.f, 26.f));
+          box.setFillColor(sf::Color(50, 50, 60));
+          box.setOutlineThickness(1);
+          box.setOutlineColor(focused ? sf::Color(120, 160, 220) : sf::Color(90, 90, 110));
+          box.setPosition(pos);
+          window.draw(box);
+          sf::Text t(font);
+          t.setCharacterSize(16);
+          t.setFillColor(sf::Color::White);
+          t.setPosition(pos + sf::Vector2f(6.f, 4.f));
+          t.setString(text.empty() ? "" : text);
+          window.draw(t);
+        };
+        drawInput(sf::Vector2f(12.f, static_cast<float>(cfgInputsY)), tileWBuf, enteringTileW);
+        drawInput(sf::Vector2f(72.f, static_cast<float>(cfgInputsY)), tileHBuf, enteringTileH);
+        drawInput(sf::Vector2f(132.f, static_cast<float>(cfgInputsY)), rowsBuf, enteringRows);
+        drawInput(sf::Vector2f(192.f, static_cast<float>(cfgInputsY)), colsBuf, enteringCols);
+        // Apply button (moved below inputs to avoid overlap and stay within palette)
+        sf::RectangleShape applyBtn(sf::Vector2f(100.f, 26.f));
+        applyBtn.setFillColor(sf::Color(85, 120, 160));
+        applyBtn.setOutlineThickness(1);
+        applyBtn.setOutlineColor(sf::Color(90, 110, 140));
+        applyBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(cfgButtonsY)));
+        window.draw(applyBtn);
+        sf::Text applyTxt(font);
+        applyTxt.setCharacterSize(16);
+        applyTxt.setFillColor(sf::Color(235, 240, 255));
+        applyTxt.setPosition(sf::Vector2f(12.f + 12.f, static_cast<float>(cfgButtonsY) + 4.f));
+        applyTxt.setString("Apply");
+        window.draw(applyTxt);
 
         // Save folder controls
         sf::Text saveLabel(font);
@@ -769,7 +873,6 @@ int main() {
         savePathText.setCharacterSize(14);
         savePathText.setFillColor(sf::Color::White);
         savePathText.setPosition(sf::Vector2f(18.f, static_cast<float>(saveInputY + 2)));
-        // Fit displayed save path into the input box
         savePathText.setString(ellipsizeStart(saveDirPath, 14u, static_cast<float>((paletteWidth - 24) - 12)));
         window.draw(savePathText);
 
@@ -816,9 +919,13 @@ int main() {
           int px = x0 + tx * (cell + padding);
           int py = y0 + ty * (cell + padding);
 
-          sf::Sprite spr(tileset.texture, sf::IntRect({c * tileset.tileSize, r * tileset.tileSize}, {tileset.tileSize, tileset.tileSize}));
-          spr.setPosition(sf::Vector2f(static_cast<float>(px), static_cast<float>(py)));
-          spr.setScale(sf::Vector2f(thumbScale, thumbScale));
+          sf::Sprite spr(tileset.texture, sf::IntRect({c * tileset.tileW, r * tileset.tileH}, {tileset.tileW, tileset.tileH}));
+          // Fit uniformly into cell and center
+          float scale = std::min(static_cast<float>(cell) / static_cast<float>(tileset.tileW), static_cast<float>(cell) / static_cast<float>(tileset.tileH));
+          float offX = (cell - tileset.tileW * scale) * 0.5f;
+          float offY = (cell - tileset.tileH * scale) * 0.5f;
+          spr.setPosition(sf::Vector2f(static_cast<float>(px) + offX, static_cast<float>(py) + offY));
+          spr.setScale(sf::Vector2f(scale, scale));
           window.draw(spr);
 
           // Highlight selected
@@ -886,8 +993,11 @@ int main() {
       for (int y = 0; y < gridRows; ++y) {
         for (int x = 0; x < gridCols; ++x) {
           const TileCR& t = grid[y][x];
-          sf::Sprite spr(tileset.texture, sf::IntRect({t.col * tilePx, t.row * tilePx}, {tilePx, tilePx}));
-          spr.setScale(sf::Vector2f(tileScale, tileScale));
+          sf::Sprite spr(tileset.texture, sf::IntRect({t.col * tileset.tileW, t.row * tileset.tileH}, {tileset.tileW, tileset.tileH}));
+          // Scale to fit grid cell size (may be non-uniform if tileW != tileH)
+          float scaleX = (tilePx * tileScale) / static_cast<float>(tileset.tileW);
+          float scaleY = (tilePx * tileScale) / static_cast<float>(tileset.tileH);
+          spr.setScale(sf::Vector2f(scaleX, scaleY));
           spr.setPosition(sf::Vector2f(gridOrigin.x + x * tilePx * tileScale, gridOrigin.y + y * tilePx * tileScale));
           window.draw(spr);
         }
