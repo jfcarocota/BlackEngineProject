@@ -73,6 +73,10 @@ if(NOT box2d_FOUND)
     GIT_REPOSITORY https://github.com/erincatto/box2d.git
     GIT_TAG v2.4.1
     GIT_SHALLOW ON)
+  # Disable Box2D extras to speed up Windows/Linux builds
+  set(BOX2D_BUILD_UNIT_TESTS OFF CACHE BOOL "" FORCE)
+  set(BOX2D_BUILD_TESTBED OFF CACHE BOOL "" FORCE)
+  set(BOX2D_BUILD_DOCS OFF CACHE BOOL "" FORCE)
   FetchContent_MakeAvailable(box2d)
   set(BOX2D_TARGET box2d)
 else()
@@ -262,21 +266,23 @@ if(APPLE)
   endif()
 endif()
 
-# Install/packaging target to create dist/.app bundle copy
-set(DIST_DIR ${CMAKE_SOURCE_DIR}/dist)
-add_custom_target(package_app ALL
-  COMMAND ${CMAKE_COMMAND} -E rm -rf ${DIST_DIR}
-  COMMAND ${CMAKE_COMMAND} -E make_directory ${DIST_DIR}
-  COMMAND ${CMAKE_COMMAND} -E copy_directory
-          ${CMAKE_SOURCE_DIR}/BlackEngineProject.app
-          ${DIST_DIR}/BlackEngineProject.app
-  COMMAND ${CMAKE_COMMAND} -E copy_directory
-          ${CMAKE_SOURCE_DIR}/TileMapEditor.app
-          ${DIST_DIR}/TileMapEditor.app
-  COMMENT "Packaging .app into dist/"
-)
-add_dependencies(package_app BlackEngineProject)
-add_dependencies(package_app TileMapEditor)
+# Install/packaging target to create dist/.app bundle copy (macOS only)
+if(APPLE)
+  set(DIST_DIR ${CMAKE_SOURCE_DIR}/dist)
+  add_custom_target(package_app ALL
+    COMMAND ${CMAKE_COMMAND} -E rm -rf ${DIST_DIR}
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${DIST_DIR}
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/BlackEngineProject.app
+            ${DIST_DIR}/BlackEngineProject.app
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/TileMapEditor.app
+            ${DIST_DIR}/TileMapEditor.app
+    COMMENT "Packaging .app into dist/"
+  )
+  add_dependencies(package_app BlackEngineProject)
+  add_dependencies(package_app TileMapEditor)
+endif()
 
 # Signing / notarization targets
 option(MAC_SIGN "Code sign the app" OFF)
