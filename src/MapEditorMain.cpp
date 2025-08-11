@@ -13,6 +13,20 @@
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
 #endif
+#ifdef _WIN32
+  #ifndef NOMINMAX
+  #define NOMINMAX
+  #endif
+  #include <windows.h>
+  #include <commdlg.h>
+  #include <shlobj.h>
+  #include <shobjidl.h>
+  #ifdef _MSC_VER
+    #pragma comment(lib, "comdlg32.lib")
+    #pragma comment(lib, "shell32.lib")
+    #pragma comment(lib, "ole32.lib")
+  #endif
+#endif
 
 #include "Constants.hh"
 
@@ -165,7 +179,118 @@ struct Tileset {
   }
 };
 
+#ifdef _WIN32
+// Try to use modern IFileDialog for picking files/folders; fallback to legacy APIs if needed
+static std::optional<std::string> winPickImageFile() {
+  // Preferred: IFileOpenDialog with filters
+  IFileOpenDialog* pDlg = nullptr;
+  HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
+  if (SUCCEEDED(hr) && pDlg) {
+    // Set filters
+    COMDLG_FILTERSPEC filters[] = {
+      { L"Image Files", L"*.png;*.jpg;*.jpeg;*.bmp;*.gif" },
+      { L"All Files", L"*.*" }
+    };
+    pDlg->SetFileTypes(static_cast<UINT>(std::size(filters)), filters);
+    pDlg->SetFileTypeIndex(1);
+    pDlg->SetOptions(FOS_PATHMUSTEXIST | FOS_FILEMUSTEXIST);
+    hr = pDlg->Show(nullptr);
+    if (SUCCEEDED(hr)) {
+      IShellItem* pItem = nullptr;
+      if (SUCCEEDED(pDlg->GetResult(&pItem)) && pItem) {
+        PWSTR psz = nullptr;
+        if (SUCCEEDED(pItem->GetDisplayName(SIGDN_FILESYSPATH, &psz)) && psz) {
+          std::wstring ws(psz);
+          CoTaskMemFree(psz);
+          pItem->Release();
+          pDlg->Release();
+          // convert to UTF-8
+          int len = WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), -1, nullptr, 0, nullptr, nullptr);
+          std::string out(len > 1 ? len - 1 : 0, '\0');
+          if (len > 1) WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), -1, out.data(), len - 1, nullptr, nullptr);
+          return out;
+        }
+        if (pItem) pItem->Release();
+      }
+    }
+    pDlg->Release();
+  }
+  // Fallback: GetOpenFileNameA
+  const char* filter = "Image Files\0*.png;*.jpg;*.jpeg;*.bmp;*.gif\0All Files\0*.*\0\0";
+  char file[MAX_PATH] = "";
+  OPENFILENAMEA ofn{};
+  ofn.lStructSize = sizeof(ofn);
+  ofn.hwndOwner = nullptr;
+  ofn.lpstrFilter = filter;
+  ofn.nFilterIndex = 1;
+  ofn.lpstrFile = file;
+  ofn.nMaxFile = MAX_PATH;
+  ofn.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST | OFN_EXPLORER;
+  if (GetOpenFileNameA(&ofn)) return std::string(ofn.lpstrFile);
+  return std::nullopt;
+}
+
+static std::optional<std::string> winPickFolder(const wchar_t* title = L"Select save folder") {
+  // Preferred: IFileOpenDialog with FOS_PICKFOLDERS
+  IFileOpenDialog* pDlg = nullptr;
+  HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
+  if (SUCCEEDED(hr) && pDlg) {
+    DWORD opts = 0;
+    pDlg->GetOptions(&opts);
+    pDlg->SetOptions(opts | FOS_PICKFOLDERS | FOS_PATHMUSTEXIST);
+    if (title) pDlg->SetTitle(title);
+    hr = pDlg->Show(nullptr);
+    if (SUCCEEDED(hr)) {
+      IShellItem* pItem = nullptr;
+      if (SUCCEEDED(pDlg->GetResult(&pItem)) && pItem) {
+        PWSTR psz = nullptr;
+        if (SUCCEEDED(pItem->GetDisplayName(SIGDN_FILESYSPATH, &psz)) && psz) {
+          std::wstring ws(psz);
+          CoTaskMemFree(psz);
+          pItem->Release();
+          pDlg->Release();
+          int len = WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), -1, nullptr, 0, nullptr, nullptr);
+          std::string out(len > 1 ? len - 1 : 0, '\0');
+          if (len > 1) WideCharToMultiByte(CP_UTF8, 0, ws.c_str(), -1, out.data(), len - 1, nullptr, nullptr);
+          return out;
+        }
+        if (pItem) pItem->Release();
+      }
+    }
+    pDlg->Release();
+  }
+  // Fallback: SHBrowseForFolderA
+  BROWSEINFOA bi{};
+  bi.hwndOwner = nullptr;
+  bi.pidlRoot = nullptr;
+  std::string titleA;
+  if (title) {
+    int len = WideCharToMultiByte(CP_UTF8, 0, title, -1, nullptr, 0, nullptr, nullptr);
+    titleA.resize(len > 1 ? len - 1 : 0);
+    if (len > 1) WideCharToMultiByte(CP_UTF8, 0, title, -1, titleA.data(), len - 1, nullptr, nullptr);
+    bi.lpszTitle = titleA.c_str();
+  }
+  bi.ulFlags = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
+  LPITEMIDLIST pidl = SHBrowseForFolderA(&bi);
+  if (!pidl) return std::nullopt;
+  char path[MAX_PATH] = "";
+  BOOL ok = SHGetPathFromIDListA(pidl, path);
+  LPMALLOC pMalloc = nullptr;
+  if (SUCCEEDED(SHGetMalloc(&pMalloc)) && pMalloc) {
+    pMalloc->Free(pidl);
+    pMalloc->Release();
+  }
+  if (ok && path[0] != '\0') return std::string(path);
+  return std::nullopt;
+}
+#endif
+
 int main() {
+#ifdef _WIN32
+  // Initialize COM for modern file/folder pickers
+  HRESULT comInit = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+  (void)comInit; // ignore failures; we have fallbacks
+#endif
   // Layout constants
   const int gridCols = GameConstants::MAP_WIDTH;
   const int gridRows = GameConstants::MAP_HEIGHT;
@@ -356,14 +481,14 @@ int main() {
   const int padding = 6;
   const int x0 = 8;
   // Layout for tileset config and save controls
-  const int cfgLabelY = 86;
-  const int cfgInputsY = 106;
-  const int cfgButtonsY = 136;
-  const int saveLabelY = 172;
-  const int saveInputY = 192;
-  const int saveButtonsY = 224;
+  const int cfgLabelY = 128;
+  const int cfgInputsY = 148;
+  const int cfgButtonsY = 178;
+  const int saveLabelY = 214;
+  const int saveInputY = 234;
+  const int saveButtonsY = 266;
   // Shift tileset thumbnails down to make space for config + save controls
-  const int y0 = 260;
+  const int y0 = 302;
 
   // --- Palette vertical scrolling state & helpers ---
   float paletteScrollY = 0.f; // in palette coordinate space
@@ -635,6 +760,71 @@ int main() {
         sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
         sf::Vector2i mpPalette(static_cast<int>(mpPaletteF.x), static_cast<int>(mpPaletteF.y));
 
+        // Tileset path input, Load and Browse button hit-tests
+        if (mp.x >= 0 && mp.x < paletteWidth) {
+          int pathInputW = paletteWidth - 24 - 100 - 6; // input + gap + load button
+          sf::IntRect pathRect({12, 62}, {pathInputW, 26});
+          sf::IntRect loadRect({12 + pathInputW + 6, 62}, {100, 26});
+          sf::IntRect browseRect({12, 94}, {100, 26});
+          if (pathRect.contains(mpPalette)) {
+            enteringPath = true;
+            enteringSaveDir = enteringTileW = enteringTileH = enteringRows = enteringCols = false;
+            continue;
+          }
+          if (loadRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+#ifdef _WIN32
+            // Open dialog to pick image and load immediately
+            if (auto sel = winPickImageFile()) {
+              pathBuffer = *sel;
+              if (tileset.loadTexture(pathBuffer)) {
+                tilesetPath = pathBuffer;
+                applyTilesetConfig();
+                clampAndApplyPaletteScroll();
+                showInfo(std::string("Loaded tileset: ") + tilesetPath);
+              } else {
+                showInfo(std::string("Failed tileset: ") + pathBuffer);
+              }
+            } else {
+              showInfo("Load canceled");
+            }
+#else
+            // Fallback: use typed path
+            if (tileset.loadTexture(pathBuffer)) {
+              tilesetPath = pathBuffer;
+              applyTilesetConfig();
+              clampAndApplyPaletteScroll();
+              showInfo(std::string("Loaded tileset: ") + tilesetPath);
+            } else {
+              showInfo(std::string("Failed tileset: ") + pathBuffer);
+            }
+#endif
+            enteringPath = false;
+            continue;
+          }
+          if (browseRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+#ifdef _WIN32
+            if (auto sel = winPickImageFile()) {
+              pathBuffer = *sel;
+              // Auto-load after selecting
+              if (tileset.loadTexture(pathBuffer)) {
+                tilesetPath = pathBuffer;
+                applyTilesetConfig();
+                clampAndApplyPaletteScroll();
+                showInfo(std::string("Loaded tileset: ") + tilesetPath);
+              } else {
+                showInfo(std::string("Failed tileset: ") + pathBuffer);
+              }
+              enteringPath = false;
+            } else {
+              showInfo("Browse canceled");
+            }
+#else
+            showInfo("Browse not supported on this platform");
+#endif
+            continue;
+          }
+        }
+
         // Tileset config controls (take top precedence)
         if (mp.x >= 0 && mp.x < paletteWidth) {
           // Input rects
@@ -676,7 +866,10 @@ int main() {
           }
           if (saveBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { saveGrid(); continue; }
           if (browseBtnRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
-#ifdef __APPLE__
+#if defined(_WIN32)
+            if (auto chosen = winPickFolder(L"Select folder to save maps")) { saveDirPath = *chosen; showInfo(std::string("Save folder set: ") + saveDirPath); }
+            else { showInfo("Folder selection canceled"); }
+#elif defined(__APPLE__)
             if (auto chosen = macChooseFolder()) { saveDirPath = *chosen; showInfo(std::string("Save folder set: ") + saveDirPath); }
             else { showInfo("Folder selection canceled"); }
 #else
@@ -782,7 +975,7 @@ int main() {
     title.setPosition(sf::Vector2f(16.f, 10.f));
     window.draw(title);
 
-    // Tileset path / load help
+    // Tileset path input + help
     {
       sf::Text help(font);
       help.setCharacterSize(14);
@@ -791,121 +984,142 @@ int main() {
       help.setString(ellipsizeEnd("L: load tileset  •  S: save  •  N: new  •  O: load level1", 14u, static_cast<float>(paletteWidth - 32)));
       window.draw(help);
 
-      if (enteringPath) {
-        sf::RectangleShape box(sf::Vector2f(static_cast<float>(paletteWidth - 24), 26.f));
-        box.setFillColor(sf::Color(50, 50, 60));
-        box.setOutlineThickness(1);
-        box.setOutlineColor(sf::Color(90, 90, 110));
-        box.setPosition(sf::Vector2f(12.f, 62.f));
-        window.draw(box);
+      int pathInputW = paletteWidth - 24 - 100 - 6; // input + gap + Load button
+      // Input box
+      sf::RectangleShape box(sf::Vector2f(static_cast<float>(pathInputW), 26.f));
+      box.setFillColor(sf::Color(50, 50, 60));
+      box.setOutlineThickness(1);
+      box.setOutlineColor(enteringPath ? sf::Color(120, 160, 220) : sf::Color(90, 90, 110));
+      box.setPosition(sf::Vector2f(12.f, 62.f));
+      window.draw(box);
 
-        sf::Text path(font);
-        path.setCharacterSize(16);
-        path.setFillColor(sf::Color::White);
-        path.setPosition(sf::Vector2f(18.f, 64.f));
-        path.setString(ellipsizeStart(pathBuffer, 16u, static_cast<float>((paletteWidth - 24) - 12)));
-        window.draw(path);
-      } else {
-        sf::Text path(font);
-        path.setCharacterSize(12);
-        path.setFillColor(sf::Color(160, 160, 180));
-        path.setPosition(sf::Vector2f(16.f, 62.f));
-        path.setString(ellipsizeStart(std::string("Tileset: ") + tilesetPath, 12u, static_cast<float>(paletteWidth - 32)));
-        window.draw(path);
+      sf::Text path(font);
+      path.setCharacterSize(16);
+      path.setFillColor(sf::Color::White);
+      path.setPosition(sf::Vector2f(18.f, 64.f));
+      path.setString(ellipsizeStart(pathBuffer, 16u, static_cast<float>(pathInputW - 12)));
+      window.draw(path);
 
-        // Tileset config label
-        sf::Text cfgLabel(font);
-        cfgLabel.setCharacterSize(14);
-        cfgLabel.setFillColor(sf::Color(180, 180, 200));
-        cfgLabel.setPosition(sf::Vector2f(16.f, static_cast<float>(cfgLabelY)));
-        cfgLabel.setString("Config (W,H,Rows,Cols):");
-        window.draw(cfgLabel);
+      // Load button
+      sf::RectangleShape loadBtn(sf::Vector2f(100.f, 26.f));
+      loadBtn.setFillColor(sf::Color(85, 120, 160));
+      loadBtn.setOutlineThickness(1);
+      loadBtn.setOutlineColor(sf::Color(90, 110, 140));
+      loadBtn.setPosition(sf::Vector2f(12.f + static_cast<float>(pathInputW) + 6.f, 62.f));
+      window.draw(loadBtn);
+      sf::Text loadTxt(font);
+      loadTxt.setCharacterSize(16);
+      loadTxt.setFillColor(sf::Color(235, 240, 255));
+      loadTxt.setPosition(sf::Vector2f(12.f + static_cast<float>(pathInputW) + 6.f + 24.f, 66.f));
+      loadTxt.setString("Load");
+      window.draw(loadTxt);
 
-        // Inputs W, H, Rows, Cols and Apply button
-        auto drawInput = [&](sf::Vector2f pos, const std::string& text, bool focused) {
-          sf::RectangleShape box(sf::Vector2f(52.f, 26.f));
-          box.setFillColor(sf::Color(50, 50, 60));
-          box.setOutlineThickness(1);
-          box.setOutlineColor(focused ? sf::Color(120, 160, 220) : sf::Color(90, 90, 110));
-          box.setPosition(pos);
-          window.draw(box);
-          sf::Text t(font);
-          t.setCharacterSize(16);
-          t.setFillColor(sf::Color::White);
-          t.setPosition(pos + sf::Vector2f(6.f, 4.f));
-          t.setString(text.empty() ? "" : text);
-          window.draw(t);
-        };
-        drawInput(sf::Vector2f(12.f, static_cast<float>(cfgInputsY)), tileWBuf, enteringTileW);
-        drawInput(sf::Vector2f(72.f, static_cast<float>(cfgInputsY)), tileHBuf, enteringTileH);
-        drawInput(sf::Vector2f(132.f, static_cast<float>(cfgInputsY)), rowsBuf, enteringRows);
-        drawInput(sf::Vector2f(192.f, static_cast<float>(cfgInputsY)), colsBuf, enteringCols);
-        // Apply button (moved below inputs to avoid overlap and stay within palette)
-        sf::RectangleShape applyBtn(sf::Vector2f(100.f, 26.f));
-        applyBtn.setFillColor(sf::Color(85, 120, 160));
-        applyBtn.setOutlineThickness(1);
-        applyBtn.setOutlineColor(sf::Color(90, 110, 140));
-        applyBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(cfgButtonsY)));
-        window.draw(applyBtn);
-        sf::Text applyTxt(font);
-        applyTxt.setCharacterSize(16);
-        applyTxt.setFillColor(sf::Color(235, 240, 255));
-        applyTxt.setPosition(sf::Vector2f(12.f + 12.f, static_cast<float>(cfgButtonsY) + 4.f));
-        applyTxt.setString("Apply");
-        window.draw(applyTxt);
+      // Browse button (Windows)
+      sf::RectangleShape browseBtnTop(sf::Vector2f(100.f, 26.f));
+      browseBtnTop.setFillColor(sf::Color(70, 90, 120));
+      browseBtnTop.setOutlineThickness(1);
+      browseBtnTop.setOutlineColor(sf::Color(90, 110, 140));
+      browseBtnTop.setPosition(sf::Vector2f(12.f, 94.f));
+      window.draw(browseBtnTop);
+      sf::Text browseTxtTop(font);
+      browseTxtTop.setCharacterSize(16);
+      browseTxtTop.setFillColor(sf::Color(235, 240, 255));
+      browseTxtTop.setPosition(sf::Vector2f(12.f + 14.f, 98.f));
+      browseTxtTop.setString("Browse");
+      window.draw(browseTxtTop);
 
-        // Save folder controls
-        sf::Text saveLabel(font);
-        saveLabel.setCharacterSize(14);
-        saveLabel.setFillColor(sf::Color(180, 180, 200));
-        saveLabel.setPosition(sf::Vector2f(16.f, static_cast<float>(saveLabelY)));
-        saveLabel.setString("Save folder:");
-        window.draw(saveLabel);
+      // Tileset config label
+      sf::Text cfgLabel(font);
+      cfgLabel.setCharacterSize(14);
+      cfgLabel.setFillColor(sf::Color(180, 180, 200));
+      cfgLabel.setPosition(sf::Vector2f(16.f, static_cast<float>(cfgLabelY)));
+      cfgLabel.setString("Config (W,H,Rows,Cols):");
+      window.draw(cfgLabel);
 
-        sf::RectangleShape saveBox(sf::Vector2f(static_cast<float>(paletteWidth - 24), 26.f));
-        saveBox.setFillColor(sf::Color(50, 50, 60));
-        saveBox.setOutlineThickness(1);
-        saveBox.setOutlineColor(sf::Color(90, 90, 110));
-        saveBox.setPosition(sf::Vector2f(12.f, static_cast<float>(saveInputY)));
-        window.draw(saveBox);
+      // Inputs W, H, Rows, Cols and Apply button
+      auto drawInput = [&](sf::Vector2f pos, const std::string& text, bool focused) {
+        sf::RectangleShape ibox(sf::Vector2f(52.f, 26.f));
+        ibox.setFillColor(sf::Color(50, 50, 60));
+        ibox.setOutlineThickness(1);
+        ibox.setOutlineColor(focused ? sf::Color(120, 160, 220) : sf::Color(90, 90, 110));
+        ibox.setPosition(pos);
+        window.draw(ibox);
+        sf::Text t(font);
+        t.setCharacterSize(16);
+        t.setFillColor(sf::Color::White);
+        t.setPosition(pos + sf::Vector2f(6.f, 4.f));
+        t.setString(text.empty() ? "" : text);
+        window.draw(t);
+      };
+      drawInput(sf::Vector2f(12.f, static_cast<float>(cfgInputsY)), tileWBuf, enteringTileW);
+      drawInput(sf::Vector2f(72.f, static_cast<float>(cfgInputsY)), tileHBuf, enteringTileH);
+      drawInput(sf::Vector2f(132.f, static_cast<float>(cfgInputsY)), rowsBuf, enteringRows);
+      drawInput(sf::Vector2f(192.f, static_cast<float>(cfgInputsY)), colsBuf, enteringCols);
+      // Apply button (moved below inputs to avoid overlap and stay within palette)
+      sf::RectangleShape applyBtn(sf::Vector2f(100.f, 26.f));
+      applyBtn.setFillColor(sf::Color(85, 120, 160));
+      applyBtn.setOutlineThickness(1);
+      applyBtn.setOutlineColor(sf::Color(90, 110, 140));
+      applyBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(cfgButtonsY)));
+      window.draw(applyBtn);
+      sf::Text applyTxt(font);
+      applyTxt.setCharacterSize(16);
+      applyTxt.setFillColor(sf::Color(235, 240, 255));
+      applyTxt.setPosition(sf::Vector2f(12.f + 12.f, static_cast<float>(cfgButtonsY) + 4.f));
+      applyTxt.setString("Apply");
+      window.draw(applyTxt);
 
-        sf::Text savePathText(font);
-        savePathText.setCharacterSize(14);
-        savePathText.setFillColor(sf::Color::White);
-        savePathText.setPosition(sf::Vector2f(18.f, static_cast<float>(saveInputY + 2)));
-        savePathText.setString(ellipsizeStart(saveDirPath, 14u, static_cast<float>((paletteWidth - 24) - 12)));
-        window.draw(savePathText);
+      // Save folder controls
+      sf::Text saveLabel(font);
+      saveLabel.setCharacterSize(14);
+      saveLabel.setFillColor(sf::Color(180, 180, 200));
+      saveLabel.setPosition(sf::Vector2f(16.f, static_cast<float>(saveLabelY)));
+      saveLabel.setString("Save folder:");
+      window.draw(saveLabel);
 
-        // Save button
-        sf::RectangleShape saveBtn(sf::Vector2f(100.f, 28.f));
-        saveBtn.setFillColor(sf::Color(70, 120, 90));
-        saveBtn.setOutlineThickness(1);
-        saveBtn.setOutlineColor(sf::Color(90, 140, 110));
-        saveBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(saveButtonsY)));
-        window.draw(saveBtn);
+      sf::RectangleShape saveBox(sf::Vector2f(static_cast<float>(paletteWidth - 24), 26.f));
+      saveBox.setFillColor(sf::Color(50, 50, 60));
+      saveBox.setOutlineThickness(1);
+      saveBox.setOutlineColor(sf::Color(90, 90, 110));
+      saveBox.setPosition(sf::Vector2f(12.f, static_cast<float>(saveInputY)));
+      window.draw(saveBox);
 
-        sf::Text saveBtnText(font);
-        saveBtnText.setCharacterSize(16);
-        saveBtnText.setFillColor(sf::Color(240, 255, 240));
-        saveBtnText.setPosition(sf::Vector2f(12.f + 20.f, static_cast<float>(saveButtonsY) + 4.f));
-        saveBtnText.setString("Save");
-        window.draw(saveBtnText);
+      sf::Text savePathText(font);
+      savePathText.setCharacterSize(14);
+      savePathText.setFillColor(sf::Color::White);
+      savePathText.setPosition(sf::Vector2f(18.f, static_cast<float>(saveInputY + 2)));
+      savePathText.setString(ellipsizeStart(saveDirPath, 14u, static_cast<float>((paletteWidth - 24) - 12)));
+      window.draw(savePathText);
 
-        // Browse button
-        sf::RectangleShape browseBtn(sf::Vector2f(100.f, 28.f));
-        browseBtn.setFillColor(sf::Color(70, 90, 120));
-        browseBtn.setOutlineThickness(1);
-        browseBtn.setOutlineColor(sf::Color(90, 110, 140));
-        browseBtn.setPosition(sf::Vector2f(12.f + 110.f, static_cast<float>(saveButtonsY)));
-        window.draw(browseBtn);
+      // Save button
+      sf::RectangleShape saveBtn(sf::Vector2f(100.f, 28.f));
+      saveBtn.setFillColor(sf::Color(70, 120, 90));
+      saveBtn.setOutlineThickness(1);
+      saveBtn.setOutlineColor(sf::Color(90, 140, 110));
+      saveBtn.setPosition(sf::Vector2f(12.f, static_cast<float>(saveButtonsY)));
+      window.draw(saveBtn);
 
-        sf::Text browseBtnText(font);
-        browseBtnText.setCharacterSize(16);
-        browseBtnText.setFillColor(sf::Color(235, 240, 255));
-        browseBtnText.setPosition(sf::Vector2f(12.f + 110.f + 14.f, static_cast<float>(saveButtonsY) + 4.f));
-        browseBtnText.setString("Browse");
-        window.draw(browseBtnText);
-      }
+      sf::Text saveBtnText(font);
+      saveBtnText.setCharacterSize(16);
+      saveBtnText.setFillColor(sf::Color(240, 255, 240));
+      saveBtnText.setPosition(sf::Vector2f(12.f + 20.f, static_cast<float>(saveButtonsY) + 4.f));
+      saveBtnText.setString("Save");
+      window.draw(saveBtnText);
+
+      // Browse button
+      sf::RectangleShape browseBtn(sf::Vector2f(100.f, 28.f));
+      browseBtn.setFillColor(sf::Color(70, 90, 120));
+      browseBtn.setOutlineThickness(1);
+      browseBtn.setOutlineColor(sf::Color(90, 110, 140));
+      browseBtn.setPosition(sf::Vector2f(12.f + 110.f, static_cast<float>(saveButtonsY)));
+      window.draw(browseBtn);
+
+      sf::Text browseBtnText(font);
+      browseBtnText.setCharacterSize(16);
+      browseBtnText.setFillColor(sf::Color(235, 240, 255));
+      browseBtnText.setPosition(sf::Vector2f(12.f + 110.f + 14.f, static_cast<float>(saveButtonsY) + 4.f));
+      browseBtnText.setString("Browse");
+      window.draw(browseBtnText);
     }
 
     // Draw palette thumbnails (still clipped by palette view)
