@@ -86,6 +86,37 @@ static std::string findAssetPath(const std::string& relative) {
   return relative;
 }
 
+// Try to locate a readable, widely available UI font on each platform
+static std::string findDefaultUIFont() {
+  std::vector<std::string> candidates;
+#ifdef _WIN32
+  candidates = {
+    "C:/Windows/Fonts/segoeui.ttf",
+    "C:/Windows/Fonts/arial.ttf",
+    "C:/Windows/Fonts/tahoma.ttf",
+    "C:/Windows/Fonts/verdana.ttf"
+  };
+#elif __APPLE__
+  candidates = {
+    "/System/Library/Fonts/SFNS.ttf",
+    "/System/Library/Fonts/SFNS.ttf",
+    "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+    "/System/Library/Fonts/Supplemental/Helvetica.ttc"
+  };
+#else
+  candidates = {
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    "/usr/share/fonts/truetype/freefont/FreeSans.ttf"
+  };
+#endif
+  for (const auto& p : candidates) {
+    std::error_code ec;
+    if (std::filesystem::exists(p, ec)) return p;
+  }
+  return {};
+}
+
 // User-writable directory for saved maps
 static std::filesystem::path getUserMapsDir() {
   std::filesystem::path home;
@@ -320,10 +351,21 @@ int main() {
   };
   setPaletteViewport();
 
-  // Load font for UI (SFML 3: openFromFile only)
+  // Load a default system UI font to avoid missing glyphs/kerning issues
   sf::Font font;
-  if (!font.openFromFile(findAssetPath(ASSETS_FONT_ARCADECLASSIC))) {
-    std::cerr << "Failed to load font: " << ASSETS_FONT_ARCADECLASSIC << std::endl;
+  bool fontOK = false;
+  {
+    std::string sysFont = findDefaultUIFont();
+    if (!sysFont.empty()) {
+      fontOK = font.openFromFile(sysFont);
+      if (!fontOK) std::cerr << "Failed to open system font: " << sysFont << std::endl;
+    }
+    if (!fontOK) {
+      // Fallback to bundled font if system fonts not found
+      std::string assetFont = findAssetPath(ASSETS_FONT_ARCADECLASSIC);
+      fontOK = font.openFromFile(assetFont);
+      if (!fontOK) std::cerr << "Failed to load fallback font: " << assetFont << std::endl;
+    }
   }
 
   // Helper text fitting utilities to avoid overlapping UI into grid
@@ -760,12 +802,11 @@ int main() {
         sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
         sf::Vector2i mpPalette(static_cast<int>(mpPaletteF.x), static_cast<int>(mpPaletteF.y));
 
-        // Tileset path input, Load and Browse button hit-tests
+  // Tileset path input and Load button hit-tests
         if (mp.x >= 0 && mp.x < paletteWidth) {
           int pathInputW = paletteWidth - 24 - 100 - 6; // input + gap + load button
           sf::IntRect pathRect({12, 62}, {pathInputW, 26});
           sf::IntRect loadRect({12 + pathInputW + 6, 62}, {100, 26});
-          sf::IntRect browseRect({12, 94}, {100, 26});
           if (pathRect.contains(mpPalette)) {
             enteringPath = true;
             enteringSaveDir = enteringTileW = enteringTileH = enteringRows = enteringCols = false;
@@ -799,28 +840,6 @@ int main() {
             }
 #endif
             enteringPath = false;
-            continue;
-          }
-          if (browseRect.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
-#ifdef _WIN32
-            if (auto sel = winPickImageFile()) {
-              pathBuffer = *sel;
-              // Auto-load after selecting
-              if (tileset.loadTexture(pathBuffer)) {
-                tilesetPath = pathBuffer;
-                applyTilesetConfig();
-                clampAndApplyPaletteScroll();
-                showInfo(std::string("Loaded tileset: ") + tilesetPath);
-              } else {
-                showInfo(std::string("Failed tileset: ") + pathBuffer);
-              }
-              enteringPath = false;
-            } else {
-              showInfo("Browse canceled");
-            }
-#else
-            showInfo("Browse not supported on this platform");
-#endif
             continue;
           }
         }
@@ -1014,19 +1033,7 @@ int main() {
       loadTxt.setString("Load");
       window.draw(loadTxt);
 
-      // Browse button (Windows)
-      sf::RectangleShape browseBtnTop(sf::Vector2f(100.f, 26.f));
-      browseBtnTop.setFillColor(sf::Color(70, 90, 120));
-      browseBtnTop.setOutlineThickness(1);
-      browseBtnTop.setOutlineColor(sf::Color(90, 110, 140));
-      browseBtnTop.setPosition(sf::Vector2f(12.f, 94.f));
-      window.draw(browseBtnTop);
-      sf::Text browseTxtTop(font);
-      browseTxtTop.setCharacterSize(16);
-      browseTxtTop.setFillColor(sf::Color(235, 240, 255));
-      browseTxtTop.setPosition(sf::Vector2f(12.f + 14.f, 98.f));
-      browseTxtTop.setString("Browse");
-      window.draw(browseTxtTop);
+  // (Top Browse button removed; Load already opens a file dialog)
 
       // Tileset config label
       sf::Text cfgLabel(font);
