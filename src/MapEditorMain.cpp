@@ -10,6 +10,7 @@
 #include <limits.h>
 #include <cstdio>
 #include <algorithm>
+#include <cmath>
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
 #endif
@@ -446,7 +447,11 @@ int main() {
   std::string infoMessage;
   sf::Clock infoClock;
 
-  auto gridOrigin = sf::Vector2f(static_cast<float>(paletteWidth + margin), static_cast<float>(margin));
+  // Grid camera state (origin can move via panning; zoom multiplies base tile scale)
+  sf::Vector2f gridOrigin = sf::Vector2f(static_cast<float>(paletteWidth + margin), static_cast<float>(margin));
+  float gridZoom = 1.0f;                 // zoom factor for grid (1.0 = default)
+  bool panningGrid = false;              // middle-mouse panning
+  sf::Vector2i lastPanMouse{0, 0};
 
   auto showInfo = [&](const std::string& msg) {
     infoMessage = msg;
@@ -627,6 +632,7 @@ int main() {
         paintingLeft = false;
         paintingRight = false;
         lastPaintGX = lastPaintGY = -1;
+  panningGrid = false;
       }
 
       // Keep views and palette size in sync with window to avoid overlap on resize
@@ -641,7 +647,7 @@ int main() {
         clampAndApplyPaletteScroll();
       }
 
-      // Mouse wheel scroll to move palette
+      // Mouse wheel: scroll palette or zoom grid depending on mouse area
       if (event.is<sf::Event::MouseWheelScrolled>()) {
         const auto* e = event.getIf<sf::Event::MouseWheelScrolled>();
         if (e) {
@@ -652,6 +658,31 @@ int main() {
             float step = 60.f; // pixels per notch; trackpads provide fractional deltas
             paletteScrollY -= e->delta * step;
             clampAndApplyPaletteScroll();
+          } else {
+            // Zoom grid when mouse is over the grid area
+            float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
+            float gridW = static_cast<float>(gridCols) * cellPx;
+            float gridH = static_cast<float>(gridRows) * cellPx;
+            sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
+            if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
+              float oldZoom = gridZoom;
+              // Zoom speed factor
+              float zoomStep = 1.1f;
+              if (e->delta > 0) gridZoom *= zoomStep; else gridZoom /= zoomStep;
+              if (gridZoom < 0.25f) gridZoom = 0.25f; if (gridZoom > 8.0f) gridZoom = 8.0f;
+              float newCellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
+              float oldCellPx = cellPx;
+              // Keep tile under cursor stable by adjusting origin
+              if (gridZoom != oldZoom && oldCellPx > 0.0f) {
+                sf::Vector2f mouseF(static_cast<float>(mp.x), static_cast<float>(mp.y));
+                // world coords in tile-space before zoom
+                sf::Vector2f rel = mouseF - gridOrigin;
+                sf::Vector2f world(rel.x / oldCellPx, rel.y / oldCellPx);
+                // recompute origin so that world under cursor stays put
+                sf::Vector2f newRel(world.x * newCellPx, world.y * newCellPx);
+                gridOrigin = mouseF - newRel;
+              }
+            }
           }
         }
       }
@@ -685,13 +716,16 @@ int main() {
           }
         }
 
-        // Grid painting while holding mouse button (default view coords)
+        // Grid painting while holding mouse button (default view coords) or panning
         if (paintingLeft || paintingRight) {
           sf::Vector2i mp(me->position.x, me->position.y);
-          sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {static_cast<float>(gridPxW), static_cast<float>(gridPxH)});
+          float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
+          float gridW = static_cast<float>(gridCols) * cellPx;
+          float gridH = static_cast<float>(gridRows) * cellPx;
+          sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
           if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
-            int gx = static_cast<int>((mp.x - gridOrigin.x) / (tilePx * tileScale));
-            int gy = static_cast<int>((mp.y - gridOrigin.y) / (tilePx * tileScale));
+            int gx = static_cast<int>((mp.x - gridOrigin.x) / cellPx);
+            int gy = static_cast<int>((mp.y - gridOrigin.y) / cellPx);
             if (gx != lastPaintGX || gy != lastPaintGY) {
               bool leftBtn = paintingLeft;
               if (lastPaintGX >= 0 && lastPaintGY >= 0) paintLine(lastPaintGX, lastPaintGY, gx, gy, leftBtn);
@@ -699,6 +733,14 @@ int main() {
               lastPaintGX = gx; lastPaintGY = gy;
             }
           }
+        }
+        // Panning with middle mouse button
+        if (panningGrid) {
+          sf::Vector2i mp(me->position.x, me->position.y);
+          sf::Vector2i delta = mp - lastPanMouse;
+          gridOrigin.x += static_cast<float>(delta.x);
+          gridOrigin.y += static_cast<float>(delta.y);
+          lastPanMouse = mp;
         }
       }
       if (event.is<sf::Event::MouseButtonReleased>()) {
@@ -711,6 +753,9 @@ int main() {
         if (e && e->button == sf::Mouse::Button::Right) {
           paintingRight = false;
           lastPaintGX = lastPaintGY = -1;
+        }
+        if (e && e->button == sf::Mouse::Button::Middle) {
+          panningGrid = false;
         }
       }
 
@@ -941,11 +986,14 @@ int main() {
           }
         }
 
-        // Click in grid to paint / erase
-        sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {static_cast<float>(gridPxW), static_cast<float>(gridPxH)});
+        // Click in grid to paint / erase or start panning
+        float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
+        float gridW = static_cast<float>(gridCols) * cellPx;
+        float gridH = static_cast<float>(gridRows) * cellPx;
+        sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
         if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
-          int gx = static_cast<int>((mp.x - gridOrigin.x) / (tilePx * tileScale));
-          int gy = static_cast<int>((mp.y - gridOrigin.y) / (tilePx * tileScale));
+          int gx = static_cast<int>((mp.x - gridOrigin.x) / cellPx);
+          int gy = static_cast<int>((mp.y - gridOrigin.y) / cellPx);
           if (gx >= 0 && gx < gridCols && gy >= 0 && gy < gridRows) {
             if (e->button == sf::Mouse::Button::Left) {
               paintCell(gx, gy, true);
@@ -955,6 +1003,9 @@ int main() {
               paintCell(gx, gy, false);
               paintingRight = true;
               lastPaintGX = gx; lastPaintGY = gy;
+            } else if (e->button == sf::Mouse::Button::Middle) {
+              panningGrid = true;
+              lastPanMouse = mp;
             }
           }
         }
@@ -1173,34 +1224,47 @@ int main() {
     // Switch back to default (full-window) view for the grid
     window.setView(defaultView);
 
-    // Grid panel
-    window.draw(gridBG);
+    // Grid panel (size adapts to zoom)
+    {
+      float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
+      float gridW = static_cast<float>(gridCols) * cellPx;
+      float gridH = static_cast<float>(gridRows) * cellPx;
+      gridBG.setSize(sf::Vector2f(gridW, gridH));
+      gridBG.setPosition(gridOrigin);
+      window.draw(gridBG);
+    }
 
     // Grid lines
-    for (int x = 0; x <= gridCols; ++x) {
-      sf::RectangleShape line(sf::Vector2f(1.f, static_cast<float>(gridPxH)));
-      line.setFillColor(sf::Color(45, 45, 55));
-      line.setPosition(sf::Vector2f(gridOrigin.x + x * tilePx * tileScale, gridOrigin.y));
-      window.draw(line);
-    }
-    for (int y = 0; y <= gridRows; ++y) {
-      sf::RectangleShape line(sf::Vector2f(static_cast<float>(gridPxW), 1.f));
-      line.setFillColor(sf::Color(45, 45, 55));
-      line.setPosition(sf::Vector2f(gridOrigin.x, gridOrigin.y + y * tilePx * tileScale));
-      window.draw(line);
+    {
+      float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
+      float gridW = static_cast<float>(gridCols) * cellPx;
+      float gridH = static_cast<float>(gridRows) * cellPx;
+      for (int x = 0; x <= gridCols; ++x) {
+        sf::RectangleShape line(sf::Vector2f(1.f, gridH));
+        line.setFillColor(sf::Color(45, 45, 55));
+        line.setPosition(sf::Vector2f(gridOrigin.x + x * cellPx, gridOrigin.y));
+        window.draw(line);
+      }
+      for (int y = 0; y <= gridRows; ++y) {
+        sf::RectangleShape line(sf::Vector2f(gridW, 1.f));
+        line.setFillColor(sf::Color(45, 45, 55));
+        line.setPosition(sf::Vector2f(gridOrigin.x, gridOrigin.y + y * cellPx));
+        window.draw(line);
+      }
     }
 
     // Draw placed tiles
     if (tileset.loaded) {
+      float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
       for (int y = 0; y < gridRows; ++y) {
         for (int x = 0; x < gridCols; ++x) {
           const TileCR& t = grid[y][x];
           sf::Sprite spr(tileset.texture, sf::IntRect({t.col * tileset.tileW, t.row * tileset.tileH}, {tileset.tileW, tileset.tileH}));
           // Scale to fit grid cell size (may be non-uniform if tileW != tileH)
-          float scaleX = (tilePx * tileScale) / static_cast<float>(tileset.tileW);
-          float scaleY = (tilePx * tileScale) / static_cast<float>(tileset.tileH);
+          float scaleX = (cellPx) / static_cast<float>(tileset.tileW);
+          float scaleY = (cellPx) / static_cast<float>(tileset.tileH);
           spr.setScale(sf::Vector2f(scaleX, scaleY));
-          spr.setPosition(sf::Vector2f(gridOrigin.x + x * tilePx * tileScale, gridOrigin.y + y * tilePx * tileScale));
+          spr.setPosition(sf::Vector2f(gridOrigin.x + x * cellPx, gridOrigin.y + y * cellPx));
           window.draw(spr);
         }
       }
@@ -1208,12 +1272,15 @@ int main() {
 
     // Hover highlight on grid
     sf::Vector2i mp = sf::Mouse::getPosition(window);
-    sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {static_cast<float>(gridPxW), static_cast<float>(gridPxH)});
+    float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
+    float gridW = static_cast<float>(gridCols) * cellPx;
+    float gridH = static_cast<float>(gridRows) * cellPx;
+    sf::FloatRect gridRect({gridOrigin.x, gridOrigin.y}, {gridW, gridH});
     if (gridRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
-      int gx = static_cast<int>((mp.x - gridOrigin.x) / (tilePx * tileScale));
-      int gy = static_cast<int>((mp.y - gridOrigin.y) / (tilePx * tileScale));
-      sf::RectangleShape hover(sf::Vector2f(tilePx * tileScale, tilePx * tileScale));
-      hover.setPosition(sf::Vector2f(gridOrigin.x + gx * tilePx * tileScale, gridOrigin.y + gy * tilePx * tileScale));
+      int gx = static_cast<int>((mp.x - gridOrigin.x) / cellPx);
+      int gy = static_cast<int>((mp.y - gridOrigin.y) / cellPx);
+      sf::RectangleShape hover(sf::Vector2f(cellPx, cellPx));
+      hover.setPosition(sf::Vector2f(gridOrigin.x + gx * cellPx, gridOrigin.y + gy * cellPx));
       hover.setFillColor(sf::Color(255, 255, 255, 20));
       hover.setOutlineThickness(1);
       hover.setOutlineColor(sf::Color(255, 255, 255, 60));
