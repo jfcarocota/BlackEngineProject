@@ -687,13 +687,47 @@ int main() {
       if (idxInsert > static_cast<int>(layersRef.size())) idxInsert = static_cast<int>(layersRef.size());
       Layer newLayer;
       newLayer.name = std::string("Layer ") + std::to_string(static_cast<int>(layersRef.size() + 1));
-      newLayer.tilesetPath = findAssetPath(ASSETS_TILES);
+      // Copiar tileset desde la capa activa si existe para compartir imagen/config
+      if (!layersRef.empty()) {
+        int src = std::clamp(idxInsert - 1, 0, static_cast<int>(layersRef.size() - 1));
+        newLayer.tileset = layersRef[src].tileset;
+        newLayer.tilesetPath = layersRef[src].tilesetPath;
+      } else {
+        newLayer.tilesetPath = findAssetPath(ASSETS_TILES);
+      }
       newLayer.visible = true;
       layersRef.insert(layersRef.begin() + idxInsert, std::move(newLayer));
       return idxInsert;
     }
   } insertNewLayerAt{ &layers };
   
+  // Ensure a layer has a loaded tileset; if not, copy from first loaded layer
+  auto ensureLayerTileset = [&](int layerIdx) {
+    if (layerIdx < 0 || layerIdx >= static_cast<int>(layers.size())) return;
+    if (layers[layerIdx].tileset.loaded) return;
+    for (const auto& L : layers) {
+      if (L.tileset.loaded) {
+        layers[layerIdx].tileset = L.tileset;
+        layers[layerIdx].tilesetPath = L.tilesetPath;
+        // Recompute grid based on copied dims
+        int tw = layers[layerIdx].tileset.tileW;
+        int th = layers[layerIdx].tileset.tileH;
+        layers[layerIdx].tileset.configureGrid(tw, th, layers[layerIdx].tileset.cols, layers[layerIdx].tileset.rows);
+        break;
+      }
+    }
+  };
+
+  // Propagate a tileset to all layers so they share the same image/config
+  auto propagateTilesetToAllLayers = [&](const Tileset& ts, const std::string& path) {
+    for (size_t i = 0; i < layers.size(); ++i) {
+      layers[i].tileset = ts;
+      layers[i].tilesetPath = path;
+      int tw = ts.tileW, th = ts.tileH;
+      layers[i].tileset.configureGrid(tw, th, ts.cols, ts.rows);
+    }
+  };
+
   // Convenience macros to keep existing code paths working with the active layer
   #define CUR_LAYER (layers[activeLayer])
   #define tileset (CUR_LAYER.tileset)
@@ -767,6 +801,20 @@ int main() {
     infoClock.restart();
   };
 
+  // Layer selection helpers (after showInfo is defined)
+  auto selectPrevLayer = [&]() {
+    if (layers.empty()) return;
+    activeLayer = (activeLayer - 1 + static_cast<int>(layers.size())) % static_cast<int>(layers.size());
+    ensureLayerTileset(activeLayer);
+    showInfo(std::string("Active: ") + layers[activeLayer].name);
+  };
+  auto selectNextLayer = [&]() {
+    if (layers.empty()) return;
+    activeLayer = (activeLayer + 1) % static_cast<int>(layers.size());
+    ensureLayerTileset(activeLayer);
+    showInfo(std::string("Active: ") + layers[activeLayer].name);
+  };
+
   // Helper to apply current buffers into tileset grid
   auto applyTilesetConfig = [&]() {
     if (tileset.texture.getSize().x == 0) { showInfo("Load a tileset path first (press L)"); return; }
@@ -814,7 +862,7 @@ int main() {
 
     out << "{\n  \"layers\": [\n";
     for (size_t li = 0; li < layers.size(); ++li) {
-      // tileset path relative to assets/
+  // tileset path relative to assets/
       std::string tilesetOut = tilesetPathFromLayer(static_cast<int>(li));
       auto posAssets = tilesetOut.find("assets/");
       if (posAssets != std::string::npos) tilesetOut = tilesetOut.substr(posAssets);
@@ -1352,8 +1400,8 @@ int main() {
             if (e->code == sf::Keyboard::Key::S) saveGrid();
             if (e->code == sf::Keyboard::Key::J) saveJson();
             // Layer controls
-            if (e->code == sf::Keyboard::Key::F1) { if (!layers.empty()) { activeLayer = (activeLayer - 1 + static_cast<int>(layers.size())) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); } }
-            if (e->code == sf::Keyboard::Key::F2) { if (!layers.empty()) { activeLayer = (activeLayer + 1) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); } }
+            if (e->code == sf::Keyboard::Key::F1) { selectPrevLayer(); }
+            if (e->code == sf::Keyboard::Key::F2) { selectNextLayer(); }
             if (e->code == sf::Keyboard::Key::F4) {
               int idxInsert = activeLayer + 1;
               activeLayer = insertNewLayerAt(idxInsert);
@@ -1393,10 +1441,10 @@ int main() {
             if (e->code == sf::Keyboard::Key::Enter) {
               if (enteringPath) {
                 if (tileset.loadTexture(pathBuffer)) {
-                  tilesetPath = pathBuffer;
-                  // Keep current buffers for grid config, or defaults if empty
+                  // Configurar grid con los buffers actuales
                   applyTilesetConfig();
-                  showInfo("Loaded tileset: " + tilesetPath);
+                  propagateTilesetToAllLayers(tileset, pathBuffer);
+                  showInfo("Loaded tileset: " + pathBuffer);
                 } else {
                   showInfo("Failed tileset: " + pathBuffer);
                 }
@@ -1464,14 +1512,8 @@ int main() {
             sf::IntRect rectNext({startX + btnW + gap, layerBtnY}, {btnW, btnH});
             sf::IntRect rectAdd ({startX + 2*(btnW + gap), layerBtnY}, {btnW, btnH});
             sf::IntRect rectDel ({startX + 3*(btnW + gap), layerBtnY}, {btnW, btnH});
-            if (rectPrev.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
-              if (!layers.empty()) { activeLayer = (activeLayer - 1 + static_cast<int>(layers.size())) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); }
-              continue;
-            }
-            if (rectNext.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
-              if (!layers.empty()) { activeLayer = (activeLayer + 1) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); }
-              continue;
-            }
+            if (rectPrev.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { selectPrevLayer(); continue; }
+            if (rectNext.contains(mpPalette) && e->button == sf::Mouse::Button::Left) { selectNextLayer(); continue; }
             if (rectAdd.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
               int idxInsert = activeLayer + 1; activeLayer = insertNewLayerAt(idxInsert); showInfo("Layer added");
               continue;
@@ -1495,10 +1537,10 @@ int main() {
             if (auto sel = winPickImageFile()) {
               pathBuffer = *sel;
               if (tileset.loadTexture(pathBuffer)) {
-                tilesetPath = pathBuffer;
                 applyTilesetConfig();
+                propagateTilesetToAllLayers(tileset, pathBuffer);
                 clampAndApplyPaletteScroll();
-                showInfo(std::string("Loaded tileset: ") + tilesetPath);
+                showInfo(std::string("Loaded tileset: ") + pathBuffer);
               } else {
                 showInfo(std::string("Failed tileset: ") + pathBuffer);
               }
@@ -1508,10 +1550,10 @@ int main() {
 #else
             // Fallback: use typed path
             if (tileset.loadTexture(pathBuffer)) {
-              tilesetPath = pathBuffer;
               applyTilesetConfig();
+              propagateTilesetToAllLayers(tileset, pathBuffer);
               clampAndApplyPaletteScroll();
-              showInfo(std::string("Loaded tileset: ") + tilesetPath);
+              showInfo(std::string("Loaded tileset: ") + pathBuffer);
             } else {
               showInfo(std::string("Failed tileset: ") + pathBuffer);
             }
