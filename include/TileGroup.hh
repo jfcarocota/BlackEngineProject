@@ -8,7 +8,8 @@ class TileGroup
 {
 private:
   sf::RenderWindow* window;
-  std::unique_ptr<std::vector<std::unique_ptr<Tile>>> tiles;
+  // Multiple layers of tiles (drawn in order)
+  std::unique_ptr<std::vector<std::vector<std::unique_ptr<Tile>>>> layerTiles;
   int COLS{}, ROWS{};
   std::unique_ptr<std::ifstream> reader;
   std::string filePathStr{};

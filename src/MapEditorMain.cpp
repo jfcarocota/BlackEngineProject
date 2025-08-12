@@ -657,16 +657,54 @@ int main() {
     return dots + tailForward;
   };
 
-  // Tileset
-  Tileset tileset;
-  std::string tilesetPath = findAssetPath(ASSETS_TILES); // default
+  // --- Layers system ---
+  struct Layer {
+    Tileset tileset;
+    std::string tilesetPath;
+    std::unordered_map<ChunkCoord, Chunk, ChunkCoordHash> chunks;
+    std::string name;
+    bool visible{true};
+  };
+
+  std::vector<Layer> layers;
+  int activeLayer = 0;
+  auto ensureInitialLayer = [&]() {
+    if (layers.empty()) {
+      layers.emplace_back();
+      layers[0].tilesetPath = findAssetPath(ASSETS_TILES); // default
+      layers[0].name = "Layer 1";
+      layers[0].visible = true;
+    }
+  };
+  ensureInitialLayer();
+
+  // Helper to insert a new layer safely (place before macros to avoid macro name collisions)
+  struct InsertNewLayerAtHelper {
+    std::vector<Layer>* layersPtr;
+    int operator()(int idxInsert) {
+      auto& layersRef = *layersPtr;
+      if (idxInsert < 0) idxInsert = 0;
+      if (idxInsert > static_cast<int>(layersRef.size())) idxInsert = static_cast<int>(layersRef.size());
+      Layer newLayer;
+      newLayer.name = std::string("Layer ") + std::to_string(static_cast<int>(layersRef.size() + 1));
+      newLayer.tilesetPath = findAssetPath(ASSETS_TILES);
+      newLayer.visible = true;
+      layersRef.insert(layersRef.begin() + idxInsert, std::move(newLayer));
+      return idxInsert;
+    }
+  } insertNewLayerAt{ &layers };
+  
+  // Convenience macros to keep existing code paths working with the active layer
+  #define CUR_LAYER (layers[activeLayer])
+  #define tileset (CUR_LAYER.tileset)
+  #define tilesetPath (CUR_LAYER.tilesetPath)
+  #define chunks (CUR_LAYER.chunks)
   // Default config buffers
   int defaultW = tilePx;
   int defaultH = tilePx;
 
   // Grid data (col,row for each cell)
-  // Sparse grid by chunks instead of fixed dense grid
-  std::unordered_map<ChunkCoord, Chunk, ChunkCoordHash> chunks;
+  // Sparse grid by chunks instead of fixed dense grid (per-layer via macro 'chunks')
   auto getChunkPtr = [&](const ChunkCoord& cc) -> Chunk* {
     auto it = chunks.find(cc);
     if (it == chunks.end()) return nullptr;
@@ -763,19 +801,41 @@ int main() {
     };
     std::ofstream out(outPath);
     if (!out.is_open()) { showInfo("Failed to save: " + outPath.string()); return; }
-    std::string tilesetOut = tilesetPath;
-    auto posAssets = tilesetOut.find("assets/");
-    if (posAssets != std::string::npos) tilesetOut = tilesetOut.substr(posAssets);
-    out << "{\n  \"tileset\": \"" << jsonEscape(tilesetOut) << "\",\n  \"grid\": [\n";
-    for (int y = 0; y < gridRows; ++y) {
-      out << "    [";
-      for (int x = 0; x < gridCols; ++x) {
-        TileCR t = getTileAt(x, y);
-        out << "[" << t.col << "," << t.row << "]";
-        if (x + 1 < gridCols) out << ",";
+    // Helper to get tile from arbitrary layer by temporarily switching activeLayer
+    auto getTileFromLayer = [&](int layerIdx, int gx, int gy) -> TileCR {
+      int prev = activeLayer; activeLayer = layerIdx; TileCR t = getTileAt(gx, gy); activeLayer = prev; return t;
+    };
+    auto tilesetPathFromLayer = [&](int layerIdx) -> std::string {
+      int prev = activeLayer; activeLayer = layerIdx; std::string p = tilesetPath; activeLayer = prev; return p;
+    };
+    auto tileDimFromLayer = [&](int layerIdx) -> std::pair<int,int> {
+      int prev = activeLayer; activeLayer = layerIdx; auto pr = std::make_pair(tileset.tileW, tileset.tileH); activeLayer = prev; return pr;
+    };
+
+    out << "{\n  \"layers\": [\n";
+    for (size_t li = 0; li < layers.size(); ++li) {
+      // tileset path relative to assets/
+      std::string tilesetOut = tilesetPathFromLayer(static_cast<int>(li));
+      auto posAssets = tilesetOut.find("assets/");
+      if (posAssets != std::string::npos) tilesetOut = tilesetOut.substr(posAssets);
+      auto dims = tileDimFromLayer(static_cast<int>(li));
+      out << "    {\n      \"name\": \"" << jsonEscape(layers[li].name.empty() ? (std::string("Layer ") + std::to_string(li+1)) : layers[li].name) << "\",\n";
+      out << "      \"tileset\": \"" << jsonEscape(tilesetOut) << "\",\n";
+      out << "      \"tileW\": " << dims.first << ", \"tileH\": " << dims.second << ",\n";
+      out << "      \"grid\": [\n";
+      for (int y = 0; y < gridRows; ++y) {
+        out << "        [";
+        for (int x = 0; x < gridCols; ++x) {
+          TileCR t = getTileFromLayer(static_cast<int>(li), x, y);
+          out << "[" << t.col << "," << t.row << "]";
+          if (x + 1 < gridCols) out << ",";
+        }
+        out << "]";
+        if (y + 1 < gridRows) out << ",";
+        out << "\n";
       }
-      out << "]";
-      if (y + 1 < gridRows) out << ",";
+      out << "      ]\n    }";
+      if (li + 1 < layers.size()) out << ",";
       out << "\n";
     }
     out << "  ]\n}\n";
@@ -861,7 +921,8 @@ int main() {
     showInfo("Loaded grid from: " + resolved);
   };
 
-  // Load from JSON map (tileset + 2D grid of [c,r])
+  // Load from JSON map: supports single-layer schema {tileset, tileW?, tileH?, grid}
+  // and multi-layer schema {layers: [{name?, tileset, tileW?, tileH?, grid}, ...]}
   auto loadJsonFromFile = [&](const std::string& filePath) {
     std::string resolved = findAssetPath(filePath);
     std::ifstream in(resolved, std::ios::in | std::ios::binary);
@@ -931,33 +992,103 @@ int main() {
       return grid;
     };
 
-    // Apply tileset if present
-    std::string ts = extractStringField(json, "tileset");
-    int jsonTileW = extractIntField(json, "tileW");
-    int jsonTileH = extractIntField(json, "tileH");
-    if (!ts.empty()) {
-      std::string resolvedTs = findAssetPath(ts);
-      if (tileset.loadTexture(resolvedTs)) {
-        tilesetPath = resolvedTs;
-        // Si tileW/tileH existen en el JSON, configúralos
-        if (jsonTileW > 0) tileWBuf = std::to_string(jsonTileW);
-        if (jsonTileH > 0) tileHBuf = std::to_string(jsonTileH);
-        applyTilesetConfig();
-        showInfo(std::string("Loaded tileset: ") + tilesetPath);
+    auto hasKey = [&](const std::string& key) -> bool {
+      const std::string quoted = '"' + key + '"';
+      return json.find(quoted) != std::string::npos;
+    };
+
+    // Detect multi-layer schema
+    bool isLayered = hasKey("layers");
+  if (!isLayered) {
+      // Backward compatible single-layer path
+      // Reset to one layer
+      layers.clear(); ensureInitialLayer(); activeLayer = 0;
+      // Apply tileset if present
+      std::string ts = extractStringField(json, "tileset");
+      int jsonTileW = extractIntField(json, "tileW");
+      int jsonTileH = extractIntField(json, "tileH");
+      if (!ts.empty()) {
+        std::string resolvedTs = findAssetPath(ts);
+        if (tileset.loadTexture(resolvedTs)) {
+          tilesetPath = resolvedTs;
+          if (jsonTileW > 0) tileWBuf = std::to_string(jsonTileW);
+          if (jsonTileH > 0) tileHBuf = std::to_string(jsonTileH);
+          applyTilesetConfig();
+        }
       }
+      size_t gs = extractGridStart(json);
+      if (gs == std::string::npos) { showInfo("Invalid JSON: missing grid"); return; }
+      auto grid = parseGrid(json, gs);
+  chunks.clear();
+      for (int y = 0; y < static_cast<int>(grid.size()); ++y) {
+        for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
+          TileCR t = grid[y][x];
+          if (t.col != 0 || t.row != 0) setTileAt(x, y, t);
+        }
+      }
+      showInfo("Loaded JSON map: " + resolved);
+      return;
     }
 
-    size_t gs = extractGridStart(json);
-    if (gs == std::string::npos) { showInfo("Invalid JSON: missing grid"); return; }
-    auto grid = parseGrid(json, gs);
-    chunks.clear();
-    for (int y = 0; y < static_cast<int>(grid.size()); ++y) {
-      for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
-        TileCR t = grid[y][x];
-        if (t.col != 0 || t.row != 0) setTileAt(x, y, t);
+  // Layered path: parse array of layers crudely
+  layers.clear(); activeLayer = 0;
+    size_t layersPos = json.find("\"layers\"");
+    size_t arrStart = layersPos == std::string::npos ? std::string::npos : json.find('[', layersPos);
+    if (arrStart == std::string::npos) { showInfo("Invalid JSON: layers array not found"); return; }
+    size_t i = arrStart + 1; int depth = 1; // inside array
+    while (i < json.size() && depth > 0) {
+      // Find next object '{'
+      while (i < json.size() && json[i] != '{' && json[i] != ']') ++i;
+      if (i >= json.size()) break;
+      if (json[i] == ']') { --depth; break; }
+      // Parse object span
+      size_t objStart = i; int objDepth = 0; do { if (json[i] == '{') ++objDepth; else if (json[i] == '}') --objDepth; ++i; } while (i < json.size() && objDepth > 0);
+      size_t objEnd = i; // one past '}'
+      std::string obj = json.substr(objStart, objEnd - objStart);
+
+      // Extract fields
+      std::string ts = extractStringField(obj, "tileset");
+      std::string name = extractStringField(obj, "name");
+      int jsonTileW = extractIntField(obj, "tileW");
+      int jsonTileH = extractIntField(obj, "tileH");
+      size_t gstart = std::string::npos;
+      {
+        const std::string quoted = "\"grid\"";
+        size_t p = obj.find(quoted);
+        if (p != std::string::npos) { p = obj.find(':', p); if (p != std::string::npos) gstart = obj.find('[', p); }
+      }
+      std::vector<std::vector<TileCR>> grid;
+      if (gstart != std::string::npos) grid = parseGrid(obj, gstart);
+
+      // Create new layer and configure it via active layer macros to avoid macro collisions
+      layers.emplace_back();
+      int li = static_cast<int>(layers.size()) - 1;
+      layers[li].name = !name.empty() ? name : (std::string("Layer ") + std::to_string(li+1));
+      layers[li].visible = true;
+      activeLayer = li;
+      if (!ts.empty()) {
+        std::string resolvedTs = findAssetPath(ts);
+        if (tileset.loadTexture(resolvedTs)) {
+          tilesetPath = resolvedTs;
+          if (jsonTileW > 0) tileset.tileW = jsonTileW;
+          if (jsonTileH > 0) tileset.tileH = jsonTileH;
+          // Configure grid sizes (rows/cols) based on texture and tile dims
+          tileset.configureGrid(tileset.tileW > 0 ? tileset.tileW : tilePx,
+                                tileset.tileH > 0 ? tileset.tileH : tilePx,
+                                /*cols*/0, /*rows*/0);
+        }
+      }
+      // Fill tiles for this layer
+      chunks.clear();
+      for (int y = 0; y < static_cast<int>(grid.size()); ++y) {
+        for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
+          TileCR t = grid[y][x];
+          if (t.col != 0 || t.row != 0) setTileAt(x, y, t);
+        }
       }
     }
-    showInfo("Loaded JSON map: " + resolved);
+  ensureInitialLayer(); activeLayer = 0;
+    showInfo("Loaded layered JSON map: " + resolved);
   };
 
   // Load default map if available
@@ -1220,6 +1351,18 @@ int main() {
             if (e->code == sf::Keyboard::Key::Escape) window.close();
             if (e->code == sf::Keyboard::Key::S) saveGrid();
             if (e->code == sf::Keyboard::Key::J) saveJson();
+            // Layer controls
+            if (e->code == sf::Keyboard::Key::F1) { if (!layers.empty()) { activeLayer = (activeLayer - 1 + static_cast<int>(layers.size())) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); } }
+            if (e->code == sf::Keyboard::Key::F2) { if (!layers.empty()) { activeLayer = (activeLayer + 1) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); } }
+            if (e->code == sf::Keyboard::Key::F4) {
+              int idxInsert = activeLayer + 1;
+              activeLayer = insertNewLayerAt(idxInsert);
+              showInfo("Layer added");
+            }
+            if (e->code == sf::Keyboard::Key::F5) {
+              if (layers.size() > 1) { layers.erase(layers.begin() + activeLayer); if (activeLayer >= static_cast<int>(layers.size())) activeLayer = static_cast<int>(layers.size())-1; showInfo("Layer deleted"); }
+            }
+            if (e->code == sf::Keyboard::Key::F3) { if (!layers.empty()) { layers[activeLayer].visible = !layers[activeLayer].visible; showInfo(std::string("Visibility: ") + (layers[activeLayer].visible?"On":"Off")); } }
             if (e->code == sf::Keyboard::Key::N) { chunks.clear(); showInfo("New empty grid"); }
             if (e->code == sf::Keyboard::Key::L) {
               enteringPath = true;
@@ -1504,9 +1647,9 @@ int main() {
     paletteBG.setPosition(sf::Vector2f(0.f, 0.f));
     window.draw(paletteBG);
 
-    // Palette title
+  // Palette title
     sf::Text title(font);
-    title.setString("Tileset");
+  title.setString(std::string("Tileset (Layer: ") + (layers.empty()?std::string("-") : layers[activeLayer].name) + ")");
     title.setCharacterSize(22);
     title.setFillColor(sf::Color(230, 230, 240));
     title.setPosition(sf::Vector2f(16.f, 10.f));
@@ -1760,8 +1903,8 @@ int main() {
       }
     }
 
-    // Draw placed tiles (visible range only)
-    if (tileset.loaded) {
+    // Draw placed tiles from all visible layers (bottom to top, visible range only)
+    if (!layers.empty()) {
       float cellPx = static_cast<float>(tilePx) * tileScale * gridZoom;
       float panelLeft = static_cast<float>(paletteWidth + margin);
       float panelTop = static_cast<float>(margin);
@@ -1773,17 +1916,22 @@ int main() {
       int maxGX = static_cast<int>(std::floor((panelRight - gridOrigin.x) / cellPx)) + 1;
       int minGY = static_cast<int>(std::floor((panelTop - gridOrigin.y) / cellPx)) - 1;
       int maxGY = static_cast<int>(std::floor((panelBottom - gridOrigin.y) / cellPx)) + 1;
-      for (int gy = minGY; gy <= maxGY; ++gy) {
-        for (int gx = minGX; gx <= maxGX; ++gx) {
-          TileCR t = getTileAt(gx, gy);
-          if (t.col == 0 && t.row == 0) continue;
-          sf::Sprite spr(tileset.texture, sf::IntRect({t.col * tileset.tileW, t.row * tileset.tileH}, {tileset.tileW, tileset.tileH}));
-          float scaleX = (cellPx) / static_cast<float>(tileset.tileW);
-          float scaleY = (cellPx) / static_cast<float>(tileset.tileH);
-          spr.setScale(sf::Vector2f(scaleX, scaleY));
-          spr.setPosition(sf::Vector2f(gridOrigin.x + gx * cellPx, gridOrigin.y + gy * cellPx));
-          window.draw(spr);
+      for (size_t li = 0; li < layers.size(); ++li) {
+        int prev = activeLayer; activeLayer = static_cast<int>(li);
+        if (!layers[li].visible || !tileset.loaded) { activeLayer = prev; continue; }
+        for (int gy = minGY; gy <= maxGY; ++gy) {
+          for (int gx = minGX; gx <= maxGX; ++gx) {
+            TileCR t = getTileAt(gx, gy);
+            if (t.col == 0 && t.row == 0) continue;
+            sf::Sprite spr(tileset.texture, sf::IntRect({t.col * tileset.tileW, t.row * tileset.tileH}, {tileset.tileW, tileset.tileH}));
+            float scaleX = (cellPx) / static_cast<float>(tileset.tileW);
+            float scaleY = (cellPx) / static_cast<float>(tileset.tileH);
+            spr.setScale(sf::Vector2f(scaleX, scaleY));
+            spr.setPosition(sf::Vector2f(gridOrigin.x + gx * cellPx, gridOrigin.y + gy * cellPx));
+            window.draw(spr);
+          }
         }
+        activeLayer = prev;
       }
     }
 
