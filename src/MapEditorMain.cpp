@@ -1819,35 +1819,7 @@ int main() {
       drawBtn(xAdd, "+");
       drawBtn(xDel, "-");
 
-      // If dropdown open, draw items list below
-      if (layerDropdownOpen) {
-        const int itemH = btnH;
-        const int dropY = layerBtnY + btnH + 2;
-        sf::RectangleShape listBg(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH * static_cast<int>(layers.size()))));
-        listBg.setPosition(sf::Vector2f(static_cast<float>(xSelect), static_cast<float>(dropY)));
-        listBg.setFillColor(sf::Color(50, 50, 65));
-        listBg.setOutlineThickness(1);
-        listBg.setOutlineColor(sf::Color(90, 90, 110));
-        window.draw(listBg);
-        for (int i = 0; i < static_cast<int>(layers.size()); ++i) {
-          // highlight active
-          if (i == activeLayer) {
-            sf::RectangleShape hi(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH)));
-            hi.setPosition(sf::Vector2f(static_cast<float>(xSelect), static_cast<float>(dropY + i * itemH)));
-            hi.setFillColor(sf::Color(70, 70, 95));
-            window.draw(hi);
-          }
-          sf::Text it(font);
-          it.setCharacterSize(16);
-          it.setFillColor(sf::Color(230, 230, 240));
-          it.setString(ellipsizeEnd(layers[i].name, 14u, static_cast<float>(selW - 10)));
-          auto ib = it.getLocalBounds();
-          float tx = static_cast<float>(xSelect) + 6.f - ib.position.x;
-          float ty = static_cast<float>(dropY + i * itemH) + (itemH - ib.size.y) * 0.5f - ib.position.y - 2.f;
-          it.setPosition(sf::Vector2f(tx, ty));
-          window.draw(it);
-        }
-      }
+  // Nota: la lista desplegable se dibuja más abajo para que quede por encima del resto de la UI
 
       int pathInputW = paletteWidth - 24 - 100 - 6; // input + gap + Load button
       // Input box
@@ -2023,7 +1995,7 @@ int main() {
       }
     }
 
-    // Simple vertical scrollbar (right edge of the palette)
+  // Simple vertical scrollbar (right edge of the palette)
     {
       float contentH = computePaletteContentHeight();
       if (contentH > static_cast<float>(winH)) {
@@ -2047,6 +2019,40 @@ int main() {
         thumb.setPosition(sf::Vector2f(trackX, thumbY));
         thumb.setFillColor(sf::Color(90, 110, 140, 200));
         window.draw(thumb);
+      }
+    }
+
+    // Draw layer dropdown list last within palette view (so it appears on top of palette UI)
+    if (layerDropdownOpen) {
+      const int layerBtnY = 34;
+      const int btnH = 22;
+      const int gap = 4;
+      const int selW = 160;
+      const int xSelect = paletteWidth - 8 - (selW + 2*gap + 2*24); // 24 = btnW
+      const int itemH = btnH;
+      const int dropY = layerBtnY + btnH + 2;
+      sf::RectangleShape listBg(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH * static_cast<int>(layers.size()))));
+      listBg.setPosition(sf::Vector2f(static_cast<float>(xSelect), static_cast<float>(dropY)));
+      listBg.setFillColor(sf::Color(50, 50, 65));
+      listBg.setOutlineThickness(1);
+      listBg.setOutlineColor(sf::Color(90, 90, 110));
+      window.draw(listBg);
+      for (int i = 0; i < static_cast<int>(layers.size()); ++i) {
+        if (i == activeLayer) {
+          sf::RectangleShape hi(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH)));
+          hi.setPosition(sf::Vector2f(static_cast<float>(xSelect), static_cast<float>(dropY + i * itemH)));
+          hi.setFillColor(sf::Color(70, 70, 95));
+          window.draw(hi);
+        }
+        sf::Text it(font);
+        it.setCharacterSize(16);
+        it.setFillColor(sf::Color(230, 230, 240));
+        it.setString(ellipsizeEnd(layers[i].name, 14u, static_cast<float>(selW - 10)));
+        auto ib = it.getLocalBounds();
+        float tx = static_cast<float>(xSelect) + 6.f - ib.position.x;
+        float ty = static_cast<float>(dropY + i * itemH) + (itemH - ib.size.y) * 0.5f - ib.position.y - 2.f;
+        it.setPosition(sf::Vector2f(tx, ty));
+        window.draw(it);
       }
     }
 
