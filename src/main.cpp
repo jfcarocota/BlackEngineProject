@@ -3,11 +3,8 @@
 
 int main()
 {
-
-    Game* game{new Game()};
-    game->Initialize();
-
-    delete game;
+    Game game;
+    game.Initialize();
 
     return EXIT_SUCCESS;
 }

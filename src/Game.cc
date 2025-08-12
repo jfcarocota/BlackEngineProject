@@ -29,14 +29,11 @@
 #include "FlipSprite.hh"
 #include "Components/Entity.hh"
 #include "GUI/Button.hh"
+#include "GUI/TextObject.hh"
+#include "TileGroup.hh"
+#include "Components/EntityManager.hh"
 
-EntityManager entityManager;
-
-std::unique_ptr<TextObject> textObj1;
-std::unique_ptr<sf::Clock> gameClock;
-float deltaTime{};
-
-std::unique_ptr<TileGroup> tileGroup;
+// All state moved into Game class members (see Game.hh)
 
 uint32 flags{};
     //flags += b2Draw::e_aabbBit;
@@ -89,18 +86,19 @@ Game::Game()
   gravity = std::make_unique<b2Vec2>(0.f, 0.f);
   world = std::make_unique<b2World>(*gravity);
   drawPhysics = std::make_unique<DrawPhysics>(window.get());
+  entityManager = std::make_unique<EntityManager>();
 
   tileGroup = std::make_unique<TileGroup>(window.get(), GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT, 
                                         ASSETS_MAPS_JSON_THREE, GameConstants::TILE_SCALE, GameConstants::TILE_SIZE, 
                                         GameConstants::TILE_SIZE, ASSETS_TILES);
 
-  auto& hero{entityManager.AddEntity("hero")};
-  auto& candle1{entityManager.AddEntity("candle")};
-  auto& chest1{entityManager.AddEntity("chest")};
-  auto& chest2{entityManager.AddEntity("chest")};
-  auto& chest3{entityManager.AddEntity("chest")};
+  auto& hero{entityManager->AddEntity("hero")};
+  auto& candle1{entityManager->AddEntity("candle")};
+  auto& chest1{entityManager->AddEntity("chest")};
+  auto& chest2{entityManager->AddEntity("chest")};
+  auto& chest3{entityManager->AddEntity("chest")};
 
-  Entity& buttonDebugPhysics{entityManager.AddEntity("button")};
+  Entity& buttonDebugPhysics{entityManager->AddEntity("button")};
 
   hero.AddComponent<TransformComponent>(500.f, 300.f, 16.f, 16.f, 4.f);
   hero.AddComponent<SpriteComponent>(ASSETS_SPRITES, 0, 5);
@@ -130,7 +128,7 @@ Game::Game()
 
   auto& btnPhysicsDebugTrs{buttonDebugPhysics.AddComponent<TransformComponent>(100.f, 100.f, 200.f, 100.f, 1.f)};
   auto& buttonPhysicsComp = buttonDebugPhysics.AddComponent<Button>(btnPhysicsDebugTrs, 0.f,
-  sf::Color::White, sf::Color::Transparent, [=, this](){
+  sf::Color::White, sf::Color::Transparent, [this](){
     std::cout << "clicked" << std::endl;
     debugPhysics = !debugPhysics;
   });
@@ -175,7 +173,7 @@ void Game::Update()
     deltaTime = gsl::not_null<sf::Clock*>(gameClock.get())->getElapsedTime().asSeconds();
     gameClock->restart();
   }
-  entityManager.Update(deltaTime);
+  if (entityManager) entityManager->Update(deltaTime);
   imguiManager->Update(*window, sf::seconds(deltaTime));
 }
 
@@ -208,7 +206,7 @@ void Game::Render()
   if (tileGroup) {
     gsl::not_null<TileGroup*>(tileGroup.get())->Draw();
   }
-  entityManager.Render(*gsl::not_null<sf::RenderWindow*>(window.get()));
+  if (entityManager) entityManager->Render(*gsl::not_null<sf::RenderWindow*>(window.get()));
   if(debugPhysics)
   {
     gsl::not_null<b2World*>(world.get())->DebugDraw();
@@ -231,4 +229,19 @@ void Game::Destroy()
   // Shutdown ImGui
   imguiManager->Shutdown();
   // Smart pointers automatically clean up
+  // Detach Box2D hooks before destroying their owners
+  if (world) {
+    world->SetDebugDraw(nullptr);
+    world->SetContactListener(nullptr);
+  }
+  // Explicitly reset components in safe order: entities (with Box2D bodies) before Box2D world
+  entityManager.reset();
+  tileGroup.reset();
+  drawPhysics.reset();
+  contactEventManager.reset();
+  imguiManager.reset();
+  world.reset();
+  gravity.reset();
+  textObj1.reset();
+  gameClock.reset();
 }

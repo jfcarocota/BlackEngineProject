@@ -47,7 +47,16 @@ void RigidBodyComponent::Initialize()
 
 RigidBodyComponent::~RigidBodyComponent()
 {
-  world->DestroyBody(body);
+  if (world && body) {
+    world->DestroyBody(body);
+    body = nullptr;
+  }
+  delete bodyDef;
+  delete polygonShape;
+  delete fixtureDef;
+  bodyDef = nullptr;
+  polygonShape = nullptr;
+  fixtureDef = nullptr;
 }
 
 b2Body* RigidBodyComponent::GetBody() const

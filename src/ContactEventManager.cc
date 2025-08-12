@@ -18,8 +18,15 @@ ContactEventManager::~ContactEventManager()
 
 void ContactEventManager::BeginContact(b2Contact* contact)
 {
-  Entity* actorA{(Entity*)contact->GetFixtureA()->GetBody()->GetUserData().pointer};
-  Entity* actorB{(Entity*)contact->GetFixtureB()->GetBody()->GetUserData().pointer};
+  if (!contact) return;
+  auto* fA = contact->GetFixtureA();
+  auto* fB = contact->GetFixtureB();
+  if (!fA || !fB) return;
+  auto* bA = fA->GetBody();
+  auto* bB = fB->GetBody();
+  if (!bA || !bB) return;
+  Entity* actorA{reinterpret_cast<Entity*>(bA->GetUserData().pointer)};
+  Entity* actorB{reinterpret_cast<Entity*>(bB->GetUserData().pointer)};
 
   if(actorA && actorB)
   {
