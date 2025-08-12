@@ -44,6 +44,7 @@ void TileGroup::GenerateMap()
     }
 
     if (ext == ".json") {
+      std::cout << "TileGroup: loading JSON map -> " << filePathStr << std::endl;
       // New JSON format: { "tileset": "assets/tiles.png", "grid": [[[c,r], ...], ...] }
       // Read whole file into a string
       std::ifstream in(filePathStr, std::ios::in | std::ios::binary);
@@ -75,6 +76,20 @@ void TileGroup::GenerateMap()
           out.push_back(ch);
         }
         return out;
+      };
+
+      // Extract int field like "tileW": 16
+      auto extractIntField = [](const std::string& src, const std::string& key) -> int {
+        const std::string quoted = '"' + key + '"';
+        size_t pos = src.find(quoted);
+        if (pos == std::string::npos) return 0;
+        pos = src.find(':', pos);
+        if (pos == std::string::npos) return 0;
+        ++pos;
+        while (pos < src.size() && (src[pos] == ' ' || src[pos] == '\t')) ++pos;
+        std::string num;
+        while (pos < src.size() && (std::isdigit(static_cast<unsigned char>(src[pos])) || src[pos] == '-')) num += src[pos++];
+        try { return std::stoi(num); } catch (...) { return 0; }
       };
 
       // Extract the grid array starting from the first '[' after "grid":
@@ -145,10 +160,16 @@ void TileGroup::GenerateMap()
         return grid;
       };
 
-      const std::string parsedTileset = extractStringField(json, "tileset");
+  const std::string parsedTileset = extractStringField(json, "tileset");
       if (!parsedTileset.empty()) {
         this->textureUrlStr = parsedTileset;
       }
+
+  // Optional tile size overrides
+  int jsonTileW = extractIntField(json, "tileW");
+  int jsonTileH = extractIntField(json, "tileH");
+  if (jsonTileW > 0) this->tileWidth = static_cast<float>(jsonTileW);
+  if (jsonTileH > 0) this->tileHeight = static_cast<float>(jsonTileH);
 
       const size_t gridStart = extractGridStart(json);
       if (gridStart == std::string::npos) {
@@ -165,7 +186,8 @@ void TileGroup::GenerateMap()
       this->ROWS = static_cast<int>(grid.size());
       this->COLS = static_cast<int>(grid[0].size());
 
-      for (int y = 0; y < this->ROWS; ++y) {
+    int placed = 0;
+    for (int y = 0; y < this->ROWS; ++y) {
         if (static_cast<int>(grid[y].size()) != this->COLS) {
           std::cerr << "Row " << y << " has a different column count in JSON map: " << filePathStr << std::endl;
         }
@@ -174,9 +196,12 @@ void TileGroup::GenerateMap()
           float posX{scale * tileWidth * x};
           float posY{scale * tileHeight * y};
           tiles->push_back(std::make_unique<Tile>(this->textureUrlStr, scale, (int)tileWidth, (int)tileHeight, col, row, posX, posY, window));
+      ++placed;
         }
       }
+    std::cout << "TileGroup: JSON loaded. Size=" << this->COLS << "x" << this->ROWS << ", tiles=" << placed << std::endl;
     } else {
+    std::cout << "TileGroup: loading GRID map -> " << filePathStr << std::endl;
       // Legacy .grid format (two ints per tile: col row)
       reader->open(filePathStr);
       if (!reader->is_open()) {
