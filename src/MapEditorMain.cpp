@@ -869,23 +869,35 @@ int main() {
     std::ostringstream ss; ss << in.rdbuf(); in.close();
     std::string json = ss.str();
 
-    auto extractStringField = [](const std::string& src, const std::string& key) -> std::string {
-      const std::string quoted = '"' + key + '"';
-      size_t pos = src.find(quoted);
-      if (pos == std::string::npos) return {};
-      pos = src.find(':', pos);
-      if (pos == std::string::npos) return {};
-      pos = src.find('"', pos);
-      if (pos == std::string::npos) return {};
-      ++pos;
-      std::string out; bool escape=false; for (; pos < src.size(); ++pos) {
-        char ch = src[pos];
-        if (escape) { out.push_back(ch); escape = false; continue; }
-        if (ch == '\\') { escape = true; continue; }
-        if (ch == '"') break; out.push_back(ch);
-      }
-      return out;
-    };
+  auto extractIntField = [](const std::string& src, const std::string& key) -> int {
+    const std::string quoted = '"' + key + '"';
+    size_t pos = src.find(quoted);
+    if (pos == std::string::npos) return 0;
+    pos = src.find(':', pos);
+    if (pos == std::string::npos) return 0;
+    ++pos;
+    while (pos < src.size() && (src[pos] == ' ' || src[pos] == '\t')) ++pos;
+    std::string num;
+    while (pos < src.size() && (std::isdigit(static_cast<unsigned char>(src[pos])) || src[pos] == '-')) num += src[pos++];
+    try { return std::stoi(num); } catch (...) { return 0; }
+  };
+  auto extractStringField = [](const std::string& src, const std::string& key) -> std::string {
+    const std::string quoted = '"' + key + '"';
+    size_t pos = src.find(quoted);
+    if (pos == std::string::npos) return {};
+    pos = src.find(':', pos);
+    if (pos == std::string::npos) return {};
+    pos = src.find('"', pos);
+    if (pos == std::string::npos) return {};
+    ++pos;
+    std::string out; bool escape=false; for (; pos < src.size(); ++pos) {
+      char ch = src[pos];
+      if (escape) { out.push_back(ch); escape = false; continue; }
+      if (ch == '\\') { escape = true; continue; }
+      if (ch == '"') break; out.push_back(ch);
+    }
+    return out;
+  };
     auto extractGridStart = [](const std::string& src) -> size_t {
       size_t pos = src.find("\"grid\"");
       if (pos == std::string::npos) return std::string::npos;
@@ -921,12 +933,16 @@ int main() {
 
     // Apply tileset if present
     std::string ts = extractStringField(json, "tileset");
+    int jsonTileW = extractIntField(json, "tileW");
+    int jsonTileH = extractIntField(json, "tileH");
     if (!ts.empty()) {
       std::string resolvedTs = findAssetPath(ts);
       if (tileset.loadTexture(resolvedTs)) {
         tilesetPath = resolvedTs;
-        // Configure grid using current UI tile size values so palette can render
-  applyTilesetConfig();
+        // Si tileW/tileH existen en el JSON, configúralos
+        if (jsonTileW > 0) tileWBuf = std::to_string(jsonTileW);
+        if (jsonTileH > 0) tileHBuf = std::to_string(jsonTileH);
+        applyTilesetConfig();
         showInfo(std::string("Loaded tileset: ") + tilesetPath);
       }
     }
