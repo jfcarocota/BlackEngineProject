@@ -983,11 +983,12 @@ int main() {
   const int cfgInputsY = 148;
   const int cfgButtonsY = 178;
   const int saveLabelY = 214;
-  const int saveInputY = 234;
-  const int saveButtonsY = 266;
+  const int saveInputY = 238; // +4 for spacing
+  const int saveButtonsY = 272; // +6 for spacing
   const int saveButtonsY2 = saveButtonsY + 34;
-  // Shift tileset thumbnails down to make space for config + save controls
-  const int y0 = 302;
+  // Shift tileset thumbnails down to make space for config + save controls (including second row)
+  const int buttonsBottom = saveButtonsY2 + 28; // 28 = button height
+  const int y0 = buttonsBottom + 16;            // add margin below buttons
 
   // --- Palette vertical scrolling state & helpers ---
   float paletteScrollY = 0.f; // in palette coordinate space
