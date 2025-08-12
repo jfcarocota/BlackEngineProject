@@ -1452,6 +1452,35 @@ int main() {
 
   // Tileset path input and Load button hit-tests
         if (mp.x >= 0 && mp.x < paletteWidth) {
+          // Hit-test for layer buttons at top
+          {
+            const int layerBtnY = 34;
+            const int btnW = 24;
+            const int btnH = 22;
+            const int gap = 4;
+            const int btnCount = 4;
+            const int startX = paletteWidth - 8 - (btnCount * btnW + (btnCount - 1) * gap);
+            sf::IntRect rectPrev({startX, layerBtnY}, {btnW, btnH});
+            sf::IntRect rectNext({startX + btnW + gap, layerBtnY}, {btnW, btnH});
+            sf::IntRect rectAdd ({startX + 2*(btnW + gap), layerBtnY}, {btnW, btnH});
+            sf::IntRect rectDel ({startX + 3*(btnW + gap), layerBtnY}, {btnW, btnH});
+            if (rectPrev.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+              if (!layers.empty()) { activeLayer = (activeLayer - 1 + static_cast<int>(layers.size())) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); }
+              continue;
+            }
+            if (rectNext.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+              if (!layers.empty()) { activeLayer = (activeLayer + 1) % static_cast<int>(layers.size()); showInfo(std::string("Active: ") + layers[activeLayer].name); }
+              continue;
+            }
+            if (rectAdd.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+              int idxInsert = activeLayer + 1; activeLayer = insertNewLayerAt(idxInsert); showInfo("Layer added");
+              continue;
+            }
+            if (rectDel.contains(mpPalette) && e->button == sf::Mouse::Button::Left) {
+              if (layers.size() > 1) { layers.erase(layers.begin() + activeLayer); if (activeLayer >= static_cast<int>(layers.size())) activeLayer = static_cast<int>(layers.size())-1; showInfo("Layer deleted"); }
+              continue;
+            }
+          }
           int pathInputW = paletteWidth - 24 - 100 - 6; // input + gap + load button
           sf::IntRect pathRect({12, 62}, {pathInputW, 26});
           sf::IntRect loadRect({12 + pathInputW + 6, 62}, {100, 26});
@@ -1657,6 +1686,40 @@ int main() {
 
   // Tileset path input
     {
+      // Layer management buttons near the title: <, >, +, -
+      const int layerBtnY = 34;
+      const int btnW = 24;
+      const int btnH = 22;
+      const int gap = 4;
+      const int btnCount = 4;
+      const int startX = paletteWidth - 8 - (btnCount * btnW + (btnCount - 1) * gap);
+      // Draw buttons
+      auto drawBtn = [&](int x, const char* label) {
+        sf::RectangleShape r(sf::Vector2f(static_cast<float>(btnW), static_cast<float>(btnH)));
+        r.setPosition(sf::Vector2f(static_cast<float>(x), static_cast<float>(layerBtnY)));
+        r.setFillColor(sf::Color(60, 60, 75));
+        r.setOutlineThickness(1);
+        r.setOutlineColor(sf::Color(90, 90, 110));
+        window.draw(r);
+        sf::Text t(font);
+        t.setCharacterSize(16);
+        t.setFillColor(sf::Color(230, 230, 240));
+        t.setString(label);
+        auto b = t.getLocalBounds();
+        float tx = static_cast<float>(x) + (btnW - b.size.x) * 0.5f - b.position.x;
+        float ty = static_cast<float>(layerBtnY) + (btnH - b.size.y) * 0.5f - b.position.y - 2.f;
+        t.setPosition(sf::Vector2f(tx, ty));
+        window.draw(t);
+      };
+      int xPrev = startX;
+      int xNext = xPrev + btnW + gap;
+      int xAdd  = xNext + btnW + gap;
+      int xDel  = xAdd + btnW + gap;
+      drawBtn(xPrev, "<");
+      drawBtn(xNext, ">");
+      drawBtn(xAdd,  "+");
+      drawBtn(xDel,  "-");
+
       int pathInputW = paletteWidth - 24 - 100 - 6; // input + gap + Load button
       // Input box
       sf::RectangleShape box(sf::Vector2f(static_cast<float>(pathInputW), 26.f));
