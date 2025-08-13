@@ -11,11 +11,11 @@ class Movement: public Component
 {
 private:
   float moveSpeed;
-  RigidBodyComponent* rigidbody;
-  AnimatorComponent* animator;
-  TransformComponent* transform;
-  SpriteComponent* sprite;
-  AudioListenerComponent* audioListener;
+  RigidBodyComponent* rigidbody{};
+  AnimatorComponent* animator{};
+  TransformComponent* transform{};
+  SpriteComponent* sprite{};
+  AudioListenerComponent* audioListener{}; // optional
 
   AudioClip stepsAudio;
 

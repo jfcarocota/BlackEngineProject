@@ -1,4 +1,5 @@
 #include "Components/TransformComponent.hh"
+#include <gsl/assert>
 
 TransformComponent::TransformComponent(float posX, float posY, float width, float height, float scale)
 {
@@ -37,14 +38,17 @@ float TransformComponent::GetScale() const
 
 void TransformComponent::SetWidth(float width)
 {
+  Expects(width >= 0.0f);
   this->width = width;
 }
 void TransformComponent::SetHeight(float height)
 {
+  Expects(height >= 0.0f);
   this->height = height;
 }
 void TransformComponent::SetScale(float scale)
 {
+  Expects(scale >= 0.0f);
   this->scale = scale;
 }
 

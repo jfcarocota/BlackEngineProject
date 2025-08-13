@@ -1,5 +1,6 @@
 #include "Components/AnimatorComponent.hh"
 #include "Components/EntityManager.hh"
+#include <gsl/assert>
 
 AnimatorComponent::AnimatorComponent()
 {
@@ -13,6 +14,8 @@ void AnimatorComponent::Initialize()
 {
   sprite = owner->GetComponent<SpriteComponent>();
   transform = owner->GetComponent<TransformComponent>();
+  Expects(sprite != nullptr);
+  Expects(transform != nullptr);
 }
 
 void AnimatorComponent::RefreshAnimationClip()

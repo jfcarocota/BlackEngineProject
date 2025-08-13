@@ -2,6 +2,7 @@
 #include "InputSystem.hh"
 #include "AnimationClip.hh"
 #include "Components/EntityManager.hh"
+#include <gsl/assert>
 
 Movement::Movement(float moveSpeed, float stepsDelay, AudioClip stepsAudio)
 {
@@ -23,12 +24,21 @@ void Movement::Initialize()
   rigidbody = owner->GetComponent<RigidBodyComponent>();
   audioListener = owner->GetComponent<AudioListenerComponent>();
 
+  Expects(animator != nullptr);
+  Expects(sprite != nullptr);
+  Expects(transform != nullptr);
+  Expects(rigidbody != nullptr);
+
   animator->AddAnimation("idle", AnimationClip("assets/animations/player/idle.json"));
   animator->AddAnimation("walk", AnimationClip("assets/animations/player/walk.json"));
 }
 
 void Movement::Update(float& deltaTime)
 {
+  Expects(animator != nullptr);
+  Expects(sprite != nullptr);
+  Expects(transform != nullptr);
+  Expects(rigidbody != nullptr);
   sf::Vector2 direction = InputSystem::Axis() * moveSpeed;
 
   rigidbody->AddVelocity(b2Vec2(direction.x, direction.y));

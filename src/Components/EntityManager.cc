@@ -1,4 +1,6 @@
 #include "Components/EntityManager.hh"
+#include <gsl/assert>
+#include <gsl/narrow>
 
 EntityManager::EntityManager()
 {
@@ -66,11 +68,18 @@ Entity& EntityManager::AddEntity(std::string entityName)
 }
 
 gsl::span<Entity*> EntityManager::GetEntities() const {
-  static std::vector<Entity*> result;
+  thread_local std::vector<Entity*> result;
   result.clear();
   result.reserve(entities.size());
   for (const auto& e : entities) {
     result.push_back(e.get());
   }
+  Ensures(result.size() <= entities.size());
   return gsl::span<Entity*>(result.data(), result.size());
+}
+
+unsigned int EntityManager::GetentityCount() const
+{
+  // entities.size() is size_t; API expects unsigned int
+  return gsl::narrow_cast<unsigned int>(entities.size());
 }

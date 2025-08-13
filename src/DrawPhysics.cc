@@ -3,6 +3,7 @@
 
 DrawPhysics::DrawPhysics(sf::RenderWindow* window)
 {
+  Expects(window != nullptr);
   this->window = window;
 }
 
@@ -24,7 +25,7 @@ void DrawPhysics::DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b
   convexShape.setOutlineColor(DrawPhysics::GLColorToSFML(color));
   convexShape.setFillColor(sf::Color::Transparent);
   convexShape.setOutlineThickness(-2.f);
-  window->draw(convexShape);
+  if (window) window->draw(convexShape);
 }
 
 /// Draw a solid closed polygon provided in CCW order.
@@ -41,7 +42,7 @@ void DrawPhysics::DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, co
   convexShape.setOutlineColor(DrawPhysics::GLColorToSFML(color));
   convexShape.setFillColor(DrawPhysics::GLColorToSFML(color, 60.f));
   convexShape.setOutlineThickness(-2.f);
-  window->draw(convexShape);
+  if (window) window->draw(convexShape);
 }
 
 /// Draw a circle.

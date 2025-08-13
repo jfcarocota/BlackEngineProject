@@ -1,10 +1,11 @@
 #include "Components/RigidBodyComponent.hh"
 #include "Components/EntityManager.hh"
+#include <gsl/assert>
 
-RigidBodyComponent::RigidBodyComponent(b2World* world, b2BodyType bodyType, float density, float friction,
+RigidBodyComponent::RigidBodyComponent(gsl::not_null<b2World*> world, b2BodyType bodyType, float density, float friction,
 float restitution, float angle, bool frezeRotation, void* userData)
+  : world(world)
 {
-  this->world = world;
 
   bodyDef = new b2BodyDef();
   bodyDef->type = bodyType;
@@ -23,6 +24,8 @@ void RigidBodyComponent::Initialize()
 {
   transform = owner->GetComponent<TransformComponent>();
   spriteComponent = owner->GetComponent<SpriteComponent>();
+  Expects(transform != nullptr);
+  Expects(spriteComponent != nullptr);
 
   sf::Vector2f spritePos{transform->GetPosition().x, transform->GetPosition().y};
   sf::Vector2f size{transform->GetWidth() * transform->GetScale(), transform->GetHeight() * transform->GetScale()};

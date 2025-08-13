@@ -2,19 +2,28 @@
 #include<box2d/box2d.h>
 #include<SFML/Graphics.hpp>
 #include <cstdint>
+#include <gsl/assert>
+#include <gsl/narrow>
 
 class DrawPhysics : public b2Draw
 {
 private:
-  sf::RenderWindow* window{};
+	sf::RenderWindow* window{};
 public:
-  DrawPhysics(sf::RenderWindow* window);
+	DrawPhysics(sf::RenderWindow* window);
   ~DrawPhysics();
 
   /// Convert Box2D's OpenGL style color definition[0-1] to SFML's color definition[0-255], with optional alpha byte[Default - opaque]
 	static sf::Color GLColorToSFML(const b2Color &color, std::uint8_t alpha = 255)
 	{
-		return sf::Color(static_cast<std::uint8_t>(color.r * 255), static_cast<std::uint8_t>(color.g * 255), static_cast<std::uint8_t>(color.b * 255), alpha);
+		Expects(color.r >= 0.f && color.r <= 1.f);
+		Expects(color.g >= 0.f && color.g <= 1.f);
+		Expects(color.b >= 0.f && color.b <= 1.f);
+		return sf::Color(
+		  gsl::narrow_cast<std::uint8_t>(color.r * 255.f),
+		  gsl::narrow_cast<std::uint8_t>(color.g * 255.f),
+		  gsl::narrow_cast<std::uint8_t>(color.b * 255.f),
+		  alpha);
 	}
 
 	/// Convert Box2D's vector to SFML vector [Default - scales the vector up by SCALE constants amount]

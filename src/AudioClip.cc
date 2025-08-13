@@ -1,6 +1,7 @@
 #include "AudioClip.hh"
 #include <iostream>
 #include <memory>
+#include <gsl/assert>
 
 AudioClip::AudioClip()
 {
@@ -46,6 +47,7 @@ AudioClip::AudioClip(const char* audioUrl)
 void AudioClip::SetVolume(float volume)
 {
 #ifdef SFML_AUDIO_AVAILABLE
+  Expects(volume >= 0.0f && volume <= 100.0f);
   if (sound) {
     sound->setVolume(volume);
   }
@@ -127,6 +129,7 @@ AudioClip& AudioClip::operator=(AudioClip&& other) noexcept {
 #ifdef SFML_AUDIO_AVAILABLE
 void AudioClip::Play(sf::SoundBuffer&)
 {
+  Expects(sound != nullptr);
   if (!sound) {
     std::cerr << "Sound object is null, cannot play audio" << std::endl;
     return;

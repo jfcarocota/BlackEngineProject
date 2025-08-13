@@ -2,6 +2,7 @@
 #include "Tile.hh"
 #include <memory>
 #include <string>
+#include <gsl/assert>
 
 class TileGroup
 {

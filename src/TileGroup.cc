@@ -13,6 +13,9 @@
 TileGroup::TileGroup(sf::RenderWindow* window, int COLS, int ROWS, const char* filePath, 
 float scale, float tileWidth, float tileHeight, const char* textureUrl)
 {
+  Expects(window != nullptr);
+  Expects(scale >= 0.0f);
+  Expects(tileWidth >= 0.0f && tileHeight >= 0.0f);
   this->textureUrlStr = textureUrl ? std::string(textureUrl) : std::string{};
   this->tileWidth = tileWidth;
   this->tileHeight = tileHeight;

@@ -3,6 +3,8 @@
 #include<SFML/Graphics.hpp>
 #include <memory>
 #include <string>
+#include <gsl/assert>
+#include <gsl/narrow>
 
 class Tile
 {

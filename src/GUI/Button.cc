@@ -5,6 +5,7 @@ Button::Button(TransformComponent& transform, float borderSize,
 sf::Color fillColor, sf::Color borderColor, std::function<void()> onClickAction):
 transform(transform)
 {
+  Expects(borderSize >= 0.0f);
   this->borderSize = borderSize;
   this->fillColor = fillColor;
   this->borderColor = borderColor;
@@ -32,6 +33,9 @@ void Button::Initialize()
   float width{transform.GetWidth()};
   float height{transform.GetHeight()};
 
+  Expects(width >= 0.0f);
+  Expects(height >= 0.0f);
+
   rectangleShape = sf::RectangleShape();
   rectangleShape.setPosition(sf::Vector2f(posX, posY));
   rectangleShape.setSize(sf::Vector2f(width, height));
@@ -45,7 +49,8 @@ void Button::OnClick()
   if(!clicked)
   {
     clicked = true;
-    onClickAction();
+  Expects(static_cast<bool>(onClickAction));
+  onClickAction();
   }
 }
 

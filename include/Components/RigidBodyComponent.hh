@@ -4,6 +4,7 @@
 #include<SFML/Graphics.hpp>
 #include "TransformComponent.hh"
 #include "SpriteComponent.hh"
+#include <gsl/gsl>
 
 class RigidBodyComponent: public Component
 {
@@ -12,10 +13,10 @@ private:
   b2Body* body{};
   b2PolygonShape* polygonShape{};
   b2FixtureDef* fixtureDef{};
-  b2Fixture* fixture;
-  b2World* world;
-  TransformComponent* transform;
-  SpriteComponent* spriteComponent;
+  b2Fixture* fixture{};
+  gsl::not_null<b2World*> world;
+  TransformComponent* transform{};
+  SpriteComponent* spriteComponent{};
 
   b2Vec2 bodyPos{};
   sf::Vector2f trsPos{};
@@ -27,7 +28,7 @@ private:
   bool frezeRotation{};
   void* userData{};
 public:
-  RigidBodyComponent(b2World* world, b2BodyType bodyType, float density, float friction,
+  RigidBodyComponent(gsl::not_null<b2World*> world, b2BodyType bodyType, float density, float friction,
   float restitution, float angle, bool frezeRotation, void* userData);
   ~RigidBodyComponent();
 

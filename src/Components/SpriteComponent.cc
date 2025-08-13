@@ -1,6 +1,8 @@
 #include "Components/SpriteComponent.hh"
 #include "Components/EntityManager.hh"
 #include <iostream>
+#include <gsl/assert>
+#include <gsl/narrow>
 
 SpriteComponent::SpriteComponent(const char* textureUrl, unsigned int col, unsigned int row)
 {
@@ -17,10 +19,12 @@ void SpriteComponent::Initialize()
 {
   transform = owner->GetComponent<TransformComponent>();
 
-  const int w = static_cast<int>(transform->GetWidth());
-  const int h = static_cast<int>(transform->GetHeight());
-  const int left = static_cast<int>(col * transform->GetWidth());
-  const int top  = static_cast<int>(row * transform->GetHeight());
+  Expects(transform != nullptr);
+
+  const int w = gsl::narrow_cast<int>(transform->GetWidth());
+  const int h = gsl::narrow_cast<int>(transform->GetHeight());
+  const int left = gsl::narrow_cast<int>(static_cast<float>(col) * transform->GetWidth());
+  const int top  = gsl::narrow_cast<int>(static_cast<float>(row) * transform->GetHeight());
 
   // Create sprite once transform is available
   sprite = std::make_unique<sf::Sprite>(
@@ -32,6 +36,8 @@ void SpriteComponent::Initialize()
   sprite->setScale(sf::Vector2f(transform->GetScale(), transform->GetScale()));
   sprite->setColor(sf::Color::White);
   sprite->setOrigin(sf::Vector2f(w * 0.5f, h * 0.5f));
+
+  Ensures(sprite != nullptr);
 }
 
 SpriteComponent::~SpriteComponent()
@@ -54,6 +60,7 @@ void SpriteComponent::Render(sf::RenderWindow& window)
 void SpriteComponent::SetFlipTexture(bool flipTexture)
 {
   this->flipTexture = flipTexture;
+  Expects(transform != nullptr);
   if (sprite)
     sprite->setScale(sf::Vector2f(flipTexture ? -transform->GetScale(): transform->GetScale(), transform->GetScale()));
 }
@@ -71,5 +78,5 @@ sf::Vector2f SpriteComponent::GetOrigin() const
 void SpriteComponent::RebindRectTexture(int col, int row, float width, float height)
 {
   if (sprite)
-    sprite->setTextureRect(sf::IntRect({col, row}, {static_cast<int>(width), static_cast<int>(height)}));
+  sprite->setTextureRect(sf::IntRect({col, row}, {gsl::narrow_cast<int>(width), gsl::narrow_cast<int>(height)}));
 }

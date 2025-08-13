@@ -6,7 +6,8 @@ Tile::Tile(const std::string& textureUrl, float scale, int width, int height, in
 float posX, float posY, sf::RenderWindow*& window)
 {
   try {
-    this->window = window;
+  Expects(window != nullptr);
+  this->window = window;
     this->scale = scale;
     this->width = width;
     this->height = height;
@@ -19,7 +20,11 @@ float posX, float posY, sf::RenderWindow*& window)
     if (!texture->loadFromFile(textureUrl)) {
       std::cerr << "Failed to load tile texture: " << textureUrl << std::endl;
     }
-    sprite = std::make_unique<sf::Sprite>(*texture, sf::IntRect({column * width, row * height}, {width, height}));
+    sprite = std::make_unique<sf::Sprite>(
+      *texture,
+      sf::IntRect({gsl::narrow_cast<int>(column * width), gsl::narrow_cast<int>(row * height)},
+                   {gsl::narrow_cast<int>(width), gsl::narrow_cast<int>(height)})
+    );
     sprite->setPosition(sf::Vector2f(posX, posY));
     sprite->setColor(sf::Color::White);
     sprite->setScale(sf::Vector2f(scale, scale));
@@ -37,5 +42,5 @@ Tile::~Tile()
 
 void Tile::Draw()
 {
-  window->draw(*sprite);
+  if (window && sprite) window->draw(*sprite);
 }

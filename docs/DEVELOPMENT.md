@@ -577,3 +577,22 @@ public:
 ---
 
 This development guide provides comprehensive information for extending and contributing to the BlackEngine. Follow these guidelines to maintain code quality and consistency across the project.
+
+## Guidelines: Using Microsoft GSL
+
+We use Microsoft GSL to express simple contracts and safer casts.
+
+- Assertions and contracts
+    - Include `<gsl/assert>` and use `Expects(expr)` for preconditions and `Ensures(expr)` for postconditions.
+    - Examples in code: Movement, AnimatorComponent, TransformComponent.
+
+- Not-null pointers
+    - Use `gsl::not_null<T*>` for parameters that must never be null (e.g., `RigidBodyComponent` world pointer). Include `<gsl/gsl>` in the header.
+
+- Narrowing casts
+    - Prefer `gsl::narrow_cast<int>(value)` from `<gsl/narrow>` when converting to narrower integer types (e.g., SpriteComponent `sf::IntRect`).
+
+- Spans
+    - Use `gsl::span<T>` for non-owning views; see `EntityManager::GetEntities()`.
+
+Build: GSL is fetched via CMake FetchContent and linked as a header-only dependency.

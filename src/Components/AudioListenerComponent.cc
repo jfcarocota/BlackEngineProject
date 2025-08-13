@@ -1,5 +1,6 @@
 #include "Components/AudioListenerComponent.hh"
 #include <iostream>
+#include <gsl/assert>
 
 AudioListenerComponent::AudioListenerComponent()
 {
@@ -15,6 +16,8 @@ AudioListenerComponent::~AudioListenerComponent()
 
 void AudioListenerComponent::Initialize()
 {
+  // No owner dependencies here, but document invariant for future changes
+  Ensures(true);
 
 }
 

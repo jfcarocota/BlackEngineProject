@@ -4,6 +4,7 @@
 #include "Components/EntityManager.hh"
 #include<string>
 #include <functional>
+#include <gsl/assert>
 
 class Button: public Component
 {
