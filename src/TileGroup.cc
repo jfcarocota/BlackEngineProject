@@ -9,6 +9,7 @@
 #include <vector>
 #include <fstream>
 #include <json/json.h>
+#include <gsl/narrow>
 
 TileGroup::TileGroup(sf::RenderWindow* window, int COLS, int ROWS, const char* filePath, 
 float scale, float tileWidth, float tileHeight, const char* textureUrl)
@@ -89,22 +90,22 @@ void TileGroup::GenerateMap()
       int layerIndex = 0;
       for (const auto& L : arr) {
         std::string tilesetPath = L.isMember("tileset") ? L["tileset"].asString() : this->textureUrlStr;
-        int lTileW = L.isMember("tileW") ? L["tileW"].asInt() : static_cast<int>(this->tileWidth);
-        int lTileH = L.isMember("tileH") ? L["tileH"].asInt() : static_cast<int>(this->tileHeight);
+  int lTileW = L.isMember("tileW") ? L["tileW"].asInt() : gsl::narrow_cast<int>(this->tileWidth);
+  int lTileH = L.isMember("tileH") ? L["tileH"].asInt() : gsl::narrow_cast<int>(this->tileHeight);
         auto grid = readGrid(L["grid"]);
         if (grid.empty() || grid[0].empty()) { ++layerIndex; continue; }
-        if (layerIndex == 0) { ROWS = static_cast<int>(grid.size()); COLS = static_cast<int>(grid[0].size()); }
+  if (layerIndex == 0) { ROWS = gsl::narrow_cast<int>(grid.size()); COLS = gsl::narrow_cast<int>(grid[0].size()); }
         float tw = static_cast<float>(lTileW);
         float th = static_cast<float>(lTileH);
         std::vector<std::unique_ptr<Tile>> layerVec;
         layerVec.reserve(static_cast<size_t>(ROWS * COLS));
-        for (int y = 0; y < static_cast<int>(grid.size()); ++y) {
-          for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
+        for (int y = 0; y < gsl::narrow_cast<int>(grid.size()); ++y) {
+          for (int x = 0; x < gsl::narrow_cast<int>(grid[y].size()); ++x) {
             auto [col, row] = grid[y][x];
             if (col == 0 && row == 0) continue;
             float posX{scale * tw * x};
             float posY{scale * th * y};
-            layerVec.push_back(std::make_unique<Tile>(tilesetPath, scale, (int)tw, (int)th, col, row, posX, posY, window));
+            layerVec.push_back(std::make_unique<Tile>(tilesetPath, scale, gsl::narrow_cast<int>(tw), gsl::narrow_cast<int>(th), col, row, posX, posY, window));
             ++totalPlaced;
           }
         }
@@ -121,17 +122,17 @@ void TileGroup::GenerateMap()
       if (root.isMember("tileH")) this->tileHeight = static_cast<float>(root["tileH"].asInt());
       auto grid = readGrid(root["grid"]);
       if (grid.empty() || grid[0].empty()) { std::cerr << "JSON map 'grid' is empty or malformed: " << filePathStr << std::endl; return; }
-      ROWS = static_cast<int>(grid.size());
-      COLS = static_cast<int>(grid[0].size());
+  ROWS = gsl::narrow_cast<int>(grid.size());
+  COLS = gsl::narrow_cast<int>(grid[0].size());
       std::vector<std::unique_ptr<Tile>> singleLayer;
       singleLayer.reserve(static_cast<size_t>(ROWS * COLS));
       for (int y = 0; y < ROWS; ++y) {
-        for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
+        for (int x = 0; x < gsl::narrow_cast<int>(grid[y].size()); ++x) {
           auto [col, row] = grid[y][x];
           if (col == 0 && row == 0) continue;
           float posX{scale * tileWidth * x};
           float posY{scale * tileHeight * y};
-          singleLayer.push_back(std::make_unique<Tile>(this->textureUrlStr, scale, (int)tileWidth, (int)tileHeight, col, row, posX, posY, window));
+          singleLayer.push_back(std::make_unique<Tile>(this->textureUrlStr, scale, gsl::narrow_cast<int>(tileWidth), gsl::narrow_cast<int>(tileHeight), col, row, posX, posY, window));
           ++totalPlaced;
         }
       }

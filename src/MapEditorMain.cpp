@@ -17,6 +17,7 @@
 #include <iterator>
 #include <system_error>
 #include <functional>
+#include <gsl/narrow>
 
 // Define to enable native Win32 file dialogs. Requires Windows SDK headers/libs.
 // #define MAPEDITOR_ENABLE_WIN32_DIALOGS 1
@@ -240,8 +241,8 @@ struct Tileset {
       cols = c;
       rows = r;
     } else {
-      cols = static_cast<int>(texture.getSize().x) / tileW;
-      rows = static_cast<int>(texture.getSize().y) / tileH;
+  cols = gsl::narrow_cast<int>(texture.getSize().x) / tileW;
+  rows = gsl::narrow_cast<int>(texture.getSize().y) / tileH;
     }
     loaded = cols > 0 && rows > 0;
     if (!loaded) {
@@ -555,13 +556,13 @@ int main() {
   // Layout constants
   const int gridCols = GameConstants::MAP_WIDTH;
   const int gridRows = GameConstants::MAP_HEIGHT;
-  const int tilePx = static_cast<int>(GameConstants::TILE_SIZE);
+  const int tilePx = gsl::narrow_cast<int>(GameConstants::TILE_SIZE);
   const float tileScale = GameConstants::TILE_SCALE;
 
   const int paletteWidth = 280; // left panel
   const int margin = 12;
-  const int gridPxW = static_cast<int>(gridCols * tilePx * tileScale);
-  const int gridPxH = static_cast<int>(gridRows * tilePx * tileScale);
+  const int gridPxW = gsl::narrow_cast<int>(gridCols * tilePx * tileScale);
+  const int gridPxH = gsl::narrow_cast<int>(gridRows * tilePx * tileScale);
   int winW = paletteWidth + margin + gridPxW + margin;
   int winH = std::max(gridPxH + margin * 2, 720);
 
@@ -674,7 +675,7 @@ int main() {
     t.setString(std::string("Tileset (Layer: ") + (layers.empty()? std::string("-") : layers[activeLayer].name) + ")");
     auto b = t.getLocalBounds();
     float bottom = 10.f + (b.size.y - b.position.y); // title is drawn at y=10
-    return static_cast<int>(bottom + 6.f); // small gap below title
+  return gsl::narrow_cast<int>(bottom + 6.f); // small gap below title
   };
 
   // Helper to insert a new layer safely (place before macros to avoid macro name collisions)
@@ -683,12 +684,12 @@ int main() {
     int operator()(int idxInsert) {
       auto& layersRef = *layersPtr;
       if (idxInsert < 0) idxInsert = 0;
-      if (idxInsert > static_cast<int>(layersRef.size())) idxInsert = static_cast<int>(layersRef.size());
+  if (idxInsert > gsl::narrow_cast<int>(layersRef.size())) idxInsert = gsl::narrow_cast<int>(layersRef.size());
       Layer newLayer;
-      newLayer.name = std::string("Layer ") + std::to_string(static_cast<int>(layersRef.size() + 1));
+  newLayer.name = std::string("Layer ") + std::to_string(gsl::narrow_cast<int>(layersRef.size() + 1));
       // Copiar tileset desde la capa activa si existe para compartir imagen/config
       if (!layersRef.empty()) {
-        int src = std::clamp(idxInsert - 1, 0, static_cast<int>(layersRef.size() - 1));
+  int src = std::clamp(idxInsert - 1, 0, gsl::narrow_cast<int>(layersRef.size() - 1));
         newLayer.tileset = layersRef[src].tileset;
         newLayer.tilesetPath = layersRef[src].tilesetPath;
       } else {
@@ -702,7 +703,7 @@ int main() {
   
   // Ensure a layer has a loaded tileset; if not, copy from first loaded layer
   auto ensureLayerTileset = [&](int layerIdx) {
-    if (layerIdx < 0 || layerIdx >= static_cast<int>(layers.size())) return;
+  if (layerIdx < 0 || layerIdx >= gsl::narrow_cast<int>(layers.size())) return;
     if (layers[layerIdx].tileset.loaded) return;
     for (const auto& L : layers) {
       if (L.tileset.loaded) {
@@ -876,13 +877,15 @@ int main() {
   // Layer selection helpers (after showInfo is defined)
   auto selectPrevLayer = [&]() {
     if (layers.empty()) return;
-    activeLayer = (activeLayer - 1 + static_cast<int>(layers.size())) % static_cast<int>(layers.size());
+    activeLayer = (activeLayer - 1 + gsl::narrow_cast<int>(layers.size())) % gsl::narrow_cast<int>(layers.size());
+    Expects(activeLayer >= 0 && activeLayer < gsl::narrow_cast<int>(layers.size()));
     ensureLayerTileset(activeLayer);
     showInfo(std::string("Active: ") + layers[activeLayer].name);
   };
   auto selectNextLayer = [&]() {
     if (layers.empty()) return;
-    activeLayer = (activeLayer + 1) % static_cast<int>(layers.size());
+    activeLayer = (activeLayer + 1) % gsl::narrow_cast<int>(layers.size());
+    Expects(activeLayer >= 0 && activeLayer < gsl::narrow_cast<int>(layers.size()));
     ensureLayerTileset(activeLayer);
     showInfo(std::string("Active: ") + layers[activeLayer].name);
   };
@@ -935,10 +938,10 @@ int main() {
     out << "{\n  \"layers\": [\n";
     for (size_t li = 0; li < layers.size(); ++li) {
   // tileset path relative to assets/
-      std::string tilesetOut = tilesetPathFromLayer(static_cast<int>(li));
+  std::string tilesetOut = tilesetPathFromLayer(gsl::narrow_cast<int>(li));
       auto posAssets = tilesetOut.find("assets/");
       if (posAssets != std::string::npos) tilesetOut = tilesetOut.substr(posAssets);
-      auto dims = tileDimFromLayer(static_cast<int>(li));
+  auto dims = tileDimFromLayer(gsl::narrow_cast<int>(li));
       out << "    {\n      \"name\": \"" << jsonEscape(layers[li].name.empty() ? (std::string("Layer ") + std::to_string(li+1)) : layers[li].name) << "\",\n";
       out << "      \"tileset\": \"" << jsonEscape(tilesetOut) << "\",\n";
       out << "      \"tileW\": " << dims.first << ", \"tileH\": " << dims.second << ",\n";
@@ -946,7 +949,7 @@ int main() {
       for (int y = 0; y < gridRows; ++y) {
         out << "        [";
         for (int x = 0; x < gridCols; ++x) {
-          TileCR t = getTileFromLayer(static_cast<int>(li), x, y);
+          TileCR t = getTileFromLayer(gsl::narrow_cast<int>(li), x, y);
           out << "[" << t.col << "," << t.row << "]";
           if (x + 1 < gridCols) out << ",";
         }
@@ -1106,8 +1109,8 @@ int main() {
       if (gs == std::string::npos) { showInfo("Invalid JSON: missing grid"); return; }
       auto grid = parseGrid(json, gs);
   chunks.clear();
-      for (int y = 0; y < static_cast<int>(grid.size()); ++y) {
-        for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
+      for (int y = 0; y < gsl::narrow_cast<int>(grid.size()); ++y) {
+            for (int x = 0; x < gsl::narrow_cast<int>(grid[y].size()); ++x) {
           TileCR t = grid[y][x];
           if (t.col != 0 || t.row != 0) setTileAt(x, y, t);
         }
@@ -1148,7 +1151,7 @@ int main() {
 
       // Create new layer and configure it via active layer macros to avoid macro collisions
       layers.emplace_back();
-      int li = static_cast<int>(layers.size()) - 1;
+      int li = gsl::narrow_cast<int>(layers.size()) - 1;
       layers[li].name = !name.empty() ? name : (std::string("Layer ") + std::to_string(li+1));
       layers[li].visible = true;
       activeLayer = li;
@@ -1166,8 +1169,8 @@ int main() {
       }
       // Fill tiles for this layer
       chunks.clear();
-      for (int y = 0; y < static_cast<int>(grid.size()); ++y) {
-        for (int x = 0; x < static_cast<int>(grid[y].size()); ++x) {
+      for (int y = 0; y < gsl::narrow_cast<int>(grid.size()); ++y) {
+        for (int x = 0; x < gsl::narrow_cast<int>(grid[y].size()); ++x) {
           TileCR t = grid[y][x];
           if (t.col != 0 || t.row != 0) setTileAt(x, y, t);
         }
@@ -1187,7 +1190,7 @@ int main() {
 
   // Palette draw origin and layout (shared by draw and hit-test)
   const float thumbScale = 2.0f;
-  const int cell = static_cast<int>(tilePx * thumbScale);
+  const int cell = gsl::narrow_cast<int>(tilePx * thumbScale);
   const int padding = 6;
   const int x0 = 8;
   // Layout for tileset config and save controls
@@ -1309,8 +1312,8 @@ int main() {
       // Keep views and palette size in sync with window to avoid overlap on resize
       if (event.is<sf::Event::Resized>()) {
         auto sz = window.getSize();
-        winW = static_cast<int>(sz.x);
-        winH = static_cast<int>(sz.y);
+  winW = gsl::narrow_cast<int>(sz.x);
+  winH = gsl::narrow_cast<int>(sz.y);
         defaultView = sf::View(sf::FloatRect({0.f, 0.f}, {static_cast<float>(winW), static_cast<float>(winH)}));
         window.setView(defaultView);
         setPaletteViewport();
@@ -1541,7 +1544,7 @@ int main() {
         sf::Vector2i mp(e->position.x, e->position.y);
         // Map to palette coordinate space for accurate hit testing while scrolled
         sf::Vector2f mpPaletteF = window.mapPixelToCoords(mp, paletteView);
-        sf::Vector2i mpPalette(static_cast<int>(mpPaletteF.x), static_cast<int>(mpPaletteF.y));
+  sf::Vector2i mpPalette(gsl::narrow_cast<int>(mpPaletteF.x), gsl::narrow_cast<int>(mpPaletteF.y));
 
   // Tileset path input and Load button hit-tests
         if (mp.x >= 0 && mp.x < paletteWidth) {
@@ -1563,7 +1566,7 @@ int main() {
             // Dropdown open area (below select field)
             const int itemH = btnH; // one item per button height
             const int dropY = layerBtnY + btnH + 2;
-            const int dropH = itemH * static_cast<int>(layers.size());
+            const int dropH = itemH * gsl::narrow_cast<int>(layers.size());
             sf::IntRect rectDropdown({xSelect, dropY}, {selW, dropH});
 
             if (e->button == sf::Mouse::Button::Left) {
@@ -1573,7 +1576,7 @@ int main() {
               if (layerDropdownOpen) {
                 if (rectDropdown.contains(mpPalette)) {
                   int idx = (mpPalette.y - dropY) / itemH;
-                  if (idx >= 0 && idx < static_cast<int>(layers.size())) {
+                  if (idx >= 0 && idx < gsl::narrow_cast<int>(layers.size())) {
                     activeLayer = idx;
                     ensureLayerTileset(activeLayer);
                     showInfo(std::string("Active: ") + layers[activeLayer].name);
@@ -1591,7 +1594,7 @@ int main() {
                 continue;
               }
               if (rectDel.contains(mpPalette)) {
-                if (layers.size() > 1) { layers.erase(layers.begin() + activeLayer); if (activeLayer >= static_cast<int>(layers.size())) activeLayer = static_cast<int>(layers.size())-1; showInfo("Layer deleted"); }
+                if (layers.size() > 1) { layers.erase(layers.begin() + activeLayer); if (activeLayer >= gsl::narrow_cast<int>(layers.size())) activeLayer = gsl::narrow_cast<int>(layers.size())-1; showInfo("Layer deleted"); }
                 continue;
               }
             }
@@ -2016,7 +2019,7 @@ int main() {
           int px = x0 + tx * (cell + padding);
           int py = y0 + ty * (cell + padding);
 
-          sf::Sprite spr(tileset.texture, sf::IntRect({c * tileset.tileW, r * tileset.tileH}, {tileset.tileW, tileset.tileH}));
+          sf::Sprite spr(tileset.texture, sf::IntRect({gsl::narrow_cast<int>(c * tileset.tileW), gsl::narrow_cast<int>(r * tileset.tileH)}, {gsl::narrow_cast<int>(tileset.tileW), gsl::narrow_cast<int>(tileset.tileH)}));
           // Fit uniformly into cell and center
           float scale = std::min(static_cast<float>(cell) / static_cast<float>(tileset.tileW), static_cast<float>(cell) / static_cast<float>(tileset.tileH));
           float offX = (cell - tileset.tileW * scale) * 0.5f;
@@ -2076,13 +2079,13 @@ int main() {
       const int xSelect = startX;
       const int itemH = btnH;
       const int dropY = layerBtnY + btnH + 2;
-      sf::RectangleShape listBg(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH * static_cast<int>(layers.size()))));
+  sf::RectangleShape listBg(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH * gsl::narrow_cast<int>(layers.size()))));
       listBg.setPosition(sf::Vector2f(static_cast<float>(xSelect), static_cast<float>(dropY)));
       listBg.setFillColor(sf::Color(50, 50, 65));
       listBg.setOutlineThickness(1);
       listBg.setOutlineColor(sf::Color(90, 90, 110));
       window.draw(listBg);
-      for (int i = 0; i < static_cast<int>(layers.size()); ++i) {
+  for (int i = 0; i < gsl::narrow_cast<int>(layers.size()); ++i) {
         if (i == activeLayer) {
           sf::RectangleShape hi(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH)));
           hi.setPosition(sf::Vector2f(static_cast<float>(xSelect), static_cast<float>(dropY + i * itemH)));
@@ -2124,10 +2127,10 @@ int main() {
       float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
       float panelRight = panelLeft + panelW;
       float panelBottom = panelTop + panelH;
-      int minGX = static_cast<int>(std::floor((panelLeft - gridOrigin.x) / cellPx)) - 1;
-      int maxGX = static_cast<int>(std::floor((panelRight - gridOrigin.x) / cellPx)) + 1;
-      int minGY = static_cast<int>(std::floor((panelTop - gridOrigin.y) / cellPx)) - 1;
-      int maxGY = static_cast<int>(std::floor((panelBottom - gridOrigin.y) / cellPx)) + 1;
+  int minGX = gsl::narrow_cast<int>(std::floor((panelLeft - gridOrigin.x) / cellPx)) - 1;
+  int maxGX = gsl::narrow_cast<int>(std::floor((panelRight - gridOrigin.x) / cellPx)) + 1;
+  int minGY = gsl::narrow_cast<int>(std::floor((panelTop - gridOrigin.y) / cellPx)) - 1;
+  int maxGY = gsl::narrow_cast<int>(std::floor((panelBottom - gridOrigin.y) / cellPx)) + 1;
       for (int gx = minGX; gx <= maxGX; ++gx) {
         float x = gridOrigin.x + gx * cellPx;
         if (x < panelLeft - 2.f || x > panelRight + 2.f) continue;
@@ -2155,12 +2158,12 @@ int main() {
       float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
       float panelRight = panelLeft + panelW;
       float panelBottom = panelTop + panelH;
-      int minGX = static_cast<int>(std::floor((panelLeft - gridOrigin.x) / cellPx)) - 1;
-      int maxGX = static_cast<int>(std::floor((panelRight - gridOrigin.x) / cellPx)) + 1;
-      int minGY = static_cast<int>(std::floor((panelTop - gridOrigin.y) / cellPx)) - 1;
-      int maxGY = static_cast<int>(std::floor((panelBottom - gridOrigin.y) / cellPx)) + 1;
+  int minGX = gsl::narrow_cast<int>(std::floor((panelLeft - gridOrigin.x) / cellPx)) - 1;
+  int maxGX = gsl::narrow_cast<int>(std::floor((panelRight - gridOrigin.x) / cellPx)) + 1;
+  int minGY = gsl::narrow_cast<int>(std::floor((panelTop - gridOrigin.y) / cellPx)) - 1;
+  int maxGY = gsl::narrow_cast<int>(std::floor((panelBottom - gridOrigin.y) / cellPx)) + 1;
       for (size_t li = 0; li < layers.size(); ++li) {
-        int prev = activeLayer; activeLayer = static_cast<int>(li);
+  int prev = activeLayer; activeLayer = gsl::narrow_cast<int>(li);
         if (!layers[li].visible || !tileset.loaded) { activeLayer = prev; continue; }
         for (int gy = minGY; gy <= maxGY; ++gy) {
           for (int gx = minGX; gx <= maxGX; ++gx) {
@@ -2187,8 +2190,8 @@ int main() {
     float panelH = std::max(0.f, static_cast<float>(winH) - (2.f * static_cast<float>(margin)));
     sf::FloatRect panelRect({panelLeft, panelTop}, {panelW, panelH});
     if (panelRect.contains(sf::Vector2f(static_cast<float>(mp.x), static_cast<float>(mp.y)))) {
-      int gx = static_cast<int>(std::floor((static_cast<float>(mp.x) - gridOrigin.x) / cellPx));
-      int gy = static_cast<int>(std::floor((static_cast<float>(mp.y) - gridOrigin.y) / cellPx));
+  int gx = gsl::narrow_cast<int>(std::floor((static_cast<float>(mp.x) - gridOrigin.x) / cellPx));
+  int gy = gsl::narrow_cast<int>(std::floor((static_cast<float>(mp.y) - gridOrigin.y) / cellPx));
       sf::RectangleShape hover(sf::Vector2f(cellPx, cellPx));
       hover.setPosition(sf::Vector2f(gridOrigin.x + gx * cellPx, gridOrigin.y + gy * cellPx));
       hover.setFillColor(sf::Color(255, 255, 255, 20));

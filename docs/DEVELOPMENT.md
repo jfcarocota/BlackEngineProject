@@ -595,4 +595,11 @@ We use Microsoft GSL to express simple contracts and safer casts.
 - Spans
     - Use `gsl::span<T>` for non-owning views; see `EntityManager::GetEntities()`.
 
-Build: GSL is fetched via CMake FetchContent and linked as a header-only dependency.
+Build: GSL is fetched via CMake FetchContent and linked as a header-only dependency. Both the game target (`BlackEngineProject`) and the editor (`TileMapEditor`) link `Microsoft.GSL::GSL`.
+
+Editor notes:
+- The Tile Map Editor (`src/MapEditorMain.cpp`) uses `gsl::narrow_cast` for:
+    - Computing window and grid sizes (ints from floats),
+    - Building `sf::IntRect` for tileset thumbnails,
+    - Iterating over grids and layer indices.
+- Lightweight `Expects(...)` guards are added in layer selection helpers.

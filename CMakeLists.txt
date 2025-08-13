@@ -138,6 +138,7 @@ target_link_libraries(TileMapEditor PRIVATE
   sfml-window
   sfml-system
   sfml-audio
+  Microsoft.GSL::GSL
 )
 
 # Enable native Windows file dialogs for the editor
