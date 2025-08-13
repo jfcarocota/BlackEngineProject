@@ -16,6 +16,7 @@
 #include <cwchar>
 #include <iterator>
 #include <system_error>
+#include <functional>
 
 // Define to enable native Win32 file dialogs. Requires Windows SDK headers/libs.
 // #define MAPEDITOR_ENABLE_WIN32_DIALOGS 1
@@ -69,6 +70,9 @@ struct TileCR {
   int col{0};
   int row{0};
 };
+
+static inline bool operator==(const TileCR& a, const TileCR& b) noexcept { return a.col == b.col && a.row == b.row; }
+static inline bool operator!=(const TileCR& a, const TileCR& b) noexcept { return !(a == b); }
 
 // Resolve asset paths when running from different working directories or a macOS .app bundle
 static std::string getExecutableDir() {
@@ -678,6 +682,16 @@ int main() {
   };
   ensureInitialLayer();
 
+  // Helper: compute Y position for layer selector just below the title text
+  auto layerHeaderY = [&]() -> int {
+    sf::Text t(font);
+    t.setCharacterSize(22);
+    t.setString(std::string("Tileset (Layer: ") + (layers.empty()? std::string("-") : layers[activeLayer].name) + ")");
+    auto b = t.getLocalBounds();
+    float bottom = 10.f + (b.size.y - b.position.y); // title is drawn at y=10
+    return static_cast<int>(bottom + 6.f); // small gap below title
+  };
+
   // Helper to insert a new layer safely (place before macros to avoid macro name collisions)
   struct InsertNewLayerAtHelper {
     std::vector<Layer>* layersPtr;
@@ -773,6 +787,59 @@ int main() {
   // Selected tile in palette (col,row)
   TileCR selected{0, 0};
 
+  // ---- Undo/Redo system ----
+  struct TileChange { int layer; int gx; int gy; TileCR before; TileCR after; };
+  struct Action { std::vector<TileChange> changes; };
+  std::vector<Action> undoStack;
+  std::vector<Action> redoStack;
+  const size_t MAX_HISTORY = 200;
+  // Stroke recording state
+  bool strokeActive = false;
+  int strokeLayer = 0;
+  std::unordered_map<uint64_t, TileChange> strokeChanges;
+  auto keyFor = [](int gx, int gy) -> uint64_t {
+    uint64_t ux = static_cast<uint32_t>(gx);
+    uint64_t uy = static_cast<uint32_t>(gy);
+    return (ux << 32) ^ uy;
+  };
+  // Record a change for the current stroke (capture first-before and last-after)
+  auto recordStrokeChange = [&](int gx, int gy, const TileCR& after) {
+    if (!strokeActive) return;
+    uint64_t k = keyFor(gx, gy);
+    auto it = strokeChanges.find(k);
+    if (it == strokeChanges.end()) {
+      TileCR before = getTileAt(gx, gy);
+      strokeChanges.emplace(k, TileChange{strokeLayer, gx, gy, before, after});
+    } else {
+      it->second.after = after;
+    }
+  };
+  auto finalizeStroke = [&]() {
+    if (!strokeActive) return;
+    if (!strokeChanges.empty()) {
+      Action act;
+      act.changes.reserve(strokeChanges.size());
+      for (auto &kv : strokeChanges) act.changes.push_back(kv.second);
+      // push to undo, clear redo
+      undoStack.push_back(std::move(act));
+      if (undoStack.size() > MAX_HISTORY) undoStack.erase(undoStack.begin());
+      redoStack.clear();
+    }
+    strokeChanges.clear();
+    strokeActive = false;
+  };
+  auto applyAction = [&](const Action& act, bool forward) {
+    int saved = activeLayer;
+    for (const auto& ch : act.changes) {
+      activeLayer = ch.layer;
+      setTileAt(ch.gx, ch.gy, forward ? ch.after : ch.before);
+    }
+    activeLayer = saved;
+  };
+  // doUndo/doRedo are defined later where showInfo is available
+  std::function<void()> doUndo;
+  std::function<void()> doRedo;
+
   // Text input state for loading tileset
   bool enteringPath = false;
   std::string pathBuffer = tilesetPath;
@@ -801,6 +868,24 @@ int main() {
   auto showInfo = [&](const std::string& msg) {
     infoMessage = msg;
     infoClock.restart();
+  };
+
+  // Define undo/redo now that showInfo exists
+  doUndo = [&]() {
+    if (undoStack.empty()) { showInfo("Nothing to undo"); return; }
+    Action act = std::move(undoStack.back());
+    undoStack.pop_back();
+    applyAction(act, /*forward=*/false);
+    redoStack.push_back(std::move(act));
+    showInfo("Undo");
+  };
+  doRedo = [&]() {
+    if (redoStack.empty()) { showInfo("Nothing to redo"); return; }
+    Action act = std::move(redoStack.back());
+    redoStack.pop_back();
+    applyAction(act, /*forward=*/true);
+    undoStack.push_back(std::move(act));
+    showInfo("Redo");
   };
 
   // Layer selection helpers (after showInfo is defined)
@@ -1222,7 +1307,12 @@ int main() {
   int lastPaintGY = -1;
   auto paintCell = [&](int gx, int gy, bool leftButton) {
   // No fixed bounds: infinite grid
-  setTileAt(gx, gy, leftButton ? selected : TileCR{0, 0});
+  TileCR v = leftButton ? selected : TileCR{0, 0};
+  recordStrokeChange(gx, gy, v);
+  int savedLayer = activeLayer;
+  if (strokeActive) activeLayer = strokeLayer;
+  setTileAt(gx, gy, v);
+  activeLayer = savedLayer;
   };
   auto paintLine = [&](int x0, int y0, int x1, int y1, bool leftButton) {
     int dx = x1 - x0;
@@ -1266,6 +1356,8 @@ int main() {
         paintingRight = false;
         lastPaintGX = lastPaintGY = -1;
   panningGrid = false;
+  // finalize any active stroke (no-op if none)
+  finalizeStroke();
       }
 
       // Keep views and palette size in sync with window to avoid overlap on resize
@@ -1384,10 +1476,12 @@ int main() {
           draggingScrollThumb = false;
           paintingLeft = false;
           lastPaintGX = lastPaintGY = -1;
+          finalizeStroke();
         }
         if (e && e->button == sf::Mouse::Button::Right) {
           paintingRight = false;
           lastPaintGX = lastPaintGY = -1;
+          finalizeStroke();
         }
         if (e && e->button == sf::Mouse::Button::Middle) {
           panningGrid = false;
@@ -1401,6 +1495,11 @@ int main() {
             if (e->code == sf::Keyboard::Key::Escape) window.close();
             if (e->code == sf::Keyboard::Key::S) saveGrid();
             if (e->code == sf::Keyboard::Key::J) saveJson();
+            // Undo/Redo shortcuts: Ctrl/Cmd+Z (undo), Ctrl/Cmd+Y or Shift+Ctrl/Cmd+Z (redo)
+            bool ctrl = e->control || e->system; // system covers Cmd on macOS
+            bool shift = e->shift;
+            if (ctrl && e->code == sf::Keyboard::Key::Z && !shift) { doUndo(); }
+            else if ((ctrl && e->code == sf::Keyboard::Key::Y) || (ctrl && e->code == sf::Keyboard::Key::Z && shift)) { doRedo(); }
             // Layer controls
             if (e->code == sf::Keyboard::Key::F1) { selectPrevLayer(); }
             if (e->code == sf::Keyboard::Key::F2) { selectNextLayer(); }
@@ -1504,11 +1603,11 @@ int main() {
         if (mp.x >= 0 && mp.x < paletteWidth) {
           // Hit-test for layer selector (dropdown) and add/delete at top
           {
-            const int layerBtnY = 34;
+            const int layerBtnY = layerHeaderY();
             const int btnW = 24;
             const int btnH = 22;
             const int gap = 4;
-            const int selW = 160; // width of dropdown field
+            const int selW = std::max(120, paletteWidth - 8 - (2*gap + 2*btnW) - 140); // responsive width, leaving ~140px para path label
             const int startX = paletteWidth - 8 - (selW + 2*gap + 2*btnW);
             const int xSelect = startX;
             const int xAdd    = xSelect + selW + gap;
@@ -1718,10 +1817,12 @@ int main() {
           int gx = static_cast<int>(std::floor((static_cast<float>(mp.x) - gridOrigin.x) / cellPx));
           int gy = static_cast<int>(std::floor((static_cast<float>(mp.y) - gridOrigin.y) / cellPx));
           if (e->button == sf::Mouse::Button::Left) {
+            if (!strokeActive) { strokeActive = true; strokeLayer = activeLayer; strokeChanges.clear(); }
             paintCell(gx, gy, true);
             paintingLeft = true;
             lastPaintGX = gx; lastPaintGY = gy;
           } else if (e->button == sf::Mouse::Button::Right) {
+            if (!strokeActive) { strokeActive = true; strokeLayer = activeLayer; strokeChanges.clear(); }
             paintCell(gx, gy, false);
             paintingRight = true;
             lastPaintGX = gx; lastPaintGY = gy;
@@ -2024,11 +2125,13 @@ int main() {
 
     // Draw layer dropdown list last within palette view (so it appears on top of palette UI)
     if (layerDropdownOpen) {
-      const int layerBtnY = 34;
+      const int layerBtnY = layerHeaderY();
+      const int btnW = 24;
       const int btnH = 22;
       const int gap = 4;
-      const int selW = 160;
-      const int xSelect = paletteWidth - 8 - (selW + 2*gap + 2*24); // 24 = btnW
+      const int selW = std::max(120, paletteWidth - 8 - (2*gap + 2*btnW) - 140);
+      const int startX = paletteWidth - 8 - (selW + 2*gap + 2*btnW);
+      const int xSelect = startX;
       const int itemH = btnH;
       const int dropY = layerBtnY + btnH + 2;
       sf::RectangleShape listBg(sf::Vector2f(static_cast<float>(selW), static_cast<float>(itemH * static_cast<int>(layers.size()))));
