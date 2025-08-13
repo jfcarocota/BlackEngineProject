@@ -142,19 +142,45 @@ BlackEngineProject/
 - Configure tiles:
   - Only W and H are needed. Rows/Cols are computed automatically from the image size.
   - Click "Apply" to re-slice the tileset.
+- Layers UI:
+  - Layer dropdown at the top-left to select the active layer; buttons [+] and [-] to add/delete.
+  - Visibility toggle via F3. Layers share the same tileset image/config.
 - Paint the grid:
   - Left click to paint, right click to erase. Drag to paint continuously.
-  - Zoom with the mouse wheel over the grid; pan with the middle mouse button. Zoom anchors under the cursor.
-- Save level:
-  - "Save folder" shows the target directory; click "Browse" to choose a folder.
-  - Click "Save" to write a timestamped `.grid` file.
+  - Zoom with mouse wheel over the grid; pan with middle mouse button. Zoom anchors under the cursor.
+- Undo/Redo:
+  - Undo: Ctrl+Z (Windows/Linux) or Cmd+Z (macOS)
+  - Redo: Ctrl+Y or Ctrl+Shift+Z (Cmd+Shift+Z on macOS)
+- Save/Open:
+  - "Save JSON" crea un archivo `.json` con capas por defecto en:
+    - Windows: `%APPDATA%/BlackEngineProject/Maps/map_YYYYMMDD_HHMMSS.json`
+  - "Save As..." y "Open Map..." soportan `.json` y `.grid`.
 
-Map file format:
-- New sparse format for large/infinite maps: the file starts with `# BEP_GRID_SPARSE v1`, followed by one line per painted cell: `gx gy col row`.
-- Legacy dense `.grid` files without the header are still supported for loading.
+Map file formats:
+- JSON (default, supports layers):
+  - Single layer
+    ```json
+    {
+      "tileset": "assets/tiles.png",
+      "tileW": 16, "tileH": 16,
+      "grid": [ [ [c,r], ... ], ... ]
+    }
+    ```
+  - Multi-layer
+    ```json
+    {
+      "layers": [
+        { "name": "Base", "tileset": "assets/tiles.png", "tileW": 16, "tileH": 16, "grid": [ ... ] },
+        { "name": "Detail", "tileset": "assets/tiles.png", "tileW": 16, "tileH": 16, "grid": [ ... ] }
+      ]
+    }
+    ```
+  - Nota: la celda `[0,0]` se considera vacía (no se dibuja).
+- Legacy `.grid` (compatible para carga):
+  - Denso tradicional (dos enteros por celda) o formato escaso `# BEP_GRID_SPARSE v1` con líneas `gx gy col row`.
 
 Notes:
-- The editor uses a system UI font by default (Segoe UI/Arial on Windows; DejaVu/Arial on Linux/macOS), with fallback to the bundled Arcade font. This avoids missing glyphs in labels.
+- El editor usa fuentes del sistema cuando es posible; fallback a la Arcade incluida.
 
 ### Creating Game Objects
 ```cpp
@@ -185,6 +211,7 @@ animator.PlayAnimation("walk");
 ## 🎮 Controls
 - **WASD**: Move player character
 - **ESC**: Close ImGui debug windows
+ - Editor: F1/F2 para cambiar capa, F4 añadir capa, F5 eliminar capa
 
 ## 🔊 Audio
 - SFML 3 audio uses miniaudio internally. No OpenAL or extra dylibs required.
@@ -197,6 +224,14 @@ animator.PlayAnimation("walk");
 ## 🧰 Troubleshooting
 - If the app shows missing assets when double-clicked: the app sets its working directory to `Contents/Resources`; rebuild if assets changed.
 - If macOS blocks the app: remove quarantine (`xattr -dr com.apple.quarantine BlackEngineProject.app`).
+
+### Runtime map loading (engine)
+- Orden de selección al iniciar el juego:
+  1) JSON de assets definidos en `Constants.hh` (por ejemplo `ASSETS_MAPS_JSON_THREE`) si existen.
+  2) Último `.json` en `%APPDATA%/BlackEngineProject/Maps` (Windows) guardado desde el editor.
+  3) JSON más reciente en `assets/maps/`.
+  4) Fallback a `ASSETS_MAPS` (`.grid`).
+- El motor parsea el JSON con jsoncpp y dibuja todas las capas en orden; `[0,0]` es celda vacía.
 
 ## 🔐 Code Signing & Notarization (optional)
 CMake provides targets to sign and notarize the `.app`.
