@@ -2,10 +2,8 @@
 #include <box2d/box2d.h>
 #include <iostream>
 #include <memory>
-#include <cstring>
 #include <filesystem>
 #include <optional>
-#include <gsl/gsl>
 
 #ifdef _WIN32
   #include <windows.h>
@@ -16,7 +14,6 @@
 // Project includes
 #include "Game.hh"
 #include "Constants.hh"
-#include "InputSystem.hh"
 #include "GUI/TextObject.hh"
 #include "TileGroup.hh"
 #include "Components/EntityManager.hh"
@@ -29,15 +26,8 @@
 #include "FlipSprite.hh"
 #include "Components/Entity.hh"
 #include "GUI/Button.hh"
-#include "GUI/TextObject.hh"
-#include "TileGroup.hh"
-#include "Components/EntityManager.hh"
 
-// All state moved into Game class members (see Game.hh)
-
-uint32 flags{};
-    //flags += b2Draw::e_aabbBit;
-    //flags += b2::e_shapeBit;
+// All state is managed inside Game class members (see Game.hh)
 
 // Function to find the project root directory
 std::string findProjectRoot() {
@@ -177,7 +167,6 @@ Game::Game()
   auto& btnPhysicsDebugTrs{buttonDebugPhysics.AddComponent<TransformComponent>(100.f, 100.f, 200.f, 100.f, 1.f)};
   auto& buttonPhysicsComp = buttonDebugPhysics.AddComponent<Button>(btnPhysicsDebugTrs, 0.f,
   sf::Color::White, sf::Color::Transparent, [this](){
-    std::cout << "clicked" << std::endl;
     debugPhysics = !debugPhysics;
   });
   buttonPhysicsComp.SetTexture("assets/GUI/button.png");
@@ -190,6 +179,7 @@ Game::~Game() = default;
 
 void Game::Initialize()
 {
+  unsigned int flags = 0;
   flags += b2Draw::e_shapeBit;
   world->SetDebugDraw(drawPhysics.get());
   drawPhysics->SetFlags(flags);
@@ -217,8 +207,7 @@ void Game::UpdatePhysics()
 void Game::Update()
 {
   if (gameClock) {
-    // Use gsl::not_null for safety
-    deltaTime = gsl::not_null<sf::Clock*>(gameClock.get())->getElapsedTime().asSeconds();
+  deltaTime = gameClock->getElapsedTime().asSeconds();
     gameClock->restart();
   }
   if (entityManager) entityManager->Update(deltaTime);
@@ -252,22 +241,21 @@ void Game::Render()
   window->clear(sf::Color::Black);
 
   if (tileGroup) {
-    gsl::not_null<TileGroup*>(tileGroup.get())->Draw();
+    tileGroup->Draw();
   }
-  if (entityManager) entityManager->Render(*gsl::not_null<sf::RenderWindow*>(window.get()));
-  if(debugPhysics)
+  if (entityManager) entityManager->Render(*window);
+  if (debugPhysics)
   {
-    gsl::not_null<b2World*>(world.get())->DebugDraw();
+    world->DebugDraw();
   }
   
   // Draw UI text above world/debug
   if (textObj1) {
-    gsl::not_null<TextObject*>(textObj1.get());
     window->draw(*textObj1->GetText());
   }
 
   // Render ImGui on top
-  gsl::not_null<ImGuiManager*>(imguiManager.get())->Render(*window);
+  imguiManager->Render(*window);
   
   window->display();
 }

@@ -5,7 +5,6 @@
 #include "DrawPhysics.hh"
 #include "ImGuiManager.hh"
 #include <box2d/box2d.h>
-#include <queue>
 #include <memory>
 
 // Forward declarations to reduce header coupling
