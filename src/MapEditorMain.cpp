@@ -205,22 +205,11 @@ static std::string timestampName() {
   localtime_r(&t, &tm);
 #endif
   char buf[32];
-  std::strftime(buf, sizeof(buf), "map_%Y%m%d_%H%M%S.grid", &tm);
-  return std::string(buf);
-}
-
-static std::string timestampNameJson() {
-  std::time_t t = std::time(nullptr);
-  std::tm tm{};
-#ifdef _WIN32
-  localtime_s(&tm, &t);
-#else
-  localtime_r(&t, &tm);
-#endif
-  char buf[32];
   std::strftime(buf, sizeof(buf), "map_%Y%m%d_%H%M%S.json", &tm);
   return std::string(buf);
 }
+
+// timestampName now produces JSON names directly
 
 struct Tileset {
   sf::Texture texture;
@@ -410,18 +399,16 @@ static std::optional<std::string> winPickFolder(const wchar_t* title = L"Select 
 #endif // _WIN32 && MAPEDITOR_ENABLE_WIN32_DIALOGS
 
 #if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
-// Open a .grid file using modern IFileOpenDialog; fallback to GetOpenFileName
+// Open a .json file using modern IFileOpenDialog; fallback to GetOpenFileName
 static std::optional<std::string> winPickMapFile(const wchar_t* title = L"Open map file") {
   IFileOpenDialog* pDlg = nullptr;
   HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
   if (SUCCEEDED(hr) && pDlg) {
     COMDLG_FILTERSPEC filters[] = {
-      {L"Map Files (*.json;*.grid)", L"*.json;*.grid"},
       {L"JSON Files (*.json)", L"*.json"},
-      {L"Grid Files (*.grid)", L"*.grid"},
       {L"All Files (*.*)", L"*.*"}
     };
-    pDlg->SetFileTypes(4, filters);
+    pDlg->SetFileTypes(2, filters);
     if (title) pDlg->SetTitle(title);
     hr = pDlg->Show(nullptr);
     if (SUCCEEDED(hr)) {
@@ -451,7 +438,7 @@ static std::optional<std::string> winPickMapFile(const wchar_t* title = L"Open m
   OPENFILENAMEA ofn{};
   ofn.lStructSize = sizeof(ofn);
   ofn.hwndOwner = nullptr;
-  ofn.lpstrFilter = "Map Files (*.json;*.grid)\0*.json;*.grid\0JSON Files (*.json)\0*.json\0Grid Files (*.grid)\0*.grid\0All Files\0*.*\0";
+  ofn.lpstrFilter = "JSON Files (*.json)\0*.json\0All Files\0*.*\0";
   ofn.lpstrFile = file;
   ofn.nMaxFile = MAX_PATH;
   ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
@@ -459,18 +446,16 @@ static std::optional<std::string> winPickMapFile(const wchar_t* title = L"Open m
   return std::nullopt;
 }
 
-// Save As dialog for .grid using IFileSaveDialog; fallback to GetSaveFileName
+// Save As dialog for JSON using IFileSaveDialog; fallback to GetSaveFileName
 static std::optional<std::string> winSaveMapAs(const wchar_t* title = L"Save map as") {
   IFileSaveDialog* pDlg = nullptr;
   HRESULT hr = CoCreateInstance(CLSID_FileSaveDialog, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pDlg));
   if (SUCCEEDED(hr) && pDlg) {
     COMDLG_FILTERSPEC filters[] = {
       {L"JSON Files (*.json)", L"*.json"},
-      {L"Map Files (*.json;*.grid)", L"*.json;*.grid"},
-      {L"Grid Files (*.grid)", L"*.grid"},
       {L"All Files (*.*)", L"*.*"}
     };
-    pDlg->SetFileTypes(4, filters);
+    pDlg->SetFileTypes(2, filters);
     pDlg->SetDefaultExtension(L"json");
     if (title) pDlg->SetTitle(title);
     hr = pDlg->Show(nullptr);
@@ -502,7 +487,7 @@ static std::optional<std::string> winSaveMapAs(const wchar_t* title = L"Save map
   OPENFILENAMEA ofn{};
   ofn.lStructSize = sizeof(ofn);
   ofn.hwndOwner = nullptr;
-  ofn.lpstrFilter = "Map Files (*.json;*.grid)\0*.json;*.grid\0JSON Files (*.json)\0*.json\0Grid Files (*.grid)\0*.grid\0All Files\0*.*\0";
+  ofn.lpstrFilter = "JSON Files (*.json)\0*.json\0All Files\0*.*\0";
   ofn.lpstrDefExt = "json";
   ofn.lpstrFile = file;
   ofn.nMaxFile = MAX_PATH;
@@ -999,21 +984,7 @@ int main() {
     showInfo(std::string("Saved -> ") + outPath.string());
   };
 
-  // Save current grid to file in chosen folder (sparse format)
-  auto saveGrid = [&]() {
-    fs::path mapsDir = saveDirPath.empty() ? getUserMapsDir() : fs::path(saveDirPath);
-    std::error_code ec;
-    if (!fs::exists(mapsDir)) {
-      fs::create_directories(mapsDir, ec);
-      if (ec) { showInfo(std::string("Failed to create maps dir: ") + mapsDir.string()); return; }
-    } else if (!fs::is_directory(mapsDir)) {
-      showInfo(std::string("Not a directory: ") + mapsDir.string());
-      return;
-    }
-    std::string fileName = timestampName();
-    fs::path outPath = mapsDir / fileName;
-    saveGridToPath(outPath);
-  };
+  // Removed legacy grid save helper
 
   // Save current grid to JSON in chosen folder (fixed size grid + tileset path)
   auto saveJson = [&]() {
@@ -1026,34 +997,14 @@ int main() {
       showInfo(std::string("Not a directory: ") + mapsDir.string());
       return;
     }
-    std::string fileName = timestampNameJson();
+  std::string fileName = timestampName();
   fs::path outPath = mapsDir / fileName;
     saveJsonToPath(outPath);
   };
 
-  // Load grid from a .grid file (supports sparse v1 and legacy dense)
+  // Legacy .grid support removed; JSON-only
   auto loadGridFromFile = [&](const std::string& filePath) {
-    std::string resolved = findAssetPath(filePath);
-    std::ifstream in(resolved);
-    if (!in.is_open()) { showInfo("Failed to open: " + resolved); return; }
-    chunks.clear();
-    in >> std::ws;
-    if (in.peek() == '#') {
-      std::string header; std::getline(in, header);
-      int gx, gy, c, r;
-      while (in >> gx >> gy >> c >> r) {
-        setTileAt(gx, gy, TileCR{c, r});
-      }
-    } else {
-      in.clear(); in.seekg(0, std::ios::beg);
-      for (int y = 0; y < gridRows; ++y) {
-        for (int x = 0; x < gridCols; ++x) {
-          int c, r; if (!(in >> c >> r)) { showInfo("Invalid grid file format"); return; }
-          if (c != 0 || r != 0) setTileAt(x, y, TileCR{c, r});
-        }
-      }
-    }
-    showInfo("Loaded grid from: " + resolved);
+    showInfo("Grid format no longer supported. Use JSON maps.");
   };
 
   // Load from JSON map: supports single-layer schema {tileset, tileW?, tileH?, grid}
@@ -1231,11 +1182,6 @@ int main() {
     std::string jsonDefault = findAssetPath(ASSETS_MAPS_JSON);
     if (!jsonDefault.empty() && fs::exists(jsonDefault)) {
       loadJsonFromFile(jsonDefault);
-    } else {
-      std::string defaultMap = findAssetPath(ASSETS_MAPS);
-      if (!defaultMap.empty() && fs::exists(defaultMap)) {
-        loadGridFromFile(defaultMap);
-      }
     }
   }
 
@@ -1493,7 +1439,7 @@ int main() {
         if (e) {
           if (!enteringPath && !enteringSaveDir && !enteringTileW && !enteringTileH && !enteringRows && !enteringCols) {
             if (e->code == sf::Keyboard::Key::Escape) window.close();
-            if (e->code == sf::Keyboard::Key::S) saveGrid();
+            // Removed legacy grid save shortcut (S). Use J for JSON.
             if (e->code == sf::Keyboard::Key::J) saveJson();
             // Undo/Redo shortcuts: Ctrl/Cmd+Z (undo), Ctrl/Cmd+Y or Shift+Ctrl/Cmd+Z (redo)
             bool ctrl = e->control || e->system; // system covers Cmd on macOS
@@ -1524,13 +1470,11 @@ int main() {
 #if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
               if (auto sel = winPickMapFile(L"Open map file")) {
                 std::string p = *sel;
-                if (p.size() >= 5 && p.substr(p.size()-5) == ".json") loadJsonFromFile(p);
-                else loadGridFromFile(p);
+                loadJsonFromFile(p);
               } else showInfo("Open canceled");
 #else
               std::string jsonDefault = findAssetPath(ASSETS_MAPS_JSON);
               if (!jsonDefault.empty() && fs::exists(jsonDefault)) loadJsonFromFile(jsonDefault);
-              else loadGridFromFile(ASSETS_MAPS);
 #endif
             }
             // Optional keyboard scroll helpers
@@ -1729,8 +1673,8 @@ int main() {
 #if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
             if (auto out = winSaveMapAs(L"Save map as")) {
               std::string path = *out;
-              if (path.size() >= 5 && path.substr(path.size()-5) == ".json") saveJsonToPath(fs::path(path));
-              else saveGridToPath(fs::path(path));
+              if (path.size() < 5 || path.substr(path.size()-5) != ".json") path += ".json";
+              saveJsonToPath(fs::path(path));
             } else { showInfo("Save As canceled"); }
 #else
             saveJson();
@@ -1741,13 +1685,11 @@ int main() {
 #if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
             if (auto sel = winPickMapFile(L"Open map file")) {
               std::string p = *sel;
-              if (p.size() >= 5 && p.substr(p.size()-5) == ".json") loadJsonFromFile(p);
-              else loadGridFromFile(p);
+              loadJsonFromFile(p);
             } else { showInfo("Open canceled"); }
 #else
             std::string jsonDefault = findAssetPath(ASSETS_MAPS_JSON);
             if (!jsonDefault.empty() && fs::exists(jsonDefault)) loadJsonFromFile(jsonDefault);
-            else loadGridFromFile(ASSETS_MAPS);
 #endif
             continue;
           }

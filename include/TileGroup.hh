@@ -1,6 +1,5 @@
 #pragma once
 #include "Tile.hh"
-#include<fstream>
 #include <memory>
 #include <string>
 
@@ -11,7 +10,6 @@ private:
   // Multiple layers of tiles (drawn in order)
   std::unique_ptr<std::vector<std::vector<std::unique_ptr<Tile>>>> layerTiles;
   int COLS{}, ROWS{};
-  std::unique_ptr<std::ifstream> reader;
   std::string filePathStr{};
   float scale;
   float tileWidth{}, tileHeight{};

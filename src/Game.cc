@@ -77,7 +77,7 @@ Game::Game()
   world = std::make_unique<b2World>(*gravity);
   drawPhysics = std::make_unique<DrawPhysics>(window.get());
   entityManager = std::make_unique<EntityManager>();
-  // Resolve default map path with fallbacks: prefer layered JSON (latest user map, then assets), then legacy
+  // Resolve default map path with fallbacks: prefer layered JSON (assets constants, then latest in assets/maps)
   auto exists = [](const std::string& p){ return std::filesystem::exists(std::filesystem::path(p)); };
   auto findLatestJsonIn = [&](const std::filesystem::path& dir) -> std::optional<std::string> {
     namespace fs = std::filesystem;
@@ -98,32 +98,18 @@ Game::Game()
     if (!best.empty()) return best; else return std::nullopt;
   };
 
-  // User Maps folder (same as editor) on Windows: %APPDATA%/BlackEngineProject/Maps
-  auto userMapsDir = [&]() -> std::filesystem::path {
-    std::filesystem::path base;
-    const char* appData = std::getenv("APPDATA");
-    if (appData) base = appData; else base = std::filesystem::current_path();
-    return base / "BlackEngineProject" / "Maps";
-  }();
-
   std::string mapPath;
   // 1) Prefer explicit assets JSON constants (developer override)
   if (exists(ASSETS_MAPS_JSON_THREE)) mapPath = ASSETS_MAPS_JSON_THREE;
   else if (exists(ASSETS_MAPS_JSON_TWO)) mapPath = ASSETS_MAPS_JSON_TWO;
   else if (exists(ASSETS_MAPS_JSON)) mapPath = ASSETS_MAPS_JSON;
 
-  // 2) If not set by constants, try most recent JSON in user Maps dir
-  if (mapPath.empty()) {
-    if (auto p = findLatestJsonIn(userMapsDir)) mapPath = *p;
-  }
-
-  // 3) If still empty, pick latest JSON from assets/maps
+  // 2) If not set by constants, pick latest JSON from assets/maps
   if (mapPath.empty()) {
     auto assetsLatest = findLatestJsonIn(std::filesystem::path("assets") / "maps");
     if (assetsLatest) mapPath = *assetsLatest;
   }
-  // 4) Final fallback to legacy .grid
-  if (mapPath.empty()) mapPath = ASSETS_MAPS;
+  // 3) If still empty, keep mapPath blank; engine requires JSON maps now
 
   std::cout << "Game: loading map -> " << mapPath << std::endl;
   tileGroup = std::make_unique<TileGroup>(window.get(), GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT,

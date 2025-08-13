@@ -441,7 +441,7 @@ const char* GAME_NAME{"Game1"};
 ```cpp
 const char* ASSETS_SPRITES{"assets/sprites.png"};
 const char* ASSETS_TILES{"assets/tiles.png"};
-const char* ASSETS_MAPS{"assets/maps/level1.grid"};
+// Grid format removed; use JSON maps only.
 const char* ASSETS_FONT_ARCADECLASSIC{"assets/fonts/ARCADECLASSIC.ttf"};
 ```
 

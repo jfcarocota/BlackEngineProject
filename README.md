@@ -154,7 +154,7 @@ BlackEngineProject/
 - Save/Open:
   - "Save JSON" crea un archivo `.json` con capas por defecto en:
     - Windows: `%APPDATA%/BlackEngineProject/Maps/map_YYYYMMDD_HHMMSS.json`
-  - "Save As..." y "Open Map..." soportan `.json` y `.grid`.
+  - "Save As..." y "Open Map..." soportan únicamente `.json`.
 
 Map file formats:
 - JSON (default, supports layers):
@@ -176,8 +176,6 @@ Map file formats:
     }
     ```
   - Nota: la celda `[0,0]` se considera vacía (no se dibuja).
-- Legacy `.grid` (compatible para carga):
-  - Denso tradicional (dos enteros por celda) o formato escaso `# BEP_GRID_SPARSE v1` con líneas `gx gy col row`.
 
 Notes:
 - El editor usa fuentes del sistema cuando es posible; fallback a la Arcade incluida.
@@ -228,9 +226,8 @@ animator.PlayAnimation("walk");
 ### Runtime map loading (engine)
 - Orden de selección al iniciar el juego:
   1) JSON de assets definidos en `Constants.hh` (por ejemplo `ASSETS_MAPS_JSON_THREE`) si existen.
-  2) Último `.json` en `%APPDATA%/BlackEngineProject/Maps` (Windows) guardado desde el editor.
-  3) JSON más reciente en `assets/maps/`.
-  4) Fallback a `ASSETS_MAPS` (`.grid`).
+  2) JSON más reciente en `assets/maps/`.
+  3) Si no hay ninguno, el juego arrancará sin mapa.
 - El motor parsea el JSON con jsoncpp y dibuja todas las capas en orden; `[0,0]` es celda vacía.
 
 ## 🔐 Code Signing & Notarization (optional)
