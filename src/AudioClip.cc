@@ -1,29 +1,28 @@
 #include "AudioClip.hh"
+
+#include <gsl/assert>
 #include <iostream>
 #include <memory>
-#include <gsl/assert>
 
-AudioClip::AudioClip()
-{
+AudioClip::AudioClip() {
 #ifdef SFML_AUDIO_AVAILABLE
   sound = nullptr;
   buffer = nullptr;
 #endif
 }
 
-AudioClip::AudioClip(const char* audioUrl)
-{
+AudioClip::AudioClip(const char* audioUrl) {
   this->audioUrl = audioUrl;
-  
+
 #ifdef SFML_AUDIO_AVAILABLE
   sound = nullptr;
   buffer = nullptr;
-  
+
   if (!audioUrl) {
     std::cerr << "AudioClip: audioUrl is null" << std::endl;
     return;
   }
-  
+
   try {
     buffer = std::make_unique<sf::SoundBuffer>();
     if (!buffer) {
@@ -44,8 +43,7 @@ AudioClip::AudioClip(const char* audioUrl)
 #endif
 }
 
-void AudioClip::SetVolume(float volume)
-{
+void AudioClip::SetVolume(float volume) {
 #ifdef SFML_AUDIO_AVAILABLE
   Expects(volume >= 0.0f && volume <= 100.0f);
   if (sound) {
@@ -54,16 +52,14 @@ void AudioClip::SetVolume(float volume)
 #endif
 }
 
-AudioClip::~AudioClip()
-{
+AudioClip::~AudioClip() {
 #ifdef SFML_AUDIO_AVAILABLE
   // Smart pointers automatically clean up
 #endif
 }
 
 // Copy constructor
-AudioClip::AudioClip(const AudioClip& other)
-{
+AudioClip::AudioClip(const AudioClip& other) {
   audioUrl = other.audioUrl;
 #ifdef SFML_AUDIO_AVAILABLE
   sound = nullptr;
@@ -83,8 +79,7 @@ AudioClip::AudioClip(const AudioClip& other)
 }
 
 // Copy assignment
-AudioClip& AudioClip::operator=(const AudioClip& other)
-{
+AudioClip& AudioClip::operator=(const AudioClip& other) {
   if (this == &other) return *this;
   audioUrl = other.audioUrl;
 #ifdef SFML_AUDIO_AVAILABLE
@@ -127,14 +122,16 @@ AudioClip& AudioClip::operator=(AudioClip&& other) noexcept {
 }
 
 #ifdef SFML_AUDIO_AVAILABLE
-void AudioClip::Play(sf::SoundBuffer&)
-{
+void AudioClip::Play(sf::SoundBuffer&) {
   Expects(sound != nullptr);
   if (!sound) {
     std::cerr << "Sound object is null, cannot play audio" << std::endl;
     return;
   }
-  try { sound->play(); }
-  catch (const std::exception& e) { std::cerr << "Exception playing audio: " << e.what() << std::endl; }
+  try {
+    sound->play();
+  } catch (const std::exception& e) {
+    std::cerr << "Exception playing audio: " << e.what() << std::endl;
+  }
 }
 #endif

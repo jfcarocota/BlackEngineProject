@@ -1,18 +1,19 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <gsl/span>
+#include <memory>
+#include <vector>
+
 #include "Component.hh"
 #include "Entity.hh"
-#include <vector>
-#include <memory>
-#include <gsl/span>
 
-class EntityManager
-{
-private:
+class EntityManager {
+ private:
   std::vector<std::unique_ptr<Entity>> entities;
   std::vector<std::unique_ptr<Entity>> activeEntities;
   std::vector<std::unique_ptr<Entity>> inactiveEntities;
-public:
+
+ public:
   EntityManager(/* args */);
   ~EntityManager();
 

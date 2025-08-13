@@ -2,18 +2,17 @@
 #ifdef SFML_AUDIO_AVAILABLE
 #include "SFML/Audio.hpp"
 #endif
-#include<string>
 #include <memory>
+#include <string>
 
-class AudioClip
-{
-private:
+class AudioClip {
+ private:
   std::string audioUrl{};
 #ifdef SFML_AUDIO_AVAILABLE
   std::unique_ptr<sf::Sound> sound;
   std::unique_ptr<sf::SoundBuffer> buffer;
 #endif
-public:
+ public:
   AudioClip();
   AudioClip(const char* audioUrl);
   ~AudioClip();

@@ -1,14 +1,14 @@
 #pragma once
-#include "Component.hh"
+#include <map>
+#include <string>
+
 #include "AnimationClip.hh"
-#include<map>
-#include<string>
+#include "Component.hh"
 #include "SpriteComponent.hh"
 #include "TransformComponent.hh"
 
-class AnimatorComponent : public Component
-{
-private:
+class AnimatorComponent : public Component {
+ private:
   SpriteComponent* sprite;
   TransformComponent* transform;
   std::string currentAnimationName{};
@@ -22,10 +22,9 @@ private:
   int currentAnimation{};
   float currentTime{};
 
-public:
+ public:
   AnimatorComponent();
   ~AnimatorComponent();
-
 
   void Play(std::string animationName);
   void AddAnimation(std::string animationName, AnimationClip animationClip);

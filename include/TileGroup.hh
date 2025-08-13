@@ -1,12 +1,12 @@
 #pragma once
-#include "Tile.hh"
+#include <gsl/assert>
 #include <memory>
 #include <string>
-#include <gsl/assert>
 
-class TileGroup
-{
-private:
+#include "Tile.hh"
+
+class TileGroup {
+ private:
   sf::RenderWindow* window;
   // Multiple layers of tiles (drawn in order)
   std::unique_ptr<std::vector<std::vector<std::unique_ptr<Tile>>>> layerTiles;
@@ -15,9 +15,11 @@ private:
   float scale;
   float tileWidth{}, tileHeight{};
   std::string textureUrlStr{};
-public:
-  TileGroup(sf::RenderWindow* window, int COLS, int ROWS, const char* filePath, 
-  float scale, float tileWidth, float tileHeight, const char* textureUrl);
+
+ public:
+  TileGroup(sf::RenderWindow* window, int COLS, int ROWS, const char* filePath,
+            float scale, float tileWidth, float tileHeight,
+            const char* textureUrl);
   ~TileGroup();
 
   void GenerateMap();

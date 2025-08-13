@@ -1,8 +1,9 @@
 #include "GUI/TextObject.hh"
+
 #include <iostream>
 
-TextObject::TextObject(std::string fontUrl, int size, sf::Color color, std::uint32_t style)
-{
+TextObject::TextObject(std::string fontUrl, int size, sf::Color color,
+                       std::uint32_t style) {
   this->fontUrl = std::move(fontUrl);
   this->size = size;
   this->color = color;
@@ -18,8 +19,8 @@ TextObject::TextObject(std::string fontUrl, int size, sf::Color color, std::uint
   Ensures(static_cast<bool>(text));
 }
 
-TextObject::TextObject(std::string fontUrl, int size, sf::Color color, std::uint32_t style, std::string textStr)
-{
+TextObject::TextObject(std::string fontUrl, int size, sf::Color color,
+                       std::uint32_t style, std::string textStr) {
   this->fontUrl = std::move(fontUrl);
   this->size = size;
   this->color = color;
@@ -37,18 +38,14 @@ TextObject::TextObject(std::string fontUrl, int size, sf::Color color, std::uint
   Ensures(static_cast<bool>(text));
 }
 
-TextObject::~TextObject()
-{
-}
+TextObject::~TextObject() {}
 
-void TextObject::SetTextStr(std::string textStr)
-{
+void TextObject::SetTextStr(std::string textStr) {
   this->textStr = std::move(textStr);
   if (text) text->setString(this->textStr);
 }
 
-sf::Text* TextObject::GetText() const
-{
+sf::Text* TextObject::GetText() const {
   Expects(static_cast<bool>(text));
   return text.get();
 }

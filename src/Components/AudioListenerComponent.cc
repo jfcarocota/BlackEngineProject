@@ -1,44 +1,35 @@
 #include "Components/AudioListenerComponent.hh"
-#include <iostream>
-#include <gsl/assert>
 
-AudioListenerComponent::AudioListenerComponent()
-{
+#include <gsl/assert>
+#include <iostream>
+
+AudioListenerComponent::AudioListenerComponent() {
 #ifdef SFML_AUDIO_AVAILABLE
   this->soundBuffer = sf::SoundBuffer();
   audioClip = nullptr;
 #endif
 }
 
-AudioListenerComponent::~AudioListenerComponent()
-{
-}
+AudioListenerComponent::~AudioListenerComponent() {}
 
-void AudioListenerComponent::Initialize()
-{
+void AudioListenerComponent::Initialize() {
   // No owner dependencies here, but document invariant for future changes
   Ensures(true);
-
 }
 
-AudioClip* AudioListenerComponent::GetAudioClip() const
-{
-  return audioClip;
-}
+AudioClip* AudioListenerComponent::GetAudioClip() const { return audioClip; }
 
-void AudioListenerComponent::Play()
-{
+void AudioListenerComponent::Play() {
 #ifdef SFML_AUDIO_AVAILABLE
-  if(audioClip)
-  {
+  if (audioClip) {
     audioClip->SetVolume(1.f);
     audioClip->Play(soundBuffer);
   }
 #endif
 }
 
-void AudioListenerComponent::PlayOneShot(AudioClip& audioClip, float audioVolume)
-{
+void AudioListenerComponent::PlayOneShot(AudioClip& audioClip,
+                                         float audioVolume) {
 #ifdef SFML_AUDIO_AVAILABLE
   try {
     audioClip.SetVolume(audioVolume);
@@ -49,8 +40,7 @@ void AudioListenerComponent::PlayOneShot(AudioClip& audioClip, float audioVolume
 #endif
 }
 
-void AudioListenerComponent::PlayOneShot(AudioClip& audioClip)
-{
+void AudioListenerComponent::PlayOneShot(AudioClip& audioClip) {
 #ifdef SFML_AUDIO_AVAILABLE
   try {
     audioClip.SetVolume(1.f);

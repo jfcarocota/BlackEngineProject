@@ -3,12 +3,12 @@
 #include "Components/SpriteComponent.hh"
 #include "Components/TransformComponent.hh"
 
-class FlipSprite: public Component
-{
-private:
+class FlipSprite : public Component {
+ private:
   SpriteComponent* spriteComponent;
   TransformComponent* transform;
-public:
+
+ public:
   FlipSprite();
   ~FlipSprite();
   void Initialize() override;

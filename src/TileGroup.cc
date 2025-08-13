@@ -1,19 +1,21 @@
 #include "TileGroup.hh"
+
+#include <json/json.h>
+
+#include <cctype>
+#include <filesystem>
+#include <fstream>
+#include <gsl/narrow>
 #include <iostream>
 #include <memory>
 #include <sstream>
-#include <filesystem>
-#include <cctype>
 #include <string>
 #include <utility>
 #include <vector>
-#include <fstream>
-#include <json/json.h>
-#include <gsl/narrow>
 
-TileGroup::TileGroup(sf::RenderWindow* window, int COLS, int ROWS, const char* filePath, 
-float scale, float tileWidth, float tileHeight, const char* textureUrl)
-{
+TileGroup::TileGroup(sf::RenderWindow* window, int COLS, int ROWS,
+                     const char* filePath, float scale, float tileWidth,
+                     float tileHeight, const char* textureUrl) {
   Expects(window != nullptr);
   Expects(scale >= 0.0f);
   Expects(tileWidth >= 0.0f && tileHeight >= 0.0f);
@@ -25,17 +27,16 @@ float scale, float tileWidth, float tileHeight, const char* textureUrl)
   this->ROWS = ROWS;
   this->filePathStr = filePath ? std::string(filePath) : std::string{};
   this->window = window;
-  layerTiles = std::make_unique<std::vector<std::vector<std::unique_ptr<Tile>>>>();
+  layerTiles =
+      std::make_unique<std::vector<std::vector<std::unique_ptr<Tile>>>>();
 
   GenerateMap();
 }
 
-TileGroup::~TileGroup()
-{
+TileGroup::~TileGroup() {
   // Smart pointers automatically clean up
 }
-void TileGroup::GenerateMap()
-{
+void TileGroup::GenerateMap() {
   // JSON-only map loading (supports single-layer and layered variants)
   try {
     if (filePathStr.empty()) {
@@ -63,12 +64,13 @@ void TileGroup::GenerateMap()
     int totalPlaced = 0;
     layerTiles->clear();
 
-    auto readGrid = [&](const Json::Value& gridVal) -> std::vector<std::vector<std::pair<int,int>>> {
-      std::vector<std::vector<std::pair<int,int>>> grid;
+    auto readGrid = [&](const Json::Value& gridVal)
+        -> std::vector<std::vector<std::pair<int, int>>> {
+      std::vector<std::vector<std::pair<int, int>>> grid;
       if (!gridVal.isArray()) return grid;
       grid.reserve(gridVal.size());
       for (const auto& rowVal : gridVal) {
-        std::vector<std::pair<int,int>> row;
+        std::vector<std::pair<int, int>> row;
         if (!rowVal.isArray()) continue;
         row.reserve(rowVal.size());
         for (const auto& cell : rowVal) {
@@ -89,12 +91,24 @@ void TileGroup::GenerateMap()
       const auto& arr = root["layers"];
       int layerIndex = 0;
       for (const auto& L : arr) {
-        std::string tilesetPath = L.isMember("tileset") ? L["tileset"].asString() : this->textureUrlStr;
-  int lTileW = L.isMember("tileW") ? L["tileW"].asInt() : gsl::narrow_cast<int>(this->tileWidth);
-  int lTileH = L.isMember("tileH") ? L["tileH"].asInt() : gsl::narrow_cast<int>(this->tileHeight);
+        std::string tilesetPath = L.isMember("tileset")
+                                      ? L["tileset"].asString()
+                                      : this->textureUrlStr;
+        int lTileW = L.isMember("tileW")
+                         ? L["tileW"].asInt()
+                         : gsl::narrow_cast<int>(this->tileWidth);
+        int lTileH = L.isMember("tileH")
+                         ? L["tileH"].asInt()
+                         : gsl::narrow_cast<int>(this->tileHeight);
         auto grid = readGrid(L["grid"]);
-        if (grid.empty() || grid[0].empty()) { ++layerIndex; continue; }
-  if (layerIndex == 0) { ROWS = gsl::narrow_cast<int>(grid.size()); COLS = gsl::narrow_cast<int>(grid[0].size()); }
+        if (grid.empty() || grid[0].empty()) {
+          ++layerIndex;
+          continue;
+        }
+        if (layerIndex == 0) {
+          ROWS = gsl::narrow_cast<int>(grid.size());
+          COLS = gsl::narrow_cast<int>(grid[0].size());
+        }
         float tw = static_cast<float>(lTileW);
         float th = static_cast<float>(lTileH);
         std::vector<std::unique_ptr<Tile>> layerVec;
@@ -105,25 +119,38 @@ void TileGroup::GenerateMap()
             if (col == 0 && row == 0) continue;
             float posX{scale * tw * x};
             float posY{scale * th * y};
-            layerVec.push_back(std::make_unique<Tile>(tilesetPath, scale, gsl::narrow_cast<int>(tw), gsl::narrow_cast<int>(th), col, row, posX, posY, window));
+            layerVec.push_back(std::make_unique<Tile>(
+                tilesetPath, scale, gsl::narrow_cast<int>(tw),
+                gsl::narrow_cast<int>(th), col, row, posX, posY, window));
             ++totalPlaced;
           }
         }
         layerTiles->push_back(std::move(layerVec));
         ++layerIndex;
       }
-      if (layerTiles->empty()) { std::cerr << "No valid layers parsed; aborting" << std::endl; return; }
-      std::cout << "TileGroup: JSON layered loaded. Layers=" << layerTiles->size()
-                << ", Size=" << COLS << "x" << ROWS << ", tiles=" << totalPlaced << std::endl;
+      if (layerTiles->empty()) {
+        std::cerr << "No valid layers parsed; aborting" << std::endl;
+        return;
+      }
+      std::cout << "TileGroup: JSON layered loaded. Layers="
+                << layerTiles->size() << ", Size=" << COLS << "x" << ROWS
+                << ", tiles=" << totalPlaced << std::endl;
     } else {
       // Single-layer JSON
-      if (root.isMember("tileset")) this->textureUrlStr = root["tileset"].asString();
-      if (root.isMember("tileW")) this->tileWidth = static_cast<float>(root["tileW"].asInt());
-      if (root.isMember("tileH")) this->tileHeight = static_cast<float>(root["tileH"].asInt());
+      if (root.isMember("tileset"))
+        this->textureUrlStr = root["tileset"].asString();
+      if (root.isMember("tileW"))
+        this->tileWidth = static_cast<float>(root["tileW"].asInt());
+      if (root.isMember("tileH"))
+        this->tileHeight = static_cast<float>(root["tileH"].asInt());
       auto grid = readGrid(root["grid"]);
-      if (grid.empty() || grid[0].empty()) { std::cerr << "JSON map 'grid' is empty or malformed: " << filePathStr << std::endl; return; }
-  ROWS = gsl::narrow_cast<int>(grid.size());
-  COLS = gsl::narrow_cast<int>(grid[0].size());
+      if (grid.empty() || grid[0].empty()) {
+        std::cerr << "JSON map 'grid' is empty or malformed: " << filePathStr
+                  << std::endl;
+        return;
+      }
+      ROWS = gsl::narrow_cast<int>(grid.size());
+      COLS = gsl::narrow_cast<int>(grid[0].size());
       std::vector<std::unique_ptr<Tile>> singleLayer;
       singleLayer.reserve(static_cast<size_t>(ROWS * COLS));
       for (int y = 0; y < ROWS; ++y) {
@@ -132,20 +159,22 @@ void TileGroup::GenerateMap()
           if (col == 0 && row == 0) continue;
           float posX{scale * tileWidth * x};
           float posY{scale * tileHeight * y};
-          singleLayer.push_back(std::make_unique<Tile>(this->textureUrlStr, scale, gsl::narrow_cast<int>(tileWidth), gsl::narrow_cast<int>(tileHeight), col, row, posX, posY, window));
+          singleLayer.push_back(std::make_unique<Tile>(
+              this->textureUrlStr, scale, gsl::narrow_cast<int>(tileWidth),
+              gsl::narrow_cast<int>(tileHeight), col, row, posX, posY, window));
           ++totalPlaced;
         }
       }
       layerTiles->push_back(std::move(singleLayer));
-      std::cout << "TileGroup: JSON loaded. Size=" << COLS << "x" << ROWS << ", tiles=" << totalPlaced << std::endl;
+      std::cout << "TileGroup: JSON loaded. Size=" << COLS << "x" << ROWS
+                << ", tiles=" << totalPlaced << std::endl;
     }
   } catch (const std::exception& ex) {
     std::cerr << "Exception while generating map: " << ex.what() << std::endl;
   }
 }
 
-void TileGroup::Draw()
-{
+void TileGroup::Draw() {
   // Draw layers in order; per-layer tiles are already positioned
   if (!layerTiles) return;
   for (auto& layer : *layerTiles) {

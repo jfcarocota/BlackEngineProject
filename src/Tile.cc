@@ -1,13 +1,14 @@
 #include "Tile.hh"
+
 #include <iostream>
 #include <memory>
 
-Tile::Tile(const std::string& textureUrl, float scale, int width, int height, int column, int row,
-float posX, float posY, sf::RenderWindow*& window)
-{
+Tile::Tile(const std::string& textureUrl, float scale, int width, int height,
+           int column, int row, float posX, float posY,
+           sf::RenderWindow*& window) {
   try {
-  Expects(window != nullptr);
-  this->window = window;
+    Expects(window != nullptr);
+    this->window = window;
     this->scale = scale;
     this->width = width;
     this->height = height;
@@ -21,10 +22,10 @@ float posX, float posY, sf::RenderWindow*& window)
       std::cerr << "Failed to load tile texture: " << textureUrl << std::endl;
     }
     sprite = std::make_unique<sf::Sprite>(
-      *texture,
-      sf::IntRect({gsl::narrow_cast<int>(column * width), gsl::narrow_cast<int>(row * height)},
-                   {gsl::narrow_cast<int>(width), gsl::narrow_cast<int>(height)})
-    );
+        *texture, sf::IntRect({gsl::narrow_cast<int>(column * width),
+                               gsl::narrow_cast<int>(row * height)},
+                              {gsl::narrow_cast<int>(width),
+                               gsl::narrow_cast<int>(height)}));
     sprite->setPosition(sf::Vector2f(posX, posY));
     sprite->setColor(sf::Color::White);
     sprite->setScale(sf::Vector2f(scale, scale));
@@ -35,12 +36,10 @@ float posX, float posY, sf::RenderWindow*& window)
   }
 }
 
-Tile::~Tile()
-{
+Tile::~Tile() {
   // No need to manually delete smart pointers
 }
 
-void Tile::Draw()
-{
+void Tile::Draw() {
   if (window && sprite) window->draw(*sprite);
 }

@@ -1,12 +1,15 @@
 #include "Components/RigidBodyComponent.hh"
-#include "Components/EntityManager.hh"
+
 #include <gsl/assert>
 
-RigidBodyComponent::RigidBodyComponent(gsl::not_null<b2World*> world, b2BodyType bodyType, float density, float friction,
-float restitution, float angle, bool frezeRotation, void* userData)
-  : world(world)
-{
+#include "Components/EntityManager.hh"
 
+RigidBodyComponent::RigidBodyComponent(gsl::not_null<b2World*> world,
+                                       b2BodyType bodyType, float density,
+                                       float friction, float restitution,
+                                       float angle, bool frezeRotation,
+                                       void* userData)
+    : world(world) {
   bodyDef = new b2BodyDef();
   bodyDef->type = bodyType;
   polygonShape = new b2PolygonShape();
@@ -20,24 +23,26 @@ float restitution, float angle, bool frezeRotation, void* userData)
   this->userData = userData;
 }
 
-void RigidBodyComponent::Initialize()
-{
+void RigidBodyComponent::Initialize() {
   transform = owner->GetComponent<TransformComponent>();
   spriteComponent = owner->GetComponent<SpriteComponent>();
   Expects(transform != nullptr);
   Expects(spriteComponent != nullptr);
 
-  sf::Vector2f spritePos{transform->GetPosition().x, transform->GetPosition().y};
-  sf::Vector2f size{transform->GetWidth() * transform->GetScale(), transform->GetHeight() * transform->GetScale()};
+  sf::Vector2f spritePos{transform->GetPosition().x,
+                         transform->GetPosition().y};
+  sf::Vector2f size{transform->GetWidth() * transform->GetScale(),
+                    transform->GetHeight() * transform->GetScale()};
 
-  //init body
+  // init body
   bodyDef->position = b2Vec2(spritePos.x, spritePos.y);
   body = world->CreateBody(bodyDef);
 
-  //define polygon shape
-  polygonShape->SetAsBox(size.x * 0.5f - b2_polygonRadius, size.y * 0.5f - b2_polygonRadius);
+  // define polygon shape
+  polygonShape->SetAsBox(size.x * 0.5f - b2_polygonRadius,
+                         size.y * 0.5f - b2_polygonRadius);
 
-  //init fixture
+  // init fixture
   fixtureDef->shape = polygonShape;
   fixtureDef->density = density;
   fixtureDef->friction = friction;
@@ -48,8 +53,7 @@ void RigidBodyComponent::Initialize()
   body->GetUserData().pointer = reinterpret_cast<uintptr_t>(userData);
 }
 
-RigidBodyComponent::~RigidBodyComponent()
-{
+RigidBodyComponent::~RigidBodyComponent() {
   if (world && body) {
     world->DestroyBody(body);
     body = nullptr;
@@ -62,35 +66,24 @@ RigidBodyComponent::~RigidBodyComponent()
   fixtureDef = nullptr;
 }
 
-b2Body* RigidBodyComponent::GetBody() const
-{
-  return body;
-}
+b2Body* RigidBodyComponent::GetBody() const { return body; }
 
-void RigidBodyComponent::FreezeRotation(bool freeze)
-{
+void RigidBodyComponent::FreezeRotation(bool freeze) {
   body->SetFixedRotation(freeze);
 }
 
-b2Vec2 RigidBodyComponent::GetPosition() const
-{
-  return body->GetPosition();
-}
+b2Vec2 RigidBodyComponent::GetPosition() const { return body->GetPosition(); }
 
-sf::Vector2f RigidBodyComponent::GetPositionSFML() const
-{
+sf::Vector2f RigidBodyComponent::GetPositionSFML() const {
   return sf::Vector2f(body->GetPosition().x, body->GetPosition().y);
 }
 
-void RigidBodyComponent::AddVelocity(b2Vec2 velocity)
-{
+void RigidBodyComponent::AddVelocity(b2Vec2 velocity) {
   body->SetLinearVelocity(velocity);
 }
 
-void RigidBodyComponent::Update(float& deltaTime)
-{
-  if(spriteComponent != nullptr && transform != nullptr)
-  {
+void RigidBodyComponent::Update(float& deltaTime) {
+  if (spriteComponent != nullptr && transform != nullptr) {
     bodyPos = body->GetPosition();
     trsPos = sf::Vector2f(bodyPos.x, bodyPos.y);
     transform->SetPosition(trsPos);

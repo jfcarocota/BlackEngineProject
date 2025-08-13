@@ -1,8 +1,10 @@
-#include "Game.hh"
-#include "Constants.hh"
-#include "InputSystem.hh"
+#include <box2d/box2d.h>
+
+#include <iostream>
+
 #include "Animation.hh"
-#include "GUI/TextObject.hh"
+#include "Constants.hh"
 #include "DrawPhysics.hh"
-#include<box2d/box2d.h>
-#include<iostream>
+#include "GUI/TextObject.hh"
+#include "Game.hh"
+#include "InputSystem.hh"

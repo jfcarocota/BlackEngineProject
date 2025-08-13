@@ -1,0 +1,4 @@
+BasedOnStyle: Google
+Language: Cpp
+Standard: Latest
+SortIncludes: true

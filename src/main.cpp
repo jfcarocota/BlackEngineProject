@@ -1,10 +1,10 @@
-#include<iostream>
+#include <iostream>
+
 #include "Game.hh"
 
-int main()
-{
-    Game game;
-    game.Initialize();
+int main() {
+  Game game;
+  game.Initialize();
 
-    return EXIT_SUCCESS;
+  return EXIT_SUCCESS;
 }

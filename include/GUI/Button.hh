@@ -1,14 +1,14 @@
 #pragma once
-#include "Components/Component.hh"
-#include "Components/TransformComponent.hh"
-#include "Components/EntityManager.hh"
-#include<string>
 #include <functional>
 #include <gsl/assert>
+#include <string>
 
-class Button: public Component
-{
-private:
+#include "Components/Component.hh"
+#include "Components/EntityManager.hh"
+#include "Components/TransformComponent.hh"
+
+class Button : public Component {
+ private:
   sf::RectangleShape rectangleShape;
   float borderSize;
   sf::Color fillColor;
@@ -17,8 +17,10 @@ private:
   std::function<void()> onClickAction;
   bool clicked = false;
   sf::Texture texture{};
-public:
-  Button(TransformComponent& transform, float borderSize, sf::Color fillColor, sf::Color borderColor, std::function<void()> onClickAction);
+
+ public:
+  Button(TransformComponent& transform, float borderSize, sf::Color fillColor,
+         sf::Color borderColor, std::function<void()> onClickAction);
   ~Button();
   void OnClick();
   void Initialize() override;

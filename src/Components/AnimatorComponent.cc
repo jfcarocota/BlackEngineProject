@@ -1,25 +1,21 @@
 #include "Components/AnimatorComponent.hh"
-#include "Components/EntityManager.hh"
+
 #include <gsl/assert>
 
-AnimatorComponent::AnimatorComponent()
-{
-}
+#include "Components/EntityManager.hh"
 
-AnimatorComponent::~AnimatorComponent()
-{
-}
+AnimatorComponent::AnimatorComponent() {}
 
-void AnimatorComponent::Initialize()
-{
+AnimatorComponent::~AnimatorComponent() {}
+
+void AnimatorComponent::Initialize() {
   sprite = owner->GetComponent<SpriteComponent>();
   transform = owner->GetComponent<TransformComponent>();
   Expects(sprite != nullptr);
   Expects(transform != nullptr);
 }
 
-void AnimatorComponent::RefreshAnimationClip()
-{
+void AnimatorComponent::RefreshAnimationClip() {
   animationIndex = currentAnimationClip.animationIndex;
   startFrame = currentAnimationClip.startFrame;
   endFrame = currentAnimationClip.endFrame;
@@ -27,23 +23,22 @@ void AnimatorComponent::RefreshAnimationClip()
   currentAnimation = currentAnimationClip.currentAnimation;
 }
 
-void AnimatorComponent::Play(std::string animationName)
-{
+void AnimatorComponent::Play(std::string animationName) {
   auto it = animations.find(animationName);
   if (it == animations.end()) {
     std::cerr << "Animation '" << animationName << "' not found" << std::endl;
     return;
   }
-  
+
   AnimationClip anim = it->second;
-  
+
   if (!anim.IsValid()) {
-    std::cerr << "Cannot play invalid animation '" << animationName << "'" << std::endl;
+    std::cerr << "Cannot play invalid animation '" << animationName << "'"
+              << std::endl;
     return;
   }
 
-  if(animationName != currentAnimationName)
-  {
+  if (animationName != currentAnimationName) {
     currentAnimationName = animationName;
     currentAnimationClip = anim;
 
@@ -51,16 +46,16 @@ void AnimatorComponent::Play(std::string animationName)
   }
 }
 
-void AnimatorComponent::AddAnimation(std::string animationName, AnimationClip animationClip)
-{
+void AnimatorComponent::AddAnimation(std::string animationName,
+                                     AnimationClip animationClip) {
   // Check if animation clip is valid
   if (!animationClip.IsValid()) {
-    std::cerr << "Warning: Invalid animation clip for '" << animationName << "'" << std::endl;
+    std::cerr << "Warning: Invalid animation clip for '" << animationName << "'"
+              << std::endl;
     return;
   }
-  
-  if(currentAnimationName.empty())
-  {
+
+  if (currentAnimationName.empty()) {
     currentAnimationName = animationName;
     currentAnimationClip = animationClip;
 
@@ -69,25 +64,18 @@ void AnimatorComponent::AddAnimation(std::string animationName, AnimationClip an
   animations.insert({animationName, animationClip});
 }
 
-void AnimatorComponent::Update(float& deltaTime)
-{
-  if(sprite != nullptr && transform != nullptr)
-  {
-    if(animations.size() > 0 && !currentAnimationName.empty())
-    {
+void AnimatorComponent::Update(float& deltaTime) {
+  if (sprite != nullptr && transform != nullptr) {
+    if (animations.size() > 0 && !currentAnimationName.empty()) {
       currentTime += deltaTime;
       sprite->RebindRectTexture(animationIndex * transform->GetWidth(),
-      currentAnimation * transform->GetHeight(), transform->GetWidth(),
-      transform->GetHeight());
+                                currentAnimation * transform->GetHeight(),
+                                transform->GetWidth(), transform->GetHeight());
 
-      if(currentTime > animationDelay)
-      {
-        if(animationIndex == endFrame)
-        {
+      if (currentTime > animationDelay) {
+        if (animationIndex == endFrame) {
           animationIndex = startFrame;
-        }
-        else
-        {
+        } else {
           animationIndex++;
         }
         currentTime = 0.f;

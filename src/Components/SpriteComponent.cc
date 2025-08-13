@@ -1,11 +1,13 @@
 #include "Components/SpriteComponent.hh"
-#include "Components/EntityManager.hh"
-#include <iostream>
+
 #include <gsl/assert>
 #include <gsl/narrow>
+#include <iostream>
 
-SpriteComponent::SpriteComponent(const char* textureUrl, unsigned int col, unsigned int row)
-{
+#include "Components/EntityManager.hh"
+
+SpriteComponent::SpriteComponent(const char* textureUrl, unsigned int col,
+                                 unsigned int row) {
   this->textureUrl = textureUrl;
   this->col = col;
   this->row = row;
@@ -15,22 +17,21 @@ SpriteComponent::SpriteComponent(const char* textureUrl, unsigned int col, unsig
   }
 }
 
-void SpriteComponent::Initialize()
-{
+void SpriteComponent::Initialize() {
   transform = owner->GetComponent<TransformComponent>();
 
   Expects(transform != nullptr);
 
   const int w = gsl::narrow_cast<int>(transform->GetWidth());
   const int h = gsl::narrow_cast<int>(transform->GetHeight());
-  const int left = gsl::narrow_cast<int>(static_cast<float>(col) * transform->GetWidth());
-  const int top  = gsl::narrow_cast<int>(static_cast<float>(row) * transform->GetHeight());
+  const int left =
+      gsl::narrow_cast<int>(static_cast<float>(col) * transform->GetWidth());
+  const int top =
+      gsl::narrow_cast<int>(static_cast<float>(row) * transform->GetHeight());
 
   // Create sprite once transform is available
-  sprite = std::make_unique<sf::Sprite>(
-    texture,
-    sf::IntRect({left, top}, {w, h})
-  );
+  sprite =
+      std::make_unique<sf::Sprite>(texture, sf::IntRect({left, top}, {w, h}));
 
   sprite->setPosition(transform->GetPosition());
   sprite->setScale(sf::Vector2f(transform->GetScale(), transform->GetScale()));
@@ -40,43 +41,37 @@ void SpriteComponent::Initialize()
   Ensures(sprite != nullptr);
 }
 
-SpriteComponent::~SpriteComponent()
-{
-}
+SpriteComponent::~SpriteComponent() {}
 
-void SpriteComponent::Update(float& deltaTime)
-{
-  if(transform != nullptr && sprite)
-  {
+void SpriteComponent::Update(float& deltaTime) {
+  if (transform != nullptr && sprite) {
     sprite->setPosition(transform->GetPosition());
   }
 }
 
-void SpriteComponent::Render(sf::RenderWindow& window)
-{
+void SpriteComponent::Render(sf::RenderWindow& window) {
   if (sprite) window.draw(*sprite);
 }
 
-void SpriteComponent::SetFlipTexture(bool flipTexture)
-{
+void SpriteComponent::SetFlipTexture(bool flipTexture) {
   this->flipTexture = flipTexture;
   Expects(transform != nullptr);
   if (sprite)
-    sprite->setScale(sf::Vector2f(flipTexture ? -transform->GetScale(): transform->GetScale(), transform->GetScale()));
+    sprite->setScale(sf::Vector2f(
+        flipTexture ? -transform->GetScale() : transform->GetScale(),
+        transform->GetScale()));
 }
 
-bool SpriteComponent::GetFlipTexture() const
-{
-  return flipTexture;
-}
+bool SpriteComponent::GetFlipTexture() const { return flipTexture; }
 
-sf::Vector2f SpriteComponent::GetOrigin() const
-{
+sf::Vector2f SpriteComponent::GetOrigin() const {
   return sprite ? sprite->getOrigin() : sf::Vector2f{};
 }
 
-void SpriteComponent::RebindRectTexture(int col, int row, float width, float height)
-{
+void SpriteComponent::RebindRectTexture(int col, int row, float width,
+                                        float height) {
   if (sprite)
-  sprite->setTextureRect(sf::IntRect({col, row}, {gsl::narrow_cast<int>(width), gsl::narrow_cast<int>(height)}));
+    sprite->setTextureRect(sf::IntRect(
+        {col, row},
+        {gsl::narrow_cast<int>(width), gsl::narrow_cast<int>(height)}));
 }

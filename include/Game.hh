@@ -1,20 +1,21 @@
 #pragma once
 
+#include <box2d/box2d.h>
+
 #include <SFML/Graphics.hpp>
+#include <memory>
+
 #include "ContactEventManager.hh"
 #include "DrawPhysics.hh"
 #include "ImGuiManager.hh"
-#include <box2d/box2d.h>
-#include <memory>
 
 // Forward declarations to reduce header coupling
 class TextObject;
 class TileGroup;
 class EntityManager;
 
-class Game
-{
-private:
+class Game {
+ private:
   std::unique_ptr<sf::RenderWindow> window;
   std::unique_ptr<ContactEventManager> contactEventManager;
   std::unique_ptr<ImGuiManager> imguiManager;
@@ -40,9 +41,8 @@ private:
   void Destroy();
   void UpdatePhysics();
 
-public:
+ public:
   Game();
   ~Game();
   void Initialize();
-
 };

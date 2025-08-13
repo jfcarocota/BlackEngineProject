@@ -1,14 +1,15 @@
 #pragma once
-#include "Component.hh"
-#include<box2d/box2d.h>
-#include<SFML/Graphics.hpp>
-#include "TransformComponent.hh"
-#include "SpriteComponent.hh"
+#include <box2d/box2d.h>
+
+#include <SFML/Graphics.hpp>
 #include <gsl/gsl>
 
-class RigidBodyComponent: public Component
-{
-private:
+#include "Component.hh"
+#include "SpriteComponent.hh"
+#include "TransformComponent.hh"
+
+class RigidBodyComponent : public Component {
+ private:
   b2BodyDef* bodyDef{};
   b2Body* body{};
   b2PolygonShape* polygonShape{};
@@ -27,9 +28,11 @@ private:
   float angle{};
   bool frezeRotation{};
   void* userData{};
-public:
-  RigidBodyComponent(gsl::not_null<b2World*> world, b2BodyType bodyType, float density, float friction,
-  float restitution, float angle, bool frezeRotation, void* userData);
+
+ public:
+  RigidBodyComponent(gsl::not_null<b2World*> world, b2BodyType bodyType,
+                     float density, float friction, float restitution,
+                     float angle, bool frezeRotation, void* userData);
   ~RigidBodyComponent();
 
   b2Body* GetBody() const;
