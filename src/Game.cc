@@ -87,10 +87,58 @@ Game::Game()
   world = std::make_unique<b2World>(*gravity);
   drawPhysics = std::make_unique<DrawPhysics>(window.get());
   entityManager = std::make_unique<EntityManager>();
+  // Resolve default map path with fallbacks: prefer layered JSON (latest user map, then assets), then legacy
+  auto exists = [](const std::string& p){ return std::filesystem::exists(std::filesystem::path(p)); };
+  auto findLatestJsonIn = [&](const std::filesystem::path& dir) -> std::optional<std::string> {
+    namespace fs = std::filesystem;
+    std::error_code ec;
+    if (!fs::exists(dir, ec) || !fs::is_directory(dir, ec)) return std::nullopt;
+    std::string best;
+    std::filesystem::file_time_type bestTime{};
+    for (auto it = fs::directory_iterator(dir, ec); !ec && it != fs::end(it); it.increment(ec)) {
+      if (ec) break;
+      const auto& entry = *it;
+      if (!entry.is_regular_file(ec)) continue;
+      auto path = entry.path();
+      if (path.extension() == ".json") {
+        auto t = entry.last_write_time(ec);
+        if (!ec && (best.empty() || t > bestTime)) { best = path.string(); bestTime = t; }
+      }
+    }
+    if (!best.empty()) return best; else return std::nullopt;
+  };
 
-  tileGroup = std::make_unique<TileGroup>(window.get(), GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT, 
-                                        ASSETS_MAPS_JSON_THREE, GameConstants::TILE_SCALE, GameConstants::TILE_SIZE, 
-                                        GameConstants::TILE_SIZE, ASSETS_TILES);
+  // User Maps folder (same as editor) on Windows: %APPDATA%/BlackEngineProject/Maps
+  auto userMapsDir = [&]() -> std::filesystem::path {
+    std::filesystem::path base;
+    const char* appData = std::getenv("APPDATA");
+    if (appData) base = appData; else base = std::filesystem::current_path();
+    return base / "BlackEngineProject" / "Maps";
+  }();
+
+  std::string mapPath;
+  // 1) Prefer explicit assets JSON constants (developer override)
+  if (exists(ASSETS_MAPS_JSON_THREE)) mapPath = ASSETS_MAPS_JSON_THREE;
+  else if (exists(ASSETS_MAPS_JSON_TWO)) mapPath = ASSETS_MAPS_JSON_TWO;
+  else if (exists(ASSETS_MAPS_JSON)) mapPath = ASSETS_MAPS_JSON;
+
+  // 2) If not set by constants, try most recent JSON in user Maps dir
+  if (mapPath.empty()) {
+    if (auto p = findLatestJsonIn(userMapsDir)) mapPath = *p;
+  }
+
+  // 3) If still empty, pick latest JSON from assets/maps
+  if (mapPath.empty()) {
+    auto assetsLatest = findLatestJsonIn(std::filesystem::path("assets") / "maps");
+    if (assetsLatest) mapPath = *assetsLatest;
+  }
+  // 4) Final fallback to legacy .grid
+  if (mapPath.empty()) mapPath = ASSETS_MAPS;
+
+  std::cout << "Game: loading map -> " << mapPath << std::endl;
+  tileGroup = std::make_unique<TileGroup>(window.get(), GameConstants::MAP_WIDTH, GameConstants::MAP_HEIGHT,
+                                          mapPath.c_str(), GameConstants::TILE_SCALE, GameConstants::TILE_SIZE,
+                                          GameConstants::TILE_SIZE, ASSETS_TILES);
 
   auto& hero{entityManager->AddEntity("hero")};
   auto& candle1{entityManager->AddEntity("candle")};

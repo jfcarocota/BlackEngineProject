@@ -7,7 +7,7 @@ const char* ASSETS_MAPS{"assets/maps/level1.grid"};
 const char* ASSETS_MAPS_NEW{"assets/maps/map_20250809_183540.grid"};
 const char* ASSETS_MAPS_JSON{"assets/maps/level1.json"};
 const char* ASSETS_MAPS_JSON_TWO{"assets/maps/level2.json"};
-const char* ASSETS_MAPS_JSON_THREE{"assets/maps/level3.json"};
+const char* ASSETS_MAPS_JSON_THREE{"assets/maps/level4.json"};
 const char* ASSETS_FONT_ARCADECLASSIC{"assets/fonts/ARCADECLASSIC.TTF"};
 
 // Game constants
