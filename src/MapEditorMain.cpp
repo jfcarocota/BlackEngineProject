@@ -21,7 +21,14 @@
 #include <vector>
 
 // Define to enable native Win32 file dialogs. Requires Windows SDK
-// headers/libs. #define MAPEDITOR_ENABLE_WIN32_DIALOGS 1
+// headers/libs. Currently disabled due to compilation issues - using fallback
+// implementations
+// #define MAPEDITOR_ENABLE_WIN32_DIALOGS 1
+
+// Force disable Win32 dialogs to avoid compilation issues
+#ifdef MAPEDITOR_ENABLE_WIN32_DIALOGS
+#undef MAPEDITOR_ENABLE_WIN32_DIALOGS
+#endif
 
 // Fallback for compilers without __has_include
 #ifndef __has_include
@@ -56,20 +63,23 @@ using experimental::optional;
 #ifdef __APPLE__
 #include <mach-o/dyld.h>
 #endif
-#if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#include <commdlg.h>
-#include <shlobj.h>
-#include <shobjidl.h>
-#include <windows.h>
-#ifdef _MSC_VER
-#pragma comment(lib, "comdlg32.lib")
-#pragma comment(lib, "shell32.lib")
-#pragma comment(lib, "ole32.lib")
-#endif
-#endif
+
+// Only include Win32 headers when explicitly enabling Win32 dialogs
+// Currently disabled to avoid compilation issues
+// #if defined(_WIN32) && defined(MAPEDITOR_ENABLE_WIN32_DIALOGS)
+// #ifndef NOMINMAX
+// #define NOMINMAX
+// #endif
+// #include <commdlg.h>
+// #include <shlobj.h>
+// #include <shobjidl.h>
+// #include <windows.h>
+// #ifdef _MSC_VER
+// #pragma comment(lib, "comdlg32.lib")
+// #pragma comment(lib, "shell32.lib")
+// #pragma comment(lib, "ole32.lib")
+// #endif
+// #endif
 
 #include "Constants.hh"
 
@@ -603,6 +613,12 @@ static std::optional<std::string> winSaveJsonAs(
 // Stubs when dialogs are disabled; callers should be behind the same macro
 static std::optional<std::string> winPickImageFile() { return std::nullopt; }
 static std::optional<std::string> winPickFolder(const wchar_t* = L"") {
+  return std::nullopt;
+}
+static std::optional<std::string> winPickMapFile(const wchar_t* = L"") {
+  return std::nullopt;
+}
+static std::optional<std::string> winSaveMapAs(const wchar_t* = L"") {
   return std::nullopt;
 }
 static std::optional<std::string> winPickGridFile(const wchar_t* = L"") {
